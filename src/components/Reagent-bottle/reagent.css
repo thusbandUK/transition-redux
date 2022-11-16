@@ -1,0 +1,9 @@
+.reagent-bottle-selection {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+.reagent-bottle-image {
+    width: 100px;
+}

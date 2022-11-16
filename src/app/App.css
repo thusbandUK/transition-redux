@@ -1,0 +1,152 @@
+/* Kept CSS I've written down to minimum bu using Bootstrap framework, see https://getbootstrap.com/docs/5.2/getting-started/introduction/ */
+
+/* Variables */
+:root {
+  --primary: #960150;
+  --primaryText: rgb(43, 43, 43);
+  --greyLight: #dee2e6;
+  --greyDark: #999;
+}
+
+/* Global styles */
+html {
+  color: var(--primaryText);
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Permanent Marker', Arial, sans-serif;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.subheader {
+  display: block;
+  font-family: var(--bs-body-font-family);
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: var(--greyDark);
+}
+
+a {
+  color: var(--primary) !important;
+}
+
+a:hover {
+  color: var(--primary) !important;
+  opacity: .7;
+}
+
+/* Header and footer */
+header::before,
+footer::before {
+  content: '';
+  width: 100%;
+  height: 1000px;
+  position: absolute;
+  top: 0;
+  background: url("../../public/images/explosive\ doodle.png") no-repeat center center fixed;
+  background-size: cover; 
+  opacity: .1;
+}
+
+h1 {
+  position: relative;
+  z-index: 999;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+}
+
+/* Nav buttons */
+.nav-btn {
+  position: absolute;
+  top: 0;
+  width: 48px;
+  left: 0;
+  height: 100%;
+  border: 0;
+  border-right: 1px solid var(--greyLight);
+  font-size: 2rem;
+}
+
+/* TODO: hide these buttons properly via the JS - or add a disabled propery for accessibility reasons */
+.nav-btn[style="cursor: not-allowed;"] {
+  display: none;
+}
+
+.nav-btn:hover {
+  color: var(--primary);
+}
+
+.nav-btn__next {
+  left: auto;
+  right: 0;
+  border-right: 0;
+  border-left: 1px solid var(--greyLight);
+}
+
+/* text box */
+.text-box {
+  width: 75%;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 740px) {
+  .text-box {
+      width: 90%;
+  }
+}
+
+
+
+/*This was already here in the boiler plate*/
+/*
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+*/

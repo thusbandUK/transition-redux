@@ -1,0 +1,28 @@
+<1 - on routing>
+
+There does need to be some routing. We can use Ben's format, the landing page will have the introduction AND the exam board selector
+
+then that takes the user to the reactions page, where it will have the links at the bottom, as per Ben's, so two pages basically
+
+you're going to need a component that says: "Oop, are you sure? You're gonna lose your work"
+
+<1 - on routing ENDS>
+
+
+<2 - on overriding the link colors>
+
+I think you need to make a custom theme...
+https://create-react-app.dev/docs/adding-bootstrap/#using-a-custom-theme
+
+...like so...
+https://getbootstrap.com/docs/4.6/getting-started/theming/#variable-defaults
+
+
+
+This first page... 
+https://react-bootstrap.github.io/getting-started/introduction/
+
+...led to the two above via this:
+https://getbootstrap.com/docs/4.4/getting-started/theming/
+
+<2 - on overriding the link colors ENDS>

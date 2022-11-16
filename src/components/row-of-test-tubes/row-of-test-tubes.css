@@ -1,0 +1,11 @@
+.row-of-tubes {
+    display: inline-flex;
+    /*position: relative;*/
+   /*background: url("images/laboratory background.jpg") no-repeat;*/
+   height: 100vh;
+}
+
+button {
+    background: rgba(255, 122, 89, 0);
+    border: rgba(255, 122, 89, 0);
+}
