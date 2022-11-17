@@ -4,6 +4,9 @@ import React, { useEffect, useState } from 'react';
 import RowOfTubes from '../components/row-of-test-tubes/row-of-test-tubes';
 import ReagentBottle from '../components/Reagent-bottle/reagent';
 import ResetButton from '../components/resetButton/resetButton';
+import { BrowserRouter as Router, Route,  Switch, NavLink } from 'react-router-dom';
+import { Outlet } from "react-router-dom";
+import Menu from '../components/menu/menu';
 
 const reagentOptions = [
   {section: 1, name: 'concentrated hydrochloric acid'},
@@ -24,6 +27,7 @@ function App(props) {
   
 
   return (
+    
     <div className="App">
       <header className="border-bottom py-5 overflow-hidden position-relative">
         <section className="container">
@@ -40,26 +44,21 @@ function App(props) {
             reagent={reagent}
             />
           </div>
-      
-          <ul className="list-group mt-4 fs-5">
-            {reagentOptions.map((reagent) =>               
-              (<li
-                 className="list-group-item bg-light" 
-               >
-                 <a 
-                   className="d-block text-decoration-none">
-                     {`Section ${reagent.section}: Reactions with ${reagent.name}`}
-                     <i className="mdi mdi-chevron-right mdi-24px float-end"></i>
-                 </a>
-               </li>)
-            )}            
-          </ul>
+          
+          <NavLink to="/introduction">
+            Click to see menu
+          </NavLink>
+
+          <Outlet />
+          
         </div>
       </section>
+      
       <footer className="border-top py-5 overflow-hidden position-relative">        
         <div className="container">Copyright T Husband</div>
       </footer>
     </div>
+    
   );
 }
 

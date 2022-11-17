@@ -1,5 +1,25 @@
 <1 - on routing>
 
+So that was a pretty brutal day, oof! You need to do it all a new way now because up-to-date React isn't really compatabile with
+out-of-date React-router-dom, which unfortunately meant I had to learn a completely new way of using Router than I was taught
+in Codecademy, euch. There are a few really good places, obvs all filed under coding hacks and or react BUT here's a choice selection:
+
+This looks awesome, only caught it right at the end:
+
+https://www.freecodecamp.org/news/how-to-use-react-router-version-6/#:~:text=To%20install%20React%20Router%2C%20all,%2Drouter%2Ddom%406%20.
+
+React Router dox (latest version 6.4.3)
+
+https://reactrouter.com/en/main/components/nav-link
+
+Read all of this stackexchange query and response so many times and realised on final reread the above-described compatability issue
+
+https://stackoverflow.com/questions/43351752/react-router-changes-url-but-not-view
+
+
+
+
+
 There does need to be some routing. We can use Ben's format, the landing page will have the introduction AND the exam board selector
 
 then that takes the user to the reactions page, where it will have the links at the bottom, as per Ben's, so two pages basically
