@@ -15,7 +15,7 @@ import ReactionsContainer from './components/reactionsContainer/reactionsContain
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<App />} >
-        <Route path="/reactions" element={<ReactionsContainer />} />
+        <Route path="/:reactant" element={<ReactionsContainer />} />
         <Route path="/" element={<Menu />} />
       </Route>
       

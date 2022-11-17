@@ -15,13 +15,14 @@ return (
 <ul className="list-group mt-4 fs-5">
             {reagentOptions.map((reagent) =>               
               (<li
-                 className="list-group-item bg-light" 
+                className="list-group-item bg-light"
                >
                  <NavLink 
-                 to={`reactions/with-${reagent.name}`}
-                   className="d-block text-decoration-none">
+                   to={`/with-${reagent.name}`}
+                   className="d-block text-decoration-none"
+                   >
                      {`Section ${reagent.section}: Reactions with ${reagent.name}`}
-                     <i className="mdi mdi-chevron-right mdi-24px float-end"></i>
+                     
                  </NavLink>
                </li>)
             )}            

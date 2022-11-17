@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import RowOfTubes from '../components/row-of-test-tubes/row-of-test-tubes';
 import ReagentBottle from '../components/Reagent-bottle/reagent';
 import ResetButton from '../components/resetButton/resetButton';
-import { BrowserRouter as Router, Route, Routes, Switch, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Switch, NavLink, useParams } from 'react-router-dom';
 import { Outlet } from "react-router-dom";
 import Menu from '../components/menu/menu';
 
@@ -24,14 +24,14 @@ function App(props) {
     //alert('surely theres a function here');
   }
 
-  
+  const {reactant} = useParams();
 
   return (
     
     <div className="App">
       <header className="border-bottom py-5 overflow-hidden position-relative">
         <section className="container">
-            <h1 className="display-2 m-0">Reactions of complex ions</h1>
+            <h1 className="display-2 m-0">Reactions of complex ions {reactant}</h1>
         </section>
       </header>
       

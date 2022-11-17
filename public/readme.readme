@@ -1,5 +1,32 @@
+<3 - on redux>
+
+5) so there are all these things to link up, you need to think about how your state will looks
+a) examboard 
+b) your data file needs to basically have true false booleans for each exam board
+c) which reagents are needed, which will render the menus differently
+d) the selection of exam board needs to be a bit sort of set in stone
+e) exam board dictates which reagents render, both the complex ions and the acids / bases
+f) the logic you currently have for dictating the colour changes, which precipitate appears needs to go in a redux file
+g) AOB
+
+<3 - on redux ENDS>
+
+<4 - text>
+
+right this is a biggie, the text needs to render differently depending on the exam board
+
+<4 - text ENDS>
+
 <1 - on routing>
 
+so, you've got some good routing going on, you need to:
+create the intro page in a single component (switch in for current menu component)
+1) intro blurb
+2) title useParams get title from url (or if no matching query - complex ions)
+3) exam board buttons
+4) menu
+   a) menu needs to configure differently using similar logic to title, if it's the intro the big menu, otherwise the small one
+   b) 
 So that was a pretty brutal day, oof! You need to do it all a new way now because up-to-date React isn't really compatabile with
 out-of-date React-router-dom, which unfortunately meant I had to learn a completely new way of using Router than I was taught
 in Codecademy, euch. There are a few really good places, obvs all filed under coding hacks and or react BUT here's a choice selection:
