@@ -12,20 +12,11 @@ import {
   Route,
 } from "react-router-dom";
 import Menu from './components/menu/menu';
+import RowOfTubes from './components/row-of-test-tubes/row-of-test-tubes';
+import ReagentBottle from './components/Reagent-bottle/reagent';
+import router from './router';
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    children: [
-      {
-        path: "/introduction",
-        element: <Menu />,
-      }
-    ]
-  },  
-  
-]);
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

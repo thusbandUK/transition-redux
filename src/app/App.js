@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import RowOfTubes from '../components/row-of-test-tubes/row-of-test-tubes';
 import ReagentBottle from '../components/Reagent-bottle/reagent';
 import ResetButton from '../components/resetButton/resetButton';
-import { BrowserRouter as Router, Route,  Switch, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Switch, NavLink } from 'react-router-dom';
 import { Outlet } from "react-router-dom";
 import Menu from '../components/menu/menu';
 
@@ -34,21 +34,24 @@ function App(props) {
             <h1 className="display-2 m-0">Reactions of complex ions</h1>
         </section>
       </header>
+      
       <section className="py-5">
         <div className="container">
           <div className="reagents-and-tubes">
-            <ReagentBottle 
-            onChange={updateState}
-            />
-            <RowOfTubes
-            reagent={reagent}
-            />
+             
+          
+
+            
+          
+              
+          
           </div>
           
-          <NavLink to="/introduction">
+          <NavLink to="/reactions">
             Click to see menu
           </NavLink>
 
+          
           <Outlet />
           
         </div>
