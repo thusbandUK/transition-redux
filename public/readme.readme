@@ -27,6 +27,9 @@ create the intro page in a single component (switch in for current menu componen
 4) menu
    a) menu needs to configure differently using similar logic to title, if it's the intro the big menu, otherwise the small one
    b) 
+5) test hypothesis that /reactions/:reactant dynamic path didn't work but there needs to be a <reactions> parent component or something
+similar
+
 So that was a pretty brutal day, oof! You need to do it all a new way now because up-to-date React isn't really compatabile with
 out-of-date React-router-dom, which unfortunately meant I had to learn a completely new way of using Router than I was taught
 in Codecademy, euch. There are a few really good places, obvs all filed under coding hacks and or react BUT here's a choice selection:

@@ -7,6 +7,7 @@ import ResetButton from '../components/resetButton/resetButton';
 import { BrowserRouter as Router, Route, Routes, Switch, NavLink, useParams } from 'react-router-dom';
 import { Outlet } from "react-router-dom";
 import Menu from '../components/menu/menu';
+import { dashBeGone } from '../components/functionModules/urlTranslator';
 
 const reagentOptions = [
   {section: 1, name: 'concentrated hydrochloric acid'},
@@ -31,7 +32,7 @@ function App(props) {
     <div className="App">
       <header className="border-bottom py-5 overflow-hidden position-relative">
         <section className="container">
-            <h1 className="display-2 m-0">Reactions of complex ions {reactant}</h1>
+            <h1 className="display-2 m-0">Reactions of complex ions {dashBeGone(reactant)}</h1>
         </section>
       </header>
       
@@ -54,6 +55,8 @@ function App(props) {
           
           <Outlet />
           
+          <Menu />
+
         </div>
       </section>
       
