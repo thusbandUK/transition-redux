@@ -1,13 +1,13 @@
 const imagesOfReactantsAndProducts = {
     unreactedMetals: 
         [
-            {metal: "cobalt", link: 'images/cobalt chloride solution.png', altText: "test tube shows transparent pink solution", opaque: false},
-            {metal: "copper", link: 'images/copper sulfate solution.png', altText: "test tube shows transparent blue solution", opaque: false},
-            {metal: "aluminium", link: 'images/aluminium III solution.png', altText: "test tube shows colourless solution", opaque: false},
-            {metal: "iron II", link: 'images/iron II solution.png', altText: "test tube shows transparent green solution", opaque: false},
-            {metal: "iron III", link: 'images/iron III solution.png', altText: "test tube shows pale, transparent yellow solution", opaque: false},
-            {metal: "manganese", link: 'images/manganese solution.png', altText: "test tube shows very pale, transparent pink solution", opaque: false},
-            {metal: "chromium", link: 'images/chromium solution.png', altText: "test tube shows transparent blueish green solution", opaque: false}
+            {metal: "cobalt", link: '/images/cobalt chloride solution.png', altText: "test tube shows transparent pink solution", opaque: false},
+            {metal: "copper", link: '/images/copper sulfate solution.png', altText: "test tube shows transparent blue solution", opaque: false},
+            {metal: "aluminium", link: '/images/aluminium III solution.png', altText: "test tube shows colourless solution", opaque: false},
+            {metal: "iron II", link: '/images/iron II solution.png', altText: "test tube shows transparent green solution", opaque: false},
+            {metal: "iron III", link: '/images/iron III solution.png', altText: "test tube shows pale, transparent yellow solution", opaque: false},
+            {metal: "manganese", link: '/images/manganese solution.png', altText: "test tube shows very pale, transparent pink solution", opaque: false},
+            {metal: "chromium", link: '/images/chromium solution.png', altText: "test tube shows transparent blueish green solution", opaque: false}
         ]
         ,
     reagentBottles:
