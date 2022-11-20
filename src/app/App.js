@@ -8,6 +8,9 @@ import { BrowserRouter as Router, Route, Routes, Switch, NavLink, useParams } fr
 import { Outlet } from "react-router-dom";
 import Menu from '../components/menu/menu';
 import { dashBeGone } from '../components/functionModules/urlTranslator';
+import ExamBoard from '../components/examBoard/ExamBoard';
+import Introduction from '../components/introduction/Introduction';
+import ReactionsContainer from '../components/reactionsContainer/reactionsContainer';
 
 const reagentOptions = [
   {section: 1, name: 'concentrated hydrochloric acid'},
@@ -48,12 +51,11 @@ function App(props) {
           
           </div>
           
-          <NavLink to="/reactions">
-            Click to see menu
-          </NavLink>
+          <Outlet />
 
           
-          <Outlet />
+          
+          
           
           <Menu />
 
@@ -69,3 +71,14 @@ function App(props) {
 }
 
 export default App;
+
+//<Outlet />
+
+/*
+<Routes>
+          <Route path="/" element={<Introduction />} />
+          <Route path="/:reactant" element={<ReactionsContainer />} />
+          </Routes>
+          
+
+*/
