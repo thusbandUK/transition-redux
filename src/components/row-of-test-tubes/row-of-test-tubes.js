@@ -8,12 +8,14 @@ import productFinder from '../functionModules/findProduct';
 //import background from "./images/laboratory background trial.jpg";
 import ResetButton from '../resetButton/resetButton';
 import reagentsByExamBoard from '../functionModules/reagentsByExamBoard';
+import { useSelector, useDispatch } from 'react-redux';
 
 
 const RowOfTubes = (props) => {
 
   //const [tubes, setTubes] = useState(imagesOfReactantsAndProducts.unreactedMetals);
-  const [tubes, setTubes] = useState(reagentsByExamBoard('OCRA'));
+  const examBoard = useSelector(state => state.examBoard.selectedExamBoard);
+  const [tubes, setTubes] = useState(reagentsByExamBoard(examBoard));
   const [tubesTest, setTubesTest] = useState(reagentsByExamBoard('OCRA'));
   const [products, setProducts] = useState(
 

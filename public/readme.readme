@@ -1,3 +1,21 @@
+Right, so you need to hook up menu so that it only renders Na2CO3 for AQA and the others just the others
+And you want to make it so that the reagent renders automatically for the page selection, there shouldn't be a drop down menu 
+and then you need to set it so that only certain test tubes render, by reagent AND by examboard
+
+POINTS TO ADDRESS:
+1) hook up the metals so that they render for Edexcel and OCRB
+2) as it's currently configured, "back to main menu" can be selected as the reagent, so there needs to be some conditional logic
+to the effect that if data.RELEVANTSECTION.includes(selection) then return selection else return null
+only it's more complicated than that (or less complicated) because... the selection should only be from the reagents that have
+been passed for render by menu
+so it might be that you need to... add reagentOptions to the state via menuSlice
+
+no, selecting the menu slice shouldn't contain the logic for generating reagentOptions, that should be added to state as the examboard 
+is selected in the examBoard slice
+
+3) sending the selected reagent as the whole entry (object) in that reagent from reagentOptions will make logic easier later
+
+
 new links:
 
 https://redux.js.org/tutorials/quick-start

@@ -6,7 +6,7 @@ import {
     createRoutesFromElements,
     Route,
   } from "react-router-dom";
-import Menu from './components/menu/menu';
+//import Menu from './components/menu/menu';
 import { Provider } from 'react-redux';
 import RowOfTubes from './components/row-of-test-tubes/row-of-test-tubes';
 import ReagentBottle from './components/Reagent-bottle/reagent';

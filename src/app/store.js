@@ -4,6 +4,7 @@ import { configureStore } from '@reduxjs/toolkit';
 //import favoriteRecipesReducer from '../features/favoriteRecipes/favoriteRecipesSlice.js';
 import { selectExamBoard } from '../features/examBoards/examBoardsSlice.js';
 import examBoardReducer from '../features/examBoards/examBoardsSlice.js';
+import menuReducer from '../features/menu/menuSlice.js';
 
 /*
 export default createStore(combineReducers({
@@ -13,7 +14,8 @@ export default createStore(combineReducers({
 
 export default configureStore({
     reducer: {
-        examBoard: examBoardReducer
+        examBoard: examBoardReducer,
+        menu: menuReducer
     }
   })
 

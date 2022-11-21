@@ -6,7 +6,7 @@ import ReagentBottle from '../components/Reagent-bottle/reagent';
 import ResetButton from '../components/resetButton/resetButton';
 import { BrowserRouter as Router, Route, Routes, Switch, NavLink, useParams } from 'react-router-dom';
 import { Outlet } from "react-router-dom";
-import Menu from '../components/menu/menu';
+import Menu from '../features/menu/Menu';
 import { dashBeGone } from '../components/functionModules/urlTranslator';
 import ExamBoard from '../components/examBoard/ExamBoard';
 import Introduction from '../components/introduction/Introduction';
