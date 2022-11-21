@@ -3,6 +3,7 @@ import { createStore, combineReducers } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
 //import favoriteRecipesReducer from '../features/favoriteRecipes/favoriteRecipesSlice.js';
 import { selectExamBoard } from '../features/examBoards/examBoardsSlice.js';
+import examBoardReducer from '../features/examBoards/examBoardsSlice.js';
 
 /*
 export default createStore(combineReducers({
@@ -12,7 +13,7 @@ export default createStore(combineReducers({
 
 export default configureStore({
     reducer: {
-        examBoards: selectExamBoard
+        examBoard: examBoardReducer
     }
   })
 

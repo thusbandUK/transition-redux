@@ -2,10 +2,12 @@ import { createSlice } from '@reduxjs/toolkit';
 
 export const examBoardSlice = createSlice({
     name: "examBoard",
-    initialState: {board: ''},
+    initialState: {
+      selectedExamBoard: 'AQA'
+    },
     reducers: {
       selectExamBoard: (state, action) => {
-        state.examBoard = action.payload.examBoard;
+        state.selectedExamBoard = action.payload.examBoard;
       },
       
     },

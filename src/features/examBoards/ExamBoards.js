@@ -5,8 +5,8 @@ import'../../app/App.css';
 import { data } from '../../data';
 
 export function ExamBoards() {
-    //const examBoard = useSelector(state => state.examBoard.board)
-    //const dispatch = useDispatch()
+    const examBoard = useSelector(state => state.examBoard.selectedExamBoard)
+    const dispatch = useDispatch()
 
     //const dispatch = useDispatch();
     //const [examBoard, setExamBoard] = useState('');
@@ -34,12 +34,12 @@ export function ExamBoards() {
     return (
       <div>
           <h1>Select Exam Board</h1>
-          {data.examBoards.map((examBoard) => (
+          {data.examBoards.map((examBoardEntry) => (
               <button 
               className="list-group mt-4 fs-5 list-group-item bg-light"
-              
+              onClick={() => dispatch(selectExamBoard({examBoard: examBoardEntry}))}
               >
-                  {examBoard}
+                  {examBoardEntry}
   
               </button>
           ))}
