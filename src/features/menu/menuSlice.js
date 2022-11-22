@@ -19,11 +19,11 @@ import { createSlice } from '@reduxjs/toolkit';
 export const menuSlice = createSlice({
     name: "menu",
     initialState: {
-      selectedReagent: ''
+      selectedReagent: {}
     },
     reducers: {
       selectReagent: (state, action) => {        
-        state.selectedReagent = action.payload.reagent;
+        state.selectedReagent = action.payload;
       },
       
     },

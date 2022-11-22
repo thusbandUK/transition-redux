@@ -10,8 +10,11 @@ export const examBoardSlice = createSlice({
     reducers: {
       selectExamBoard: (state, action) => {
         state.selectedExamBoard = action.payload.examBoard;
-        state.reagentOptions = data.reagentOptions.filter((x) => {
-          return x.true.includes(action.payload.examBoard);
+        state.reagentOptions = data.reagentOptions.map((reagent) => {
+          if (reagent.true.includes(action.payload.examBoard)){
+            return {section: reagent.section,
+              name: reagent.name};
+          }          
         })
       },
       

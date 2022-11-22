@@ -11,13 +11,17 @@ const ReagentBottle = (props) => {
 
 
     const selectedReagent = useSelector(state => state.menu.selectedReagent);
-    const selectedReagentImage = data.reagentOptions.filter((x) => {
+    
+    const selectedReagentImage = selectedReagent.link;
+    
+    /*
+    data.reagentOptions.filter((x) => {
       if (x.name === selectedReagent){
         //alert(x.link);
         return x.link;
       }
     });
-
+*/
     //alert(selectedReagentImage[0].name);
 
     /*
@@ -56,7 +60,7 @@ const ReagentBottle = (props) => {
       */
       return (
           <div className="reagent-bottle-selection">
-            <img className="reagent-bottle-image" src={selectedReagentImage[0].link}/>    
+            <img className="reagent-bottle-image" src={selectedReagentImage}/>    
             
               
           </div>

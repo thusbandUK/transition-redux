@@ -23,7 +23,9 @@ const ReactionsContainer = (props) => {
 
     return (
       <div>
+        {/* */}
         <ReagentBottle onChange={updateState}/>
+        
         <RowOfTubes reagent={reagent}/>
         
         

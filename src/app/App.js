@@ -11,6 +11,7 @@ import { dashBeGone } from '../components/functionModules/urlTranslator';
 import ExamBoard from '../components/examBoard/ExamBoard';
 import Introduction from '../components/introduction/Introduction';
 import ReactionsContainer from '../components/reactionsContainer/reactionsContainer';
+import { useSelector, useDispatch } from 'react-redux';
 
 const reagentOptions = [
   {section: 1, name: 'concentrated hydrochloric acid'},
@@ -21,6 +22,7 @@ const reagentOptions = [
 
 function App(props) {
   const [reagent, setReagent] = useState('');
+  const selectedReagent = useSelector(state => state.menu.selectedReagent);
 
   const updateState = (reagent) => {
     setReagent(reagent);
@@ -35,7 +37,7 @@ function App(props) {
     <div className="App">
       <header className="border-bottom py-5 overflow-hidden position-relative">
         <section className="container">
-            <h1 className="display-2 m-0">Reactions of complex ions {dashBeGone(reactant)}</h1>
+            <h1 className="display-2 m-0">Reactions of complex ions {selectedReagent.name ? `with ${selectedReagent.name}` : ''}</h1>
         </section>
       </header>
       
@@ -82,3 +84,5 @@ export default App;
           
 
 */
+
+//Reactions of complex ions {dashBeGone(reactant)}

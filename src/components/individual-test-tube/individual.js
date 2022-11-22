@@ -77,7 +77,7 @@ const IndividualTube = (props) => {
         </button>
         {(selectedReagent === 'ammonia solution' || selectedReagent === 'sodium hydroxide') ? <ExcessButton 
         onClick={addExcessReagent}
-        reagent={selectedReagent}
+        reagent={selectedReagent.name}
         metal={props.metal.metal}
         /> : null}
         
