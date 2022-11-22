@@ -48,20 +48,20 @@ const Menu = () => {
         if (direction === ''){
           return currentReagent;
         }
-        if (currentReagent.section === 1 && direction === 'back' || currentReagent.section === data.reagentOptions.length && direction === 'forward'){
+        if (currentReagent.id === 1 && direction === 'back' || currentReagent.id === data.reagentOptions.length && direction === 'forward'){
           reagentObject.linkText = 'back to main menu';
           return reagentObject;
         } else {
           if (direction === 'forward'){      
-            const targetSection = currentReagent.section + 1;
+            const targetId = currentReagent.id + 1;
             const targetReagent = data.reagentOptions.filter((reagent) => {
-              return reagent.section  === targetSection;
+              return reagent.id  === targetId;
             })
             return targetReagent[0];
           } else if (direction === 'back'){
-            const targetSection = currentReagent.section - 1;
+            const targetId = currentReagent.id - 1;
             const targetReagent = data.reagentOptions.filter((reagent) => {
-              return reagent.section === targetSection;
+              return reagent.id === targetId;
             })
             return targetReagent[0];
           }    
@@ -81,7 +81,7 @@ return (
 <div>
   
 <ul className="list-group mt-4 fs-5" style={reactant ? {display: 'none'} : {display: 'flex'}}>
-            {data.reagentOptions.map((reagent) =>               
+            {reagentOptions.map((reagent) =>               
               (<li
                 className="list-group-item bg-light"
                >
@@ -90,7 +90,7 @@ return (
                    className="d-block text-decoration-none"
                    onClick={() => dispatch(selectReagent(reagent))}
                    >
-                     {`Section ${reagent.section}: Reactions with ${reagent.name}`}
+                     {`Section ${reagent.id}: Reactions with ${reagent.name}`}
                      
                  </NavLink>
                </li>)

@@ -14,19 +14,27 @@ but the main point is that changing page also updates the store
 */
 
 import { createSlice } from '@reduxjs/toolkit';
+import { data } from '../../data';
+import { useSelector, useDispatch } from 'react-redux';
 
+//const examBoard = useSelector(state => state.examBoard.selectedExamBoard);
 
 export const menuSlice = createSlice({
     name: "menu",
     initialState: {
-      selectedReagent: {}
+      selectedReagent: {},
+      //metals: []
+
     },
     reducers: {
       selectReagent: (state, action) => {        
         state.selectedReagent = action.payload;
+        
+
+      }
       },
       
-    },
+    
   });
 
   export const {
@@ -34,3 +42,12 @@ export const menuSlice = createSlice({
  } = menuSlice.actions;
  
  export default menuSlice.reducer;
+
+ /*
+ 
+ state.metals = data.metalIdsByReagent.filter((x) => {
+          //console.log(x.id);
+          //return x.id === reagent;
+          return data.metalIdsByReagent[useSelector(state => state.examBoard.selectedExamBoard)][action.payload.name].includes(x.id);
+          })
+ */

@@ -15,8 +15,9 @@ const RowOfTubes = (props) => {
 
   //const [tubes, setTubes] = useState(imagesOfReactantsAndProducts.unreactedMetals);
   const examBoard = useSelector(state => state.examBoard.selectedExamBoard);
+  const selectedReagent = useSelector(state => state.menu.selectedReagent);
   const [tubes, setTubes] = useState(reagentsByExamBoard(examBoard));
-  const [tubesTest, setTubesTest] = useState(reagentsByExamBoard('OCRA'));
+  //const [tubesTest, setTubesTest] = useState(reagentsByExamBoard('OCRA'));
   const [products, setProducts] = useState(
 
     {

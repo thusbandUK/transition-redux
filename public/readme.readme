@@ -1,19 +1,12 @@
-Right, so you need to hook up menu so that it only renders Na2CO3 for AQA and the others just the others
-And you want to make it so that the reagent renders automatically for the page selection, there shouldn't be a drop down menu 
-and then you need to set it so that only certain test tubes render, by reagent AND by examboard
 
 POINTS TO ADDRESS:
 1) hook up the metals so that they render for Edexcel and OCRB
-2) sending the selected reagent as the whole entry (object) in that reagent from reagentOptions will make logic easier later, so
-not just 'reagent name' but {key: , name: , path: , linkText: , link:, alt} effect
-3) so the individual / rowOfTubes situation is complicated and needs a total overhaul into >1 slice
- a) props.reagent needs to be recalled (as in what does it consist of, I think it's an object with different keys) and superceded
- with the result of point 2
- b) there needs to be slices
-    i) slice 1: reducer 1: find product reducer 2: find excess product
-    ii) slice 2: ...?
- c) row of tubes needs to render the metals required for that exam board
- d) which means data.js needs to be updated with a: {true: [INSERT EXAMBOARDS]} entry by metal
+a) transfer rowOfTubes to features
+b) add a rowOfTubesSlice file
+c) in rowOfTubes add a useEffect hook to dispatch the selection of metals that matches both the examboard and the reagent
+d) create a new reducer that takes care of the reactions logic
+e) probably need another reducer to handle the addition of excess reagent 
+
 
 
 new links:
@@ -36,7 +29,7 @@ https://reactrouter.com/en/main/upgrading/v5#relative-routes-and-links
 
 ...that shows a v6 router app that looks remarkably similar to a v5 router app
 
-So the best thing might be to fuck around a bit more with the Router aspect until you can get it as most like what it used to be
+So the best thing might be to mess around a bit more with the Router aspect until you can get it as most like what it used to be
 and then you can hopefully switch out BrowserProvider for Provider. I mean the implication seems to be that react-redux provides
 a way of routing that users the react-redux router sort of instead of but still in tandem with the react-router-dom
 
