@@ -8,7 +8,7 @@ import {
   } from "react-router-dom";
 //import Menu from './components/menu/menu';
 import { Provider } from 'react-redux';
-import RowOfTubes from './components/row-of-test-tubes/row-of-test-tubes';
+//import RowOfTubes from './components/row-of-test-tubes/row-of-test-tubes';
 import ReagentBottle from './components/Reagent-bottle/reagent';
 import ReactionsContainer from './components/reactionsContainer/reactionsContainer';
 import Introduction from './components/introduction/Introduction';

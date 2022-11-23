@@ -13,7 +13,7 @@ import {
   Route,
 } from "react-router-dom";
 //import Menu from './components/menu/menu';
-import RowOfTubes from './components/row-of-test-tubes/row-of-test-tubes';
+//import RowOfTubes from './components/row-of-test-tubes/row-of-test-tubes';
 import ReagentBottle from './components/Reagent-bottle/reagent';
 import router from './router';
 import store from './app/store';

@@ -16,11 +16,8 @@ got some data, posting it to the store, but that doesn't mean you can't process 
 
 
 */
-const filtered = (examBoard, reagent) => {
-    //console.log(data.metalsByReagent[examBoard][reagent]);
-    const newArray = data.unreactedMetals.filter((x) => {
-      //console.log(x.id);
-      //return x.id === reagent;
+const filtered = (examBoard, reagent) => {    
+    const newArray = data.unreactedMetals.filter((x) => {      
       return data.metalsByReagent[examBoard][reagent].includes(x.id);
       })
       return newArray;

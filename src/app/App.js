@@ -1,7 +1,8 @@
 //import logo from './logo.svg';
 import './App.css';
 import React, { useEffect, useState } from 'react';
-import RowOfTubes from '../components/row-of-test-tubes/row-of-test-tubes';
+//import RowOfTubes from '../components/rowOfTestTubes/RowOfTestTubes';
+//import RowOfTubes from '../../features/rowOfTestTubes/RowOfTestTubes';
 import ReagentBottle from '../components/Reagent-bottle/reagent';
 import ResetButton from '../components/resetButton/resetButton';
 import { BrowserRouter as Router, Route, Routes, Switch, NavLink, useParams } from 'react-router-dom';

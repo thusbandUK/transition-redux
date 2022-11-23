@@ -1,23 +1,51 @@
 import React, { useState, useEffect } from 'react';
-import IndividualTube from '../individual-test-tube/individual';
+import IndividualTube from '../../components/individual-test-tube/individual';
 //import imagesOfReactantsAndProducts from '../images/images';
-import imagesOfReactantsAndProducts from '../images/images-combined';
+import imagesOfReactantsAndProducts from '../../components/images/images-combined';
 import './row-of-test-tubes.css';
-import productFinder from '../functionModules/findProduct';
+import productFinder from '../../components/functionModules/findProduct';
 //import Background from '../images/laboratory background.jpg';
 //import background from "./images/laboratory background trial.jpg";
-import ResetButton from '../resetButton/resetButton';
-import reagentsByExamBoard from '../functionModules/reagentsByExamBoard';
+import ResetButton from '../../components/resetButton/resetButton';
+import reagentsByExamBoard from '../../components/functionModules/reagentsByExamBoard';
 import { useSelector, useDispatch } from 'react-redux';
+import { data } from '../../data';
+import { selectUnreactedMetals } from './rowOfTestTubesSlice';
+import { NavLink, useParams } from 'react-router-dom';
+
 
 
 const RowOfTubes = (props) => {
 
+  
   //const [tubes, setTubes] = useState(imagesOfReactantsAndProducts.unreactedMetals);
   const examBoard = useSelector(state => state.examBoard.selectedExamBoard);
   const selectedReagent = useSelector(state => state.menu.selectedReagent);
-  const [tubes, setTubes] = useState(reagentsByExamBoard(examBoard));
+ // const [tubes, setTubes] = useState(reagentsByExamBoard(examBoard));
   //const [tubesTest, setTubesTest] = useState(reagentsByExamBoard('OCRA'));
+  const dispatch = useDispatch();
+  const {reactant} = useParams();
+
+
+  useEffect(() => {
+    //alert('use effect is getting');
+    //alert(selectedReagent.name);    
+      const matchedMetals = data.unreactedMetals.filter((x) => {      
+        return data.metalIdsByReagent[examBoard][selectedReagent.name].includes(x.id);
+        })
+        //return matchedMetals;
+        //alert(matchedMetals);
+        dispatch(selectUnreactedMetals(matchedMetals));
+    
+    //handleReset();  
+}, [reactant]);
+
+const tubes = useSelector(state => state.rowOfTubes.unreactedMetals);
+
+  
+
+
+
   const [products, setProducts] = useState(
 
     {

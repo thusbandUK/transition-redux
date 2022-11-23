@@ -5,8 +5,10 @@ import ExcessButton from '../excessButton/excessButton';
 import imagesOfReactantsAndProducts from '../images/images-combined';
 ///import './individual.css';
 import excessProductFinder from '../functionModules/findExcessProduct';
-import RowOfTubes from '../../components/row-of-test-tubes/row-of-test-tubes';
+//import RowOfTubes from '../../components/row-of-test-tubes/row-of-test-tubes';
 import ReagentBottle from '../../components/Reagent-bottle/reagent';
+import RowOfTubes from '../../features/rowOfTestTubes/RowOfTestTubes';
+ 
 
 
 

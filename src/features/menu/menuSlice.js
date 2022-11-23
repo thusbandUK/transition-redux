@@ -22,11 +22,15 @@ import { useSelector, useDispatch } from 'react-redux';
 export const menuSlice = createSlice({
     name: "menu",
     initialState: {
+      reagentOptions: [],
       selectedReagent: {},
       //metals: []
 
     },
     reducers: {
+      selectReagentOptions: (state, action) => {
+        state.reagentOptions = action.payload;
+      },
       selectReagent: (state, action) => {        
         state.selectedReagent = action.payload;
         
@@ -39,6 +43,7 @@ export const menuSlice = createSlice({
 
   export const {
     selectReagent,
+    selectReagentOptions,
  } = menuSlice.actions;
  
  export default menuSlice.reducer;

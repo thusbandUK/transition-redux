@@ -1,19 +1,43 @@
 import '../../app/App.css';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import { spaceBeGone, dashBeGone } from '../../components/functionModules/urlTranslator';
 import { useSelector, useDispatch } from 'react-redux';
 import { data } from '../../data';
-import { selectReagent } from './menuSlice';
+import { selectReagent, selectReagentOptions } from './menuSlice';
 
 const Menu = () => {
 
     const examBoard = useSelector(state => state.examBoard.selectedExamBoard);
 
     const selectedReagent = useSelector(state => state.menu.selectedReagent)
+    const reagentOptions = useSelector(state => state.menu.reagentOptions);
     const dispatch = useDispatch()
-    const reagentOptions = useSelector(state => state.examBoard.reagentOptions)
+    
+    useEffect(() => {       
+                 //alert('useEffect getting called');
+          //dispatch(selectUnreactedMetals(matchedMetals));
+          const reagentOptions = data.reagentOptions.filter((reagent) => {
+            if (reagent.true.includes(examBoard)){
+              //delete reagent.true;
+              return reagent;
+             // return {id: reagent.id,
+                //name: reagent.name};
+            }          
+          })
+      dispatch(selectReagentOptions(reagentOptions))
+  }, [examBoard]);
 
+//alert(examBoard);
+/*
+  const reagentOptions = data.reagentOptions.filter((reagent) => {
+    if (reagent.true.includes(examBoard)){
+      //delete reagent.true;
+      return reagent;
+    }});
+    */
+  
+  //const reagentOptions = useSelector(state => state.examBoard.reagentOptions)
 
     /*
     const reagentOptions = data.reagentOptions.filter((reagent) => {
@@ -40,7 +64,7 @@ const Menu = () => {
          
        let currentReagent;
        //alert(currentUrl);
-       data.reagentOptions.forEach((x) => {    
+       reagentOptions.forEach((x) => {    
         if (x.path.includes(currentUrl) === true){      
           currentReagent = x;
         }
@@ -48,19 +72,22 @@ const Menu = () => {
         if (direction === ''){
           return currentReagent;
         }
-        if (currentReagent.id === 1 && direction === 'back' || currentReagent.id === data.reagentOptions.length && direction === 'forward'){
+        
+        if (currentReagent.id === 1 && direction === 'back' || currentReagent.id === reagentOptions.length && direction === 'forward'){
+          
           reagentObject.linkText = 'back to main menu';
           return reagentObject;
         } else {
-          if (direction === 'forward'){      
+          if (direction === 'forward'){   
+            //alert('wrong path of menu writer');   
             const targetId = currentReagent.id + 1;
-            const targetReagent = data.reagentOptions.filter((reagent) => {
+            const targetReagent = reagentOptions.filter((reagent) => {
               return reagent.id  === targetId;
             })
             return targetReagent[0];
           } else if (direction === 'back'){
             const targetId = currentReagent.id - 1;
-            const targetReagent = data.reagentOptions.filter((reagent) => {
+            const targetReagent = reagentOptions.filter((reagent) => {
               return reagent.id === targetId;
             })
             return targetReagent[0];

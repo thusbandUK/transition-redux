@@ -5,6 +5,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { selectExamBoard } from '../features/examBoards/examBoardsSlice.js';
 import examBoardReducer from '../features/examBoards/examBoardsSlice.js';
 import menuReducer from '../features/menu/menuSlice.js';
+import rowOfTubesReducer from '../features/rowOfTestTubes/rowOfTestTubesSlice';
 
 /*
 export default createStore(combineReducers({
@@ -15,7 +16,8 @@ export default createStore(combineReducers({
 export default configureStore({
     reducer: {
         examBoard: examBoardReducer,
-        menu: menuReducer
+        menu: menuReducer,
+        rowOfTubes: rowOfTubesReducer
     }
   })
 
