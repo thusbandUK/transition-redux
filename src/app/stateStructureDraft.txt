@@ -1,0 +1,15 @@
+
+
+state = {
+    examboard: '',
+    reagents: [],
+    metalSolutions: []
+}
+
+state = {
+    products: [
+        copper: {name: , link: , AOD:}
+        aluminium:
+        metalsEtc:
+    ]
+}

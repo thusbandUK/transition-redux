@@ -2,29 +2,12 @@ import React, { useEffect, useState } from 'react';
 //import reagentBottleImages from '../images/reagent-bottle-images';
 import imagesOfReactantsAndProducts from '../images/images-combined';
 import './reagent.css';
-import { useSelector, useDispatch } from 'react-redux';
-import { data } from '../../data';
+
 
                 
 
 const ReagentBottle = (props) => {
 
-
-    const selectedReagent = useSelector(state => state.menu.selectedReagent);
-    
-    const selectedReagentImage = selectedReagent.link;
-    
-    /*
-    data.reagentOptions.filter((x) => {
-      if (x.name === selectedReagent){
-        //alert(x.link);
-        return x.link;
-      }
-    });
-*/
-    //alert(selectedReagentImage[0].name);
-
-    /*
     const [reagents, setReagents] = useState([]);
     const [selectedReagent, setSelectedReagent] = useState('');    
     const [selectedImage, setSelectedImage] = useState('');
@@ -57,11 +40,16 @@ const ReagentBottle = (props) => {
         props.onChange(e.target.value);
         } 
 
-      */
+      
       return (
           <div className="reagent-bottle-selection">
-            <img className="reagent-bottle-image" src={selectedReagentImage}/>    
-            
+            <img className="reagent-bottle-image" src={selectedImage}/>    
+            <select  value={selectedReagent} onChange={onReagentSelection} name="reagent-selection">
+                <option disabled={true} value="">Select a reagent</option>
+                {reagents.map((selection) => (
+                    <option value={selection.reagent}>{selection.reagent}</option>
+                ))}              
+            </select>
               
           </div>
           
@@ -72,12 +60,4 @@ const ReagentBottle = (props) => {
     export default ReagentBottle;
 
     
-    /*
-    <select  value={selectedReagent} onChange={onReagentSelection} name="reagent-selection">
-                <option disabled={true} value="">Select a reagent</option>
-                {reagents.map((selection) => (
-                    <option value={selection.reagent}>{selection.reagent}</option>
-                ))}              
-            </select>
     
-    */

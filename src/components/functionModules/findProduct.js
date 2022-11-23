@@ -14,7 +14,7 @@ function productFinder(metal, reagent) {
             case 'sodium carbonate solution':
                 return 'copper carbonate ppt'
                 break;
-            case 'hydrochloric acid':
+            case 'concentrated hydrochloric acid':
                 return 'copper chloro complex'
                 break;         
             case 'sodium hydroxide':               
@@ -28,7 +28,7 @@ function productFinder(metal, reagent) {
             case 'sodium carbonate solution':
                 return 'cobalt carbonate ppt'
                 break;
-            case 'hydrochloric acid':
+            case 'concentrated hydrochloric acid':
                 return 'cobalt chloro complex'
                 break;
             case 'sodium hydroxide':            
@@ -41,7 +41,7 @@ function productFinder(metal, reagent) {
             case 'sodium carbonate solution':
                 return 'iron II carbonate'
                 break;
-            case 'hydrochloric acid':
+            case 'concentrated hydrochloric acid':
                 return 'no reaction'
                 break
             case 'sodium hydroxide':            
@@ -54,7 +54,7 @@ function productFinder(metal, reagent) {
             case 'sodium carbonate solution':
                 return 'iron III hydroxide with effervescence'
                 break;
-            case 'hydrochloric acid':
+            case 'concentrated hydrochloric acid':
                 return 'iron III chloro complex'
                 break;
             case 'sodium hydroxide':            
@@ -67,7 +67,7 @@ function productFinder(metal, reagent) {
             case 'sodium carbonate solution':
                 return 'aluminium hydroxide with effervescence'
                 break;
-            case 'hydrochloric acid':
+            case 'concentrated hydrochloric acid':
                 return 'no reaction'
                 break;
             case 'sodium hydroxide':            

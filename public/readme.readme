@@ -1,3 +1,47 @@
+
+POINTS TO ADDRESS:
+0.5) there seem to be some inconsistencies in nomenclature, see productFinder function where 'hydrochloric acid' was changed 
+in one case to 'concentrated hydrochloric acid', which is what any such entry should read
+0.75) uncomment and fix handleReset and handleExcessProducts in rowOfTubes.js
+1) hook up the metals so that they render for Edexcel and OCRB
+a) transfer rowOfTubes to features
+b) add a rowOfTubesSlice file
+c) in rowOfTubes add a useEffect hook to dispatch the selection of metals that matches both the examboard and the reagent
+d) create a new reducer that takes care of the reactions logic
+e) probably need another reducer to handle the addition of excess reagent 
+
+
+
+new links:
+
+https://redux.js.org/tutorials/quick-start
+
+for a quick-start with redux 
+
+So I've more or less followed that but...
+
+this post: https://stackoverflow.com/questions/73834918/react-router-dom6-4-1-not-rendering-components-and-also-not-logging-any-errors
+
+...made me realise that the <Router> wrapper consistently demanded by the error messages is referring to a react-redux router, not
+a react-router-dom <ProvideRouter>
+
+this is all exacerbated by the fact that the current redux docs are not written for the latest react-router-dom dox, that said
+there seems to be a way of doing react-router-dom, available here: 
+
+https://reactrouter.com/en/main/upgrading/v5#relative-routes-and-links
+
+...that shows a v6 router app that looks remarkably similar to a v5 router app
+
+So the best thing might be to mess around a bit more with the Router aspect until you can get it as most like what it used to be
+and then you can hopefully switch out BrowserProvider for Provider. I mean the implication seems to be that react-redux provides
+a way of routing that users the react-redux router sort of instead of but still in tandem with the react-router-dom
+
+Okay but last thing I did (from the stackexchange post above) worked!!! You should be cooking on gas very soon...
+
+
+
+
+
 <3 - on redux>
 
 5) so there are all these things to link up, you need to think about how your state will looks

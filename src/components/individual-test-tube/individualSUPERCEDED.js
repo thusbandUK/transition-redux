@@ -5,7 +5,6 @@ import ExcessButton from '../excessButton/excessButton';
 import imagesOfReactantsAndProducts from '../images/images-combined';
 import './individual.css';
 import excessProductFinder from '../functionModules/findExcessProduct';
-import { useSelector, useDispatch } from 'react-redux';
 
 /*
 {imagesOfReactantsAndProducts.map((metal) => (
@@ -19,7 +18,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 const IndividualTube = (props) => {
   //const [reagent, setReagent] = useState(props.reagent);
-  const selectedReagent = useSelector(state => state.menu.selectedReagent);
+  
     const placeholderCobaltImage = imagesOfReactantsAndProducts.products[0].link;
 
     const handleClick = (event) => {
@@ -28,9 +27,6 @@ const IndividualTube = (props) => {
       //event.currentTarget.disabled = true;
 
     }
-
-//alert(props.reagent);
-
 
     const addExcessReagent = (metal, reagent) => {
       
@@ -58,7 +54,7 @@ const IndividualTube = (props) => {
         className="test-tube"
         onClick={handleClick}
         aria-live="polite"
-        disabled={!selectedReagent}
+        disabled={!props.reagent}
         
         >
           <img src={"images/test tube outline.png"} className="absolute-positioning-experiment"/>
@@ -75,9 +71,9 @@ const IndividualTube = (props) => {
           alt={props.product.altText}
           /> : null }
         </button>
-        {(selectedReagent.name === 'ammonia solution' || selectedReagent.name === 'sodium hydroxide') ? <ExcessButton 
+        {(props.reagent === 'ammonia solution' || props.reagent === 'sodium hydroxide') ? <ExcessButton 
         onClick={addExcessReagent}
-        reagent={selectedReagent.name}
+        reagent={props.reagent}
         metal={props.metal.metal}
         /> : null}
         
