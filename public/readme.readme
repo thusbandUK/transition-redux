@@ -1,5 +1,8 @@
 
 POINTS TO ADDRESS:
+0.5) there seem to be some inconsistencies in nomenclature, see productFinder function where 'hydrochloric acid' was changed 
+in one case to 'concentrated hydrochloric acid', which is what any such entry should read
+0.75) uncomment and fix handleReset and handleExcessProducts in rowOfTubes.js
 1) hook up the metals so that they render for Edexcel and OCRB
 a) transfer rowOfTubes to features
 b) add a rowOfTubesSlice file

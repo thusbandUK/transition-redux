@@ -4,8 +4,7 @@ import { data } from '../../data';
 export const examBoardSlice = createSlice({
     name: "examBoard",
     initialState: {
-      selectedExamBoard: ''//,
-      //reagentOptions: []
+      selectedExamBoard: ''
     },
     reducers: {
       selectExamBoard: (state, action) => {

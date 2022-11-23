@@ -10,8 +10,9 @@ import ResetButton from '../../components/resetButton/resetButton';
 import reagentsByExamBoard from '../../components/functionModules/reagentsByExamBoard';
 import { useSelector, useDispatch } from 'react-redux';
 import { data } from '../../data';
-import { selectUnreactedMetals } from './rowOfTestTubesSlice';
+import { selectUnreactedMetals, showProducts, reset } from './rowOfTestTubesSlice';
 import { NavLink, useParams } from 'react-router-dom';
+import excessProductFinder from '../../components/functionModules/findExcessProduct';
 
 
 
@@ -26,8 +27,15 @@ const RowOfTubes = (props) => {
   const dispatch = useDispatch();
   const {reactant} = useParams();
 
+  const generateMetalReactantsSet = () => {
+    const matchedMetals = data.unreactedMetals.filter((x) => {      
+      return data.metalIdsByReagent[examBoard][selectedReagent.name].includes(x.id);
+      })
+      return matchedMetals;
+  }
 
   useEffect(() => {
+    dispatch(reset());
     //alert('use effect is getting');
     //alert(selectedReagent.name);    
       const matchedMetals = data.unreactedMetals.filter((x) => {      
@@ -35,17 +43,18 @@ const RowOfTubes = (props) => {
         })
         //return matchedMetals;
         //alert(matchedMetals);
-        dispatch(selectUnreactedMetals(matchedMetals));
+        //dispatch(selectUnreactedMetals(matchedMetals));
+        dispatch(selectUnreactedMetals(generateMetalReactantsSet()));
     
     //handleReset();  
 }, [reactant]);
 
 const tubes = useSelector(state => state.rowOfTubes.unreactedMetals);
 
-  
+const products = useSelector(state => state.rowOfTubes.products);  
 
 
-
+/*
   const [products, setProducts] = useState(
 
     {
@@ -58,7 +67,7 @@ const tubes = useSelector(state => state.rowOfTubes.unreactedMetals);
       chromium: {link: '', opaque: null}
   }
   )
-
+*/
 //alert((reagentsByExamBoard('OCRA'))[4].metal);
 
   const backgroundImage = imagesOfReactantsAndProducts.background[0].link;
@@ -85,25 +94,24 @@ const tubes = useSelector(state => state.rowOfTubes.unreactedMetals);
     
   };
 
-  const addReagent = (metal) => {   
-    if (products[metal].link){
-      return;
-    }
-   const newProduct = productFinder(metal, props.reagent);   
+  const addReagent = (metal) => {       
+   const newProduct = productFinder(metal, selectedReagent.name);
    const imageIndex = imagesOfReactantsAndProducts.products.findIndex(x => x.name === newProduct);
-   //alert(imageIndex);
    const productImageDetails = imagesOfReactantsAndProducts.products[imageIndex];
-   //index = a.findIndex(x => x.prop2 ==="yutu");
-   
-
-   setProducts({...products, [metal]: productImageDetails});   
-   //alert(productImageDetails.opaque);
-   //alert(Object.values(products));
+   dispatch(showProducts({metal: metal, details: productImageDetails}))
   }
   
+  const handleReset = () => {
+    dispatch(reset());
+    dispatch(selectUnreactedMetals(generateMetalReactantsSet()));
+  }
 
+/*
 const handleReset = () => {
   //alert('function in row of tubes activated');
+  dispatch(reset());
+
+  /*
   setProducts({
     copper: {link: '', opaque: null, altText: ''},
     cobalt: {link: '', opaque: null, altText: ''},
@@ -113,24 +121,37 @@ const handleReset = () => {
     manganese: {link: '', opaque: null, altText: ''},
     chromium: {link: '', opaque: null, altText: ''}
 })
-}
 
+}
+*/
+/*
 useEffect(() => {
   
     handleReset();
   
 }, [props.reagent])
+*/
 
-const handleExcessProduct = (metal, productImageDetails) => {
-  //alert(productImageDetails);
-  //alert('function called');
-  setProducts({...products, [metal]: productImageDetails})
-
+const handleExcessProduct = (metal, productImageDetails) => {  
+  dispatch(showProducts({metal: metal, details: productImageDetails}))
 }
 
+/*
+const handleExcessProduct = (metal) => {
+  //alert(productImageDetails);
+  //alert('function called');
+  //setProducts({...products, [metal]: productImageDetails})
+  //alert('function called');
+  const newProduct = excessProductFinder(metal, selectedReagent.name);
+  const imageIndex = imagesOfReactantsAndProducts.products.findIndex(x => x.name === newProduct);
+  const productImageDetails = imagesOfReactantsAndProducts.products[imageIndex];
+  dispatch(showProducts({metal: metal, details: productImageDetails}))
+
+}
+*/
 // && tubes.metal === 'iron II' || tubes.metal === 'aluminium'
 //&& metal === 'iron II' || metal === 'aluminium')
-
+/*
 const removeTubesForHCl = (metal) => {
   if ((props.reagent === 'hydrochloric acid') && (metal === 'iron II' || metal === 'aluminium')) {
     return false;
@@ -140,25 +161,26 @@ const removeTubesForHCl = (metal) => {
 
 }
 //
+*/
     return (
         <div className="row-of-tubes" style={rowOfTubesStyling}>
             
-            {tubes.map((metal) => (
-              removeTubesForHCl(metal.metal) ?
+            {tubes.map((metal) => (              
               <IndividualTube 
               metal={metal}
-              reagent={props.reagent}
+              reagent={selectedReagent.name}
               onClick={addReagent}
               product={products[metal.metal]}
               handleExcessProduct={handleExcessProduct}
-              /> : null
+              /> 
               
             
           ))}
+          { 
               <ResetButton 
                 onClick={handleReset}
               />
-           
+           }
         </div>
         
         
@@ -170,5 +192,7 @@ const removeTubesForHCl = (metal) => {
   /*
  {/*excessProduct={handleExcessProduct}*//*}
 
- 
+ handleExcessProduct={handleExcessProduct}
+
+ handleExcessProduct={handleExcessProduct}
   */

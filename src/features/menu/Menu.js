@@ -28,32 +28,7 @@ const Menu = () => {
       dispatch(selectReagentOptions(reagentOptions))
   }, [examBoard]);
 
-//alert(examBoard);
-/*
-  const reagentOptions = data.reagentOptions.filter((reagent) => {
-    if (reagent.true.includes(examBoard)){
-      //delete reagent.true;
-      return reagent;
-    }});
-    */
-  
-  //const reagentOptions = useSelector(state => state.examBoard.reagentOptions)
 
-    /*
-    const reagentOptions = data.reagentOptions.filter((reagent) => {
-      return reagent.true.includes(examBoard);
-    })
-*/
-//alert(reagentOptions[0]);
-
-/*
-    const reagentOptions = [
-        {section: 1, name: 'concentrated hydrochloric acid'},
-        {section: 2, name: 'sodium hydroxide'},
-        {section: 3, name: 'ammonia solution'},
-        {section: 4, name: 'sodium carbonate solution'}
-      ]
-*/
       const {reactant} = useParams();
 
       const menuWriter = (currentUrl, direction) => {  
@@ -63,7 +38,6 @@ const Menu = () => {
        }
          
        let currentReagent;
-       //alert(currentUrl);
        reagentOptions.forEach((x) => {    
         if (x.path.includes(currentUrl) === true){      
           currentReagent = x;
@@ -79,7 +53,6 @@ const Menu = () => {
           return reagentObject;
         } else {
           if (direction === 'forward'){   
-            //alert('wrong path of menu writer');   
             const targetId = currentReagent.id + 1;
             const targetReagent = reagentOptions.filter((reagent) => {
               return reagent.id  === targetId;
