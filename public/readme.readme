@@ -3,9 +3,10 @@ POINTS TO ADDRESS:
 
 <1 - styling>
 
+0.5) in examBoards.css finish tweaks for inverted colour scheme, there's a problem with the hover situation currently... you can invert the color scheme to vary between buttons (do this to examboard on intro page too), some white on red, some red on white
 1) position and appearance of various buttons including excess and reset 
 2) They need to be labelled!! so a little tag below (or above) reading the metal name / formula
-3) you can invert the color scheme to vary between buttons (do this to examboard on intro page too), some white on red, some red on white
+
 4) Test tubes never outside of container - bootstrap, can also add stacking logic for mobile phones, on which... (see A)
 
 <1 - styling ENDS>
