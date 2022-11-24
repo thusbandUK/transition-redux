@@ -1,36 +1,19 @@
-import React, { useState } from 'react';
-//import cobalt from './cobalt.png';
-//import imagesOfReactantsAndProducts from '../images/images';
+import React from 'react';
 import ExcessButton from '../excessButton/excessButton';
 import imagesOfReactantsAndProducts from '../images/images-combined';
 import './individual.css';
 import excessProductFinder from '../functionModules/findExcessProduct';
-import { useSelector, useDispatch } from 'react-redux';
-
-/*
-{imagesOfReactantsAndProducts.map((metal) => (
-            <img 
-            src={metal.link}
-            alt={metal.altText}
-            />
-          ))}
-*/
+import { useSelector } from 'react-redux';
 
 
 const IndividualTube = (props) => {
-  //const [reagent, setReagent] = useState(props.reagent);
+  
   const selectedReagent = useSelector(state => state.menu.selectedReagent);
-    const placeholderCobaltImage = imagesOfReactantsAndProducts.products[0].link;
+    
 
-    const handleClick = (event) => {
-      //alert('tube clicked');
+    const handleClick = (event) => {      
       props.onClick(props.metal.metal);
-      //event.currentTarget.disabled = true;
-
     }
-
-//alert(props.reagent);
-
 
     const addExcessReagent = (metal, reagent) => {
       
@@ -47,9 +30,7 @@ const IndividualTube = (props) => {
     
     
 
-/*
-        
-*/
+
 
     return (
       <div>

@@ -1,6 +1,5 @@
 import {ExamBoards} from '../../features/examBoards/ExamBoards';
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import '../../app/App.css';
 
 

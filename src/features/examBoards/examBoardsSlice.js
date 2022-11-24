@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { data } from '../../data';
 
 export const examBoardSlice = createSlice({
     name: "examBoard",
@@ -8,10 +7,8 @@ export const examBoardSlice = createSlice({
     },
     reducers: {
       selectExamBoard: (state, action) => {
-        state.selectedExamBoard = action.payload.examBoard;
-        
-      },
-      
+        state.selectedExamBoard = action.payload.examBoard;        
+      },      
     },
   });
 

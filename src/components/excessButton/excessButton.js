@@ -1,8 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import imagesOfReactantsAndProducts from '../images/images-combined';
 import './excessButton.css';
-
-                
 
 const ExcessButton = (props) => {
 

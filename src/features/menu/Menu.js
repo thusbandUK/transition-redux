@@ -1,7 +1,6 @@
 import '../../app/App.css';
 import React, { useEffect } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
-import { spaceBeGone, dashBeGone } from '../../components/functionModules/urlTranslator';
 import { useSelector, useDispatch } from 'react-redux';
 import { data } from '../../data';
 import { selectReagent, selectReagentOptions } from './menuSlice';
@@ -9,14 +8,10 @@ import { selectReagent, selectReagentOptions } from './menuSlice';
 const Menu = () => {
 
     const examBoard = useSelector(state => state.examBoard.selectedExamBoard);
-
-    const selectedReagent = useSelector(state => state.menu.selectedReagent)
     const reagentOptions = useSelector(state => state.menu.reagentOptions);
     const dispatch = useDispatch()
     
-    useEffect(() => {       
-                 //alert('useEffect getting called');
-          //dispatch(selectUnreactedMetals(matchedMetals));
+    useEffect(() => {   
           const reagentOptions = data.reagentOptions.filter((reagent) => {
             if (reagent.true.includes(examBoard)){
               //delete reagent.true;
@@ -26,7 +21,30 @@ const Menu = () => {
             }          
           })
       dispatch(selectReagentOptions(reagentOptions))
+  }, [dispatch, examBoard]);
+
+/*
+
+SWITCH THE BELOW FOR THE ABOVE AT SOME POINT
+
+useEffect(() => {  
+          let reagentOptions; 
+          data.reagentOptions.map((reagent) => {
+            if (reagent.true.includes(examBoard)){
+              delete reagent.true;
+              reagentOptions.push(reagent);             
+            }          
+          })
+      dispatch(selectReagentOptions(reagentOptions))
   }, [examBoard]);
+
+
+
+
+*/
+
+
+
 
 
       const {reactant} = useParams();
@@ -47,7 +65,7 @@ const Menu = () => {
           return currentReagent;
         }
         
-        if (currentReagent.id === 1 && direction === 'back' || currentReagent.id === reagentOptions.length && direction === 'forward'){
+        if ((currentReagent.id === 1 && direction === 'back') || (currentReagent.id === reagentOptions.length && direction === 'forward')){
           
           reagentObject.linkText = 'back to main menu';
           return reagentObject;

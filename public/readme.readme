@@ -6,12 +6,21 @@ POINTS TO ADDRESS:
 1) position and appearance of various buttons including excess and reset 
 2) They need to be labelled!! so a little tag below (or above) reading the metal name / formula
 3) you can invert the color scheme to vary between buttons (do this to examboard on intro page too), some white on red, some red on white
+4) Test tubes never outside of container - bootstrap, can also add stacking logic for mobile phones, on which... (see A)
 
 <1 - styling ENDS>
 
 <4 - text>
 
 right this is a biggie, the text needs to render differently depending on the exam board
+
+0.5) (From A) Individual form beneath each tube (which can contain the metal label) in which to input observations, 
+put it in the same container as the test tubes so that they stack together for mobile access
+1) read previous notes and decide what can be used between all boards and what cannot be left out of any boards
+2) Mostly you need to add explanations for Mn2+ and Cr3+ and then all other stuff can be recycled / ommitted
+(might need to rejig the section already written for AQA about CuCl42-)
+3) figure out how to modularise the printing of text / diagrams
+4) figure out how the text should be laid out
 
 <4 - text ENDS>
 
