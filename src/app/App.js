@@ -21,9 +21,9 @@ function App(props) {
       <section className="py-5">
         <div className="container">
           <div className="reagents-and-tubes">
-          <Outlet />
-          </div>          
           
+          </div>          
+          <Outlet />
           <Menu />
 
         </div>

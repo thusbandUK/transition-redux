@@ -36,16 +36,19 @@ const products = useSelector(state => state.rowOfTubes.products);
 
   const rowOfTubesStyling = {
     width: "100%",
-    /*height: '400px',   
-    backgroundImage: `url("images/laboratoryBackgroundTrial.jpg")`,*/ 
+    height: '70vh',   
+    /*backgroundImage: `url("images/laboratoryBackgroundTrial.jpg")`,*/ 
     backgroundImage: `url("images/laboratory-background.png")`,
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
-    overflowY: 'scroll'    
+    /*overflowY: 'scroll' */   
   };
 
   const addReagent = (metal) => {       
+    if (products[metal].link){
+      return;
+    }
    const newProduct = productFinder(metal, selectedReagent.name);
    const imageIndex = imagesOfReactantsAndProducts.products.findIndex(x => x.name === newProduct);
    const productImageDetails = imagesOfReactantsAndProducts.products[imageIndex];
@@ -64,7 +67,7 @@ const handleExcessProduct = (metal, productImageDetails) => {
 
 
     return (
-        <div className="row-of-tubes " style={rowOfTubesStyling}>
+        <div className="row-of-tubes rounded overflow-auto" style={rowOfTubesStyling}>
             <div className="row" style={{width: '100%', marginTop: '5%'}}>
             {tubes.map((metal) => (
                          

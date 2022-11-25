@@ -6,17 +6,26 @@ Variables
     --greyDark: #999;
   }
 
-li {
+.examBoards button {
     color: var(--primaryText) !important;
     
     
   }
 
-  li:hover {
+  .examBoards  button:hover {
     background-color: var(--greyLight) !important; 
   }
+  
+  .examBoards  button:active {
+    background-color: var(--greyDark) !important;
+  }
 
-  button {
+  .examBoards button:focus {
+    background-color: #f8f9fa !important;
+    /*color: white !important;*/
+  }
+
+  .examBoards button {
     color: var(--primary) !important;    
     
     width: 100%;

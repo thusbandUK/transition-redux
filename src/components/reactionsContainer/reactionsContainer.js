@@ -20,3 +20,5 @@ const ReactionsContainer = (props) => {
 }
 
 export default ReactionsContainer;
+
+//border p-5 rounded position-relative mb-4

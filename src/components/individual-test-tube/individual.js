@@ -30,11 +30,13 @@ const IndividualTube = (props) => {
     }
     
     
-
+//
 
 
     return (      
-      <div className="col-md-2 d-flex flex-column container" style={{height: '400px'}}> 
+      <div className="col-md-2 d-flex flex-column container " style={{height: '400px'}}> 
+      
+        
         <button 
         className="test-tube "
         onClick={handleClick}
@@ -43,28 +45,30 @@ const IndividualTube = (props) => {
         
         >
           {/* img-fluid */}
-          <img src={"images/test tube outline.png"} className="position-absolute top-0 start-0 mx-auto img-fluid"/>
-          <img className="position-absolute top-0 start-0 mx-auto img-fluid"
+          <img src={"images/test tube outline.png"} className="position-absolute top-0 start-0 mx-auto"/>
+          <img className="position-absolute top-0 start-0 mx-auto"
           src={props.metal.link}                 
           style={props.metal.opaque? null : {opacity: 0.5}}
           alt={props.product.link ? null : props.metal.altText } 
                 
           />
           {props.product ? <img 
-          className="position-absolute top-0 start-0 mx-auto img-fluid" 
+          className="position-absolute top-0 start-0 mx-auto" 
           src={props.product.link}
           style={props.product.opaque? null : {opacity: 0.5}}           
           alt={props.product.altText}
           /> : null }
         </button>
-         
+        
+        
         {(selectedReagent.name === 'ammonia solution' || selectedReagent.name === 'sodium hydroxide') ? <ExcessButton 
         onClick={addExcessReagent}
         reagent={selectedReagent.name}
         metal={props.metal.metal}
         className='excess-button'
         /> : null}
-        
+      
+       
       </div>
 
     );
