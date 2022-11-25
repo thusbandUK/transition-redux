@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { selectExamBoard } from './examBoardsSlice';
 import'../../app/App.css';
 import './examBoards.css';

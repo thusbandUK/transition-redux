@@ -1,14 +1,14 @@
-/* Variables 
+Variables 
 :root {
     --primary: #960150;
     --primaryText: rgb(43, 43, 43);
     --greyLight: #dee2e6;
     --greyDark: #999;
   }
-*/
+
 li {
-    color: var(--primary) !important;
-    background-color: var(--primary) !important;
+    color: var(--primaryText) !important;
+    
     
   }
 
@@ -17,10 +17,14 @@ li {
   }
 
   button {
-    color: var(--greyLight) !important;    
+    color: var(--primary) !important;    
+    
+    width: 100%;
   }
-  
+  /*
   button:hover {
     color: var(--primaryText) !important;
     opacity: .7;
   }
+background-color: var(--primary) !important;
+  */

@@ -10,7 +10,7 @@ const ReactionsContainer = (props) => {
     }
 
     return (
-      <div>        
+      <div className="container-fluid border p-5 rounded position-relative mb-4">        
         <ReagentBottle onChange={updateState}/>        
         <RowOfTubes reagent={reagent}/>        
       </div>

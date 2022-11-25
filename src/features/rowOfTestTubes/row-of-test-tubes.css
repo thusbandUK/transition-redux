@@ -1,8 +1,8 @@
 .row-of-tubes {
     display: inline-flex;
     /*position: relative;*/
-   /*background: url("images/laboratory background.jpg") no-repeat;*/
-   height: 100vh;
+   /*background: url("images/laboratory background.jpg") no-repeat;
+   height: 60vh;*/
 }
 
 button {

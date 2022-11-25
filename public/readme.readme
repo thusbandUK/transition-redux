@@ -1,6 +1,14 @@
 
 POINTS TO ADDRESS:
 
+utterly inexplicable styling differences between HCl Na2CO3 pages and NaOH and NH3 pages (the two with excess buttons *thinky face*)
+
+see flex-wrap, switch off (improves) from "inherited from row" with ... highlighted
+and width 16.7% switched off (also improves) from 762 media query also with div class, col-md-2 highlighted
+
+.row-of-tubes vh height
+
+
 <1 - styling>
 
 0.5) in examBoards.css finish tweaks for inverted colour scheme, there's a problem with the hover situation currently... you can invert the color scheme to vary between buttons (do this to examboard on intro page too), some white on red, some red on white

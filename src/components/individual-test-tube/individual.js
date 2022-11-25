@@ -4,6 +4,7 @@ import imagesOfReactantsAndProducts from '../images/images-combined';
 import './individual.css';
 import excessProductFinder from '../functionModules/findExcessProduct';
 import { useSelector } from 'react-redux';
+import '../../app/App.css';
 
 
 const IndividualTube = (props) => {
@@ -32,34 +33,36 @@ const IndividualTube = (props) => {
 
 
 
-    return (
-      <div>
-        
+    return (      
+      <div className="col-md-2 d-flex flex-column container" style={{height: '400px'}}> 
         <button 
-        className="test-tube"
+        className="test-tube "
         onClick={handleClick}
         aria-live="polite"
         disabled={!selectedReagent}
         
         >
-          <img src={"images/test tube outline.png"} className="absolute-positioning-experiment"/>
-          <img className="absolute-positioning-experiment"
+          {/* img-fluid */}
+          <img src={"images/test tube outline.png"} className="position-absolute top-0 start-0 mx-auto img-fluid"/>
+          <img className="position-absolute top-0 start-0 mx-auto img-fluid"
           src={props.metal.link}                 
           style={props.metal.opaque? null : {opacity: 0.5}}
           alt={props.product.link ? null : props.metal.altText } 
                 
           />
           {props.product ? <img 
-          className="absolute-positioning-experiment" 
+          className="position-absolute top-0 start-0 mx-auto img-fluid" 
           src={props.product.link}
           style={props.product.opaque? null : {opacity: 0.5}}           
           alt={props.product.altText}
           /> : null }
         </button>
+         
         {(selectedReagent.name === 'ammonia solution' || selectedReagent.name === 'sodium hydroxide') ? <ExcessButton 
         onClick={addExcessReagent}
         reagent={selectedReagent.name}
         metal={props.metal.metal}
+        className='excess-button'
         /> : null}
         
       </div>
@@ -71,3 +74,7 @@ const IndividualTube = (props) => {
 export default IndividualTube;
 
 //{imagesOfTubesBeforeReaction[0][1]}
+
+//"absolute-positioning-experiment  img-fluid"
+
+//style={{height: '400px'}}

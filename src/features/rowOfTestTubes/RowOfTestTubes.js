@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { data } from '../../data';
 import { selectUnreactedMetals, showProducts, reset } from './rowOfTestTubesSlice';
 import { useParams } from 'react-router-dom';
+import '../../app/App.css';
 
 const RowOfTubes = (props) => {
   const examBoard = useSelector(state => state.examBoard.selectedExamBoard);
@@ -35,11 +36,13 @@ const products = useSelector(state => state.rowOfTubes.products);
 
   const rowOfTubesStyling = {
     width: "100%",
-    height: "400px",    
-    backgroundImage: `url("images/laboratoryBackgroundTrial.jpg")`,
+    /*height: '400px',   
+    backgroundImage: `url("images/laboratoryBackgroundTrial.jpg")`,*/ 
+    backgroundImage: `url("images/laboratory-background.png")`,
     backgroundPosition: 'center',
     backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat'    
+    backgroundRepeat: 'no-repeat',
+    overflowY: 'scroll'    
   };
 
   const addReagent = (metal) => {       
@@ -61,24 +64,28 @@ const handleExcessProduct = (metal, productImageDetails) => {
 
 
     return (
-        <div className="row-of-tubes" style={rowOfTubesStyling}>
-            
-            {tubes.map((metal) => (              
+        <div className="row-of-tubes " style={rowOfTubesStyling}>
+            <div className="row" style={{width: '100%', marginTop: '5%'}}>
+            {tubes.map((metal) => (
+                         
+              
               <IndividualTube 
               metal={metal}
               reagent={selectedReagent.name}
               onClick={addReagent}
               product={products[metal.metal]}
               handleExcessProduct={handleExcessProduct}
+              
               /> 
               
             
           ))}
-          { 
+          </div>
+          { /*
               <ResetButton 
                 onClick={handleReset}
               />
-           }
+            */}
         </div>
         
         
