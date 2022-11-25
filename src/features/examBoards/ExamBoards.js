@@ -15,7 +15,7 @@ export function ExamBoards() {
           {data.examBoards.map((examBoardEntry) => (
            
               <button 
-              className="list-group-item w-50       d-block text-decoration-none"
+              className="list-group-item w-50  d-block text-decoration-none"
               onClick={() => dispatch(selectExamBoard({examBoard: examBoardEntry}))}
               >
                   {examBoardEntry}  

@@ -23,6 +23,8 @@ const RowOfTubes = (props) => {
       return matchedMetals;
   }
 
+
+
   useEffect(() => {
     dispatch(reset());
         dispatch(selectUnreactedMetals(generateMetalReactantsSet()));
@@ -36,8 +38,8 @@ const products = useSelector(state => state.rowOfTubes.products);
 
   const rowOfTubesStyling = {
     width: "100%",
-    height: '70vh',   
-    /*backgroundImage: `url("images/laboratoryBackgroundTrial.jpg")`,*/ 
+    /*height: '70vh',   
+    backgroundImage: `url("images/laboratoryBackgroundTrial.jpg")`,*/ 
     backgroundImage: `url("images/laboratory-background.png")`,
     backgroundPosition: 'center',
     backgroundSize: 'cover',
@@ -77,8 +79,7 @@ const handleExcessProduct = (metal, productImageDetails) => {
               reagent={selectedReagent.name}
               onClick={addReagent}
               product={products[metal.metal]}
-              handleExcessProduct={handleExcessProduct}
-              
+              handleExcessProduct={handleExcessProduct}              
               /> 
               
             

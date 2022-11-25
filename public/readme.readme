@@ -1,12 +1,19 @@
 
 POINTS TO ADDRESS:
 
+connect reset button
+
+see this for transfer between sibling components
+https://stackoverflow.com/questions/53782249/react-calling-function-from-a-sibling-component
+
+
+
 
 <1 - styling>
 
 0.25) something to try (update the repo first) add a media query stipulating that if the test tubes stack, instead of the row of tubes
 container have the laboratory background, the individual columns do
-
+(see: https://stackoverflow.com/questions/54085539/media-query-in-jss-not-responive)
 
 0.5) in examBoards.css finish tweaks for inverted colour scheme, there's a problem with the hover situation currently... you can invert the color scheme to vary between buttons (do this to examboard on intro page too), some white on red, some red on white
 1) position and appearance of various buttons including excess and reset 

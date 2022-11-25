@@ -16,7 +16,8 @@ const ResetButton = (props) => {
         
         <button 
         className="reset-button"
-        onClick={handleClick}
+        
+        onClick={() => props.reset()}
         >
           reset button        
         </button>
@@ -31,3 +32,4 @@ const ResetButton = (props) => {
 export default ResetButton;
 
 //{imagesOfTubesBeforeReaction[0][1]}
+//onClick={handleClick}

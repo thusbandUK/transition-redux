@@ -10,6 +10,7 @@ import '../../app/App.css';
 const IndividualTube = (props) => {
   
   const selectedReagent = useSelector(state => state.menu.selectedReagent);
+  
     
 
     const handleClick = (event) => {      
@@ -44,30 +45,31 @@ const IndividualTube = (props) => {
         disabled={!selectedReagent}
         
         >
-          {/* img-fluid */}
-          <img src={"images/test tube outline.png"} className="position-absolute top-0 start-0 mx-auto"/>
-          <img className="position-absolute top-0 start-0 mx-auto"
+          {/* mx-auto */}
+          <img src={"images/test tube outline.png"} className="position-absolute top-0 translate-middle-x"/>
+          <img className="position-absolute top-0 translate-middle-x"
           src={props.metal.link}                 
           style={props.metal.opaque? null : {opacity: 0.5}}
           alt={props.product.link ? null : props.metal.altText } 
                 
           />
           {props.product ? <img 
-          className="position-absolute top-0 start-0 mx-auto" 
+          className="position-absolute top-0 translate-middle-x" 
           src={props.product.link}
           style={props.product.opaque? null : {opacity: 0.5}}           
           alt={props.product.altText}
           /> : null }
         </button>
         
-        
+        <ul className="list-group list-group-horizontal mt-5 fs-5 d-flex justify-content-center">
         {(selectedReagent.name === 'ammonia solution' || selectedReagent.name === 'sodium hydroxide') ? <ExcessButton 
         onClick={addExcessReagent}
         reagent={selectedReagent.name}
         metal={props.metal.metal}
         className='excess-button'
+        
         /> : null}
-      
+      </ul>
        
       </div>
 

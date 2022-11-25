@@ -8,8 +8,8 @@ const ReagentBottle = (props) => {
     const selectedReagentImage = selectedReagent.link;
         
       return (
-          <div className="reagent-bottle-selection">
-            <img className="reagent-bottle-image" 
+          <div className="reagent-bottle-selection d-flex justify-content-center">
+            <img className="reagent-bottle-image img-fluid " 
             src={selectedReagentImage}
             alt={selectedReagent.altText}
             />
