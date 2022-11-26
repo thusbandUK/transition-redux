@@ -1,15 +1,8 @@
-import React, { useEffect, useState } from 'react';
-//import cobalt from './cobalt.png';
-//import imagesOfReactantsAndProducts from '../images/images';
-import ExcessButton from '../excessButton/excessButton';
-import imagesOfReactantsAndProducts from '../images/images-combined';
-///import './individual.css';
-import excessProductFinder from '../functionModules/findExcessProduct';
-//import RowOfTubes from '../../components/row-of-test-tubes/row-of-test-tubes';
+import React, { useState } from 'react';
 import ReagentBottle from '../../components/Reagent-bottle/reagent';
 import RowOfTubes from '../../features/rowOfTestTubes/RowOfTestTubes';
- 
-
+import ResetButton from '../../components/resetButton/resetButton';
+//import { reset } from '../../features/rowOfTestTubes/rowOfTestTubesSlice';
 
 
 
@@ -19,18 +12,28 @@ const ReactionsContainer = (props) => {
 
     const updateState = (reagent) => {
       setReagent(reagent);
-      //ResetButton.handleClick();
-      //alert('surely theres a function here');
     }
 
+const handleReset = (props) => {
+  props.handleReset();
+
+}
+
     return (
-      <div>
-        {/* */}
-        <ReagentBottle onChange={updateState}/>
+      <div className="container-fluid border d-flex p-4 rounded position-relative mb-4 row" style={{marginLeft: '0px', marginRight: '0px'}}>
         
-        <RowOfTubes reagent={reagent}/>
-        
-        
+        <div className="col-md-2" >     
+        <ReagentBottle  onChange={updateState}/>  
+        <ResetButton 
+         onClick={handleReset}/>   
+        </div>   
+        <div className="col-md-10" style={{height: 'auto'}}>
+        <RowOfTubes 
+        reagent={reagent}
+        handleReset={handleReset}
+        /> 
+        </div> 
+              
       </div>
 
     );
@@ -39,3 +42,5 @@ const ReactionsContainer = (props) => {
 
 export default ReactionsContainer;
 
+//border p-5 rounded position-relative mb-4
+//style={{height: '102vh'}} the columns are the same height because the reagent bottle is so big

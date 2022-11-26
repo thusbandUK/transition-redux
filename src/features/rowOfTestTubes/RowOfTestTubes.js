@@ -1,31 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import IndividualTube from '../../components/individual-test-tube/individual';
-//import imagesOfReactantsAndProducts from '../images/images';
 import imagesOfReactantsAndProducts from '../../components/images/images-combined';
 import './row-of-test-tubes.css';
 import productFinder from '../../components/functionModules/findProduct';
-//import Background from '../images/laboratory background.jpg';
-//import background from "./images/laboratory background trial.jpg";
-import ResetButton from '../../components/resetButton/resetButton';
-import reagentsByExamBoard from '../../components/functionModules/reagentsByExamBoard';
 import { useSelector, useDispatch } from 'react-redux';
 import { data } from '../../data';
 import { selectUnreactedMetals, showProducts, reset } from './rowOfTestTubesSlice';
-import { NavLink, useParams } from 'react-router-dom';
-import excessProductFinder from '../../components/functionModules/findExcessProduct';
-
-
+import { useParams } from 'react-router-dom';
+import '../../app/App.css';
 
 const RowOfTubes = (props) => {
-
-  
-  //const [tubes, setTubes] = useState(imagesOfReactantsAndProducts.unreactedMetals);
   const examBoard = useSelector(state => state.examBoard.selectedExamBoard);
   const selectedReagent = useSelector(state => state.menu.selectedReagent);
- // const [tubes, setTubes] = useState(reagentsByExamBoard(examBoard));
-  //const [tubesTest, setTubesTest] = useState(reagentsByExamBoard('OCRA'));
   const dispatch = useDispatch();
   const {reactant} = useParams();
+
+
+  //filters the available reactants in data.js to identify the ones used by the exam board and with the reagent in question
 
   const generateMetalReactantsSet = () => {
     const matchedMetals = data.unreactedMetals.filter((x) => {      
@@ -34,153 +25,64 @@ const RowOfTubes = (props) => {
       return matchedMetals;
   }
 
+  //effect hook removes any product images from previous reactions and loads up the relevant unreacted metal solutions
+
   useEffect(() => {
     dispatch(reset());
-    //alert('use effect is getting');
-    //alert(selectedReagent.name);    
-      const matchedMetals = data.unreactedMetals.filter((x) => {      
-        return data.metalIdsByReagent[examBoard][selectedReagent.name].includes(x.id);
-        })
-        //return matchedMetals;
-        //alert(matchedMetals);
-        //dispatch(selectUnreactedMetals(matchedMetals));
         dispatch(selectUnreactedMetals(generateMetalReactantsSet()));
-    
-    //handleReset();  
 }, [reactant]);
+
+//defines array from which is mapped the instances of each individual test tubes
 
 const tubes = useSelector(state => state.rowOfTubes.unreactedMetals);
 
-const products = useSelector(state => state.rowOfTubes.products);  
+//reference to products stored in state so individual test tubes know which product image to render
 
+const products = useSelector(state => state.rowOfTubes.products); 
 
-/*
-  const [products, setProducts] = useState(
-
-    {
-      copper: {link: '', opaque: null},
-      cobalt: {link: '', opaque: null},
-      "iron II": {link: '', opaque: null},
-      "iron III": {link: '', opaque: null},
-      aluminium: {link: '', opaque: null},
-      manganese: {link: '', opaque: null},
-      chromium: {link: '', opaque: null}
-  }
-  )
-*/
-//alert((reagentsByExamBoard('OCRA'))[4].metal);
-
-  const backgroundImage = imagesOfReactantsAndProducts.background[0].link;
-
-  //alert(backgroundImage);
-
-/*
-,
-      manganese: {link: '', opaque: null},
-      chromium: {link: '', opaque: null}
-*/
-
+//partial styling for row of test tubes, see also row-of-test-tubes.css
 
   const rowOfTubesStyling = {
     width: "100%",
-    height: "400px",
-    //backgroundImage: "url(/images.laboratoryBackgroundTrial.jpg)",
-    backgroundImage: `url("images/laboratoryBackgroundTrial.jpg")`,
+    backgroundImage: `url("images/laboratory-background.png")`,
     backgroundPosition: 'center',
     backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat'
-    //backgroundImage: `url(${backgroundImage})`,
-    //backgroundColor: 'red'
-    
+    backgroundRepeat: 'no-repeat',
   };
 
+  //function for when reagent is added to individual test tubes 
+
   const addReagent = (metal) => {       
+    if (products[metal].link){
+      return;
+    }
    const newProduct = productFinder(metal, selectedReagent.name);
    const imageIndex = imagesOfReactantsAndProducts.products.findIndex(x => x.name === newProduct);
    const productImageDetails = imagesOfReactantsAndProducts.products[imageIndex];
    dispatch(showProducts({metal: metal, details: productImageDetails}))
   }
   
-  const handleReset = () => {
-    dispatch(reset());
-    dispatch(selectUnreactedMetals(generateMetalReactantsSet()));
-  }
-
-/*
-const handleReset = () => {
-  //alert('function in row of tubes activated');
-  dispatch(reset());
-
-  /*
-  setProducts({
-    copper: {link: '', opaque: null, altText: ''},
-    cobalt: {link: '', opaque: null, altText: ''},
-    "iron II": {link: '', opaque: null, altText: ''},
-    "iron III": {link: '', opaque: null, altText: ''},
-    aluminium: {link: '', opaque: null, altText: ''},
-    manganese: {link: '', opaque: null, altText: ''},
-    chromium: {link: '', opaque: null, altText: ''}
-})
-
-}
-*/
-/*
-useEffect(() => {
-  
-    handleReset();
-  
-}, [props.reagent])
-*/
+//function to handle excess product (see also handleExcessClick in excessButton.js and addExcessReagent in individual.js)
 
 const handleExcessProduct = (metal, productImageDetails) => {  
   dispatch(showProducts({metal: metal, details: productImageDetails}))
 }
 
-/*
-const handleExcessProduct = (metal) => {
-  //alert(productImageDetails);
-  //alert('function called');
-  //setProducts({...products, [metal]: productImageDetails})
-  //alert('function called');
-  const newProduct = excessProductFinder(metal, selectedReagent.name);
-  const imageIndex = imagesOfReactantsAndProducts.products.findIndex(x => x.name === newProduct);
-  const productImageDetails = imagesOfReactantsAndProducts.products[imageIndex];
-  dispatch(showProducts({metal: metal, details: productImageDetails}))
 
-}
-*/
-// && tubes.metal === 'iron II' || tubes.metal === 'aluminium'
-//&& metal === 'iron II' || metal === 'aluminium')
-/*
-const removeTubesForHCl = (metal) => {
-  if ((props.reagent === 'hydrochloric acid') && (metal === 'iron II' || metal === 'aluminium')) {
-    return false;
-  } else {
-    return true;
-  }
-
-}
-//
-*/
     return (
-        <div className="row-of-tubes" style={rowOfTubesStyling}>
-            
-            {tubes.map((metal) => (              
+        <div className="row-of-tubes rounded overflow-auto" style={rowOfTubesStyling}>
+            <div className="row" style={{width: '100%', marginTop: '5%'}}>
+            {tubes.map((metal) => (
               <IndividualTube 
               metal={metal}
               reagent={selectedReagent.name}
               onClick={addReagent}
               product={products[metal.metal]}
-              handleExcessProduct={handleExcessProduct}
-              /> 
-              
-            
-          ))}
-          { 
-              <ResetButton 
-                onClick={handleReset}
+              handleExcessProduct={handleExcessProduct}              
               />
-           }
+          ))}
+          </div>
+          
         </div>
         
         
@@ -189,10 +91,4 @@ const removeTubesForHCl = (metal) => {
   
   export default RowOfTubes;
 
-  /*
- {/*excessProduct={handleExcessProduct}*//*}
-
- handleExcessProduct={handleExcessProduct}
-
- handleExcessProduct={handleExcessProduct}
-  */
+  

@@ -1,11 +1,18 @@
 .row-of-tubes {
     display: inline-flex;
     /*position: relative;*/
-   /*background: url("images/laboratory background.jpg") no-repeat;*/
-   height: 100vh;
+   /*background: url("images/laboratory background.jpg") no-repeat;
+   height: 60vh;*/
+   height: 70vh;
 }
 
 button {
     background: rgba(255, 122, 89, 0);
     border: rgba(255, 122, 89, 0);
+}
+
+@media only screen and (max-width: 720px) {
+    .row-of-tubes {
+        height: 70vh;
+    }
 }

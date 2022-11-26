@@ -1,86 +1,75 @@
-import React, { useState } from 'react';
-//import cobalt from './cobalt.png';
-//import imagesOfReactantsAndProducts from '../images/images';
+import React from 'react';
 import ExcessButton from '../excessButton/excessButton';
 import imagesOfReactantsAndProducts from '../images/images-combined';
 import './individual.css';
 import excessProductFinder from '../functionModules/findExcessProduct';
-import { useSelector, useDispatch } from 'react-redux';
-
-/*
-{imagesOfReactantsAndProducts.map((metal) => (
-            <img 
-            src={metal.link}
-            alt={metal.altText}
-            />
-          ))}
-*/
+import { useSelector } from 'react-redux';
+import '../../app/App.css';
 
 
 const IndividualTube = (props) => {
-  //const [reagent, setReagent] = useState(props.reagent);
+  
   const selectedReagent = useSelector(state => state.menu.selectedReagent);
-    const placeholderCobaltImage = imagesOfReactantsAndProducts.products[0].link;
+  
+    
 
-    const handleClick = (event) => {
-      //alert('tube clicked');
+    const handleClick = (event) => {      
       props.onClick(props.metal.metal);
-      //event.currentTarget.disabled = true;
-
     }
 
-//alert(props.reagent);
-
-
     const addExcessReagent = (metal, reagent) => {
-      
-      //alert(metal+reagent);
+            
       const newProduct = excessProductFinder(metal, reagent);
-      //alert(newProduct);
+      
       const imageIndex = imagesOfReactantsAndProducts.products.findIndex(x => x.name === newProduct);
       
       const productImageDetails = imagesOfReactantsAndProducts.products[imageIndex];
-      //alert(productImageDetails.link);
+      
       props.handleExcessProduct(metal, productImageDetails);
 
     }
     
     
 
-/*
-        
-*/
 
-    return (
-      <div>
+
+    return (      
+      <div className="col-md-2 d-flex flex-column container " style={{height: '400px'}}> 
+      
         
         <button 
-        className="test-tube"
+        className="test-tube "
         onClick={handleClick}
         aria-live="polite"
         disabled={!selectedReagent}
         
         >
-          <img src={"images/test tube outline.png"} className="absolute-positioning-experiment"/>
-          <img className="absolute-positioning-experiment"
+          {/* mx-auto */}
+          <img src={"images/test tube outline.png"} className="position-absolute top-0 translate-middle-x" alt=""/>
+          <img className="position-absolute top-0 translate-middle-x"
           src={props.metal.link}                 
           style={props.metal.opaque? null : {opacity: 0.5}}
           alt={props.product.link ? null : props.metal.altText } 
                 
           />
           {props.product ? <img 
-          className="absolute-positioning-experiment" 
+          className="position-absolute top-0 translate-middle-x" 
           src={props.product.link}
           style={props.product.opaque? null : {opacity: 0.5}}           
           alt={props.product.altText}
           /> : null }
         </button>
+        
+        <ul className="list-group list-group-horizontal mt-5 fs-5 d-flex justify-content-center">
         {(selectedReagent.name === 'ammonia solution' || selectedReagent.name === 'sodium hydroxide') ? <ExcessButton 
         onClick={addExcessReagent}
         reagent={selectedReagent.name}
         metal={props.metal.metal}
-        /> : null}
+        className='excess-button'
         
+        /> : null}
+      </ul>
+       
       </div>
 
     );
@@ -90,3 +79,7 @@ const IndividualTube = (props) => {
 export default IndividualTube;
 
 //{imagesOfTubesBeforeReaction[0][1]}
+
+//"absolute-positioning-experiment  img-fluid"
+
+//style={{height: '400px'}}

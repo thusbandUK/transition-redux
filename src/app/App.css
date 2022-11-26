@@ -94,6 +94,31 @@ h1 {
   border-left: 1px solid var(--greyLight);
 }
 
+/*Excess or reset button (this prevents buttons that wrap test images from changing colour when clicked*/
+
+.excess-or-reset-button-container button {
+  color: var(--primaryText) !important;   
+  
+}
+
+.excess-or-reset-button-container button:hover {
+  background-color: var(--greyLight) !important; 
+}
+
+.excess-or-reset-button-container button:active {
+  background-color: var(--greyDark) !important;
+}
+
+.excess-or-reset-button-container button:disabled {
+  color: var(--greyLight) !important;
+}
+
+.excess-or-reset-button-container button {
+  color: var(--primary) !important;    
+  font-size: 1rem;
+  width: 100%;
+}
+
 /* text box */
 .text-box {
   width: 75%;

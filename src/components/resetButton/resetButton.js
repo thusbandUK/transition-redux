@@ -1,26 +1,29 @@
 import React from 'react';
-//import ExcessButton from '../excessButton/excessButton';
-import './resetButton.css';
+import '../../app/App.css';
+import { reset } from '../../features/rowOfTestTubes/rowOfTestTubesSlice';
+import { useDispatch } from 'react-redux';
 
 
-const ResetButton = (props) => {
-  //const [reagent, setReagent] = useState(props.reagent);
+
+const ResetButton = (props) => {  
   
-    const handleClick = () => {
-        props.onClick();
+    const dispatch = useDispatch();
 
+    const handleClick = () => {        
+        dispatch(reset());
     }
   
     return (
-      <div>
-        
+      <div className="excess-or-reset-button-container">
+        <ul className="list-group list-group-horizontal mt-5 fs-5 d-flex justify-content-center">
         <button 
-        className="reset-button"
+        className="reset-button list-group-item w-100 rounded"
+        
         onClick={handleClick}
         >
           reset button        
         </button>
-        
+        </ul>
         
       </div>
 
@@ -29,5 +32,3 @@ const ResetButton = (props) => {
 }
 
 export default ResetButton;
-
-//{imagesOfTubesBeforeReaction[0][1]}
