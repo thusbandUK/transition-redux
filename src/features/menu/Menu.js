@@ -11,38 +11,26 @@ const Menu = () => {
     const reagentOptions = useSelector(state => state.menu.reagentOptions);
     const dispatch = useDispatch()
     
-
+    //Effect hook renders list of available reactants upon selection of examboard on intro page
 
     useEffect(() => {   
           const reagentOptions = data.reagentOptions.filter((reagent) => {
-            if (reagent.true.includes(examBoard)){
-              //delete reagent.true;
-              return reagent;
-             // return {id: reagent.id,
-                //name: reagent.name};
-            }          
-          })
-      dispatch(selectReagentOptions(reagentOptions))
-  }, [dispatch, examBoard]);
-  
-  
-
-//BELOW REPLACES ABOVE (MOTHBALLED)
-/*
-useEffect(() => {  
-          let reagentOptions = []; 
-          data.reagentOptions.map((reagent) => {
             if (reagent.true.includes(examBoard)){              
-              reagentOptions.push(reagent);     
-              delete reagent.true;        
+              return reagent;
             }          
           })
       dispatch(selectReagentOptions(reagentOptions))
   }, [dispatch, examBoard]);
-
-  */
+  
+  
 
       const {reactant} = useParams();
+
+      /*menuWriter handles the logic to decide which choices are rendered on the reaction pages menu, ie the next reagent and the last
+      reagent, including overriding features which offer "back to main menu" for the first back option and the final forward option,
+      which returns an object with an empty name string so that "back to main menu" is not added to the state as an available reagent.
+      Where actual reagents are selected, the function returns the whole entry for that reagent from data.js, including useful details
+      such as image link and altText, so the reagent bottle image can be rendered once the selected page is loaded */
 
       const menuWriter = (currentUrl, direction) => {  
         var reagentObject = {name: '', path: '/', linkText: ''};
@@ -84,6 +72,8 @@ useEffect(() => {
       
 return (
         <div>
+
+          {/*JSX for intro page menu */}
   
           <ul className="list-group mt-4 fs-5" style={reactant ? {display: 'none'} : {display: 'flex'}}>
             {reagentOptions.map((reagent) =>               
@@ -101,6 +91,8 @@ return (
                </li>)
             )}            
           </ul>
+
+        {/*JSX for reaction pages menu */}
 
           <ul className="list-group list-group-horizontal mt-5 fs-5" style={reactant ? {display: 'flex'} : {display: 'none'}}>
             <li className="list-group-item bg-light w-50"><NavLink className="d-block text-decoration-none" to={menuWriter(reactant, 'back').path}  onClick={() => dispatch(selectReagent(menuWriter(reactant, 'back')))}><i className="mdi mdi-chevron-left"></i>Previous section: <strong>{menuWriter(reactant, 'back').linkText ? menuWriter(reactant, 'back').linkText : menuWriter(reactant, 'back').name}</strong></NavLink></li>

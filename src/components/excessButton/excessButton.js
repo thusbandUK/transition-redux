@@ -1,4 +1,3 @@
-import './excessButton.css';
 import '../../app/App.css';
 import { useSelector } from 'react-redux';
 
@@ -9,8 +8,9 @@ const ExcessButton = (props) => {
   const handleExcessClick = () => {
     props.onClick(props.metal, props.reagent);
   }
+
     return (
-        <div className="excess-button-container d-flex justify-content-center" >          
+        <div className="excess-or-reset-button-container d-flex justify-content-center" >          
           <button className="excess-button list-group-item w-100 rounded"
             onClick={handleExcessClick}
             

@@ -26,12 +26,3 @@ export function ExamBoards() {
       </div>    
     );
   }
-
-  //className="list-group mt-4 fs-5 list-group-item bg-light"
-
-  //bg-light
-
-  //{/*</a>>*/}
-  {/*  <a
-              className="list-group-item w-50"              
-            >*/}

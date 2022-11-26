@@ -18,20 +18,19 @@ const IndividualTube = (props) => {
     }
 
     const addExcessReagent = (metal, reagent) => {
-      
-      //alert(metal+reagent);
+            
       const newProduct = excessProductFinder(metal, reagent);
-      //alert(newProduct);
+      
       const imageIndex = imagesOfReactantsAndProducts.products.findIndex(x => x.name === newProduct);
       
       const productImageDetails = imagesOfReactantsAndProducts.products[imageIndex];
-      //alert(productImageDetails.link);
+      
       props.handleExcessProduct(metal, productImageDetails);
 
     }
     
     
-//
+
 
 
     return (      
@@ -46,7 +45,7 @@ const IndividualTube = (props) => {
         
         >
           {/* mx-auto */}
-          <img src={"images/test tube outline.png"} className="position-absolute top-0 translate-middle-x"/>
+          <img src={"images/test tube outline.png"} className="position-absolute top-0 translate-middle-x" alt=""/>
           <img className="position-absolute top-0 translate-middle-x"
           src={props.metal.link}                 
           style={props.metal.opaque? null : {opacity: 0.5}}

@@ -3,7 +3,6 @@ import IndividualTube from '../../components/individual-test-tube/individual';
 import imagesOfReactantsAndProducts from '../../components/images/images-combined';
 import './row-of-test-tubes.css';
 import productFinder from '../../components/functionModules/findProduct';
-import ResetButton from '../../components/resetButton/resetButton';
 import { useSelector, useDispatch } from 'react-redux';
 import { data } from '../../data';
 import { selectUnreactedMetals, showProducts, reset } from './rowOfTestTubesSlice';
@@ -16,6 +15,9 @@ const RowOfTubes = (props) => {
   const dispatch = useDispatch();
   const {reactant} = useParams();
 
+
+  //filters the available reactants in data.js to identify the ones used by the exam board and with the reagent in question
+
   const generateMetalReactantsSet = () => {
     const matchedMetals = data.unreactedMetals.filter((x) => {      
       return data.metalIdsByReagent[examBoard][selectedReagent.name].includes(x.id);
@@ -23,29 +25,32 @@ const RowOfTubes = (props) => {
       return matchedMetals;
   }
 
-
+  //effect hook removes any product images from previous reactions and loads up the relevant unreacted metal solutions
 
   useEffect(() => {
     dispatch(reset());
         dispatch(selectUnreactedMetals(generateMetalReactantsSet()));
 }, [reactant]);
 
+//defines array from which is mapped the instances of each individual test tubes
+
 const tubes = useSelector(state => state.rowOfTubes.unreactedMetals);
+
+//reference to products stored in state so individual test tubes know which product image to render
 
 const products = useSelector(state => state.rowOfTubes.products); 
 
-
+//partial styling for row of test tubes, see also row-of-test-tubes.css
 
   const rowOfTubesStyling = {
     width: "100%",
-    /*height: '70vh',   
-    backgroundImage: `url("images/laboratoryBackgroundTrial.jpg")`,*/ 
     backgroundImage: `url("images/laboratory-background.png")`,
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
-    /*overflowY: 'scroll' */   
   };
+
+  //function for when reagent is added to individual test tubes 
 
   const addReagent = (metal) => {       
     if (products[metal].link){
@@ -57,11 +62,7 @@ const products = useSelector(state => state.rowOfTubes.products);
    dispatch(showProducts({metal: metal, details: productImageDetails}))
   }
   
-  const handleReset = () => {
-    dispatch(reset());
-    dispatch(selectUnreactedMetals(generateMetalReactantsSet()));
-  }
-
+//function to handle excess product (see also handleExcessClick in excessButton.js and addExcessReagent in individual.js)
 
 const handleExcessProduct = (metal, productImageDetails) => {  
   dispatch(showProducts({metal: metal, details: productImageDetails}))
@@ -72,24 +73,16 @@ const handleExcessProduct = (metal, productImageDetails) => {
         <div className="row-of-tubes rounded overflow-auto" style={rowOfTubesStyling}>
             <div className="row" style={{width: '100%', marginTop: '5%'}}>
             {tubes.map((metal) => (
-                         
-              
               <IndividualTube 
               metal={metal}
               reagent={selectedReagent.name}
               onClick={addReagent}
               product={products[metal.metal]}
               handleExcessProduct={handleExcessProduct}              
-              /> 
-              
-            
+              />
           ))}
           </div>
-          { /*
-              <ResetButton 
-                onClick={handleReset}
-              />
-            */}
+          
         </div>
         
         

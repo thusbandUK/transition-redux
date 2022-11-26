@@ -13,6 +13,6 @@ button {
 
 @media only screen and (max-width: 720px) {
     .row-of-tubes {
-        height: 40%;
+        height: 70vh;
     }
 }

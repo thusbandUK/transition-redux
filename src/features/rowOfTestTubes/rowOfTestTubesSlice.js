@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {  
-    products: {
+//const initialState = {  
+    const products = {
       copper: {link: '', opaque: null},
       cobalt: {link: '', opaque: null},
       "iron II": {link: '', opaque: null},
@@ -10,14 +10,14 @@ const initialState = {
       manganese: {link: '', opaque: null},
       chromium: {link: '', opaque: null}
   } 
-  };
+  //};
 
 
 export const rowOfTestTubesSlice = createSlice({
     name: "rowOfTubes",
     initialState: {
       unreactedMetals: [],
-      initialState
+      products
     },     
     reducers: {
       selectUnreactedMetals: (state, action) => {
@@ -29,7 +29,9 @@ export const rowOfTestTubesSlice = createSlice({
         //state.products = action.payload.metal;
 
       },
-      reset: () => initialState,
+      reset: (state) => {
+        state.products = products;
+      ;},
     }
     
   });
@@ -44,6 +46,9 @@ export const rowOfTestTubesSlice = createSlice({
  export default rowOfTestTubesSlice.reducer;
 
  /*
+
+reset: () => initialState;
+
   export const {
     selectExamBoard,
  } = examBoardSlice.actions;
