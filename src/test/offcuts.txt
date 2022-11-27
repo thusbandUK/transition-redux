@@ -1,0 +1,66 @@
+this is what the package.json entry read for "script"|"test"... previously:
+
+"test": "react-scripts test"
+
+substituted "react-scripts test" for "jest" in line with: https://jestjs.io/docs/getting-started
+
+
+from the former file App.test.js (deleted from app folder)
+
+//import { render, screen } from '@testing-library/react';
+//import App from './App';
+
+//below is the boiler plate test
+
+/*
+test('renders "learn react link"', () => {
+  render(<App />);
+  const linkElement = screen.getByText(/learn react/i);
+  expect(linkElement).toBeInTheDocument();
+});
+*/
+
+//mothballing for the time being, not sure why it doesn't wrok but doesn't feel urgent
+
+/*
+test('renders "reactions of complex ions" title', () => {
+  render(<App />);
+  const linkElement = screen.getByText(/reactions of complex ions/i);
+  expect(linkElement).toBeInTheDocument();
+})
+*/
+
+from successor App.test.js
+
+import React from 'react';
+import { render } from '@testing-library/react';
+import { RouterProvider } from "react-router-dom";
+import router from '../router';
+import { useSelector, useDispatch } from 'react-redux';
+import App from './App';
+import { Provider } from 'react-redux';
+import configureStore from 'redux-mock-store';
+
+
+
+describe('With React Testing Library', () => {
+    
+    const initialState = { output: 10 };
+    const mockStore = configureStore();
+    let store;
+
+    it('Shows "Hello world!"', () => {
+        store = mockStore(initialState);
+        const { getByText } = render(
+            <div>
+            <Provider store={store}>
+                <RouterProvider 
+    router={router}
+    
+    />
+            </Provider>
+            </div>);
+
+        expect(getByText('Reactions of complex ions')).not.toBeNull();
+    });
+});

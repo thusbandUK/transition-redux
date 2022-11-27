@@ -49,7 +49,7 @@ const IndividualTube = (props) => {
           <img className="position-absolute top-0 translate-middle-x"
           src={props.metal.link}                 
           style={props.metal.opaque? null : {opacity: 0.5}}
-          alt={props.product.link ? null : props.metal.altText } 
+          alt={props.product.link ? '' : props.metal.altText } 
                 
           />
           {props.product ? <img 

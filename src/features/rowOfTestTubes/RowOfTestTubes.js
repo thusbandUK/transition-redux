@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import IndividualTube from '../../components/individual-test-tube/individual';
 import imagesOfReactantsAndProducts from '../../components/images/images-combined';
 import './row-of-test-tubes.css';
@@ -18,19 +18,19 @@ const RowOfTubes = (props) => {
 
   //filters the available reactants in data.js to identify the ones used by the exam board and with the reagent in question
 
-  const generateMetalReactantsSet = () => {
+  const generateMetalReactantsSet = useCallback(() => {
     const matchedMetals = data.unreactedMetals.filter((x) => {      
       return data.metalIdsByReagent[examBoard][selectedReagent.name].includes(x.id);
       })
       return matchedMetals;
-  }
+  }, [examBoard, selectedReagent.name])
 
   //effect hook removes any product images from previous reactions and loads up the relevant unreacted metal solutions
 
   useEffect(() => {
     dispatch(reset());
         dispatch(selectUnreactedMetals(generateMetalReactantsSet()));
-}, [reactant]);
+}, [dispatch, generateMetalReactantsSet, reactant]);
 
 //defines array from which is mapped the instances of each individual test tubes
 
@@ -74,6 +74,7 @@ const handleExcessProduct = (metal, productImageDetails) => {
             <div className="row" style={{width: '100%', marginTop: '5%'}}>
             {tubes.map((metal) => (
               <IndividualTube 
+              key={metal.id}
               metal={metal}
               reagent={selectedReagent.name}
               onClick={addReagent}
