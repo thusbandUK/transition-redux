@@ -1,10 +1,25 @@
 
 POINTS TO ADDRESS:
 
-connect reset button
+save the store
 
-see this for transfer between sibling components
-https://stackoverflow.com/questions/53782249/react-calling-function-from-a-sibling-component
+so see below (menu) it crashes because the store empties
+
+see this link: https://www.npmjs.com/package/redux-persist
+and this link: https://stackoverflow.com/questions/37195590/how-can-i-persist-redux-state-tree-on-refresh
+
+makes sense really, you have to inform react/redux if you want the store to be maintained on refresh, so, figure how to do that 
+and do it
+
+
+menu
+basically on any reactions page it crashes if you click refresh, which is obvs no good. It might help to put keys in to all relevant 
+sets of child components
+but also I think maybe you need to split the menu component into two, it's one of it's on the intro page and it's another if it's 
+on a reactions page
+because when I knocked out the first li in the set of reaction-page menu links, suddenly it invoked an error in row-of-tubes, with 
+something there being undefined
+
 
 
 

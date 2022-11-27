@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { data } from '../../data';
 import { selectReagent, selectReagentOptions } from './menuSlice';
 
-const Menu = () => {
+const ReactantMenu = () => {
 
     const examBoard = useSelector(state => state.examBoard.selectedExamBoard);
     const reagentOptions = useSelector(state => state.menu.reagentOptions);
@@ -74,7 +74,7 @@ const Menu = () => {
 return (
         <div>
 
-          {/*JSX for intro page menu */}
+          {/*JSX for intro page menu 
   
           <ul className="list-group mt-4 fs-5" style={reactant ? {display: 'none'} : {display: 'flex'}}>
             {reagentOptions.map((reagent) =>               
@@ -94,10 +94,10 @@ return (
                </li>)
             )}            
           </ul>
-
+*/}
         {/*JSX for reaction pages menu */}
 
-          <ul className="list-group list-group-horizontal mt-5 fs-5" style={reactant ? {display: 'flex'} : {display: 'none'}}>
+          <ul className="list-group list-group-horizontal mt-5 fs-5" >
             <li className="list-group-item bg-light w-50" key={menuWriter(reactant, 'back').id}><NavLink className="d-block text-decoration-none" to={menuWriter(reactant, 'back').path}  onClick={() => dispatch(selectReagent(menuWriter(reactant, 'back')))}><i className="mdi mdi-chevron-left"></i>Previous section: <strong>{menuWriter(reactant, 'back').linkText ? menuWriter(reactant, 'back').linkText : menuWriter(reactant, 'back').name}</strong></NavLink></li>
             <li className="list-group-item bg-light w-50" key={menuWriter(reactant, 'forward').id}><NavLink className="d-block text-decoration-none text-end" to={menuWriter(reactant, 'forward').path} onClick={() => dispatch(selectReagent(menuWriter(reactant, 'forward')))}>Next section: <strong>{menuWriter(reactant, 'forward').linkText ? menuWriter(reactant, 'forward').linkText : menuWriter(reactant, 'forward').name}</strong><i className="mdi mdi-chevron-right"></i></NavLink></li>
           </ul>
@@ -107,6 +107,6 @@ return (
 
 }
 
-export default Menu;
+export default ReactantMenu;
 
-              
+              //style={reactant ? {display: 'flex'} : {display: 'none'}}

@@ -1,6 +1,7 @@
 import {ExamBoards} from '../../features/examBoards/ExamBoards';
 import React from 'react';
 import '../../app/App.css';
+import IntroMenu from '../../features/menu/IntroMenu';
 
 
 const Introduction = () => {
@@ -12,6 +13,7 @@ const Introduction = () => {
                 all of the information to memory.
             </p>
            <ExamBoards />
+           <IntroMenu />
         </div>
     )
 }

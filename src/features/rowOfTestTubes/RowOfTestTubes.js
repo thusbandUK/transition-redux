@@ -9,7 +9,7 @@ import { selectUnreactedMetals, showProducts, reset } from './rowOfTestTubesSlic
 import { useParams } from 'react-router-dom';
 import '../../app/App.css';
 
-const RowOfTubes = (props) => {
+const RowOfTubes = () => {
   const examBoard = useSelector(state => state.examBoard.selectedExamBoard);
   const selectedReagent = useSelector(state => state.menu.selectedReagent);
   const dispatch = useDispatch();

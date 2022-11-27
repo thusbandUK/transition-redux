@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import { Outlet } from "react-router-dom";
-import Menu from '../features/menu/Menu';
+//import Menu from '../features/menu/Menu';
 import Header from '../components/headerAndFooter/header';
 
 
@@ -24,8 +24,9 @@ function App(props) {
           
           </div>          
           <Outlet />
+           {/* 
           <Menu />
-
+*/}
         </div>
       </section>
       
