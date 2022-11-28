@@ -1,26 +1,9 @@
 
 POINTS TO ADDRESS:
 
-save the store
+restore the single menu component instead of the split component?
 
-so see below (menu) it crashes because the store empties
-
-see this link: https://www.npmjs.com/package/redux-persist
-and this link: https://stackoverflow.com/questions/37195590/how-can-i-persist-redux-state-tree-on-refresh
-
-makes sense really, you have to inform react/redux if you want the store to be maintained on refresh, so, figure how to do that 
-and do it
-
-
-menu
-basically on any reactions page it crashes if you click refresh, which is obvs no good. It might help to put keys in to all relevant 
-sets of child components
-but also I think maybe you need to split the menu component into two, it's one of it's on the intro page and it's another if it's 
-on a reactions page
-because when I knocked out the first li in the set of reaction-page menu links, suddenly it invoked an error in row-of-tubes, with 
-something there being undefined
-
-
+write localStorage tests using: https://stackoverflow.com/questions/65282181/how-to-use-jest-for-testing-a-react-component-with-localstorage
 
 
 
@@ -79,6 +62,32 @@ https://getbootstrap.com/docs/4.4/getting-started/theming/
 <2 - on overriding the link colors ENDS>
 
 LINK FROM PREVIOUS ISSUES:
+
+<Storing and rehydrating the store>
+
+method finally implemented:
+
+https://stackoverflow.com/questions/68421040/local-storage-using-redux-toolkit
+
+save the store
+
+so see below (menu) it crashes because the store empties
+
+see this link: https://www.npmjs.com/package/redux-persist
+and this link: https://stackoverflow.com/questions/37195590/how-can-i-persist-redux-state-tree-on-refresh
+
+makes sense really, you have to inform react/redux if you want the store to be maintained on refresh, so, figure how to do that 
+and do it
+
+oof, so hard to decide what to do...
+see this link: https://stackoverflow.com/questions/68421040/local-storage-using-redux-toolkit
+It looks good. I think it'll include a complete solution using only redux toolkit 
+
+I feel like this could be a later thing?
+https://blog.logrocket.com/persist-state-redux-persist-redux-toolkit-react/
+
+<Storing and rehydrating the store ENDS>
+
 
 
 new links:
