@@ -3,10 +3,10 @@
 export const data = {
     
     examBoards: [
-        'AQA',
-        'Edexcel',
-        'OCRA',
-        'OCRB'
+        {id: 12, name: 'AQA'},
+        {id: 13, name: 'Edexcel'},
+        {id: 14, name: 'OCRA'},
+        {id: 15, name: 'OCRB'}
     ],
     reagentOptions: [
         {id: 1, name: 'concentrated hydrochloric acid', path: '/concentrated_hydrochloric_acid', true: ['AQA', 'OCRA', 'OCRB', 'Edexcel'], link: 'images/HCl-bottle.png', altText: "a bottle of hydrochloric acid"},

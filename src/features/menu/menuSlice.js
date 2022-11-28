@@ -4,7 +4,7 @@ export const menuSlice = createSlice({
     name: "menu",
     initialState: {
       reagentOptions: [],
-      selectedReagent: {},
+      selectedReagent: 'no reagent selected yet',
       
     },
     reducers: {
