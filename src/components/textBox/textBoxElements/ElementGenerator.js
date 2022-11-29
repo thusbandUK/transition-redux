@@ -1,14 +1,14 @@
 import { createElement } from 'react';
 import '../../../app/App.css';
 
-function TypeSelector(props) {
+function ElementGenerator(props) {
 
     
 const formContent = () => {
     
     
     
-    if (props.type === 'form'){           
+    if ((props.type === 'form') || (props.type === 'div')){           
         let formElements = props.content.map((formElementDetails) => (
             createElement(formElementDetails.formElement, {...formElementDetails.props, style: {display: 'inline'}}, formElementDetails.formElementContent)           
         )) 
@@ -25,9 +25,4 @@ const formContent = () => {
   );
 }
 
-export default TypeSelector;
-
-/*
-
-
-*/
+export default ElementGenerator;

@@ -1,0 +1,41 @@
+|
+all text data
+      |
+      intro data
+           p1
+           |
+           p2
+           |
+           p3
+
+
+
+      HCl data
+           P1
+           |
+           ...
+
+
+
+      NaOH data
+
+
+
+      NH3 data
+
+
+
+      Na2CO3 data 
+
+
+      so the benefit of an array style for the different pages that go in each text box is that you can use array.length to
+      tell the computer how many slides it should render before the right chevron disables
+
+      buuuuut I'm not sure how that's going to work render wise because it has to render between different text boxes
+
+      but of course you can always use an n + 1 approach to page forwarding, upto a maximum of array length
+
+      now if you use separate object entries for each page, you can definitely write code, I mean it could be as simple as
+      some kind of ternary operator, like, once the key with the n+1 number doesn't exist, it's time to disable the chevron...
+
+      if you map the array, what are you saying? there's this many pages

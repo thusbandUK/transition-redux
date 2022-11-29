@@ -1,6 +1,10 @@
 
 POINTS TO ADDRESS:
 
+in the element generator, I think you can figure out a way to combine two sets of props via {...notation}
+because a) the image is at 100% and it wants to be at 40% and b) you need a way to be able to add one off instructions (like image size)
+
+
 restore the single menu component instead of the split component?
 
 write localStorage tests using: https://stackoverflow.com/questions/65282181/how-to-use-jest-for-testing-a-react-component-with-localstorage

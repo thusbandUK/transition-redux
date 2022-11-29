@@ -1,0 +1,329 @@
+/* OLD styles not currently in use */
+.text-box {
+    /* height: 480px; */
+    /* width: 92%; */
+    /* margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 2%; */
+    /* font-family: "Arial Black";
+    background-color: #EE4E34;
+    color: #FCEDDA;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px; */
+    overflow-y: auto;
+    /* padding: 2%; */
+}
+
+img#intro-answer-sidenote {
+    height: 10%;
+}
+
+#intro-answer-sidenote {
+    display: inline-flex;
+    height: 40%;
+}
+
+#sidenote {
+    padding-left: 5%;
+    overflow-y: auto;
+}
+
+/*observations*/
+
+.observations-input {
+    padding: 1%;    
+    vertical-align: top;
+}
+
+    .observations-input input {
+        font-family: 'Pacifico', cursive;
+        /*font-family: 'Rock Salt', cursive;*/
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        line-height: 0px;
+        font-size: 14px;
+    }
+
+
+.observations-input td, th {
+    padding: 1%;
+    vertical-align: top;
+    border: none;
+}
+
+    .observations-input th {
+        border-bottom-color: #EE4E34;
+    }
+
+    .observations-input td:nth-child(2) {
+        padding-left: 4%;
+    }
+    /*observations form*/
+    /*
+.observation-input {
+    position: absolute;
+    margin-left: 2%;
+}
+    */
+    #observations-table {
+        width: 100%;
+        /*border: 1px solid;
+    table-layout: fixed;
+*/
+    }
+
+#observations-table th {
+    text-align: left;
+}
+
+    #observations-table td, th {
+        padding: 1%;
+        border-bottom: 1px solid #FCEDDA;
+        vertical-align: top;
+    }
+
+#observations-table td:nth-child(1) {
+    width: 10%;
+}
+
+    #observations-table td:nth-child(2) {
+        width: 35%;
+    }
+
+    #observations-table td:nth-child(3) {
+        width: 40%;
+    }
+
+.display-observation {
+    font-family: 'Pacifico', cursive;    
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 0px;
+    font-size: 14px;
+}
+
+/*Comparison input fields*/
+
+.comparison {
+    display: inline-flex;
+    width: 100%;
+}
+
+/*
+#TB2-display-similarities, #TB2-display-differences {
+    font-family: 'Rock Salt', cursive;
+}
+    */
+
+.similarities textarea, .differences textarea {
+    width: 100%;
+    height: 100px;
+    vertical-align: top;
+    font-family: 'Pacifico', cursive;
+    /*font-family: 'Rock Salt', cursive;*/
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /*interesting, this totally didn't fly in textarea but does in input?? line-height: 0px;*/
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+
+.similarities, .differences {
+    margin-top: 0.2% /*1%*/;
+    width: 48%;
+    
+}
+
+.differences {
+    margin-left: 2%;
+}
+
+.display-comparison {
+    display: inline-flex;
+    width: 100%;
+    
+}
+
+.your-comparison {
+    font-family: 'Pacifico', cursive;
+    /*font-family: 'Rock Salt', cursive;*/
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /*interesting, this totally didn't fly in textarea but does in input?? line-height: 0px;*/
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.outside-column {
+    margin-left: 1%;
+}
+
+ul {
+    list-style-position: inside;
+    padding-left: 1%;
+}    
+
+
+.slides-box {
+    height: fit-content;
+    /*height: 520px;*/
+    width: 80%;
+    border: solid;
+    border-color: black;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.buttons {
+    display: inline-flex;
+    /* width: 96%;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    margin-right: 2%; */
+}
+
+.quiz-buttons {
+    display: inline-flex;
+}
+
+
+.spacer {
+    width: 70%;
+    border-bottom-left-radius: 10px;
+    background-color: blue;
+}
+
+/* .back-button {
+    background-color: darkorange;
+    color: white;
+    width: 15%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.next-button {
+    border-bottom-right-radius: 10px;
+    background-color: black;
+    color: deeppink;
+    width: 15%;
+    text-align: center;
+    cursor: pointer;
+} */
+
+/*written response slides*/
+
+.written-response {
+    width: 100%;
+    height: 100px;
+    font-family: 'Pacifico', cursive;
+    /*font-family: 'Rock Salt', cursive;*/
+    text-transform: uppercase;
+    letter-spacing: 2px;    
+    font-size: 14px;
+}
+
+.written-equation-response {
+    width: 100%;
+    height: 100px;
+    font-family: 'Electrolize', sans-serif;
+    font-size: 20px;
+}
+
+.displayed-equation-response {
+    font-family: 'Electrolize', sans-serif;
+    font-size: 20px;
+    background-color: black;
+    outline: 2px solid deeppink;
+    color: deeppink;
+}
+
+.displayed-response {
+    font-family: 'Pacifico', cursive;
+    /*font-family: 'Rock Salt', cursive;*/
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    background-color: black;
+    outline: 2px solid deeppink;
+    color: deeppink;
+}
+
+/*specific instructions*/
+
+/*textbox 6 conc HCl reactions*/
+
+#chloro-exchange-equation {
+    width: 60%;
+    margin-left: 20%;
+}
+
+
+#hydrolysis-mechanism {
+    width: 80%;
+}
+/*
+#TB6-model-similarities {
+    width: 32%;
+}
+    */
+
+#TB6-model-differences {
+    display: inline-flex;
+    /*width: 64%;*/
+}
+/*
+    #TB6-model-differences div {
+        width: 32%;
+    }
+    
+
+.text-box-6-MCQ-formatting {
+    display: inline-flex;
+    width: 100%;
+}
+    
+.TB6-MCQ-observations {
+    width: 40%;
+    
+    margin-left: -80%;
+}
+    */
+
+#text-box-6-MCQ-formatting td {
+    
+    line-height: 30px;
+}
+.question-line td {
+    border-bottom: 1px solid #FCEDDA;
+}
+
+
+#text-box-6-MCQ-formatting td:nth-child(1) {
+    width: 50%;
+}
+
+#text-box-6-MCQ-formatting td:nth-child(2) {
+    width: 35%;
+}
+
+#text-box-6-slide-10, #text-box-3-slide-9, #text-box-4-slide-8, #text-box-5-slide-10, #text-box-7-slide-10, #text-box-2-slide-10 {
+    background-color: black;
+}
+
+#fireworks-and-text {
+    display: inline-flex;
+    
+}
+
+    #fireworks-and-text img {
+        height: 470px;
+    }
+
+    #text-by-fireworks {
+        width: 40%;
+    }
+
+#text-box-7-slide-3-image-text, #text-box-7-slide-6-image-text {
+    display: inline-flex;
+}

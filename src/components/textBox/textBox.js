@@ -1,8 +1,10 @@
 //import './reagent.css';
 //import { useSelector } from 'react-redux';
 import '../../app/App.css';
-//import {textData} from '../../textData';
-import TypeSelector from './textBoxElements/typeSelector';
+import {textData} from '../../textData';
+import ElementGenerator from './textBoxElements/ElementGenerator';
+import DivGenerator from './textBoxElements/DivGenerator';
+import '../../app/styleSlides.css';
 
 const TextBox = (props) => {
 
@@ -10,6 +12,8 @@ const TextBox = (props) => {
 
 
     //const experiment = 'Paragraph';
+
+const page2 = textData.introPage[1].allContent;
 
     const allContent = [
             
@@ -64,68 +68,22 @@ const TextBox = (props) => {
         }
 
     ]
-        
-
-
 
       return (
         <div className="bg-light border p-5 rounded position-relative">
-
-
           
           <div class="text-box">
                     
 
-            {allContent.map((entry) => (
-              <TypeSelector
+            {page2.map((entry) => (
+              <ElementGenerator
               type={entry.type}
               content={entry.content}
               props={entry.props}
               />
             ))}
-
-{/**
- * 
- *  [{formElement: 'input',
-                    props: {type: 'checkbox', id: 'pre-learning-checklist', name: 'pre-learning-checklist', value: 'ligands'},
-                    formElementContent: null
-                    },
-                    {formElement: 'label',
-                    props: {for: 'pre-learning-checklist'},
-                    formElementContent: 'Six aqua ligands bonded via oxygen atoms'
-                    }
-                  ],
- * 
-            <TypeSelector
-            type={allContent[0].type}
-            content={allContent[0].content}
-            />
-
-
-
             
-            {allContent.map((contentEntry) => (
-                contentEntry.title ? <Title title={allContent[0].title} /> : null;
-                contentEntry.paragraph ? allContent[1].paragraph.map((paragraph) => (
-                    <Paragraph paragraph={paragraph}/>
-                )) : null;
-
-            ))}
- 
-            {allContent[0].title ? <Title title={allContent[0].title} /> : null}
-            {allContent[1].paragraph? allContent[1].paragraph.map((paragraph) => (
-                <Paragraph paragraph={paragraph}/>
-            )) : null }
-
-
-            <h2>{allContent[0].title}</h2>
-            {allContent[1].paragraph.map((paragraph) => (
-                <p>{paragraph}</p>
-            ))}
-
-*/}
-            
-          
+            {/*<DivGenerator />*/}
             <nav>
           {/* BF: these are now buttons elements (instead of divs) to ensure they can be focused on using keyboard nabigation only - crucial for accessibility. Also, semnatically they are indeed buttons! */}
               <button class="nav-btn nav-btn__prev" onClick='displayLast(0, {"last page": 3, observation: "", comparison: "", "written response": ""});' id="back-button-0">
