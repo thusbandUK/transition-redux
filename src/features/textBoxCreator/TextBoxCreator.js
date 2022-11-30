@@ -1,7 +1,7 @@
 import TextBox from '../../components/textBox/textBox';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { selectSection, selectPage } from './textBoxCreatorSlice';
+import { selectSection, selectPage, disableLeft, disableRight } from './textBoxCreatorSlice';
 import { textData } from '../../textData';
 //import TextBox from '../../components/textBox/textBox';
 
@@ -30,8 +30,15 @@ const TextBoxCreator = (props) => {
        if (currentPage === 0){
             return;
         } else {
+            if (currentPage === 1){
+                dispatch(disableLeft(true));
+            }
             dispatch(selectPage(currentPage - 1));
         }
+        if (currentPage === lastPage){
+            dispatch(disableRight(false));
+        }
+        
 
     }
 
@@ -40,6 +47,11 @@ const TextBoxCreator = (props) => {
        if (currentPage === lastPage){
             return;
        } else {
+        if (currentPage === (lastPage - 1)){
+            dispatch(disableRight(true));
+        } else if (currentPage === 0){
+            dispatch(disableLeft(false));
+        }
         dispatch(selectPage(currentPage + 1));
     }
         

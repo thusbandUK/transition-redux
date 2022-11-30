@@ -9,7 +9,11 @@ const TextBox = (props) => {
 
   
   const currentSection = useSelector(state => state.textBoxCreator.selectedSection);  
-  const currentPage = useSelector(state => state.textBoxCreator.selectedPage);  
+  const currentPage = useSelector(state => state.textBoxCreator.selectedPage);
+  const leftDisabled = useSelector(state => state.textBoxCreator.leftDisabled); 
+  const rightDisabled = useSelector(state => state.textBoxCreator.rightDisabled); 
+ //alert(leftDisabled);
+  //alert(rightDisabled);
 
   const pages = textData[currentSection][currentPage].allContent;
  //const page2 = textData.introPage[0].allContent;
@@ -47,13 +51,23 @@ const handleRightClick = () => {
             
             <nav>
           {/* BF: these are now buttons elements (instead of divs) to ensure they can be focused on using keyboard nabigation only - crucial for accessibility. Also, semnatically they are indeed buttons! */}
-              <button className="nav-btn nav-btn__prev" onClick={handleLeftClick} id="back-button-0">
-                <i className="mdi mdi-chevron-left"></i>
+              <button 
+              className="nav-btn nav-btn__prev" 
+              onClick={handleLeftClick} 
+              id="back-button-0"
+              
+              >
+                <i className="mdi mdi-chevron-left" disabled={leftDisabled}></i>
                 <span className="visually-hidden">Previous</span>
               </button>
-              <button className="nav-btn nav-btn__next" onClick={handleRightClick} id="next-button-0">
+              <button 
+              className="nav-btn nav-btn__next" 
+              onClick={handleRightClick} 
+              id="next-button-0"
+              
+              >
                 <span className="visually-hidden">Next</span>
-                <i className="mdi mdi-chevron-right"></i>
+                <i className="mdi mdi-chevron-right" disabled={rightDisabled}></i>
               </button>
             </nav>
             </div>
@@ -62,3 +76,6 @@ const handleRightClick = () => {
     };
     
     export default TextBox;
+
+    //disabled={leftDisabled}
+    //disabled={rightDisabled}
