@@ -10,7 +10,13 @@ the chevrons will dispatch information to the state, basically just the id numbe
 textBoxCreator will recall the ID number from the state and render the relevant section of the text box via textBox
 and then you're basically done for the time being
 
-although, other difficulties are going to be the more complicated forms and the multiple choice question
+biggies: 
+1) disable arrow buttons when they're no longer needed (ie clicked all the way right / left)
+2) the multiple choice questions will need a data storage format and a rendering component
+3) selectively rendering text, if you added a key to the object containing each page of data, you can add conditional formatting
+just to say, oh if it says edexcel then blah blah blah, more on which later
+4) individual form for submitting observations (and can organise it so that they can't do the reaction until they've entered observation)
+
 
 
 

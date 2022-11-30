@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import examBoardReducer from '../features/examBoards/examBoardsSlice.js';
 import menuReducer from '../features/menu/menuSlice.js';
+import textBoxCreatorReducer from '../features/textBoxCreator/textBoxCreatorSlice';
 import rowOfTubesReducer from '../features/rowOfTestTubes/rowOfTestTubesSlice';
 import { reHydrateStore, localStorageMiddleware } from '../features/examBoards/examBoardMiddleware';
 
@@ -9,7 +10,8 @@ export default configureStore({
     reducer: {
         examBoard: examBoardReducer,
         menu: menuReducer,
-        rowOfTubes: rowOfTubesReducer
+        rowOfTubes: rowOfTubesReducer,
+        textBoxCreator: textBoxCreatorReducer
     },
     preloadedState: reHydrateStore(),
     middleware: getDefaultMiddleware =>

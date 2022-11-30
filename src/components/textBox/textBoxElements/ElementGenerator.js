@@ -9,7 +9,7 @@ function ElementGenerator(props) {
 const formContent = () => {
   
     
-    if ((props.type === 'form') || (props.type === 'div')){           
+    if ((props.type === 'form') || (props.type === 'div') || (props.type === 'ul')){           
         let formElements = props.content.map((formElementDetails) => (
             createElement(formElementDetails.formElement, formElementDetails.props, formElementDetails.formElementContent)           
         )) 

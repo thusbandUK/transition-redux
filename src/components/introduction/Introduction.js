@@ -2,7 +2,7 @@ import {ExamBoards} from '../../features/examBoards/ExamBoards';
 import React from 'react';
 import '../../app/App.css';
 import IntroMenu from '../../features/menu/IntroMenu';
-import TextBox from '../textBox/textBox';
+import TextBoxCreator from '../../features/textBoxCreator/TextBoxCreator';
 
 
 const Introduction = () => {
@@ -13,10 +13,14 @@ const Introduction = () => {
                 chemistry syllabus. Click the test tubes to add the specified amounts of each reagent. There are also questions to help you commit
                 all of the information to memory.
             </p>
-            {/** */}
-            <TextBox />
+            
+            
+            <div style={{marginTop: '5%'}}>
            <ExamBoards />
-           
+           </div>
+           <div style={{marginTop: '5%'}}>
+           <TextBoxCreator />
+           </div>
            <IntroMenu />
         </div>
     )
