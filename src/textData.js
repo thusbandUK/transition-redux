@@ -27,7 +27,7 @@ export const textData = {
                 type: 'div',
                 content: [
                           {formElement: 'img',
-                           props: {src: 'images/structures/hexaaquacopper.png', className: 'img-fluid', style: {maxWidth: '40%'}},
+                           props: {src: 'images/structures/hexaaquacopper.png', className: 'img-fluid', style: {maxWidth: '40%', height: 'auto'}},
                            formElementContent: null
                           },
                           {formElement: 'p',
@@ -38,43 +38,47 @@ export const textData = {
                 props: {id: "intro-answer-sidenote"}
             },
             {
+                type: 'pTagged',  
+                content: ['Formula: [Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup>'],
+                props: {}
+            },
+            {
                 type: 'p',  
-                content: ['Formula: [Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup>',
-                'Check the boxes for the points you got correct.'],
+                content: ['Check the boxes for the points you got correct.'],
                 props: {}
             },
             {
                 type: 'form',
                 content: [{formElement: 'br'},
                           {formElement: 'input',
-                           props: {key: 1, type: 'checkbox', id: 'pre-learning-checklist', name: 'pre-learning-checklist', value: 'ligands'},
+                           props: {key: 1, type: 'checkbox', id: 'pre-learning-checklist', name: 'pre-learning-checklist', value: 'ligands', style: {display: 'inline'}},
                            formElementContent: null
                           },
                           {formElement: 'label',
-                           props: {key: 2, for: 'pre-learning-checklist'},
+                           props: {key: 2, for: 'pre-learning-checklist', style: {display: 'inline'}},
                            formElementContent: 'Six aqua ligands bonded via oxygen atoms'
                           },
                           {formElement: 'br'},
                           {formElement: 'input',
-                           props: {key: 3, type: 'checkbox', id: 'pre-learning-checklist2', name:'pre-learning-checklist2', value:'brackets'},
+                           props: {key: 3, type: 'checkbox', id: 'pre-learning-checklist2', name:'pre-learning-checklist2', value:'brackets', style: {display: 'inline'}},
                            formElementContent: null
                           },
                           {formElement: 'label',
-                           props: {key: 4, for: 'pre-learning-checklist2'},
+                           props: {key: 4, for: 'pre-learning-checklist2', style: {display: 'inline'}},
                            formElementContent: 'Square brackets with overall charge shown top right'
                           },
                           {formElement: 'br'},
                           {formElement: 'input',
-                           props: {key: 5, type: 'checkbox', id: 'pre-learning-checklist3', name:'pre-learning-checklist3', value:'arrows'},
+                           props: {key: 5, type: 'checkbox', id: 'pre-learning-checklist3', name:'pre-learning-checklist3', value:'arrows', style: {display: 'inline'}},
                            formElementContent: null
                           },
                           {formElement: 'label',
-                           props: {key: 6, for: 'pre-learning-checklist3'},
+                           props: {key: 6, for: 'pre-learning-checklist3', style: {display: 'inline'}},
                            formElementContent: 'Arrow heads point towards central Cu ion to show coordinate bonds'
                           },
                           {formElement: 'br'}
                          ],
-                props: {style: {display: 'block'}}          
+                props: {style: {display: 'inline'}}          
               }
 
         

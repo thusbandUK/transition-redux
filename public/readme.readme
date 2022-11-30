@@ -4,6 +4,15 @@ POINTS TO ADDRESS:
 in the element generator, I think you can figure out a way to combine two sets of props via {...notation}
 because a) the image is at 100% and it wants to be at 40% and b) you need a way to be able to add one off instructions (like image size)
 
+then you need to get the textBoxCreator(slice) logic written. Basically the state should give the id number of the relevant sets of
+text for each text box
+the chevrons will dispatch information to the state, basically just the id number
+textBoxCreator will recall the ID number from the state and render the relevant section of the text box via textBox
+and then you're basically done for the time being
+
+although, other difficulties are going to be the more complicated forms and the multiple choice question
+
+
 
 restore the single menu component instead of the split component?
 

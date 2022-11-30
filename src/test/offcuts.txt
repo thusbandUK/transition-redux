@@ -129,3 +129,58 @@ describe('With React Testing Library', () => {
 });
 
 */
+
+from textBox.js
+const allContent = [
+            
+        {
+            type: 'h2',
+            content: ['What should I be able to do before I start?'],
+            props: {}
+        },
+        {
+            type: 'p',  
+            content: ['Draw a diagram showing the structure of the complex ion formed when copper sulfate is dissolved in distilled water.',
+            'Try drawing the diagram now and then click the next button to check your answer.'],
+            props: {}
+        },
+        {
+          type: 'img',  
+          content: null,
+          props: {src: 'images/select reagent.png'}
+        },
+        {
+          type: 'form',
+          content: [{formElement: 'br'},
+                    {formElement: 'input',
+                     props: {key: 1, type: 'checkbox', id: 'pre-learning-checklist', name: 'pre-learning-checklist', value: 'ligands'},
+                     formElementContent: null
+                    },
+                    {formElement: 'label',
+                     props: {key: 2, for: 'pre-learning-checklist'},
+                     formElementContent: 'Six aqua ligands bonded via oxygen atoms'
+                    },
+                    {formElement: 'br'},
+                    {formElement: 'input',
+                     props: {key: 3, type: 'checkbox', id: 'pre-learning-checklist2', name:'pre-learning-checklist2', value:'brackets'},
+                     formElementContent: null
+                    },
+                    {formElement: 'label',
+                     props: {key: 4, for: 'pre-learning-checklist2'},
+                     formElementContent: 'Square brackets with overall charge shown top right'
+                    },
+                    {formElement: 'br'},
+                    {formElement: 'input',
+                     props: {key: 5, type: 'checkbox', id: 'pre-learning-checklist3', name:'pre-learning-checklist3', value:'arrows'},
+                     formElementContent: null
+                    },
+                    {formElement: 'label',
+                     props: {key: 6, for: 'pre-learning-checklist3'},
+                     formElementContent: 'Arrow heads point towards central Cu ion to show coordinate bonds'
+                    },
+                    {formElement: 'br'}
+                   ],
+          props: {style: {display: 'block'}}          
+        }
+
+    ]

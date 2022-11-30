@@ -3,7 +3,7 @@
 import '../../app/App.css';
 import {textData} from '../../textData';
 import ElementGenerator from './textBoxElements/ElementGenerator';
-import DivGenerator from './textBoxElements/DivGenerator';
+import SubSuperTextGenerator from './textBoxElements/subSuperTextGenerator';
 import '../../app/styleSlides.css';
 
 const TextBox = (props) => {
@@ -15,60 +15,7 @@ const TextBox = (props) => {
 
 const page2 = textData.introPage[1].allContent;
 
-    const allContent = [
-            
-        {
-            type: 'h2',
-            content: ['What should I be able to do before I start?'],
-            props: {}
-        },
-        {
-            type: 'p',  
-            content: ['Draw a diagram showing the structure of the complex ion formed when copper sulfate is dissolved in distilled water.',
-            'Try drawing the diagram now and then click the next button to check your answer.'],
-            props: {}
-        },
-        {
-          type: 'img',  
-          content: null,
-          props: {src: 'images/select reagent.png'}
-        },
-        {
-          type: 'form',
-          content: [{formElement: 'br'},
-                    {formElement: 'input',
-                     props: {key: 1, type: 'checkbox', id: 'pre-learning-checklist', name: 'pre-learning-checklist', value: 'ligands'},
-                     formElementContent: null
-                    },
-                    {formElement: 'label',
-                     props: {key: 2, for: 'pre-learning-checklist'},
-                     formElementContent: 'Six aqua ligands bonded via oxygen atoms'
-                    },
-                    {formElement: 'br'},
-                    {formElement: 'input',
-                     props: {key: 3, type: 'checkbox', id: 'pre-learning-checklist2', name:'pre-learning-checklist2', value:'brackets'},
-                     formElementContent: null
-                    },
-                    {formElement: 'label',
-                     props: {key: 4, for: 'pre-learning-checklist2'},
-                     formElementContent: 'Square brackets with overall charge shown top right'
-                    },
-                    {formElement: 'br'},
-                    {formElement: 'input',
-                     props: {key: 5, type: 'checkbox', id: 'pre-learning-checklist3', name:'pre-learning-checklist3', value:'arrows'},
-                     formElementContent: null
-                    },
-                    {formElement: 'label',
-                     props: {key: 6, for: 'pre-learning-checklist3'},
-                     formElementContent: 'Arrow heads point towards central Cu ion to show coordinate bonds'
-                    },
-                    {formElement: 'br'}
-                   ],
-          props: {style: {display: 'block'}}          
-        }
-
-    ]
-
+    
       return (
         <div className="bg-light border p-5 rounded position-relative">
           
@@ -76,6 +23,12 @@ const page2 = textData.introPage[1].allContent;
                     
 
             {page2.map((entry) => (
+              entry.type === 'pTagged' ?
+              <SubSuperTextGenerator 
+              type={entry.type}
+              content={entry.content}
+              props={entry.props}/>
+              :
               <ElementGenerator
               type={entry.type}
               content={entry.content}
@@ -83,7 +36,7 @@ const page2 = textData.introPage[1].allContent;
               />
             ))}
             
-            {/*<DivGenerator />*/}
+            
             <nav>
           {/* BF: these are now buttons elements (instead of divs) to ensure they can be focused on using keyboard nabigation only - crucial for accessibility. Also, semnatically they are indeed buttons! */}
               <button class="nav-btn nav-btn__prev" onClick='displayLast(0, {"last page": 3, observation: "", comparison: "", "written response": ""});' id="back-button-0">
@@ -101,3 +54,7 @@ const page2 = textData.introPage[1].allContent;
     };
     
     export default TextBox;
+
+    /*
+    
+    */

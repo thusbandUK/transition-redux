@@ -3,18 +3,19 @@ import '../../../app/App.css';
 
 function ElementGenerator(props) {
 
-    
+  //content generator for forms and divs  
+
+
 const formContent = () => {
-    
-    
+  
     
     if ((props.type === 'form') || (props.type === 'div')){           
         let formElements = props.content.map((formElementDetails) => (
-            createElement(formElementDetails.formElement, {...formElementDetails.props, style: {display: 'inline'}}, formElementDetails.formElementContent)           
+            createElement(formElementDetails.formElement, formElementDetails.props, formElementDetails.formElementContent)           
         )) 
         return formElements;        
     } else {
-        return props.content;
+      return props.content;
     }
 } 
 
@@ -26,3 +27,4 @@ const formContent = () => {
 }
 
 export default ElementGenerator;
+
