@@ -1,6 +1,26 @@
 
 POINTS TO ADDRESS:
 
+I think quite large structural revisions need to take place in the text-generation logic
+it doesn't make too much sense to have the subSuperTextGenerator.js in a ternary operator with ElementGenerator because the whole
+point of ElementGenerator is to process the different kinds of input and render output accordingly
+but the reason why subSuperTextGenerator went where it did was because ElementGenerator has a function for the content part of the
+createElement function only, whereas if a single function output type, props and content then SSTG could go there
+it seems like the variableContent logic needs to be furthest upstream? Why because having processed it for the output, that output
+still needs to be processed for render, because a variety of different elements can have variableContent, incl h2, p etc.
+
+I think what happens is you need to call a function in the textBox component when the incoming content is being mapped
+call the function to make a copy of the array being mapped, in the copy you can overwrite the content for any entries
+with dynamic content and then feed the copy through something similar to the existing architecture
+
+actually I think you can keep most of it as is, just do the above in textBox where the comments indicate and see what's what, use
+the code in 
+
+You're also going to have to fix the store rehydration logic because it's permanently stuck in a bad way
+
+And also you might have some glitches in variableTextGenerator that could throw an error
+
+
 in the element generator, I think you can figure out a way to combine two sets of props via {...notation}
 because a) the image is at 100% and it wants to be at 40% and b) you need a way to be able to add one off instructions (like image size)
 

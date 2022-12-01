@@ -18,6 +18,13 @@ const TextBox = (props) => {
   const pages = textData[currentSection][currentPage].allContent;
  //const page2 = textData.introPage[0].allContent;
 
+/*
+add the function here that rewrites the copy of pages and instead of mapping pages directly
+map the callback function of the copy of pages
+
+*/
+
+
 
 const handleLeftClick = () => {
   props.handleLeftClick();
@@ -55,19 +62,19 @@ const handleRightClick = () => {
               className="nav-btn nav-btn__prev" 
               onClick={handleLeftClick} 
               id="back-button-0"
-              
+              disabled={leftDisabled}
               >
-                <i className="mdi mdi-chevron-left" disabled={leftDisabled}></i>
+                <i className="mdi mdi-chevron-left" ></i>
                 <span className="visually-hidden">Previous</span>
               </button>
               <button 
               className="nav-btn nav-btn__next" 
               onClick={handleRightClick} 
               id="next-button-0"
-              
+              disabled={rightDisabled}
               >
                 <span className="visually-hidden">Next</span>
-                <i className="mdi mdi-chevron-right" disabled={rightDisabled}></i>
+                <i className="mdi mdi-chevron-right" ></i>
               </button>
             </nav>
             </div>
