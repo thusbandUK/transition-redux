@@ -1,13 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const initialState = {      
+  selectedSection: 'introPage',
+  selectedPage: 1,
+  leftDisabled: true,
+  rightDisabled: false
+}
+
+
 export const textBoxCreatorSlice = createSlice({
     name: "textBoardCreator",
-    initialState: {      
-      selectedSection: '',
-      selectedPage: 0,
-      leftDisabled: true,
-      rightDisabled: false
-    },
+    initialState: initialState,
     reducers: {
       selectSection: (state, action) => {
         state.selectedSection = action.payload;                
@@ -20,7 +23,10 @@ export const textBoxCreatorSlice = createSlice({
       },
       disableRight: (state, action) => {
         state.rightDisabled = action.payload; 
-      }       
+      }, 
+      reset: (state) => {
+        state = initialState;
+      ;}       
     },
   });
 
@@ -28,7 +34,8 @@ export const textBoxCreatorSlice = createSlice({
     selectSection,
     selectPage, 
     disableLeft,
-    disableRight
+    disableRight,
+    reset
  } = textBoxCreatorSlice.actions;
  
  export default textBoxCreatorSlice.reducer;

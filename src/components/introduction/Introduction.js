@@ -1,11 +1,18 @@
 import {ExamBoards} from '../../features/examBoards/ExamBoards';
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../../app/App.css';
 import IntroMenu from '../../features/menu/IntroMenu';
 import TextBoxCreator from '../../features/textBoxCreator/TextBoxCreator';
+import { useSelector } from 'react-redux';
+//import { getState } from 'react';
 
 
 const Introduction = () => {
+    const examBoard = useSelector(state => state.examBoard.selectedExamBoard);
+
+    
+
+    //alert(getState());
     return (
         <div >
             <p className="fs-5">
@@ -19,7 +26,7 @@ const Introduction = () => {
            <ExamBoards />
            </div>
            <div style={{marginTop: '5%'}}>
-           <TextBoxCreator />
+           {examBoard ? <TextBoxCreator /> : null} 
            </div>
            <IntroMenu />
         </div>

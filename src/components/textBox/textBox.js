@@ -2,12 +2,17 @@ import '../../app/App.css';
 import { textData } from '../../textData';
 import ElementGenerator from './textBoxElements/ElementGenerator';
 import SubSuperTextGenerator from './textBoxElements/subSuperTextGenerator';
-import { useSelector } from 'react-redux';
+import VariableTextCreator from './variableTextCreator';
+import { useSelector, useDispatch } from 'react-redux';
 import '../../app/styleSlides.css';
+import { useEffect } from 'react';
+//import { selectSection, selectPage, disableRight, disableLeft } from '../../features/textBoxCreator/textBoxCreatorSlice';
+//import { selectPage, disableLeft, disableRight } from '../../features/textBoxCreator/textBoxCreatorSlice';
 
 const TextBox = (props) => {
 
-  
+  //const dispatch = useDispatch();
+  const examBoard = useSelector(state => state.examBoard.selectedExamBoard);
   const currentSection = useSelector(state => state.textBoxCreator.selectedSection);  
   const currentPage = useSelector(state => state.textBoxCreator.selectedPage);
   const leftDisabled = useSelector(state => state.textBoxCreator.leftDisabled); 
@@ -15,17 +20,39 @@ const TextBox = (props) => {
  //alert(leftDisabled);
   //alert(rightDisabled);
 
-  const pages = textData[currentSection][currentPage].allContent;
- //const page2 = textData.introPage[0].allContent;
+  
 
+//this needs to be in the state, not the contents of the object in textData but the path to it, no that doesn't work, because you
+//use the same path no matter the examBoard, hmm... what if you had an entry in the textBox creator slice that replicated the
+//examBoard bit
+
+
+ //const pages = textData.introPage[0].allContent;
+//alert(pages[0].content);
 /*
 add the function here that rewrites the copy of pages and instead of mapping pages directly
 map the callback function of the copy of pages
 
 */
+const pages = textData[currentSection][currentPage].allContent;
+let copyOfPages = VariableTextCreator(pages, examBoard);
+//alert(copyOfPages[0].content);
 
+useEffect(() => {
+ //alert('use effect worked');
+  //const pages = textData[currentSection][currentPage].allContent;
+  //let copyOfPages = VariableTextCreator(pages, examBoard);
+  copyOfPages = VariableTextCreator(pages, examBoard);
+  //dispatch(selectSection('introPage'));
+  //dispatch(selectPage(0));
+  //dispatch(disableRight(false));
+  //dispatch(disableLeft(true));
 
+//this makes a new copy but you would need this page to rerender which this won't do unless it updates state in someway
 
+}, [examBoard])
+
+/**/
 const handleLeftClick = () => {
   props.handleLeftClick();
 }
@@ -41,7 +68,7 @@ const handleRightClick = () => {
           <div className="text-box">
                     
 
-            {pages.map((entry) => (
+            {copyOfPages.map((entry) => (
               entry.type === 'pTagged' ?
               <SubSuperTextGenerator 
               type={entry.type}

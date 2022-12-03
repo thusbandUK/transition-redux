@@ -7,6 +7,7 @@ the incoming data and see whether variable is true or not. If it is it needs to 
 */
 
 //if (Object.keys(x.content).includes('staticContent'))
+/*
 
 const exemplarObject = {id: 18, variable: true, allContent: [
     {

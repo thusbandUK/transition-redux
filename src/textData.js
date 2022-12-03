@@ -85,7 +85,21 @@ export const textData = {
               {id: 18, allContent: [
                 {
                     type: 'h2',
-                    content: 'The five starting solutions',
+                    content: {            
+                        staticContent: {
+                            openingString: 'The ',
+                            closingString: ' starting solutions'
+                        },
+                        dynamicContent: {
+                            
+                                AQA: 'five',
+                                Edexcel: 'five',
+                                OCRA: 'five',
+                                OCRB: 'three'
+                            
+                        }
+                        
+                    },
                     props: {key: 18.1}
                 },
                 {
@@ -135,8 +149,38 @@ export const textData = {
         ]
         }
 
-           
-        
+
+
+        //'The five starting solutions'
+/*
+{            
+                staticContent: {
+                    openingString: 'The ',
+                    closingString: ' starting solutions'
+                },
+                dynamicContent: {
+                    
+                        AQA: 'five',
+                        Edexcel: 'five',
+                        OCRA: 'five',
+                        OCRB: 'three'
+                    
+                }
+                
+            }
+*/
+
+
+    /*       
+        const content = {
+            staticContent: `The ${numberOfStartingSolutions} starting solutions`,
+            dynamicContent: {                 
+                    AQA: 'five',
+                    Edexcel: 'five',
+                    OCRA: 'five',
+                    OCRB: 'three'                
+            }
+        },
     
 
 

@@ -31,7 +31,7 @@ export const rowOfTestTubesSlice = createSlice({
       },
       reset: (state) => {
         state.products = products;
-      ;},
+      },
     }
     
   });

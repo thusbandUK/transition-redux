@@ -8,7 +8,10 @@ export const localStorageMiddleware = ({ getState }) => {
   };
   
   export const reHydrateStore = () => {
-    if (localStorage.getItem('selectedExamBoard') !== null) {
+    if (localStorage.getItem('selectedExamBoard') !== null) {      
       return JSON.parse(localStorage.getItem('selectedExamBoard')); // re-hydrate the store
     }
   };
+
+
+  //you could add the page of the text box
