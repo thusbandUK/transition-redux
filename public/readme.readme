@@ -1,6 +1,18 @@
 
 POINTS TO ADDRESS:
 
+plan:
+
+in textBoxCreator, codes stays the same, pass entry.type, entry.props, entry.content
+in ElementGenerator, let newType = props.type, newProps = props.props, newContent = props.content
+pass newType, newProps, newContent into the createElement render function
+this goes piece by piece, so every item in the page, h2, (sets of) p, etc, all needs a key value pair saying variableContent true / false
+(that's repetitious, is there a better way? Okay, good news, experiment suggests that if you don't have variableContent: true, like that
+key doesn't exist in an entry, then the logic will ignore it and do the other thing, so you only need to include variableContent: true
+where there's dynamic content, but you don't need variableContent: false for entries with only static content)
+
+
+
 okay, 
 1) make a new branch (off the branch addTextBox) called sth like "overhaul textCreator logic"
 2) add  textBox.js nav buttons to textBoxCreator

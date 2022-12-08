@@ -85,7 +85,7 @@ export const textData = {
               {id: 18, allContent: [
                 {
                     type: 'h2',
-                    content: {            
+                    content: 'CHANGE ME BACK!' /*{            
                         staticContent: {
                             openingString: 'The ',
                             closingString: ' starting solutions'
@@ -99,7 +99,7 @@ export const textData = {
                             
                         }
                         
-                    },
+                    }*/,
                     props: {key: 18.1}
                 },
                 {

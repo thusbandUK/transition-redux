@@ -1,9 +1,13 @@
-import TextBox from '../../components/textBox/textBox';
+//import TextBox from '../../components/textBox/textBox';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { selectSection, selectPage, disableLeft, disableRight, reset } from './textBoxCreatorSlice';
 import { textData } from '../../textData';
 //import TextBox from '../../components/textBox/textBox';
+import { textDataTemp } from '../../textDataTemp';
+import ElementGenerator from './textBoxElements/ElementGenerator';
+import SubSuperTextGenerator from './textBoxElements/subSuperTextGenerator';
+import VariableTextCreator from './textBoxElements/variableTextCreator';
 
 
 const TextBoxCreator = (props) => {
@@ -12,7 +16,16 @@ const TextBoxCreator = (props) => {
     const reagentOptions = useSelector(state => state.menu.reagentOptions);    
     const currentSection = useSelector(state => state.textBoxCreator.selectedSection);
     let currentPage = useSelector(state => state.textBoxCreator.selectedPage);
-    
+  const leftDisabled = useSelector(state => state.textBoxCreator.leftDisabled); 
+  const rightDisabled = useSelector(state => state.textBoxCreator.rightDisabled); 
+
+  const pages = textData[currentSection][currentPage].allContent;
+ // let copyOfPages = VariableTextCreator(pages, examBoard);
+
+ const pages2 = textDataTemp.introPage[0].allContent;
+
+
+
     //I think if you make the below more dependent on the state, that will help solve things, for why?
     //if you've got the initial state, which you will have, it'll know what page to load and if the localStorage has different
     //data, it will load that. Basically, synch this with the state
@@ -88,11 +101,53 @@ const TextBoxCreator = (props) => {
     }
 
     return(
-        <TextBox
-        handleLeftClick={leftClick}
-        handleRightClick={rightClick} 
-        />
+        <div className="bg-light border p-5 rounded position-relative">
+          
+          <div className="text-box">
+                    
+{/** */}
+            {pages2.map((entry) => (
+              
+              <ElementGenerator
+              type={entry.type}
+              content={entry.content}
+              props={entry.props}
+              
+              examBoard={examBoard}
+              
+              
+              />
+            ))}
+            
+            
+            <nav>
+          {/* BF: these are now buttons elements (instead of divs) to ensure they can be focused on using keyboard nabigation only - crucial for accessibility. Also, semnatically they are indeed buttons! */}
+              <button 
+              className="nav-btn nav-btn__prev" 
+              onClick={leftClick} 
+              id="back-button-0"
+              disabled={leftDisabled}
+              >
+                <i className="mdi mdi-chevron-left" ></i>
+                <span className="visually-hidden">Previous</span>
+              </button>
+              <button 
+              className="nav-btn nav-btn__next" 
+              onClick={rightClick} 
+              id="next-button-0"
+              disabled={rightDisabled}
+              >
+                <span className="visually-hidden">Next</span>
+                <i className="mdi mdi-chevron-right" ></i>
+              </button>
+            </nav>
+            </div>
+        </div>
+        
     )
 }
 
 export default TextBoxCreator;
+
+//variableContent={entry.variableContent}
+//parent={entry.parent}
