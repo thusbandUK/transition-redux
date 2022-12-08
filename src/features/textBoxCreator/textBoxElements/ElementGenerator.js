@@ -12,7 +12,7 @@ function ElementGenerator(props) {
 
  let newType = props.type;
  let newProps = props.props;
- //let newContent = props.content;
+ let newContent = props.content;
   
   const examBoard = props.examBoard;
 /*
@@ -39,38 +39,61 @@ if variableContent === stringSplice -->
 */
 const processContent = () => {
   //alert('function called');
-  let newContent = props.content;
+  //let newContent = props.content;
   const itemToProcess = props.content;
   //alert(itemToProcess);
   //if (props.variableContent)
+
+
+  //to generate single string which splices content filtered by examboard
+
   if (newProps.variableContent === 'stringSplicer'){
     
     const splicedString = stringSplicer(itemToProcess, examBoard);
     //alert(splicedString);
     newContent = splicedString;
+    return newType;
   } 
+
+
+  //to filter eg: a set of li elements by examboard
+
   if (newProps.variableContent === 'filter by exam board' ){
     let objectsToInclude = filterByExamBoard(props.content, examBoard);
     //alert(objectsToInclude[0]);
-    let elementsToRender = objectsToInclude.map((childElementDetails) => (  //objectsToInclude
-
-    /*
-    so this bit could be delayed because filtering by the exam board will produce an array but there will also be arrays
-    to render produced by elements that don't have variable content so you could just feed the array from this section into the
-    next part 
-     */
-      createElement(childElementDetails.childType, childElementDetails.childProps, childElementDetails.childContent)           
-  )) 
-  return newContent = elementsToRender;  
+    let elementsToRender = objectsToInclude.map((childElementDetails) => {  
+      if (childElementDetails.childProps.tagged === true){
+        const arrayOfTaggedElements = formatSubSuperScript(childElementDetails.childContent);
+        return createElement(childElementDetails.childType === 'p' ? 'div' : childElementDetails.childType, childElementDetails.childProps, arrayOfTaggedElements)
+      } else { 
+        return createElement(childElementDetails.childType, childElementDetails.childProps, childElementDetails.childContent) }          
+    }) 
+  newContent = elementsToRender;  
+  return newType;
     
   }
+
+  
+  //to create an element with children, eg: div / form / ul and populate the children elements
+
   if (newProps.parent === true){
     
-    let childrenToRender = newContent.map((childElementDetails) => (
-      createElement(childElementDetails.childType, childElementDetails.childProps, childElementDetails.childContent)
-  ))
-  return newContent = childrenToRender;
+    let childrenToRender = newContent.map((childElementDetails) => {
+      if (childElementDetails.childProps.tagged === true){
+        const arrayOfTaggedElements = formatSubSuperScript(childElementDetails.childContent);
+        return createElement(childElementDetails.childType === 'p' ? 'div' : childElementDetails.childType, childElementDetails.childProps, arrayOfTaggedElements)
+        //return 'hello Joe!'
+      } else { 
+        return createElement(childElementDetails.childType, childElementDetails.childProps, childElementDetails.childContent) }          
+    })
+  newContent = childrenToRender;
+  return newType;
   }
+
+  
+  //receives a single string with <sub> / <super> tags returns single element w no children, eg: li or div in place of p which should not 
+  //be a parent
+
   if (newProps.tagged === true){
     
     const arrayOfObjects = formatSubSuperScript(props.content);
@@ -79,14 +102,17 @@ const processContent = () => {
       arrayOfObjects.forEach((objectOfTaggedContent) => {
         processedArray.push(createElement(objectOfTaggedContent.newType, {...objectOfTaggedContent.newProps, style: {display: 'inline'}}, objectOfTaggedContent.newContent));
       })*/
-      newType = 'div'
+      
       //return newContent = processedArray;
-      return newContent = arrayOfObjects;
+      newContent = arrayOfObjects;
+      return newType = 'div';
   
     
   }
 
-return newContent;
+//if none of the if clauses apply
+
+return newType;
 }
 /*
 const formContent = () => {
@@ -103,9 +129,9 @@ const formContent = () => {
 } 
 */
   return createElement(
-    newType,
+    processContent(),    
     newProps,
-    processContent()    
+    newContent    
   );
 }
 

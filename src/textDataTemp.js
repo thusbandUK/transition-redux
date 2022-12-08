@@ -4,14 +4,14 @@ export const textDataTemp = {
             {
                 type: 'h2',
                 
-                content: {            
+                content: /*'hello joe!',*/{            
                     staticContent: 'The [REPLACE TEXT] solutions.',            
                     dynamicContent: [
                         {string: 'five', true: ['AQA', 'Edexcel', 'OCRA']},
                         {string: 'three', true: ['OCRB']},
                     ]
                 },
-                props: {key: 18.1, variableContent: 'stringSplicer'}
+                props: {key: 18.1, variableContent: 'stringSplicer'/**/}
             },
             {
                 type: 'h2',
@@ -34,8 +34,8 @@ export const textDataTemp = {
                            childContent: 'hexaquairon(II): green solution'                           
                           },
                           {childType: 'li',
-                           childProps: {true: ['AQA', 'OCRA', 'OCRB', 'Edexcel']},
-                           childContent: 'hexaaquairon(III): pale yellow (or violet) solution'                           
+                           childProps: {true: ['AQA', 'OCRA', 'OCRB', 'Edexcel'], tagged: true},
+                           childContent: 'Formula: [Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup>'                           
                           },
                           {childType: 'li',
                            childProps: {true: ['AQA']},
@@ -69,16 +69,18 @@ export const textDataTemp = {
             },
             {
                 type: 'form',                
-                content: [{childType: 'br'},
+                content: [{childType: 'br',
+                           childProps: {}},
                           {childType: 'input',
                            childProps: {key: 1, type: 'checkbox', id: 'pre-learning-checklist', name: 'pre-learning-checklist', value: 'ligands', style: {display: 'inline'}},
-                           childTypeContent: null
+                           childContent: null
                           },
                           {childType: 'label',
                            childProps: {key: 2, for: 'pre-learning-checklist', style: {display: 'inline'}},
                            childContent: 'Six aqua ligands bonded via oxygen atoms'
                           },
-                          {childType: 'br'},
+                          {childType: 'br',
+                           childProps: {}},
                           {childType: 'input',
                            childProps: {key: 3, type: 'checkbox', id: 'pre-learning-checklist2', name:'pre-learning-checklist2', value:'brackets', style: {display: 'inline'}},
                            childContent: null
@@ -87,16 +89,18 @@ export const textDataTemp = {
                            childProps: {key: 4, for: 'pre-learning-checklist2', style: {display: 'inline'}},
                            childContent: 'Square brackets with overall charge shown top right'
                           },
-                          {childType: 'br'},
+                          {childType: 'br',
+                           childProps: {}},
                           {childType: 'input',
                            childProps: {key: 5, type: 'checkbox', id: 'pre-learning-checklist3', name:'pre-learning-checklist3', value:'arrows', style: {display: 'inline'}},
                            childContent: null
                           },
                           {childType: 'label',
-                           childProps: {key: 6, for: 'pre-learning-checklist3', style: {display: 'inline'}},
-                           childContent: 'Arrow heads point towards central Cu ion to show coordinate bonds'
+                           childProps: {key: 6, for: 'pre-learning-checklist3', tagged: true, style: {display: 'inline'}},
+                           childContent: 'Formula: [Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup>'
                           },
-                          {childType: 'br'}
+                          {childType: 'br',
+                           childProps: {}}
                          ],
                 props: {style: {display: 'inline'}, key: 17.6, parent: true}          
             }/**/,
@@ -104,7 +108,7 @@ export const textDataTemp = {
                 type: 'p',  
                 content: ['Formula: [Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup>'],
                 props: {key: 17.4, tagged: true}
-            }
+            }/**/
         
             ]
         }
