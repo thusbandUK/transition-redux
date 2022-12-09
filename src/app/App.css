@@ -125,6 +125,16 @@ h1 {
   margin: 0 auto;
 }
 
+#intro-answer-sidenote {
+  display: inline-flex;
+  height: 40%;
+}
+
+#sidenote {
+  padding-left: 5%;
+  overflow-y: auto;
+}
+
 @media only screen and (max-width: 740px) {
   .text-box {
       width: 90%;

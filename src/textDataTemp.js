@@ -1,3 +1,40 @@
+export const MCQData = [
+    {
+        id: 42,
+        question: 'Which of these equations shows a hydrolysis reaction that would produce a precipitate?',
+        options: [
+            {
+                id: 421,
+                optionNumber: 1,
+                optionText: '4[Fe(H<sub>2</sub>O)<sub>4</sub>(OH)<sub>2</sub>] + O<sub>2</sub> &#8594;	 4[Fe(H<sub>2</sub>O)<sub>3</sub>(OH)<sub>3</sub>] + 2H<sub>2</sub>O',
+                feedback: 'Incorrect! Complex product is neutral but this is oxidation.'
+                
+            },
+            {
+                id: 422,
+                optionNumber: 2,
+                optionText: '[Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 2OH<sup>-</sup> &#8594;	 [Fe(H<sub>2</sub>O)<sub>4</sub>(OH)<sub>2</sub>]<sup>+</sup> + 2H<sub>2</sub>O',
+                feedback: 'Incorrect! Complex product is charged so soluble.'
+            },
+            {
+                id: 423,
+                optionNumber: 3,
+                optionText: '[Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 2OH<sup>-</sup> &#8594;	 [Fe(H<sub>2</sub>O)<sub>4</sub>(OH)<sub>2</sub>] + 2H<sub>2</sub>O',
+                feedback: 'Correct! '
+            },
+            {
+                id: 424,
+                optionNumber: 4,
+                optionText: '[Al(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 4OH<sup>-</sup> &#8594;	 [Al(OH)<sub>4</sub>]<sup>-</sup> + 6H<sub>2</sub>O',
+                feedback: 'Incorrect! Complex product is charged so soluble.'
+            }
+        ],
+        correct: 423
+        
+    }
+]
+
+
 export const textDataTemp = {
     introPage: [
         {id: 16, allContent: [
