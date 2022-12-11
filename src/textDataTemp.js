@@ -28,8 +28,39 @@ export const MCQData = [
                 optionText: '[Al(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 4OH<sup>-</sup> &#8594;	 [Al(OH)<sub>4</sub>]<sup>-</sup> + 6H<sub>2</sub>O',
                 feedback: 'Incorrect! Complex product is charged so soluble.'
             }
-        ],
-        correct: 423
+        ]
+        
+    },
+    {
+        id: 43,
+        question: 'Which of these equations shows a hydrolysis reaction that would produce a precipitate?',
+        options: [
+            {
+                id: 431,
+                optionNumber: 1,
+                optionText: ['[Co(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 4Cl<sup>-</sup> &#8652; [CoCl<sub>4</sub>]<sup>2-</sup> + 6H<sub>2</sub>O', 'blue solution to pink precipitate'],
+                feedback: 'Incorrect! Complex product is neutral but this is oxidation.'
+                
+            },
+            {
+                id: 432,
+                optionNumber: 2,
+                optionText: '[Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 2OH<sup>-</sup> &#8594;	 [Fe(H<sub>2</sub>O)<sub>4</sub>(OH)<sub>2</sub>]<sup>+</sup> + 2H<sub>2</sub>O',
+                feedback: 'Incorrect! Complex product is charged so soluble.'
+            },
+            {
+                id: 433,
+                optionNumber: 3,
+                optionText: '[Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 2OH<sup>-</sup> &#8594;	 [Fe(H<sub>2</sub>O)<sub>4</sub>(OH)<sub>2</sub>] + 2H<sub>2</sub>O',
+                feedback: 'Correct! '
+            },
+            {
+                id: 434,
+                optionNumber: 4,
+                optionText: '[Al(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 4OH<sup>-</sup> &#8594;	 [Al(OH)<sub>4</sub>]<sup>-</sup> + 6H<sub>2</sub>O',
+                feedback: 'Incorrect! Complex product is charged so soluble.'
+            }
+        ]
         
     }
 ]

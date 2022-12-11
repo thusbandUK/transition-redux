@@ -41,7 +41,7 @@ and you code the additional functionality to render accordingly
 
     const formSubmit = (event) => {
         //dispatch(displayFeedback(feedbackData));
-        dispatch(selectMCQId(42));
+        dispatch(selectMCQId(43));
         event.preventDefault();
         //console.log(event.target.value)
         const MCQ = MCQData.filter((MCQEntry) => {
@@ -62,7 +62,7 @@ and you code the additional functionality to render accordingly
             onSubmit={formSubmit}
             >
             
-            {MCQData[0].options.map((option) => (
+            {MCQData[1].options.map((option) => (
                   <div 
                   className="form-check"
                   key={option.id}

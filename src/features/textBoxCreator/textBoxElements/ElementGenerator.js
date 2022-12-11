@@ -4,7 +4,7 @@ import filterByExamBoard from './textBoxFunctions/filterByExamBoard';
 import stringSplicer from './textBoxFunctions/stringSplicer';
 import formatSubSuperScript from './textBoxFunctions/formatSubSuperScript';
 import '../../../app/App.css';
-import Arrow from './arrow';
+//import Arrow from './arrow';
 
 
 function ElementGenerator(props) {
