@@ -60,7 +60,8 @@ export const MCQData = [
                 optionText: '[Al(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 4OH<sup>-</sup> &#8594;	 [Al(OH)<sub>4</sub>]<sup>-</sup> + 6H<sub>2</sub>O',
                 feedback: 'Incorrect! Complex product is charged so soluble.'
             }
-        ]
+        ]/*,
+        correct: {id: 433}*/
         
     }
 ]

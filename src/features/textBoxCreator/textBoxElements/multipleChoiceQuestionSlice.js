@@ -3,7 +3,7 @@ import { MCQData } from '../../../textDataTemp';
 
 const initialState = {      
   //CHANGE THIS LATER
-  MCQId: 43,
+  MCQId: 42,
   selectedAnswer: '',
   displayedFeedback: ''  
 }

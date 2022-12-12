@@ -41,9 +41,10 @@ and you code the additional functionality to render accordingly
 
     const formSubmit = (event) => {
         //dispatch(displayFeedback(feedbackData));
-        dispatch(selectMCQId(43));
+        dispatch(selectMCQId(42));
         event.preventDefault();
         //console.log(event.target.value)
+        //const correctAnswerId = 
         const MCQ = MCQData.filter((MCQEntry) => {
             return MCQEntry.id = Number(MCQId);
       })
@@ -62,7 +63,7 @@ and you code the additional functionality to render accordingly
             onSubmit={formSubmit}
             >
             
-            {MCQData[1].options.map((option) => (
+            {MCQData[0].options.map((option) => (
                   <div 
                   className="form-check"
                   key={option.id}
@@ -75,9 +76,11 @@ and you code the additional functionality to render accordingly
                     
                   </div>
                 ))}
-                <div className="col-12">
-                   <button className="btn btn-primary" type="submit" onClick={formSubmit}>Check answer</button>
+                <ul className="list-group list-group-horizontal mt-5 fs-5 d-flex justify-content-center">
+                <div className="excess-or-reset-button-container d-flex justify-content-center">
+                   <button className="excess-button list-group-item w-100 rounded" type="submit" onClick={formSubmit}>Check answer</button>
                 </div>
+                </ul>
                 {feedback ? <p>{feedback[0].feedback}</p> : 'Select an option and then press "Check Answer"'}
             </form>
            
