@@ -13,7 +13,7 @@ export const multipleChoiceQuestionSlice = createSlice({
     name: "multipleChoiceQuestion",
     initialState: {      
       //CHANGE THIS LATER
-      MCQId: 43,
+      //MCQId: 43,
       selectedAnswer: '',
       displayedFeedback: ''  
     },

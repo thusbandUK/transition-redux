@@ -17,6 +17,7 @@ import { createElement } from 'react';
 
 const optionTextGenerator = (MCQDetails, columns) => {
 //console.log(MCQDetails);
+console.log(MCQDetails);
 if (columns === 2){
     //console.log('if function called!')
     //console.log(MCQDetails.optionText);

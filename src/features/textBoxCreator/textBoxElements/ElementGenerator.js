@@ -4,6 +4,7 @@ import filterByExamBoard from './textBoxFunctions/filterByExamBoard';
 import stringSplicer from './textBoxFunctions/stringSplicer';
 import formatSubSuperScript from './textBoxFunctions/formatSubSuperScript';
 import '../../../app/App.css';
+import MultipleChoiceQuestion from './MultipleChoiceQuestion';
 //import Arrow from './arrow';
 
 
@@ -111,6 +112,14 @@ const processContent = () => {
       return newType = 'div';
   
     
+  }
+  if (props.type === 'mcq'){
+    //return createElement('p', {}, 'hello!');
+    //newProps = {}
+    //newContent = 'hello'
+    //console.log(newProps);
+    //console.log(`new content id reads ${newContent.id}`);
+    return newType = MultipleChoiceQuestion
   }
 
 //if none of the if clauses apply

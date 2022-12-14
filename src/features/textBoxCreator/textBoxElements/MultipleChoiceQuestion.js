@@ -7,14 +7,18 @@ import { selectAnswer, displayFeedback, selectMCQId, reset } from './multipleCho
 import optionTextGenerator from './multipleChoiceQuestions/optionTextGenerator';
 
 
-const MultipleChoiceQuestion = () => {
+const MultipleChoiceQuestion = (props) => {
 
     const dispatch = useDispatch();
     const selectedAnswer = useSelector(state => state.multipleChoiceQuestion.selectedAnswer);
-    const MCQId = useSelector(state => state.multipleChoiceQuestion.MCQId);
+    //const MCQId = useSelector(state => state.multipleChoiceQuestion.MCQId);
+    //console.log(props.children.id);
+    const MCQId = props.children.id;
     const feedback = useSelector(state => state.multipleChoiceQuestion.displayedFeedback);
 
     //dispatches selected question to state upon radio click
+    //const correctId = feedback.correct.id;
+    //const selectedId = selectedAnswer.id;
 
     const onValueChange = (event) => {
         dispatch(selectAnswer(event.target.value));
@@ -23,6 +27,19 @@ const MultipleChoiceQuestion = () => {
 
     //checks selected answer against multiple choice data
 
+    const findQuestion = (MCQIdToRender) => {
+      //console.log(MCQIdToRender);
+      let questionToRender;
+      MCQData.forEach((entry) => {
+        if (entry.id === MCQIdToRender){
+          return questionToRender = entry;
+        }
+      })
+      console.log(questionToRender);
+      //console.log(questionToRender.columns)
+      return questionToRender;
+
+    }
 
     const formSubmit = (event) => {
         //dispatch(displayFeedback(feedbackData));
@@ -102,7 +119,7 @@ const MultipleChoiceQuestion = () => {
             onSubmit={formSubmit}
             >
             
-            {MCQData[1].options.map((option) => (
+            {findQuestion(MCQId).options.map((option) => (
                   <div 
                   className="form-check"
                   key={option.id}
@@ -110,7 +127,7 @@ const MultipleChoiceQuestion = () => {
                   >
                     <input name='option' className="form-check-input" type="radio" value={option.id} onChange={onValueChange} id={`flexCheck${option.optionNumber}`} />
                     
-                      {optionTextGenerator(option, MCQData[1].columns)}
+                      {optionTextGenerator(option, findQuestion(MCQId).columns)}
                       
                       
                       

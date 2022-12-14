@@ -232,7 +232,17 @@ export const textDataTemp = {
                 type: 'p',  
                 content: ['Formula: [Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup>'],
                 props: {key: 17.4, tagged: true}
-            }/**/
+            }/**/,/*
+            {
+                type: 'mcq',                
+                props: {key: 1},
+                content: {id: 42}
+            },*/
+            {
+                type: 'mcq',                
+                props: {key: 1},
+                content: {id: 43}
+            }
         
             ]
         }

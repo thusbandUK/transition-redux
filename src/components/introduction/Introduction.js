@@ -26,13 +26,13 @@ const Introduction = () => {
             <div style={{marginTop: '5%'}}>
            <ExamBoards />
            </div>
-           {/** */}
-           <MultipleChoiceQuestion />
-
            {/** 
+           <MultipleChoiceQuestion />
+*/}
+           {/** */ }
            <div style={{marginTop: '5%'}}>
            {examBoard ? <TextBoxCreator /> : null} 
-           </div>*/ }
+           </div>
            <IntroMenu />
         </div>
     )
