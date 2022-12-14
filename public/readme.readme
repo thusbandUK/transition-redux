@@ -1,6 +1,8 @@
 
 POINTS TO ADDRESS:
 
+0.5) In App.css revisit the hover horror show
+0.75) screen reader horror show, getting hydroxide read out as OH
 1) you need to get the multiple choice question code working with the new textGenerator logic
 a) okay, progress made here but it took all morning to figure out how to render arrows, although I did figure out some form logic too
 b) need MultipleChoiceQuestionSlice.js file, form radio inputs will update state, submit form will read state to match answer

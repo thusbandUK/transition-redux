@@ -1,9 +1,10 @@
 import { MCQData } from '../../../textDataTemp';
 import formatSubSuperScript from './textBoxFunctions/formatSubSuperScript';
-import { Fragment } from 'react';
+import { createElement, Fragment } from 'react';
 import '../../../app/App.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectAnswer, displayFeedback, selectMCQId } from './multipleChoiceQuestionSlice';
+import { selectAnswer, displayFeedback, selectMCQId, reset } from './multipleChoiceQuestionSlice';
+import optionTextGenerator from './multipleChoiceQuestions/optionTextGenerator';
 
 
 const MultipleChoiceQuestion = () => {
@@ -41,7 +42,7 @@ and you code the additional functionality to render accordingly
 
     const formSubmit = (event) => {
         //dispatch(displayFeedback(feedbackData));
-        dispatch(selectMCQId(42));
+       // dispatch(selectMCQId(42));
         event.preventDefault();
         //console.log(event.target.value)
         //const correctAnswerId = 
@@ -49,11 +50,25 @@ and you code the additional functionality to render accordingly
             return MCQEntry.id = Number(MCQId);
       })
       
-        const feedbackData = MCQ[0].options.filter((response) => {
+        const feedbackData = MCQ[1].options.filter((response) => {
             //alert(typeof(selectedAnswer));
             return response.id === Number(selectedAnswer);
         })
         dispatch(displayFeedback(feedbackData));
+    }
+
+    const handleReset = () => {
+      
+      dispatch(reset());
+      var ele = document.getElementsByName('option');
+              
+            for(let i = 0; i < ele.length; i++) {
+                if(ele[i].checked)
+                {
+                  ele[i].checked = false;
+                }                
+              }
+             
     }
 
     return (
@@ -63,22 +78,42 @@ and you code the additional functionality to render accordingly
             onSubmit={formSubmit}
             >
             
-            {MCQData[0].options.map((option) => (
+            {MCQData[1].options.map((option) => (
                   <div 
                   className="form-check"
                   key={option.id}
                   
                   >
                     <input name='option' className="form-check-input" type="radio" value={option.id} onChange={onValueChange} id={`flexCheck${option.optionNumber}`} />
-                      <label className="form-check-label" htmlFor={`flexCheck${option.optionNumber}`} >
-                      {formatSubSuperScript(option.optionText)}
-                      </label>
+                    
+                      {optionTextGenerator(option, MCQData[1].columns)}
+                      
+                      
+                      
+                      
+                      
+                      
                     
                   </div>
                 ))}
                 <ul className="list-group list-group-horizontal mt-5 fs-5 d-flex justify-content-center">
                 <div className="excess-or-reset-button-container d-flex justify-content-center">
-                   <button className="excess-button list-group-item w-100 rounded" type="submit" onClick={formSubmit}>Check answer</button>
+                  { !feedback ? 
+                   <button 
+                   className="excess-button list-group-item w-100 rounded" 
+                   type="submit" 
+                   id="checkAnswerButton"
+                   onClick={formSubmit}
+                   disabled={!selectedAnswer}
+                   >Check answer</button> 
+                   :
+                   <button 
+                   className="excess-button list-group-item w-100 rounded" 
+                   type="submit" 
+                   onClick={handleReset}
+                   
+                   >Try again</button>
+                  }
                 </div>
                 </ul>
                 {feedback ? <p>{feedback[0].feedback}</p> : 'Select an option and then press "Check Answer"'}
@@ -88,6 +123,16 @@ and you code the additional functionality to render accordingly
 
 
 {/**
+ * 
+ * 
+ * 
+ * <label className="form-check-label" htmlFor={`flexCheck${option.optionNumber}`} >
+                      {optionTextGenerator(option, MCQData[1].columns)}
+                      
+                      </label>
+ * 
+ * {formatSubSuperScript(option.optionText)}
+ * 
                 <form>
                 <div onChange={onChangeValue}>
                {MCQData[0].options.map((option) => (

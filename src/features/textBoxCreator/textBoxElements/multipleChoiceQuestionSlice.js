@@ -11,7 +11,12 @@ const initialState = {
 
 export const multipleChoiceQuestionSlice = createSlice({
     name: "multipleChoiceQuestion",
-    initialState: initialState,
+    initialState: {      
+      //CHANGE THIS LATER
+      MCQId: 43,
+      selectedAnswer: '',
+      displayedFeedback: ''  
+    },
     reducers: {
       selectMCQId: (state, action) => {
         state.MCQId = action.payload;                
@@ -21,14 +26,19 @@ export const multipleChoiceQuestionSlice = createSlice({
       },
       displayFeedback: (state, action) => {
         state.displayedFeedback = action.payload;
-      }
+      }, 
+      reset: (state) => {
+        state.selectedAnswer = initialState.selectedAnswer;
+        state.displayedFeedback = initialState.displayedFeedback;
+      } 
     },
   });
 
   export const {
     selectMCQId,
     selectAnswer,
-    displayFeedback
+    displayFeedback, 
+    reset
  } = multipleChoiceQuestionSlice.actions;
  
  export default multipleChoiceQuestionSlice.reducer;
