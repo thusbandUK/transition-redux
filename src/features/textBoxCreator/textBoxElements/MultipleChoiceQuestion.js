@@ -14,31 +14,15 @@ const MultipleChoiceQuestion = () => {
     const MCQId = useSelector(state => state.multipleChoiceQuestion.MCQId);
     const feedback = useSelector(state => state.multipleChoiceQuestion.displayedFeedback);
 
-    //const hexString = &#8594;
+    //dispatches selected question to state upon radio click
 
-//separate out the sub super formatting logic from the element generation logic (or you could have a third parameter with
-//if logic that adds additional functionality, yes, this)
-/*
-you make right arrow and reversible arrow component functions that literally just render one thing, an arrow, display: inline
-and you code the additional functionality to render accordingly
-*/
-
-
-    //const iconEntity = <Fragment>{hexString}</Fragment>
-/*
-    const handleClick = (event) => {
-        alert(event.target.value ? event.target.value : 'think its null mate');
-
-    }
-
-    const onChangeValue = (event) => {
-        console.log(event.target.value);
-    }
-*/
     const onValueChange = (event) => {
         dispatch(selectAnswer(event.target.value));
 
     }
+
+    //checks selected answer against multiple choice data
+
 
     const formSubmit = (event) => {
         //dispatch(displayFeedback(feedbackData));
@@ -49,12 +33,18 @@ and you code the additional functionality to render accordingly
         const MCQ = MCQData.filter((MCQEntry) => {
             return MCQEntry.id = Number(MCQId);
       })
-      
-        const feedbackData = MCQ[1].options.filter((response) => {
-            //alert(typeof(selectedAnswer));
-            return response.id === Number(selectedAnswer);
+        let feedbackData = {}; 
+        MCQ[1].options.forEach((response) => {
+          if (response.id === Number(selectedAnswer)){
+            //alert(response.optionNumber);
+            return feedbackData = {comment: response.feedback};
+          }
+          //return response.id === Number(selectedAnswer);
+
         })
-        dispatch(displayFeedback(feedbackData));
+        
+
+        dispatch(displayFeedback({...feedbackData, correct: MCQ[1].correct}));
     }
 
     const handleReset = () => {
@@ -69,6 +59,40 @@ and you code the additional functionality to render accordingly
                 }                
               }
              
+    }
+
+    const handleFeedback = () => {
+      //alert(feedback);
+//console.log(feedback);
+      if (!feedback.displayedFeedback){
+        //console.log('hello!');
+        return 'Select an option and then press "Check Answer"';
+      }
+      if (feedback.displayedFeedback){
+        if (feedback.id === feedback.correct.id){
+          return `Correct! ${feedback.dispalyedFeedback}`;
+        } else if (feedback.id !== feedback.correct.id){
+          return `Incorrect! ${feedback.dispalyedFeedback}`;
+        }
+      }
+      /*
+      switch(feedback.displayedFeedback){
+        
+        case !feedback.displayedFeedback:
+          alert('case 1');
+          return 'Select an option and then press "Check Answer"';
+          break;
+        case (feedback.id === feedback.correct.id):
+          alert('case 2');
+          return `Correct! ${feedback.dispalyedFeedback}`;
+          break;
+        case (feedback.id !== feedback.correct.id):
+          alert('case 3');
+          return `Incorrect! ${feedback.dispalyedFeedback}`
+          break;
+      }
+      */
+      
     }
 
     return (
@@ -116,16 +140,18 @@ and you code the additional functionality to render accordingly
                   }
                 </div>
                 </ul>
-                {feedback ? <p>{feedback[0].feedback}</p> : 'Select an option and then press "Check Answer"'}
+                {feedback ? <p>{feedback.comment}</p> : 'Select an option and then press "Check Answer"'}
+                
+                
             </form>
            
 
 
 
 {/**
- * 
- * 
- * 
+ * {feedback ? <p>{feedback.feedback}</p> : 'Select an option and then press "Check Answer"'}
+ * {handleFeedback}
+ * {feedback ? handleFeedback : 'hmm!'}
  * <label className="form-check-label" htmlFor={`flexCheck${option.optionNumber}`} >
                       {optionTextGenerator(option, MCQData[1].columns)}
                       

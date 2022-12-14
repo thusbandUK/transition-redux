@@ -2,6 +2,7 @@ export const MCQData = [
     {
         id: 42,
         question: 'Which of these equations shows a hydrolysis reaction that would produce a precipitate?',
+        correct: {id: 434},
         options: [
             {
                 id: 421,
@@ -35,6 +36,7 @@ export const MCQData = [
         id: 43,
         columns: 2,
         question: 'Which of these equations shows a hydrolysis reaction that would produce a precipitate?',
+        correct: {id: 434},
         options: [
             {
                 id: 431,

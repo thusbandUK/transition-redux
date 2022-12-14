@@ -5,7 +5,7 @@ const initialState = {
   //CHANGE THIS LATER
   MCQId: 42,
   selectedAnswer: '',
-  displayedFeedback: ''  
+  displayedFeedback: ''   
 }
 
 
