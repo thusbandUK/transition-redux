@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import examBoardReducer from '../features/examBoards/examBoardsSlice.js';
 import menuReducer from '../features/menu/menuSlice.js';
+import multipleChoiceQuestionReducer from '../features/textBoxCreator/textBoxElements/multipleChoiceQuestionSlice.js';
 import textBoxCreatorReducer from '../features/textBoxCreator/textBoxCreatorSlice';
 import rowOfTubesReducer from '../features/rowOfTestTubes/rowOfTestTubesSlice';
 import { reHydrateStore, localStorageMiddleware } from '../features/examBoards/examBoardMiddleware';
@@ -11,7 +12,8 @@ export default configureStore({
         examBoard: examBoardReducer,
         menu: menuReducer,
         rowOfTubes: rowOfTubesReducer,
-        textBoxCreator: textBoxCreatorReducer
+        textBoxCreator: textBoxCreatorReducer,
+        multipleChoiceQuestion: multipleChoiceQuestionReducer
     },
     preloadedState: reHydrateStore(),
     middleware: getDefaultMiddleware =>

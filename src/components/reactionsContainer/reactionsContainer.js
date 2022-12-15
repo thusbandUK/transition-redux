@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReagentBottle from '../../components/Reagent-bottle/reagent';
 import RowOfTubes from '../../features/rowOfTestTubes/RowOfTestTubes';
 import ResetButton from '../../components/resetButton/resetButton';

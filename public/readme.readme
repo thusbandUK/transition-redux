@@ -1,8 +1,16 @@
 
 POINTS TO ADDRESS:
 
-0.5) tweak passage of props (using spread syntax?) for styling, the image and explanation should be side by side 
+0.5) In App.css revisit the hover horror show
+0.75) screen reader horror show, getting hydroxide read out as OH
 1) you need to get the multiple choice question code working with the new textGenerator logic
+a) okay, progress made here but it took all morning to figure out how to render arrows, although I did figure out some form logic too
+b) need MultipleChoiceQuestionSlice.js file, form radio inputs will update state, submit form will read state to match answer
+c) it will be useful to log the ID code of the MCQ to the state so that the app knows which one to render, so in the pages logic
+in textBoxCreator it will just say, type: MCQ, id: [ID] and then get that from a separate file
+d) reset button / logic?
+e) formatting
+1.5) you need to code the individual observation-input forms which will stack under their individual test tubes
 2) prune superceded files, including (to confirm) 
 a) the whole or (old) textBox folder in components
 b) in textBoxCreator in features: variableTextCreator, variableTextGenerator, subSuperTextGenerator
@@ -18,6 +26,9 @@ c) variableText = 'stringSplicer' is a KV pair to include in props for the gener
 d) variableText = 'filter by exam Board' is a KV pair to include in props for an array of eg li elements to be filtered by examBoard
 i) in array of children, each should have a prop entry which is a KV pair, K = true, V = array of examboards for which true
 e) for any parent elements, eg: div / ul / form etc, props needs a KV pair, K = parent, V = true
+f) for a multiple choice question, 
+i) enter it in the text for that text box as {type: 'mcq', props: {key: 1}, content: {id: 43}}
+ii) make a separate entry in the MCQs file (is this useful?)
 4) embed code with comments that explain what each section is for
 5) delete superceded commented-out code
 6) format textData.js according to manual
@@ -25,6 +36,8 @@ e) for any parent elements, eg: div / ul / form etc, props needs a KV pair, K = 
 8) merge textGeneratorOverhaul branch with addTextBox branch
 9) analyse textBox code from pre-react version to decide what examBoard alternative text will be necessary
 10) populate textBoxes for each reagent
+11) review code, esp bad usage of useEffect and middleware / rehydration logic 
+12) there needs to be more test logic, esp introduce that bit the page always says: "hey developer you can blah blah blah"
 
 
 good way to access localStorage 
