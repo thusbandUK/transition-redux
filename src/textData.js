@@ -26,21 +26,21 @@ export const textData = {
             {
                 type: 'div',
                 content: [
-                          {formElement: 'img',
-                           props: {src: 'images/structures/hexaaquacopper.png', className: 'img-fluid', style: {maxWidth: '40%', height: 'auto'}},
-                           formElementContent: null
+                          {childType: 'img',
+                           childProps: {src: 'images/structures/hexaaquacopper.png', className: 'img-fluid', style: {maxWidth: '40%', height: 'auto'}},
+                           childContent: null
                           },
-                          {formElement: 'p',
-                           props: {key: 2, id: "sidenote"},
-                           formElementContent: "Did you include sulfate ions anywhere in your structure? Don't worry, it's a common mistake. The question states that copper sulfate is dissolved. When the ionically bonded copper sulfate is mixed with water, the ions will be separated as they become hydrated by the water molecules. The sulfate ions will become surrounded by water molecules. Each copper ion will also become surrounded by water molecules, which will arrange themselves around the copper ions as shown."
+                          {childType: 'p',
+                           childProps: {key: 2, id: "sidenote"},
+                           childContent: "Did you include sulfate ions anywhere in your structure? Don't worry, it's a common mistake. The question states that copper sulfate is dissolved. When the ionically bonded copper sulfate is mixed with water, the ions will be separated as they become hydrated by the water molecules. The sulfate ions will become surrounded by water molecules. Each copper ion will also become surrounded by water molecules, which will arrange themselves around the copper ions as shown."
                           }
                         ],
-                props: {id: "intro-answer-sidenote", key: 17.3}
+                props: {id: "intro-answer-sidenote", key: 17.3, parent: true}
             },
             {
-                type: 'pTagged',  
+                type: 'p',  
                 content: ['Formula: [Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup>'],
-                props: {key: 17.4}
+                props: {key: 17.4, tagged: true}
             },
             {
                 type: 'p',  
@@ -49,93 +49,134 @@ export const textData = {
             },
             {
                 type: 'form',
-                content: [{formElement: 'br'},
-                          {formElement: 'input',
-                           props: {key: 1, type: 'checkbox', id: 'pre-learning-checklist', name: 'pre-learning-checklist', value: 'ligands', style: {display: 'inline'}},
-                           formElementContent: null
+                content: [{childType: 'br',
+                           childProps: ''},
+                          {childType: 'input',
+                           childProps: {key: 1, type: 'checkbox', id: 'pre-learning-checklist', name: 'pre-learning-checklist', value: 'ligands', style: {display: 'inline'}},
+                           childContent: null
                           },
-                          {formElement: 'label',
-                           props: {key: 2, for: 'pre-learning-checklist', style: {display: 'inline'}},
-                           formElementContent: 'Six aqua ligands bonded via oxygen atoms'
+                          {childType: 'label',
+                           childProps: {key: 2, for: 'pre-learning-checklist', style: {display: 'inline'}},
+                           childContent: 'Six aqua ligands bonded via oxygen atoms'
                           },
-                          {formElement: 'br'},
-                          {formElement: 'input',
-                           props: {key: 3, type: 'checkbox', id: 'pre-learning-checklist2', name:'pre-learning-checklist2', value:'brackets', style: {display: 'inline'}},
-                           formElementContent: null
+                          {childType: 'br',
+                          childProps: ''},
+                          {childType: 'input',
+                           childProps: {key: 3, type: 'checkbox', id: 'pre-learning-checklist2', name:'pre-learning-checklist2', value:'brackets', style: {display: 'inline'}},
+                           childContent: null
                           },
-                          {formElement: 'label',
-                           props: {key: 4, for: 'pre-learning-checklist2', style: {display: 'inline'}},
-                           formElementContent: 'Square brackets with overall charge shown top right'
+                          {childType: 'label',
+                           childProps: {key: 4, for: 'pre-learning-checklist2', style: {display: 'inline'}},
+                           childContent: 'Square brackets with overall charge shown top right'
                           },
-                          {formElement: 'br'},
-                          {formElement: 'input',
-                           props: {key: 5, type: 'checkbox', id: 'pre-learning-checklist3', name:'pre-learning-checklist3', value:'arrows', style: {display: 'inline'}},
-                           formElementContent: null
+                          {childType: 'br',
+                           childProps: ''},
+                          {childType: 'input',
+                           childProps: {key: 5, type: 'checkbox', id: 'pre-learning-checklist3', name:'pre-learning-checklist3', value:'arrows', style: {display: 'inline'}},
+                           childContent: null
                           },
-                          {formElement: 'label',
-                           props: {key: 6, for: 'pre-learning-checklist3', style: {display: 'inline'}},
-                           formElementContent: 'Arrow heads point towards central Cu ion to show coordinate bonds'
+                          {childType: 'label',
+                           childProps: {key: 6, for: 'pre-learning-checklist3', style: {display: 'inline'}},
+                           childContent: 'Arrow heads point towards central Cu ion to show coordinate bonds'
                           },
-                          {formElement: 'br'}
+                          {childType: 'br',
+                          childProps: ''}
                          ],
-                props: {style: {display: 'inline'}, key: 17.6}          
+                props: {style: {display: 'inline'}, key: 17.6, parent: true}          
             }
         ]
     },
               {id: 18, allContent: [
                 {
                     type: 'h2',
-                    content: 'CHANGE ME BACK!' /*{            
-                        staticContent: {
-                            openingString: 'The ',
-                            closingString: ' starting solutions'
-                        },
-                        dynamicContent: {
-                            
-                                AQA: 'five',
-                                Edexcel: 'five',
-                                OCRA: 'five',
-                                OCRB: 'three'
-                            
-                        }
-                        
-                    }*/,
-                    props: {key: 18.1}
+                    
+                    content: /*'hello joe!',*/{            
+                        staticContent: 'The [REPLACE TEXT] solutions.',            
+                        dynamicContent: [
+                            {string: 'five', true: ['AQA', 'Edexcel', 'OCRA']},
+                            {string: 'three', true: ['OCRB']},
+                        ]
+                    },
+                    props: {key: 18.1, variableContent: 'stringSplicer'}
                 },
                 {
-                    type: 'p',  
-                    content: ['The AQA syllabus includes the reactions of five hexaaquaions with four different reagents. The hexaaquaions are as follows:'],
-                    props: {key: 18.2}
-                },
+                    type: 'p',
+                    
+                    content: /*'hello joe!',*/{            
+                        staticContent: "The [REPLACE TEXT] syllabus includes the reactions of five hexaaquaions with four different reagents. The hexaaquaions are as follows:",            
+                        dynamicContent: [
+                            {string: 'AQA', true: ['AQA']},
+                            {string: 'OCR A', true: ['OCRA']},
+                            {string: 'OCR B', true: ['OCRB']},
+                            {string: 'Edexcel', true: ['Edexcel']}
+                            
+                        ]
+                    },
+                    props: {key: 18.2, variableContent: 'stringSplicer'}
+                },                
                 {
-                    type: 'ul',
+                    type: 'ul',                
                     content: [
-                              {formElement: 'li',
-                               props: {},
-                               formElementContent: 'hexaaquacobalt(II): pink solution'
+                              {childType: 'li',
+                               childProps: {true: ['AQA', 'Edexcel']},
+                               childContent: 'hexaaquacobalt(II): pink solution'                           
                               },
-                              {formElement: 'li',
-                               props: {},
-                               formElementContent: 'hexaaquacopper(II): blue solution'
+                              {childType: 'li',
+                               childProps: {true: ['AQA', 'OCRA', 'OCRB', 'Edexcel']},
+                               childContent: 'hexaaquacopper(II): blue solution'                           
                               },
-                              {formElement: 'li',
-                               props: {},
-                               formElementContent: 'hexaquairon(II): green solution'
+                              {childType: 'li',
+                               childProps: {true: ['AQA', 'OCRA', 'OCRB', 'Edexcel']},
+                               childContent: 'hexaquairon(II): green solution'                           
                               },
-                              {formElement: 'li',
-                               props: {},
-                               formElementContent: 'hexaaquairon(III): pale yellow (or violet) solution'
+                              {childType: 'li',
+                               childProps: {true: ['AQA', 'OCRA', 'OCRB', 'Edexcel']},
+                               childContent: 'hexaaquairon(III): pale yellow (or violet) solution'                           
                               },
-                              {formElement: 'li',
-                               props: {},
-                               formElementContent: 'hexaaquaaluminium(III): colourless solution'
+                              {childType: 'li',
+                               childProps: {true: ['AQA']},
+                               childContent: 'hexaaquaaluminium(III): colourless solution'                           
+                              },
+                              {childType: 'li',
+                               childProps: {true: ['OCRA']},
+                               childContent: 'hexaaquamanganese(II): very pale pink solution'                           
+                              },
+                              {childType: 'li',
+                               childProps: {true: ['OCRA', 'Edexcel']},
+                               childContent: 'hexaaquachromium(III): green solution'                           
                               }
                             ],
-                    props: {key: 18.3}
-                        },
+                    props: {key: 18.3, variableContent: 'filter by exam board'}
+                        }/*,
+                   {
+                    type: 'ul',
+                    content: [
+                              {childType: 'li',
+                               childProps: {},
+                               childContent: 'hexaaquacobalt(II): pink solution'
+                              },
+                              {childType: 'li',
+                               childProps: {},
+                               childContent: 'hexaaquacopper(II): blue solution'
+                              },
+                              {childType: 'li',
+                               childProps: {},
+                               childContent: 'hexaquairon(II): green solution'
+                              },
+                              {childType: 'li',
+                               childProps: {},
+                               childContent: 'hexaaquairon(III): pale yellow (or violet) solution'
+                              },
+                              {childType: 'li',
+                               childProps: {},
+                               childContent: 'hexaaquaaluminium(III): colourless solution'
+                              }
+                            ],
+                    props: {key: 18.3, parent: true}
+                        }*/,
                     {
                         type: 'p',  
-                        content: ['In each section the starting solutions appear in a different order with buttons you can click to reveal their identity. This is so you can practise recalling their name by colour.',
+                        content: [/*'In each section the starting solutions appear in a different order with buttons you can click to reveal their identity. This is so you can practise recalling their name by colour.',*/
                     'After each set of reactions there is a set of text boxes to record your observations. Make sure to describe both the appearance of each tube at the start and at the end. State whether colours describe a solution or a precipitate. For example: "When a few drops of sodium hydroxide are added to a blue solution of hexaaquacopper(II) ions, a pale blue precipitate forms.'],
                         props: {key: 18.4}
                     }

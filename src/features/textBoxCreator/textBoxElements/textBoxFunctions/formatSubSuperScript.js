@@ -1,12 +1,18 @@
 import { createElement } from 'react';
 import Arrow from '../arrow';
 
-function formatSubSuperScript(string, equation){
-
+function formatSubSuperScript(string, key){
+   // console.log(`key reads: ${key}`);
+let keyCount;
+    if (!key){
+        keyCount = 0;
+    } else {
+        keyCount = key;
+    }
     
     let arrayOfObjects = [];
     let workingString = string.toString();
-    let keyCount = 0;
+    //let keyCount = Math.floor(Math.random() * 5);
 
     //below section parses string into sections of plain text (type: p) and text that appears between sub tags (type: sub)
     while (workingString.includes('</sub>')){

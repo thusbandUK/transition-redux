@@ -5,56 +5,30 @@ import stringSplicer from './textBoxFunctions/stringSplicer';
 import formatSubSuperScript from './textBoxFunctions/formatSubSuperScript';
 import '../../../app/App.css';
 import MultipleChoiceQuestion from './MultipleChoiceQuestion';
-//import Arrow from './arrow';
+
 
 
 function ElementGenerator(props) {
 
-  //content generator for forms and divs  
-
-//let { type, props, variableContent } = props.entry;
+  
 
  let newType = props.type;
- let newProps = props.props;
+ let newProps = props.props; 
  let newContent = props.content;
   
   const examBoard = props.examBoard;
-/*
-okay, so another sticking point is that you want to make the first layer of processing - which parses variableContent by examboard - 
-cope with a variety of input styles, suggestions including:
-i) substitute [REPLACE ME] with array.filter.true.includes(examboard)(which could output a single string)
-ii) include list items also w array.filter.true etc.
-iii) different images (and potentially other formats) but then the output will be produced the normal way, ie: if multiple children
-(hasChildren === true) etc...
 
-so there needs to be an engine that filters for examboard === true, which could be called at different levels
-
-if variableContent === stringSplice -->
-   
-       return stringSpliced and filtered for examboard
-   else if variableContent === 
-
-   stringSplice can be called at different levels and it does just that, substitutes 
-   filterByExamBoard can be called at different levels and it does just, they can be called in tandem
-   the variableContent keys can be at different levels, and every level can call the functions
-   
-
-
-*/
 const processContent = () => {
-  //alert('function called');
-  //let newContent = props.content;
+  
   const itemToProcess = props.content;
-  //alert(itemToProcess);
-  //if (props.variableContent)
+  
 
 
   //to generate single string which splices content filtered by examboard
 
   if (newProps.variableContent === 'stringSplicer'){
     
-    const splicedString = stringSplicer(itemToProcess, examBoard);
-    //alert(splicedString);
+    const splicedString = stringSplicer(itemToProcess, examBoard);    
     newContent = splicedString;
     return newType;
   } 
@@ -100,25 +74,15 @@ const processContent = () => {
 
   if (newProps.tagged === true){
     
-    const arrayOfObjects = formatSubSuperScript(props.content);
-    /*
-      let processedArray = [];
-      arrayOfObjects.forEach((objectOfTaggedContent) => {
-        processedArray.push(createElement(objectOfTaggedContent.newType, {...objectOfTaggedContent.newProps, style: {display: 'inline'}}, objectOfTaggedContent.newContent));
-      })*/
-      
-      //return newContent = processedArray;
+    //make sure below still works, added props.key to generate unique keyCount
+    const arrayOfObjects = formatSubSuperScript(props.content, props.key);
+    
       newContent = arrayOfObjects;
       return newType = 'div';
   
     
   }
-  if (props.type === 'mcq'){
-    //return createElement('p', {}, 'hello!');
-    //newProps = {}
-    //newContent = 'hello'
-    //console.log(newProps);
-    //console.log(`new content id reads ${newContent.id}`);
+  if (props.type === 'mcq'){    
     return newType = MultipleChoiceQuestion
   }
 
@@ -126,20 +90,7 @@ const processContent = () => {
 
 return newType;
 }
-/*
-const formContent = () => {
-  
-    
-    if ((props.type === 'form') || (props.type === 'div') || (props.type === 'ul')){           
-        let formElements = props.content.map((formElementDetails) => (
-            createElement(formElementDetails.formElement, formElementDetails.props, formElementDetails.formElementContent)           
-        )) 
-        return formElements;        
-    } else {
-      return newContent;
-    }
-} 
-*/
+
   return createElement(
     processContent(),    
     newProps,

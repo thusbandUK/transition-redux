@@ -106,13 +106,13 @@ const TextBoxCreator = (props) => {
           <div className="text-box">
                     
 {/** */}
-            {pages2.map((entry) => (
+            {pages.map((entry) => (
               
               <ElementGenerator
               type={entry.type}
               content={entry.content}
               props={entry.props}
-              
+              key={entry.id}
               examBoard={examBoard}
               
               

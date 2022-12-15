@@ -14,6 +14,9 @@ e) formatting
 2) prune superceded files, including (to confirm) 
 a) the whole or (old) textBox folder in components
 b) in textBoxCreator in features: variableTextCreator, variableTextGenerator, subSuperTextGenerator
+
+MANUAL
+
 3) write a manual called variableTextManual.readme which should include:
 a) for single strings with sub- or superscript tags, put tagged=true in props 
 b) the above can also be applied to childProps
@@ -29,6 +32,10 @@ e) for any parent elements, eg: div / ul / form etc, props needs a KV pair, K = 
 f) for a multiple choice question, 
 i) enter it in the text for that text box as {type: 'mcq', props: {key: 1}, content: {id: 43}}
 ii) make a separate entry in the MCQs file (is this useful?)
+g) if you want to add a break as a child you need to include an empty props entry as well as type
+
+
+
 4) embed code with comments that explain what each section is for
 5) delete superceded commented-out code
 6) format textData.js according to manual

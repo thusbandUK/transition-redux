@@ -15,22 +15,30 @@ import formatSubSuperScript from "../textBoxFunctions/formatSubSuperScript";
 import { createElement } from 'react';
 
 
-const optionTextGenerator = (MCQDetails, columns) => {
+const optionTextGenerator = (MCQDetails, columns, key) => {
+    let keyCount;
+    if (!key){
+        keyCount = 0;
+    } else {
+        keyCount = key;
+    }
+   
 //console.log(MCQDetails);
-console.log(MCQDetails);
 if (columns === 2){
     //console.log('if function called!')
     //console.log(MCQDetails.optionText);
     let childrenToRender = MCQDetails.optionText.map((childElementDetails) => {
         if (childElementDetails.childProps.tagged === true){
             //console.log('tagged logic triggered');
-          const arrayOfTaggedElements = formatSubSuperScript(childElementDetails.childContent);
+          const arrayOfTaggedElements = formatSubSuperScript(childElementDetails.childContent, keyCount = keyCount + 1);
           //console.log(arrayOfTaggedElements);
-          return createElement(childElementDetails.childType === 'p' ? 'div' : childElementDetails.childType, childElementDetails.childProps, arrayOfTaggedElements)
+          return createElement(childElementDetails.childType === 'p' ? 'div' : childElementDetails.childType, {...childElementDetails.childProps, key: keyCount = keyCount + 1}, arrayOfTaggedElements)
 
     } else { 
-        return createElement(childElementDetails.childType, childElementDetails.childProps, childElementDetails.childContent) }          
+        return createElement(childElementDetails.childType, {...childElementDetails.childProps, key: keyCount = keyCount + 1}, childElementDetails.childContent) }          
     })   
+
+    //{...childElementDetails.childProps, key: keyCount = keyCount + 1}
     //console.log(childrenToRender);
     //return childrenToRender;
     //return createElement('div', {className: 'row justify-content-start'}, childrenToRender);
