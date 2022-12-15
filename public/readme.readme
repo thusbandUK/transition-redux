@@ -26,6 +26,9 @@ c) variableText = 'stringSplicer' is a KV pair to include in props for the gener
 d) variableText = 'filter by exam Board' is a KV pair to include in props for an array of eg li elements to be filtered by examBoard
 i) in array of children, each should have a prop entry which is a KV pair, K = true, V = array of examboards for which true
 e) for any parent elements, eg: div / ul / form etc, props needs a KV pair, K = parent, V = true
+f) for a multiple choice question, 
+i) enter it in the text for that text box as {type: 'mcq', props: {key: 1}, content: {id: 43}}
+ii) make a separate entry in the MCQs file (is this useful?)
 4) embed code with comments that explain what each section is for
 5) delete superceded commented-out code
 6) format textData.js according to manual

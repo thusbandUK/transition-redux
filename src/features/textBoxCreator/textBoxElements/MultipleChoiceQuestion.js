@@ -16,6 +16,10 @@ const MultipleChoiceQuestion = (props) => {
     const MCQId = props.children.id;
     const feedback = useSelector(state => state.multipleChoiceQuestion.displayedFeedback);
 
+    const MCQAllDetails = MCQData.find((entry) => entry.id === MCQId);
+//console.log('MCQAllDetails reads...');
+    //console.log(MCQAllDetails);
+
     //dispatches selected question to state upon radio click
     //const correctId = feedback.correct.id;
     //const selectedId = selectedAnswer.id;
@@ -114,9 +118,12 @@ const MultipleChoiceQuestion = (props) => {
 
     return (
         <div>
-           
+           <h2>Check your understanding!</h2>
+           <p className="lead">{MCQAllDetails.question}</p>
             <form
             onSubmit={formSubmit}
+            className="mt-2 pt-2 border-top border-3"
+            style={{borderColor: 'red !important'}}
             >
             
             {findQuestion(MCQId).options.map((option) => (
@@ -137,7 +144,8 @@ const MultipleChoiceQuestion = (props) => {
                     
                   </div>
                 ))}
-                <ul className="list-group list-group-horizontal mt-5 fs-5 d-flex justify-content-center">
+                <p className="lead mt-1 pt-2 border-top border-3" >{feedback ? feedback.comment : 'Select an option and then press "Check Answer"'}</p> 
+                <ul className="list-group list-group-horizontal mt-3 fs-5 d-flex justify-content-center">
                 <div className="excess-or-reset-button-container d-flex justify-content-center">
                   { !feedback ? 
                    <button 
@@ -157,7 +165,7 @@ const MultipleChoiceQuestion = (props) => {
                   }
                 </div>
                 </ul>
-                {feedback ? <p>{feedback.comment}</p> : 'Select an option and then press "Check Answer"'}
+                
                 
                 
             </form>

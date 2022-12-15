@@ -124,18 +124,18 @@ export const MCQData = [
 
 export const textDataTemp = {
     introPage: [
-        {id: 16, allContent: [
+        {id: 16, allContent: [/*
             {
                 type: 'h2',
                 
-                content: /*'hello joe!',*/{            
+                content: /*'hello joe!',*//*{            
                     staticContent: 'The [REPLACE TEXT] solutions.',            
                     dynamicContent: [
                         {string: 'five', true: ['AQA', 'Edexcel', 'OCRA']},
                         {string: 'three', true: ['OCRB']},
                     ]
                 },
-                props: {key: 18.1, variableContent: 'stringSplicer'/**/}
+                props: {key: 18.1, variableContent: 'stringSplicer'/**//*}
             },
             {
                 type: 'h2',
@@ -227,12 +227,12 @@ export const textDataTemp = {
                            childProps: {}}
                          ],
                 props: {style: {display: 'inline'}, key: 17.6, parent: true}          
-            }/**/,
+            },
             {
                 type: 'p',  
                 content: ['Formula: [Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup>'],
                 props: {key: 17.4, tagged: true}
-            }/**/,/*
+            },
             {
                 type: 'mcq',                
                 props: {key: 1},
