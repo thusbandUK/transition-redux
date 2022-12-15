@@ -1,10 +1,11 @@
 import {ExamBoards} from '../../features/examBoards/ExamBoards';
-import React, { useEffect } from 'react';
+import React from 'react';
 import '../../app/App.css';
 import IntroMenu from '../../features/menu/IntroMenu';
 import TextBoxCreator from '../../features/textBoxCreator/TextBoxCreator';
 import { useSelector } from 'react-redux';
 //import { getState } from 'react';
+import MultipleChoiceQuestion from '../../features/textBoxCreator/textBoxElements/MultipleChoiceQuestion';
 
 
 const Introduction = () => {
@@ -25,6 +26,10 @@ const Introduction = () => {
             <div style={{marginTop: '5%'}}>
            <ExamBoards />
            </div>
+           {/** 
+           <MultipleChoiceQuestion />
+*/}
+           {/** */ }
            <div style={{marginTop: '5%'}}>
            {examBoard ? <TextBoxCreator /> : null} 
            </div>
