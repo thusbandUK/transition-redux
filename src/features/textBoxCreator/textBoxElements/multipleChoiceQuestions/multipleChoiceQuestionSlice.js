@@ -1,9 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { MCQData } from '../../../textDataTemp';
+import { MCQData } from '../../../../textDataTemp';
 
 const initialState = {      
-  //CHANGE THIS LATER
-  MCQId: 42,
+  
   selectedAnswer: '',
   displayedFeedback: ''   
 }

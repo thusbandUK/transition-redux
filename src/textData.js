@@ -103,7 +103,7 @@ export const textData = {
                     type: 'p',
                     
                     content: /*'hello joe!',*/{            
-                        staticContent: "The [REPLACE TEXT] syllabus includes the reactions of five hexaaquaions with four different reagents. The hexaaquaions are as follows:",            
+                        staticContent: "The [REPLACE TEXT] syllabus includes the reactions of ",            
                         dynamicContent: [
                             {string: 'AQA', true: ['AQA']},
                             {string: 'OCR A', true: ['OCRA']},
@@ -112,8 +112,21 @@ export const textData = {
                             
                         ]
                     },
-                    props: {key: 18.2, variableContent: 'stringSplicer'}
-                },                
+                    props: {key: 18.2, variableContent: 'stringSplicer', style: {display: 'inline'}}
+                },   
+                {
+                    type: 'p',
+                    
+                    content: /*'hello joe!',*/{            
+                        staticContent: "[REPLACE TEXT] hexaaquaions with the reagents in the menu below. The hexaaquaions are as follows:",            
+                        dynamicContent: [
+                            {string: 'five', true: ['AQA', 'Edexcel', 'OCRA']},
+                            {string: 'three', true: ['OCRB']}
+                            
+                        ]
+                    },
+                    props: {key: 18.2, variableContent: 'stringSplicer', style: {display: 'inline'}}
+                },                 
                 {
                     type: 'ul',                
                     content: [

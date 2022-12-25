@@ -3,14 +3,17 @@ POINTS TO ADDRESS:
 
 0.5) In App.css revisit the hover horror show
 0.75) screen reader horror show, getting hydroxide read out as OH
-1) you need to get the multiple choice question code working with the new textGenerator logic
-a) okay, progress made here but it took all morning to figure out how to render arrows, although I did figure out some form logic too
-b) need MultipleChoiceQuestionSlice.js file, form radio inputs will update state, submit form will read state to match answer
-c) it will be useful to log the ID code of the MCQ to the state so that the app knows which one to render, so in the pages logic
-in textBoxCreator it will just say, type: MCQ, id: [ID] and then get that from a separate file
-d) reset button / logic?
-e) formatting
-1.5) you need to code the individual observation-input forms which will stack under their individual test tubes
+1) you need to finish coding the individual observation-input forms which will stack under their individual test tubes
+a) progress made here: observationStage added to state (first, second, third observation), submit conditionally logs initial / final
+observation depending on observationStage, initial observation box disappears when input submitted, middleware tweaked to retain
+observationForm parts of state
+b) need to make a little sign saying: click tube after initial observation submitted
+c) disable clickingTube ahead of that, enable it upon it
+d) once tube clicked reveal observation-2 form-input
+e) put the excess button logic in here, it's revealed after observation-2 logged
+f) upon excess, reveal observation-3 input; log
+g) form disappears once final observation logged
+h) style
 2) prune superceded files, including (to confirm) 
 a) the whole or (old) textBox folder in components
 b) in textBoxCreator in features: variableTextCreator, variableTextGenerator, subSuperTextGenerator

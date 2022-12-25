@@ -6,15 +6,32 @@ import productFinder from '../../components/functionModules/findProduct';
 import { useSelector, useDispatch } from 'react-redux';
 import { data } from '../../data';
 import { selectUnreactedMetals, showProducts, reset } from './rowOfTestTubesSlice';
+import { selectReactantsToObserve } from '../observations/observationFormSlice';
 import { useParams } from 'react-router-dom';
 import '../../app/App.css';
+
 
 const RowOfTubes = () => {
   const examBoard = useSelector(state => state.examBoard.selectedExamBoard);
   const selectedReagent = useSelector(state => state.menu.selectedReagent);
   const dispatch = useDispatch();
   const {reactant} = useParams();
+  const unreactedMetals = useSelector(state => state.rowOfTubes.unreactedMetals);
 
+  /*
+console.log(unreactedMetals);
+  let objectOfReactantsToObserve = {};
+    unreactedMetals.forEach((reactantEntry) => {
+      console.log(reactantEntry.metal);
+      console.log({...objectOfReactantsToObserve, [reactantEntry.metal]: ''});
+      return {...objectOfReactantsToObserve, [reactantEntry.metal]: ''} 
+})
+    console.log(objectOfReactantsToObserve);
+    */
+  //console.log(unreactedMetals);
+  //localStorage.setItem.JSONstringify('unreactedMetals', unreactedMetals);
+
+//console.log((({metal}) => ({metal}))(unreactedMetals));
 
   //filters the available reactants in data.js to identify the ones used by the exam board and with the reagent in question
 
@@ -22,6 +39,7 @@ const RowOfTubes = () => {
     const matchedMetals = data.unreactedMetals.filter((x) => {      
       return data.metalIdsByReagent[examBoard][selectedReagent.name].includes(x.id);
       })
+      
       return matchedMetals;
   }, [examBoard, selectedReagent.name])
 
@@ -29,8 +47,22 @@ const RowOfTubes = () => {
 
   useEffect(() => {
     dispatch(reset());
-        dispatch(selectUnreactedMetals(generateMetalReactantsSet()));
+    dispatch(selectUnreactedMetals(generateMetalReactantsSet()));
+
 }, [dispatch, generateMetalReactantsSet, reactant]);
+
+//effect hook assigns a set of reactants for which to file observations
+
+useEffect(() => {
+  let objectOfReactantsToObserve = {}
+    unreactedMetals.map((entry) => {
+      objectOfReactantsToObserve = {...objectOfReactantsToObserve, [entry.metal]: {observationStage: 1, initial: {input: '', logged: ''}, final: {input: '', logged: ''}}}
+
+    })
+//console.log(objectOfReactantsToObserve);
+
+dispatch(selectReactantsToObserve(objectOfReactantsToObserve));
+}, [unreactedMetals, reactant])
 
 //defines array from which is mapped the instances of each individual test tubes
 
@@ -73,6 +105,7 @@ const handleExcessProduct = (metal, productImageDetails) => {
         <div className="row-of-tubes rounded overflow-auto" style={rowOfTubesStyling}>
             <div className="row" style={{width: '100%', marginTop: '5%'}}>
             {tubes.map((metal) => (
+              
               <IndividualTube 
               key={metal.id}
               metal={metal}
@@ -81,7 +114,10 @@ const handleExcessProduct = (metal, productImageDetails) => {
               product={products[metal.metal]}
               handleExcessProduct={handleExcessProduct}              
               />
+              
+              
           ))}
+          
           </div>
           
         </div>

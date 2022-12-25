@@ -4,7 +4,7 @@ import filterByExamBoard from './textBoxFunctions/filterByExamBoard';
 import stringSplicer from './textBoxFunctions/stringSplicer';
 import formatSubSuperScript from './textBoxFunctions/formatSubSuperScript';
 import '../../../app/App.css';
-import MultipleChoiceQuestion from './MultipleChoiceQuestion';
+import MultipleChoiceQuestion from './multipleChoiceQuestions/MultipleChoiceQuestion';
 
 
 

@@ -6,8 +6,8 @@ import { textData } from '../../textData';
 //import TextBox from '../../components/textBox/textBox';
 import { textDataTemp } from '../../textDataTemp';
 import ElementGenerator from './textBoxElements/ElementGenerator';
-import SubSuperTextGenerator from './textBoxElements/subSuperTextGenerator';
-import VariableTextCreator from './textBoxElements/variableTextCreator';
+//import SubSuperTextGenerator from './dump/subSuperTextGenerator';
+//import VariableTextCreator from './dump/variableTextCreator';
 
 
 const TextBoxCreator = (props) => {

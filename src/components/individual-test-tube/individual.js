@@ -5,9 +5,11 @@ import './individual.css';
 import excessProductFinder from '../functionModules/findExcessProduct';
 import { useSelector } from 'react-redux';
 import '../../app/App.css';
-
+import ObservationForm from '../../features/observations/ObservationForm';
 
 const IndividualTube = (props) => {
+  //console.log(`individual tube props...`);
+  //console.log(props);
   
   const selectedReagent = useSelector(state => state.menu.selectedReagent);
   
@@ -69,7 +71,12 @@ const IndividualTube = (props) => {
         
         /> : null}
       </ul>
+      
+       <ObservationForm
+       key={props.metal.id}
+       props={props}
        
+       />
       </div>
 
     );
