@@ -13,6 +13,19 @@ const IndividualTube = (props) => {
   
   const selectedReagent = useSelector(state => state.menu.selectedReagent);
   
+  const metal = props.metal.metal;
+  const metalObservations = useSelector(state => state.observationFormSlice.reactantsToObserve[metal]);
+  //console.log(metalObservations);
+
+  const observationStage = () => {
+    if (!metalObservations){
+       //console.log('undefined');
+        return 1;
+    } else {
+       // console.log('defined');
+        return metalObservations.observationStage;
+    }
+}
     
 
     const handleClick = (event) => {      
@@ -43,7 +56,7 @@ const IndividualTube = (props) => {
         className="test-tube "
         onClick={handleClick}
         aria-live="polite"
-        disabled={!selectedReagent}
+        disabled={observationStage() === 1}
         
         >
           {/* mx-auto */}

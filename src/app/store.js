@@ -23,20 +23,3 @@ export default configureStore({
   
   })
 
-  //imported exemplar from: https://stackoverflow.com/questions/68421040/local-storage-using-redux-toolkit
-/*
-  const store = configureStore({
-    reducer: {
-      movements: movementsSlice.reducer,
-      auth: authSlice.reducer,
-    },
-    preloadedState: reHydrateStore(),
-    middleware: getDefaultMiddleware =>
-      getDefaultMiddleware().concat(localStorageMiddleware),
-  });
-  
-  export const movementsActions = movementsSlice.actions;
-  export const authActions = authSlice.actions;
-  
-  export default store;
-  */

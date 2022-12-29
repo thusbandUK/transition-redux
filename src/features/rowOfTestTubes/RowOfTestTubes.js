@@ -59,8 +59,6 @@ useEffect(() => {
       objectOfReactantsToObserve = {...objectOfReactantsToObserve, [entry.metal]: {observationStage: 1, initial: {input: '', logged: ''}, final: {input: '', logged: ''}}}
 
     })
-//console.log(objectOfReactantsToObserve);
-
 dispatch(selectReactantsToObserve(objectOfReactantsToObserve));
 }, [unreactedMetals, reactant])
 

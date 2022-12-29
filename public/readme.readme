@@ -7,6 +7,7 @@ POINTS TO ADDRESS:
 a) progress made here: observationStage added to state (first, second, third observation), submit conditionally logs initial / final
 observation depending on observationStage, initial observation box disappears when input submitted, middleware tweaked to retain
 observationForm parts of state
+a.5) render form input title "observation ${observationStage}"
 b) need to make a little sign saying: click tube after initial observation submitted
 c) disable clickingTube ahead of that, enable it upon it
 d) once tube clicked reveal observation-2 form-input
