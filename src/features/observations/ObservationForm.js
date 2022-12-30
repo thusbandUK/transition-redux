@@ -56,7 +56,7 @@ const observationStage = () => {
                 {(observationStage() === 1) ?
                <div>
                 <label>
-                    Initial observation
+                    First observation
                 </label>
                 
                 <input type="text"   onChange={initialObservationToState} id={`flexCheck${props.props.metal.id}-initial`}/>
@@ -64,13 +64,15 @@ const observationStage = () => {
                 : null }
 
 
+            {/*Submit a text box reading "click test tube" */}
+            {/*Might need to add some logic to the individual tube clicking sitch where clicking the test tube adds 1 to the observation stage */}
             {/*Submit second observation */}
-           
+            {/*might need to change that to 3 so the click test tube label can go with OS2 */}
             {(observationStage() === 2) ? 
             
                 <div>
                 <label>
-                    Final observation
+                    Second observation
                 </label>
                 <input type="text"  onChange={finalObservationToState} id={`flexCheck${props.props.metal.id}-final`}/>
                 </div>      

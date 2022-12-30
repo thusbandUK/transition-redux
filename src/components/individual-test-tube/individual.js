@@ -30,8 +30,12 @@ const IndividualTube = (props) => {
 
     const handleClick = (event) => {      
       props.onClick(props.metal.metal);
+      //add code here to increase observationStage by 1
     }
 
+
+    //need to move this elsewhere? It would be code if the button was rendered by the observation form but again, might that
+    //cause the kind of problem where pandemonium ensues because a child component is modifying a parent component?
     const addExcessReagent = (metal, reagent) => {
             
       const newProduct = excessProductFinder(metal, reagent);
