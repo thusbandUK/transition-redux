@@ -1,14 +1,25 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const observations = {  
+  initial:
+  {input: {}, logged: {}},
+  final:
+  {input: {}, logged: {}}
+}
+
 export const observationFormSlice = createSlice({
     name: "observationForm",
     initialState: {      
-      reactantsToObserve: {} 
+      reactantsToObserve: {   
+      }      
     },
-    reducers: {        
-      selectReactantsToObserve: (state, action) => {
-        state.reactantsToObserve = action.payload;                
-      },
+    reducers: {    
+      selectReactantsToObserve: (state, action) => {        
+        state.reactantsToObserve = {}
+        Object.entries(action.payload).forEach(([key, value]) => {
+          state.reactantsToObserve = {...state.reactantsToObserve, [key]: observations}
+        })
+      },     
       inputInitialObservation: (state, action) => {
         state.reactantsToObserve[action.payload.metal].initial.input = action.payload.observation;
       },
@@ -22,21 +33,19 @@ export const observationFormSlice = createSlice({
       logFinalObservation: (state, action) => {
         state.reactantsToObserve[action.payload.metal].final.logged = action.payload.observation;
         state.reactantsToObserve[action.payload.metal].observationStage = action.payload.observationStage;
-      },      
+      },     
       reset: (state) => {        
         state.reactantsToObserve = {};
       }
-      
-      
     },
   });
 
-  export const {
+  export const {    
     selectReactantsToObserve,
     inputInitialObservation,
     inputFinalObservation,
     logInitialObservation,
-    logFinalObservation,
+    logFinalObservation,      
     reset   
  } = observationFormSlice.actions;
  

@@ -1,22 +1,17 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { inputInitialObservation, inputFinalObservation, logInitialObservation, logFinalObservation } from './observationFormSlice';
 import '../../app/App.css';
+import { incrementObservationStage } from '../../features/rowOfTestTubes/rowOfTestTubesSlice';
 
 const ObservationForm = (props) => {
     
-const dispatch = useDispatch();
+    const dispatch = useDispatch();
  
-const metal = props.props.metal;
+    const metal = props.props.metal;
 
-const metalObservations = useSelector(state => state.observationFormSlice.reactantsToObserve[metal.metal]);
+    const metalObservations = useSelector(state => state.observationForm.reactantsToObserve[metal.metal]);
 
-const observationStage = () => {
-    if (!metalObservations){      
-        return 1;
-    } else {       
-        return metalObservations.observationStage;
-    }
-}
+    const observationStage = useSelector(state => state.rowOfTubes.unreactedMetals[metal.metal].observationStage);
 
 
     const initialObservationToState = (event) => {        
@@ -32,15 +27,14 @@ const observationStage = () => {
     const submitObservation = (event) => {
         event.preventDefault();       
         
-        if (observationStage() === 1){
-            dispatch(logInitialObservation({metal: metal.metal, observation: metalObservations.initial.input, observationStage: observationStage() + 1}));
-                           
+        if (observationStage === 1){
+            dispatch(logInitialObservation({metal: metal.metal, observation: metalObservations.initial.input}));
+            dispatch(incrementObservationStage({metal: metal.metal, newObservationStage: observationStage + 1}));
             return;
 
-
-        } else if (observationStage() === 2){
-            console.log(observationStage() + 1);
-            dispatch(logFinalObservation({metal: metal.metal, observation: metalObservations.final.input, observationStage: observationStage() + 1}));                
+        } else if (observationStage === 3){            
+            dispatch(logFinalObservation({metal: metal.metal, observation: metalObservations.final.input}));                
+            dispatch(incrementObservationStage({metal: metal.metal, newObservationStage: observationStage + 1}));
             return;
         }
 
@@ -53,7 +47,8 @@ const observationStage = () => {
 
                {/*Submit initial observation */}                              
                 
-                {(observationStage() === 1) ?
+               {(observationStage === 1) ?
+                
                <div>
                 <label>
                     First observation
@@ -68,7 +63,7 @@ const observationStage = () => {
             {/*Might need to add some logic to the individual tube clicking sitch where clicking the test tube adds 1 to the observation stage */}
             {/*Submit second observation */}
             {/*might need to change that to 3 so the click test tube label can go with OS2 */}
-            {(observationStage() === 2) ? 
+            {(observationStage === 3) ? 
             
                 <div>
                 <label>
@@ -91,7 +86,7 @@ const observationStage = () => {
                 </div>
                 </ul>
                 </form>
-            <p>Hello!</p>
+            
         </div>
     )
 }

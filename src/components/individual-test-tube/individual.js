@@ -3,34 +3,25 @@ import ExcessButton from '../excessButton/excessButton';
 import imagesOfReactantsAndProducts from '../images/images-combined';
 import './individual.css';
 import excessProductFinder from '../functionModules/findExcessProduct';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import '../../app/App.css';
 import ObservationForm from '../../features/observations/ObservationForm';
+import { incrementObservationStage } from '../../features/rowOfTestTubes/rowOfTestTubesSlice';
 
 const IndividualTube = (props) => {
-  //console.log(`individual tube props...`);
-  //console.log(props);
+  
   
   const selectedReagent = useSelector(state => state.menu.selectedReagent);
   
   const metal = props.metal.metal;
-  const metalObservations = useSelector(state => state.observationFormSlice.reactantsToObserve[metal]);
-  //console.log(metalObservations);
-
-  const observationStage = () => {
-    if (!metalObservations){
-       //console.log('undefined');
-        return 1;
-    } else {
-       // console.log('defined');
-        return metalObservations.observationStage;
-    }
-}
+  
+  const observationStage = useSelector(state => state.rowOfTubes.unreactedMetals[metal].observationStage);
     
+  const dispatch = useDispatch();
 
-    const handleClick = (event) => {      
+    const handleClick = (event) => {         
       props.onClick(props.metal.metal);
-      //add code here to increase observationStage by 1
+      dispatch(incrementObservationStage({metal: metal, newObservationStage: observationStage + 1}))      
     }
 
 
@@ -48,10 +39,6 @@ const IndividualTube = (props) => {
 
     }
     
-    
-
-
-
     return (      
       <div className="col-md-2 d-flex flex-column container " style={{height: '400px'}}> 
       
@@ -60,7 +47,7 @@ const IndividualTube = (props) => {
         className="test-tube "
         onClick={handleClick}
         aria-live="polite"
-        disabled={observationStage() === 1}
+        disabled={observationStage === 1}
         
         >
           {/* mx-auto */}
@@ -101,9 +88,3 @@ const IndividualTube = (props) => {
 }
 
 export default IndividualTube;
-
-//{imagesOfTubesBeforeReaction[0][1]}
-
-//"absolute-positioning-experiment  img-fluid"
-
-//style={{height: '400px'}}
