@@ -9,14 +9,14 @@ import ObservationForm from '../../features/observations/ObservationForm';
 
 const IndividualTube = (props) => {
   //console.log(`individual tube props...`);
-  //console.log(props);
+  console.log(props);
   
   const selectedReagent = useSelector(state => state.menu.selectedReagent);
   
   const metal = props.metal.metal;
-  const metalObservations = useSelector(state => state.observationFormSlice.reactantsToObserve[metal]);
+  //const metalObservations = useSelector(state => state.observationFormSlice.reactantsToObserve[metal]);
   //console.log(metalObservations);
-
+/*
   const observationStage = () => {
     if (!metalObservations){
        //console.log('undefined');
@@ -26,6 +26,7 @@ const IndividualTube = (props) => {
         return metalObservations.observationStage;
     }
 }
+*/
     
 
     const handleClick = (event) => {      
@@ -43,7 +44,7 @@ const IndividualTube = (props) => {
       const imageIndex = imagesOfReactantsAndProducts.products.findIndex(x => x.name === newProduct);
       
       const productImageDetails = imagesOfReactantsAndProducts.products[imageIndex];
-      
+      //console.log(productImageDetails);
       props.handleExcessProduct(metal, productImageDetails);
 
     }
@@ -60,7 +61,7 @@ const IndividualTube = (props) => {
         className="test-tube "
         onClick={handleClick}
         aria-live="polite"
-        disabled={observationStage() === 1}
+        
         
         >
           {/* mx-auto */}
@@ -101,6 +102,10 @@ const IndividualTube = (props) => {
 }
 
 export default IndividualTube;
+
+//disabled={observationStage() === 1}
+
+
 
 //{imagesOfTubesBeforeReaction[0][1]}
 

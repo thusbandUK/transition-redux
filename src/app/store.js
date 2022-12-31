@@ -15,7 +15,7 @@ export default configureStore({
         rowOfTubes: rowOfTubesReducer,
         textBoxCreator: textBoxCreatorReducer,
         multipleChoiceQuestion: multipleChoiceQuestionReducer,
-        observationFormSlice: observationFormReducer
+        observationForm: observationFormReducer
     },
     preloadedState: reHydrateStore(),
     middleware: getDefaultMiddleware =>

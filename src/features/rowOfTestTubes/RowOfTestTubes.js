@@ -5,8 +5,8 @@ import './row-of-test-tubes.css';
 import productFinder from '../../components/functionModules/findProduct';
 import { useSelector, useDispatch } from 'react-redux';
 import { data } from '../../data';
-import { selectUnreactedMetals, showProducts, reset } from './rowOfTestTubesSlice';
-import { selectReactantsToObserve } from '../observations/observationFormSlice';
+import { selectUnreactedMetals, showProducts, reset, selectUnreactedMetals2, showProducts2, reset2 } from './rowOfTestTubesSlice';
+import { selectReactantsToObserve, selectReactantsToObserve2 } from '../observations/observationFormSlice';
 import { useParams } from 'react-router-dom';
 import '../../app/App.css';
 
@@ -17,6 +17,7 @@ const RowOfTubes = () => {
   const dispatch = useDispatch();
   const {reactant} = useParams();
   const unreactedMetals = useSelector(state => state.rowOfTubes.unreactedMetals);
+  const unreactedMetals2 = useSelector(state => state.rowOfTubes.unreactedMetals2);
 
   /*
 console.log(unreactedMetals);
@@ -46,13 +47,20 @@ console.log(unreactedMetals);
   //effect hook removes any product images from previous reactions and loads up the relevant unreacted metal solutions
 
   useEffect(() => {
-    dispatch(reset());
-    dispatch(selectUnreactedMetals(generateMetalReactantsSet()));
+    //dispatch(reset());
+    dispatch(reset2());
+    let setOfReactants = generateMetalReactantsSet();
+    //dispatch(selectUnreactedMetals(generateMetalReactantsSet()));
+    const objectFromArray = setOfReactants.reduce((accumulator, currentValue, currentIndex, array) => ({...accumulator, [currentValue.metal]: (({id, link, altText, opaque}) => ({id, link, altText, opaque}))(currentValue)}), {});
+    //console.log(objectFromArray);
+    dispatch(selectUnreactedMetals2(objectFromArray));
+
+    dispatch(selectReactantsToObserve2(objectFromArray));
 
 }, [dispatch, generateMetalReactantsSet, reactant]);
 
 //effect hook assigns a set of reactants for which to file observations
-
+/*
 useEffect(() => {
   let objectOfReactantsToObserve = {}
     unreactedMetals.map((entry) => {
@@ -61,7 +69,7 @@ useEffect(() => {
     })
 dispatch(selectReactantsToObserve(objectOfReactantsToObserve));
 }, [unreactedMetals, reactant])
-
+*/
 //defines array from which is mapped the instances of each individual test tubes
 
 const tubes = useSelector(state => state.rowOfTubes.unreactedMetals);
@@ -69,6 +77,7 @@ const tubes = useSelector(state => state.rowOfTubes.unreactedMetals);
 //reference to products stored in state so individual test tubes know which product image to render
 
 const products = useSelector(state => state.rowOfTubes.products); 
+//const products2 = useSelector(state => state.)
 
 //partial styling for row of test tubes, see also row-of-test-tubes.css
 
@@ -82,26 +91,32 @@ const products = useSelector(state => state.rowOfTubes.products);
 
   //function for when reagent is added to individual test tubes 
 
-  const addReagent = (metal) => {       
+  const addReagent = (metal) => {    
+    
     if (products[metal].link){
       return;
     }
    const newProduct = productFinder(metal, selectedReagent.name);
+   console.log(newProduct);   
    const imageIndex = imagesOfReactantsAndProducts.products.findIndex(x => x.name === newProduct);
    const productImageDetails = imagesOfReactantsAndProducts.products[imageIndex];
-   dispatch(showProducts({metal: metal, details: productImageDetails}))
+  // dispatch(showProducts({metal: metal, details: productImageDetails}))
+   dispatch(showProducts2({metal: metal, details: productImageDetails}))
   }
   
 //function to handle excess product (see also handleExcessClick in excessButton.js and addExcessReagent in individual.js)
 
 const handleExcessProduct = (metal, productImageDetails) => {  
-  dispatch(showProducts({metal: metal, details: productImageDetails}))
+  //console.log(Object.keys(productImageDetails))
+  //dispatch(showProducts({metal: metal, details: productImageDetails}))
+  dispatch(showProducts2({metal: metal, details: productImageDetails}))
 }
 
 
     return (
         <div className="row-of-tubes rounded overflow-auto" style={rowOfTubesStyling}>
             <div className="row" style={{width: '100%', marginTop: '5%'}}>
+             {/**  
             {tubes.map((metal) => (
               
               <IndividualTube 
@@ -114,6 +129,17 @@ const handleExcessProduct = (metal, productImageDetails) => {
               />
               
               
+          ))}
+           */}
+         {Object.entries(unreactedMetals2).map(([key, value]) => (
+            <IndividualTube
+            key={value.id}
+            metal={{...value, metal: key}}           
+            reagent={selectedReagent.name}
+            onClick={addReagent}
+            product={value.product}
+            handleExcessProduct={handleExcessProduct}
+            />
           ))}
           
           </div>
