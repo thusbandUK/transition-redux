@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit';
   const products = {
     link: '', opaque: null
   }
-  const observationDetails = {observationStage: 1}
+  //const observationDetails = {observationStage: 1}
   //, initial: {input: '', logged: ''}, final: {input: '', logged: ''}
 
 
@@ -18,7 +18,7 @@ export const rowOfTestTubesSlice = createSlice({
       selectUnreactedMetals: (state, action) => {        
         state.unreactedMetals = {}
         Object.entries(action.payload).forEach(([key, value]) => {
-        return state.unreactedMetals = {...state.unreactedMetals, [key]: {...value, product: products, observationStage: 1}}
+        return state.unreactedMetals = {...state.unreactedMetals, [key]: {...value, product: products, observationStage: 2}}
       })
       },    
       showProducts: (state, action) => {

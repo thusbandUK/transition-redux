@@ -1,23 +1,19 @@
 
 POINTS TO ADDRESS:
 
-0.1) see arrayToObject.js in miscJavascriptSnippets, use that format to completely reconfigure the way the state is created 
-(it's current an array w 0, 1, 2 etc. references, where those could be changed to copper, cobalt etc. headings which can then
-be used by the other things)
-0.2) experiment with getting the relevant slices to append additional details into the existing metal references 
-0.3) See same file for a reminder of Object.entries(object).map etc. in a way it seems a bit cumbersome but you can easily
-convert an object back into an array for the purposes of mapping over the array to render individual tubes for each metal
 
 0.5) In App.css revisit the hover horror show
 0.75) screen reader horror show, getting hydroxide read out as OH
 1) you need to finish coding the individual observation-input forms which will stack under their individual test tubes
-a) progress made here: observationStage added to state (first, second, third observation), submit conditionally logs initial / final
-observation depending on observationStage, initial observation box disappears when input submitted, middleware tweaked to retain
-observationForm parts of state
-a.5) render form input title "observation ${observationStage}"
-b) need to make a little sign saying: click tube after initial observation submitted
-c) disable clickingTube ahead of that, enable it upon it
-d) once tube clicked reveal observation-2 form-input
+a) okay, so you need to do these things...
+a.2) complete what you've started, only have one form input and observationLog code will just have one section which uses 
+observation stage accordingly
+a.25) render the whole form conditionally as follows: !observationComplete; add an observationComplete section to the unreactedMetals
+part of the state. If there's no excess (see the original logic), the second observation updates ObservationComplete to true
+THINK MORE ABOUT THIS, HOW TO DO IT, I think you should add an entry in the reagent dataFile saying, excess: T/F and render it that way
+then if the excess button appears (observationStage 5 && excess === true), it can pony on the same logic and the submit button and
+input form will reappear
+
 e) put the excess button logic in here, it's revealed after observation-2 logged
 f) upon excess, reveal observation-3 input; log
 g) form disappears once final observation logged

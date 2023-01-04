@@ -15,7 +15,8 @@ const ObservationForm = (props) => {
 
 
     const initialObservationToState = (event) => {        
-        dispatch(inputInitialObservation({metal: metal.metal, observation: event.target.value}));
+        //console.log(observationStage/2);
+        dispatch(inputInitialObservation({metal: metal.metal, observationNumber: ((observationStage/2).toString()), observation: event.target.value}));
 
     }
 
@@ -27,8 +28,14 @@ const ObservationForm = (props) => {
     const submitObservation = (event) => {
         event.preventDefault();       
         
-        if (observationStage === 1){
-            dispatch(logInitialObservation({metal: metal.metal, observation: metalObservations.initial.input}));
+        dispatch(logInitialObservation({metal: metal.metal, observationNumber: ((observationStage/2).toString()), observation: metalObservations[(observationStage/2).toString()].input}));
+        dispatch(incrementObservationStage({metal: metal.metal, newObservationStage: observationStage + 1}));
+        return;
+/*
+        if (observationStage === 2){
+            //console.log('OS = 1');
+           // console.log(metalObservations[observationStage.toString()].input);
+            dispatch(logInitialObservation({metal: metal.metal, observation: metalObservations[(observationStage/2).toString()].input}));
             dispatch(incrementObservationStage({metal: metal.metal, newObservationStage: observationStage + 1}));
             return;
 
@@ -37,7 +44,7 @@ const ObservationForm = (props) => {
             dispatch(incrementObservationStage({metal: metal.metal, newObservationStage: observationStage + 1}));
             return;
         }
-
+*/
     }
 
 
@@ -47,34 +54,15 @@ const ObservationForm = (props) => {
 
                {/*Submit initial observation */}                              
                 
-               {(observationStage === 1) ?
+               {(observationStage % 2 === 0) ?
                 
                <div>
-                <label>
-                    First observation
+                <label style={{display: 'inline'}}>
+                    {`Observation ${observationStage/2}`}
                 </label>
                 
                 <input type="text"   onChange={initialObservationToState} id={`flexCheck${props.props.metal.id}-initial`}/>
-                </div>
-                : null }
-
-
-            {/*Submit a text box reading "click test tube" */}
-            {/*Might need to add some logic to the individual tube clicking sitch where clicking the test tube adds 1 to the observation stage */}
-            {/*Submit second observation */}
-            {/*might need to change that to 3 so the click test tube label can go with OS2 */}
-            {(observationStage === 3) ? 
-            
-                <div>
-                <label>
-                    Second observation
-                </label>
-                <input type="text"  onChange={finalObservationToState} id={`flexCheck${props.props.metal.id}-final`}/>
-                </div>      
-                : null }  
-
-             {/*submit button */}
-             <ul className="list-group list-group-horizontal mt-3 fs-5 d-flex justify-content-center">
+                <ul className="list-group list-group-horizontal mt-3 fs-5 d-flex justify-content-center">
                 <div className="excess-or-reset-button-container d-flex justify-content-center">
                   <button 
                    className="excess-button list-group-item w-100 rounded" 
@@ -85,6 +73,45 @@ const ObservationForm = (props) => {
                    >Submit observation</button> 
                 </div>
                 </ul>
+                </div>
+                : null }
+
+
+
+
+               {(observationStage === 3) ?
+                
+                <div>
+                 <p>Click test tube</p>
+                 </div>
+                 : null }
+
+            {/*Submit a text box reading "click test tube" */}
+            {/*Might need to add some logic to the individual tube clicking sitch where clicking the test tube adds 1 to the observation stage */}
+            {/*Submit second observation */}
+            {/*might need to change that to 3 so the click test tube label can go with OS2 */}
+           {/* {(observationStage === 4) ? 
+            
+                <div>
+                <label>
+                {`Observation ${observationStage/2}`}
+                </label>
+                <input type="text"  onChange={initialObservationToState} id={`flexCheck${props.props.metal.id}-final`}/>
+                </div>      
+                : null }  */}
+
+             {/*submit button 
+             <ul className="list-group list-group-horizontal mt-3 fs-5 d-flex justify-content-center">
+                <div className="excess-or-reset-button-container d-flex justify-content-center">
+                  <button 
+                   className="excess-button list-group-item w-100 rounded" 
+                   type="submit" 
+                   id="submitObservation"
+                   onClick={submitObservation}
+                   
+                   >Submit observation</button> 
+                </div>
+                </ul>*/}
                 </form>
             
         </div>

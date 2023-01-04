@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const observations = {  
-  initial:
+  1:
   {input: {}, logged: {}},
-  final:
+  2:
   {input: {}, logged: {}}
 }
 
@@ -21,19 +21,19 @@ export const observationFormSlice = createSlice({
         })
       },     
       inputInitialObservation: (state, action) => {
-        state.reactantsToObserve[action.payload.metal].initial.input = action.payload.observation;
+        state.reactantsToObserve[action.payload.metal][action.payload.observationNumber].input = action.payload.observation;
       },
-      inputFinalObservation: (state, action) => {
+      /*inputFinalObservation: (state, action) => {
         state.reactantsToObserve[action.payload.metal].final.input = action.payload.observation;
-      },
+      },*/
       logInitialObservation: (state, action) => {
-        state.reactantsToObserve[action.payload.metal].initial.logged = action.payload.observation;
+        state.reactantsToObserve[action.payload.metal][action.payload.observationNumber].logged = action.payload.observation;
         state.reactantsToObserve[action.payload.metal].observationStage = action.payload.observationStage;
       },
-      logFinalObservation: (state, action) => {
+      /*logFinalObservation: (state, action) => {
         state.reactantsToObserve[action.payload.metal].final.logged = action.payload.observation;
         state.reactantsToObserve[action.payload.metal].observationStage = action.payload.observationStage;
-      },     
+      },*/     
       reset: (state) => {        
         state.reactantsToObserve = {};
       }

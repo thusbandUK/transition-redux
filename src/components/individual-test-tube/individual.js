@@ -47,7 +47,7 @@ const IndividualTube = (props) => {
         className="test-tube "
         onClick={handleClick}
         aria-live="polite"
-        disabled={observationStage === 1}
+        disabled={observationStage === 2}
         
         >
           {/* mx-auto */}

@@ -5,7 +5,7 @@ const ExcessButton = (props) => {
 //console.log(props)
   const products = useSelector(state => state.rowOfTubes.products); 
 
-  const product = useSelector(state => state.rowOfTubes.unreactedMetals2[props.metal].product);
+  const product = useSelector(state => state.rowOfTubes.unreactedMetals[props.metal].product);
   const handleExcessClick = () => {
     //console.log(`props.metal=${props.metal} and props.reagent=${props.reagent}`);
     props.onClick(props.metal, props.reagent);
