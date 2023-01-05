@@ -6,7 +6,8 @@ const observations = {
   2:
   {input: {}, logged: {}},
   3:
-  {input: {}, logged: {}}
+  {input: {}, logged: {}},
+  observationComplete: false
 }
 
 export const observationFormSlice = createSlice({
@@ -35,7 +36,10 @@ export const observationFormSlice = createSlice({
       /*logFinalObservation: (state, action) => {
         state.reactantsToObserve[action.payload.metal].final.logged = action.payload.observation;
         state.reactantsToObserve[action.payload.metal].observationStage = action.payload.observationStage;
-      },*/     
+      },*/   
+      completeObservation: (state, action) => {
+        state.reactantsToObserve[action.payload.metal].observationComplete = true;
+      },  
       reset: (state) => {        
         state.reactantsToObserve = {};
       }
@@ -48,7 +52,8 @@ export const observationFormSlice = createSlice({
     inputFinalObservation,
     logInitialObservation,
     logFinalObservation,      
-    reset   
+    reset,
+    completeObservation   
  } = observationFormSlice.actions;
  
  export default observationFormSlice.reducer;

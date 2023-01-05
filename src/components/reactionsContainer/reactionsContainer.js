@@ -5,20 +5,29 @@ import ResetButton from '../../components/resetButton/resetButton';
 //import { reset } from '../../features/rowOfTestTubes/rowOfTestTubesSlice';
 //import Menu from '../../features/menu/Menu';
 import ReactantMenu from '../../features/menu/ReactantMenu';
-
-
-
+import TextBoxCreator from '../../features/textBoxCreator/TextBoxCreator';
+import { useSelector, useDispatch } from 'react-redux';
 
 const ReactionsContainer = () => {
-    /*const [reagent, setReagent] = useState('');
+    
+const observations = useSelector(state => state.observationForm.reactantsToObserve);
 
-    const updateState = (reagent) => {
-      setReagent(reagent);
-    }
-*/
 const handleReset = (props) => {
   props.handleReset();
 
+}
+
+const textBoxRender = () => {
+  let newArray = Object.values(observations);
+  //if the observations section has not yet been compiled, the below returns false
+  if (newArray.length === 0){
+    //console.log('if statements');
+    return false;
+  }
+  //once every observationComplete is set to true, the function as a whole returns true
+  const allObservationsComplete = Object.values(newArray).every((entry) => entry.observationComplete);
+  return allObservationsComplete;
+  
 }
 
     return (
@@ -35,9 +44,13 @@ const handleReset = (props) => {
         
         handleReset={handleReset}
         /> 
-        </div> 
-              
+        </div>       
+
       </div>
+      
+      {textBoxRender() ?
+          <div><p>I will be the textBoxCreator</p></div> : null}
+
       <ReactantMenu/>
       </div>
     );

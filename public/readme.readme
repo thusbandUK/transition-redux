@@ -3,26 +3,11 @@ POINTS TO ADDRESS:
 
 
 0.5) In App.css revisit the hover horror show
-0.75) screen reader horror show, getting hydroxide read out as OH
+0.75) screen reader horror show, getting hydroxide read out as OH - ADD ARIA LABEL WITH O AND H SEPARATED?
 1) you need to finish coding the individual observation-input forms which will stack under their individual test tubes
-a) okay, so you need to do these things...
-a.2) complete what you've started, only have one form input and observationLog code will just have one section which uses 
-observation stage accordingly
-a.25) render the whole form conditionally as follows: !observationComplete; add an observationComplete section to the unreactedMetals
-part of the state. If there's no excess (see the original logic), the second observation updates ObservationComplete to true
-THINK MORE ABOUT THIS, HOW TO DO IT, I think you should add an entry in the reagent dataFile saying, excess: T/F and render it that way
-then if the excess button appears (observationStage 5 && excess === true), it can pony on the same logic and the submit button and
-input form will reappear
 
-THIS IS A MESS!! You might like to undo all the changes to figure out why the excess button has gone weird for being moved into 
-observationForm; its refreshing of the screen is reminiscent of when you had a submit button but no function, but there are functions 
-and they're connected and working (for a split second before it forces a refresh for some reason)
-also watch out for the fact that you can endlessly click the test tube and send the observationStage to infinity
 
-e) put the excess button logic in here, it's revealed after observation-2 logged
-f) upon excess, reveal observation-3 input; log
-g) form disappears once final observation logged
-h) style
+h) style the forms because at the moment they're GROSS
 2) prune superceded files, including (to confirm) 
 a) the whole or (old) textBox folder in components
 b) in textBoxCreator in features: variableTextCreator, variableTextGenerator, subSuperTextGenerator

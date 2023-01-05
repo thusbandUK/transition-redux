@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { inputInitialObservation, inputFinalObservation, logInitialObservation, logFinalObservation } from './observationFormSlice';
+import { inputInitialObservation, inputFinalObservation, logInitialObservation, logFinalObservation, completeObservation } from './observationFormSlice';
 import '../../app/App.css';
 import { incrementObservationStage } from '../../features/rowOfTestTubes/rowOfTestTubesSlice';
 import ExcessButton from '../../components/excessButton/excessButton';
@@ -59,6 +59,11 @@ const ObservationForm = (props) => {
         dispatch(logInitialObservation({metal: metal.metal, observationNumber: ((observationStage/2).toString()), observation: metalObservations[(observationStage/2).toString()].input}));
         //increments observationState by 1 to remove observation form and enable chemical change logic
         dispatch(incrementObservationStage({metal: metal.metal, newObservationStage: observationStage + 1}));
+        //logs observation for individual metal complete
+        if ((observationStage === 4 && !selectedReagent.excess) || (observationStage === 6)){
+            dispatch(completeObservation({metal: metal.metal}))
+            return
+        }
         return;
 
     }
