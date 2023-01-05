@@ -1,7 +1,7 @@
 import React from 'react';
 import ExcessButton from '../excessButton/excessButton';
-import imagesOfReactantsAndProducts from '../images/images-combined';
 import './individual.css';
+import imagesOfReactantsAndProducts from '../images/images-combined';
 import excessProductFinder from '../functionModules/findExcessProduct';
 import { useSelector, useDispatch } from 'react-redux';
 import '../../app/App.css';
@@ -29,6 +29,7 @@ const IndividualTube = (props) => {
 
     //need to move this elsewhere? It would be code if the button was rendered by the observation form but again, might that
     //cause the kind of problem where pandemonium ensues because a child component is modifying a parent component?
+    /*
     const addExcessReagent = (metal, reagent) => {
             
       const newProduct = excessProductFinder(metal, reagent);
@@ -40,7 +41,7 @@ const IndividualTube = (props) => {
       props.handleExcessProduct(metal, productImageDetails, observationStage);
 
     }
-    
+    */
     return (      
       <div className="col-md-2 d-flex flex-column container " style={{height: '400px'}}> 
       
@@ -49,7 +50,7 @@ const IndividualTube = (props) => {
         className="test-tube "
         onClick={handleClick}
         aria-live="polite"
-        disabled={observationStage === 2}
+        disabled={observationStage !== 3}
         
         >
           {/* mx-auto */}
@@ -67,7 +68,7 @@ const IndividualTube = (props) => {
           alt={props.product.altText}
           /> : null }
         </button>
-        {/** */}
+        {/** 
         <ul className="list-group list-group-horizontal mt-5 fs-5 d-flex justify-content-center">
         {((observationStage === 5) && (selectedReagent.excess))
          ? <ExcessButton 
@@ -78,11 +79,12 @@ const IndividualTube = (props) => {
         
         /> : null}
       </ul>
-      
+      */}
        <ObservationForm
        key={props.metal.id}
-       props={props}
        
+       metal={props.metal}
+       handleExcessProduct={props.handleExcessProduct}
        />
       </div>
 
@@ -93,3 +95,4 @@ const IndividualTube = (props) => {
 export default IndividualTube;
 
 //(selectedReagent.name === 'ammonia solution' || selectedReagent.name === 'sodium hydroxide')
+//props={props}
