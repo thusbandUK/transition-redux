@@ -1,22 +1,15 @@
 import '../../app/App.css';
-import { useSelector } from 'react-redux';
 
 const ExcessButton = (props) => {
-//console.log(props)
-  const products = useSelector(state => state.rowOfTubes.products); 
 
-  const product = useSelector(state => state.rowOfTubes.unreactedMetals[props.metal].product);
-  const handleExcessClick = () => {
-    //console.log(`props.metal=${props.metal} and props.reagent=${props.reagent}`);
+  const handleExcessClick = () => {    
     props.onClick(props.metal, props.reagent);
   }
 
     return (
         <div className="excess-or-reset-button-container d-flex justify-content-center" >          
           <button className="excess-button list-group-item w-100 rounded"
-            onClick={handleExcessClick}
-            
-            disabled={!product.link}
+            onClick={handleExcessClick}            
             >
             Add excess reagent         
           </button>
@@ -26,6 +19,3 @@ const ExcessButton = (props) => {
 }
 
 export default ExcessButton;
-
-//style={products[props.metal].link ? {display: 'flex'} : {display: 'none'}}
-//disabled={!products[props.metal].link}

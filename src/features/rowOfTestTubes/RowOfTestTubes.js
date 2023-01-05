@@ -17,8 +17,7 @@ const RowOfTubes = () => {
   const dispatch = useDispatch();
   const {reactant} = useParams();
   const unreactedMetals = useSelector(state => state.rowOfTubes.unreactedMetals);
-  const unreactedMetals2 = useSelector(state => state.rowOfTubes.unreactedMetals2);
-
+ 
  
   //filters the available reactants in data.js to identify the ones used by the exam board and with the reagent in question
 
@@ -45,10 +44,6 @@ const RowOfTubes = () => {
     dispatch(selectReactantsToObserve(objectFromArray));
 
 }, [dispatch, generateMetalReactantsSet, reactant]);
-
-//defines array from which is mapped the instances of each individual test tubes
-
-const tubes = useSelector(state => state.rowOfTubes.unreactedMetals);
 
 //reference to products stored in state so individual test tubes know which product image to render
 
