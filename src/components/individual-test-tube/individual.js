@@ -16,10 +16,12 @@ const IndividualTube = (props) => {
   const metal = props.metal.metal;
   
   const observationStage = useSelector(state => state.rowOfTubes.unreactedMetals[metal].observationStage);
-    
+
+  //console.log(observationStage);
+  
   const dispatch = useDispatch();
 
-    const handleClick = (event) => {         
+      const handleClick = (event) => {         
       props.onClick(props.metal.metal);
       dispatch(incrementObservationStage({metal: metal, newObservationStage: observationStage + 1}))      
     }
@@ -35,7 +37,7 @@ const IndividualTube = (props) => {
       
       const productImageDetails = imagesOfReactantsAndProducts.products[imageIndex];
       
-      props.handleExcessProduct(metal, productImageDetails);
+      props.handleExcessProduct(metal, productImageDetails, observationStage);
 
     }
     
@@ -65,9 +67,10 @@ const IndividualTube = (props) => {
           alt={props.product.altText}
           /> : null }
         </button>
-        
+        {/** */}
         <ul className="list-group list-group-horizontal mt-5 fs-5 d-flex justify-content-center">
-        {(selectedReagent.name === 'ammonia solution' || selectedReagent.name === 'sodium hydroxide') ? <ExcessButton 
+        {((observationStage === 5) && (selectedReagent.excess))
+         ? <ExcessButton 
         onClick={addExcessReagent}
         reagent={selectedReagent.name}
         metal={props.metal.metal}
@@ -88,3 +91,5 @@ const IndividualTube = (props) => {
 }
 
 export default IndividualTube;
+
+//(selectedReagent.name === 'ammonia solution' || selectedReagent.name === 'sodium hydroxide')

@@ -4,6 +4,8 @@ const observations = {
   1:
   {input: {}, logged: {}},
   2:
+  {input: {}, logged: {}},
+  3:
   {input: {}, logged: {}}
 }
 

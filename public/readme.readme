@@ -14,6 +14,11 @@ THINK MORE ABOUT THIS, HOW TO DO IT, I think you should add an entry in the reag
 then if the excess button appears (observationStage 5 && excess === true), it can pony on the same logic and the submit button and
 input form will reappear
 
+THIS IS A MESS!! You might like to undo all the changes to figure out why the excess button has gone weird for being moved into 
+observationForm; its refreshing of the screen is reminiscent of when you had a submit button but no function, but there are functions 
+and they're connected and working (for a split second before it forces a refresh for some reason)
+also watch out for the fact that you can endlessly click the test tube and send the observationStage to infinity
+
 e) put the excess button logic in here, it's revealed after observation-2 logged
 f) upon excess, reveal observation-3 input; log
 g) form disappears once final observation logged

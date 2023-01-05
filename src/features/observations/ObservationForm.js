@@ -86,6 +86,18 @@ const ObservationForm = (props) => {
                  </div>
                  : null }
 
+               {/** 
+                <ul className="list-group list-group-horizontal mt-5 fs-5 d-flex justify-content-center">
+                  {((observationStage === 5) && (selectedReagent.excess))
+                   ? <ExcessButton 
+                      onClick={addExcessReagent}
+                      reagent={selectedReagent.name}
+                      metal={props.metal.metal}
+                      className='excess-button'
+        
+                     /> : null}
+                </ul>
+                */}
             {/*Submit a text box reading "click test tube" */}
             {/*Might need to add some logic to the individual tube clicking sitch where clicking the test tube adds 1 to the observation stage */}
             {/*Submit second observation */}

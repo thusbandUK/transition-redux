@@ -5,7 +5,7 @@ import './row-of-test-tubes.css';
 import productFinder from '../../components/functionModules/findProduct';
 import { useSelector, useDispatch } from 'react-redux';
 import { data } from '../../data';
-import { selectUnreactedMetals, showProducts, reset } from './rowOfTestTubesSlice';
+import { selectUnreactedMetals, showProducts, reset, incrementObservationStage } from './rowOfTestTubesSlice';
 import { selectReactantsToObserve } from '../observations/observationFormSlice';
 import { useParams } from 'react-router-dom';
 import '../../app/App.css';
@@ -78,8 +78,9 @@ const products = useSelector(state => state.rowOfTubes.unreactedMetals);
   
 //function to handle excess product (see also handleExcessClick in excessButton.js and addExcessReagent in individual.js)
 
-const handleExcessProduct = (metal, productImageDetails) => {    
+const handleExcessProduct = (metal, productImageDetails, observationStage) => {    
   dispatch(showProducts({metal: metal, details: productImageDetails}))
+  dispatch(incrementObservationStage({metal: metal, newObservationStage: observationStage + 1}));
 }
 
 

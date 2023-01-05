@@ -10,8 +10,8 @@ export const data = {
     ],
     reagentOptions: [
         {id: 1, name: 'concentrated hydrochloric acid', path: '/concentrated_hydrochloric_acid', true: ['AQA', 'OCRA', 'OCRB', 'Edexcel'], link: 'images/HCl-bottle.png', altText: "a bottle of hydrochloric acid"},
-        {id: 2, name: 'sodium hydroxide', path: '/sodium_hydroxide', true: ['AQA', 'OCRA', 'OCRB', 'Edexcel'], link: 'images/sodium hydroxide bottle.png', altText: "a bottle of sodium hydroxide"},
-        {id: 3, name: 'ammonia solution', path: '/ammonia_solution', true: ['AQA', 'OCRA', 'OCRB', 'Edexcel'], link: 'images/ammonia bottle.png', altText: "a bottle of ammonia solution"},
+        {id: 2, name: 'sodium hydroxide', path: '/sodium_hydroxide', true: ['AQA', 'OCRA', 'OCRB', 'Edexcel'], link: 'images/sodium hydroxide bottle.png', altText: "a bottle of sodium hydroxide", excess: true},
+        {id: 3, name: 'ammonia solution', path: '/ammonia_solution', true: ['AQA', 'OCRA', 'OCRB', 'Edexcel'], link: 'images/ammonia bottle.png', altText: "a bottle of ammonia solution", excess: true},
         {id: 4, name: 'sodium carbonate solution', path: '/sodium_carbonate_solution', true: ['AQA'], link: 'images/sodium carbonate bottle.png', altText: "a bottle of sodium carbonate solution"}
       ],
     unreactedMetals: 
