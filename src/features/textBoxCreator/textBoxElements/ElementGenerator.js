@@ -5,6 +5,7 @@ import stringSplicer from './textBoxFunctions/stringSplicer';
 import formatSubSuperScript from './textBoxFunctions/formatSubSuperScript';
 import '../../../app/App.css';
 import MultipleChoiceQuestion from './multipleChoiceQuestions/MultipleChoiceQuestion';
+import ObservationPage from './ObservationPage';
 
 
 
@@ -84,6 +85,10 @@ const processContent = () => {
   }
   if (props.type === 'mcq'){    
     return newType = MultipleChoiceQuestion
+  }
+
+  if (props.type === 'ObservationPage'){
+    return newType = ObservationPage
   }
 
 //if none of the if clauses apply

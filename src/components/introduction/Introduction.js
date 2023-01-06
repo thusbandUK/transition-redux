@@ -14,7 +14,7 @@ const Introduction = () => {
     const dispatch = useDispatch();
 /**/
     useEffect(() => {
-        console.log('useEffect called');
+        //console.log('useEffect called');
         dispatch(reset());
 
 

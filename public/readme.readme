@@ -4,10 +4,19 @@ POINTS TO ADDRESS:
 
 0.5) In App.css revisit the hover horror show
 0.75) screen reader horror show, getting hydroxide read out as OH - ADD ARIA LABEL WITH O AND H SEPARATED?
+0.8) EUCH!! so basics there's a disconnect between when the css thinks the textBox chevrons are disabled and when the javascript
+thinks they are. So they're working, but they're not greying out when they ought to
 1) you need to finish coding the individual observation-input forms which will stack under their individual test tubes
 
 
 h) style the forms because at the moment they're GROSS
+
+1.5) Render text boxes. You need to format and complete the observations page. You'll need to add the model observations
+in the content section of the ObservationStages entry in the first page of each text box. They'll need to be tagged for 
+examBoard filtering. Or that might be overkill. It might just be that a function scans the state for the metals then 
+harvests them from props.content. I'd say a plus of rendering by examboard might be if you want to file slightly different
+"approved" colours for the same reaction. We'll see.
+
 2) prune superceded files, including (to confirm) 
 a) the whole or (old) textBox folder in components
 b) in textBoxCreator in features: variableTextCreator, variableTextGenerator, subSuperTextGenerator

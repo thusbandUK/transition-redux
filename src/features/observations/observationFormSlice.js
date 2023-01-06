@@ -2,11 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const observations = {  
   1:
-  {input: {}, logged: {}},
+  {input: "", logged: ""},
   2:
-  {input: {}, logged: {}},
+  {input: "", logged: ""},
   3:
-  {input: {}, logged: {}},
+  {input: "", logged: ""},
   observationComplete: false
 }
 

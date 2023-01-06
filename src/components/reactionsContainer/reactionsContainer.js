@@ -48,9 +48,12 @@ const textBoxRender = () => {
 
       </div>
       
+      <TextBoxCreator />
+      
+      {/**
       {textBoxRender() ?
-          <div><p>I will be the textBoxCreator</p></div> : null}
-
+          <TextBoxCreator /> : null}
+ */}
       <ReactantMenu/>
       </div>
     );
