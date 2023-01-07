@@ -1,4 +1,4 @@
-import formatSubSuperScript from "./formatSubSuperScript";
+import formatSubSuperScript from "../textBoxElements/textBoxFunctions/formatSubSuperScript";
 
 const equationGenerator = (string) => {
     

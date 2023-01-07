@@ -4,7 +4,7 @@ export const localStorageMiddleware = ({ getState }) => {
       const result = next(action);
       
       //makes a shallow copy of state object including only examBoard, menu and rowOfTubes
-      let detailsForStorage = (({ examBoard, menu, rowOfTubes }) => ({ examBoard, menu, rowOfTubes }))(getState());
+      let detailsForStorage = (({ examBoard, menu, rowOfTubes, observationFormSlice }) => ({ examBoard, menu, rowOfTubes, observationFormSlice }))(getState());
 
       //previous logic
       //localStorage.setItem('completeSavedState', JSON.stringify(getState()));

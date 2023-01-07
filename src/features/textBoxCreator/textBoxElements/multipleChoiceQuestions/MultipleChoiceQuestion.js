@@ -1,8 +1,8 @@
-import { MCQData } from '../../../textDataTemp';
-import '../../../app/App.css';
+import { MCQData } from '../../../../textDataTemp';
+import '../../../../app/App.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectAnswer, displayFeedback, selectMCQId, reset } from './multipleChoiceQuestionSlice';
-import optionTextGenerator from './multipleChoiceQuestions/optionTextGenerator';
+import optionTextGenerator from './optionTextGenerator';
 
 
 const MultipleChoiceQuestion = (props) => {

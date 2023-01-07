@@ -1,38 +1,23 @@
 import React from 'react';
-import ExcessButton from '../excessButton/excessButton';
-import imagesOfReactantsAndProducts from '../images/images-combined';
 import './individual.css';
-import excessProductFinder from '../functionModules/findExcessProduct';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import '../../app/App.css';
+import ObservationForm from '../../features/observations/ObservationForm';
+import { incrementObservationStage } from '../../features/rowOfTestTubes/rowOfTestTubesSlice';
 
-
-const IndividualTube = (props) => {
+const IndividualTube = (props) => { 
   
-  const selectedReagent = useSelector(state => state.menu.selectedReagent);
+  const metal = props.metal.metal;
   
-    
+  const observationStage = useSelector(state => state.rowOfTubes.unreactedMetals[metal].observationStage);
+ 
+  const dispatch = useDispatch();
 
-    const handleClick = (event) => {      
+      const handleClick = (event) => {         
       props.onClick(props.metal.metal);
-    }
-
-    const addExcessReagent = (metal, reagent) => {
-            
-      const newProduct = excessProductFinder(metal, reagent);
-      
-      const imageIndex = imagesOfReactantsAndProducts.products.findIndex(x => x.name === newProduct);
-      
-      const productImageDetails = imagesOfReactantsAndProducts.products[imageIndex];
-      
-      props.handleExcessProduct(metal, productImageDetails);
-
+      dispatch(incrementObservationStage({metal: metal, newObservationStage: observationStage + 1}))      
     }
     
-    
-
-
-
     return (      
       <div className="col-md-2 d-flex flex-column container " style={{height: '400px'}}> 
       
@@ -41,7 +26,7 @@ const IndividualTube = (props) => {
         className="test-tube "
         onClick={handleClick}
         aria-live="polite"
-        disabled={!selectedReagent}
+        disabled={observationStage !== 3}
         
         >
           {/* mx-auto */}
@@ -60,16 +45,11 @@ const IndividualTube = (props) => {
           /> : null }
         </button>
         
-        <ul className="list-group list-group-horizontal mt-5 fs-5 d-flex justify-content-center">
-        {(selectedReagent.name === 'ammonia solution' || selectedReagent.name === 'sodium hydroxide') ? <ExcessButton 
-        onClick={addExcessReagent}
-        reagent={selectedReagent.name}
-        metal={props.metal.metal}
-        className='excess-button'
-        
-        /> : null}
-      </ul>
-       
+       <ObservationForm
+       key={props.metal.id}       
+       metal={props.metal}
+       handleExcessProduct={props.handleExcessProduct}
+       />
       </div>
 
     );
@@ -77,9 +57,3 @@ const IndividualTube = (props) => {
 }
 
 export default IndividualTube;
-
-//{imagesOfTubesBeforeReaction[0][1]}
-
-//"absolute-positioning-experiment  img-fluid"
-
-//style={{height: '400px'}}
