@@ -1,20 +1,7 @@
 export const HydrochloricAcidText = [
-    {id: 20, allContent: [
-            
-        {
-            type: 'h2',
-            content: ['Welcome to the hydrochloric acid page'],
-            props: {key: 20.1}
-        },
-        {
-            type: 'p',  
-            content: ["I'm gonna hydrochloric acid it right up."],
-            props: {key: 20.2}
-        }
-      ]
-    },
+    
     {
-       id: 21, allContent: [
+       id: 20, allContent: [
         {
         type: 'ObservationPage',                
         props: {key: 4},
@@ -27,6 +14,30 @@ export const HydrochloricAcidText = [
         }
         }
       ]
-    }
+    },
+    {id: 20, allContent: [
+            
+      {
+          type: 'h2',
+          content: ['How can we explain these observations?'],
+          props: {key: 20.1}
+      },
+      {
+          type: 'p',  
+          content: ["Look at the equation below and compare the complex ions. List some similiarities and differences between the complex in the reactants and the complex in the products."],
+          props: {key: 20.2}
+      },
+      {
+          type: 'img',
+          content: null,
+          props: {src: "images/structures/equation conc HCl substitution.png", altText: "an equation showing the octahedral complex hexaaquacopper reacting with four chloride ions to produce the tetrachlorocopper complex along with six displaced water molecules", className: 'img-fluid'}
+      },
+      {
+          type: 'comparison',
+          content: {},
+          props: {key: 20.3}
+      }
+    ]
+  }
 
 ]

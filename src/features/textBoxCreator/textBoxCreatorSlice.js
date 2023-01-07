@@ -4,7 +4,17 @@ const initialState = {
   selectedSection: 'introPage',
   selectedPage: 1,
   leftDisabled: true,
-  rightDisabled: false
+  rightDisabled: false,
+  comparison: {
+    similarities: {
+      input: "",
+      logged: ""
+    },
+    differences: {
+      input: "",
+      logged: ""
+    }
+  }
 }
 
 
@@ -24,6 +34,19 @@ export const textBoxCreatorSlice = createSlice({
       disableRight: (state, action) => {
         state.rightDisabled = action.payload; 
       }, 
+      createComparisonSection: (state, action) => {
+        state.comparison = {...state.comparison}
+      },
+      inputSimilarities: (state, action) => {
+        state.comparison.similarities.input = action.payload;
+      },
+      inputDifferences: (state, action) => {
+        state.comparison.differences.input = action.payload;
+      },
+      submitComparisons: (state, action) => {        
+        state.comparison.similarities.logged = action.payload.similarities.input;
+        state.comparison.differences.logged = action.payload.differences.input;
+      },
       reset: (state) => {
         state = initialState;
       ;}       
@@ -35,6 +58,10 @@ export const textBoxCreatorSlice = createSlice({
     selectPage, 
     disableLeft,
     disableRight,
+    createComparisonSection,
+    inputSimilarities,
+    inputDifferences,
+    submitComparisons,
     reset
  } = textBoxCreatorSlice.actions;
  

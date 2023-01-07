@@ -6,6 +6,10 @@ import formatSubSuperScript from './textBoxFunctions/formatSubSuperScript';
 import '../../../app/App.css';
 import MultipleChoiceQuestion from './multipleChoiceQuestions/MultipleChoiceQuestion';
 import ObservationPage from './ObservationPage';
+import Comparison from './Comparison';
+
+//'./multipleChoiceQuestions/MultipleChoiceQuestion';
+//import ObservationPage from './ObservationPage';
 
 
 
@@ -89,6 +93,10 @@ const processContent = () => {
 
   if (props.type === 'ObservationPage'){
     return newType = ObservationPage
+  }
+
+  if (props.type === 'comparison') {
+    return newType = Comparison
   }
 
 //if none of the if clauses apply
