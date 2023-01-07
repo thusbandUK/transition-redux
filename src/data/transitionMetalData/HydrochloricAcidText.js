@@ -18,7 +18,13 @@ export const HydrochloricAcidText = [
         {
         type: 'ObservationPage',                
         props: {key: 4},
-        content: {}
+        content: {
+          modelObservations: {
+            copper: "blue solution changes to yellow green solution",
+            cobalt: "pink solution changes to blue solution",
+            "iron III": "pale yellow solution changes to deep yellow solution"
+          }
+        }
         }
       ]
     }

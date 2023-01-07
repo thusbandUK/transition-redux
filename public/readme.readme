@@ -17,6 +17,8 @@ examBoard filtering. Or that might be overkill. It might just be that a function
 harvests them from props.content. I'd say a plus of rendering by examboard might be if you want to file slightly different
 "approved" colours for the same reaction. We'll see.
 
+1.75) merge addObservationForms with parent branch
+
 2) prune superceded files, including (to confirm) 
 a) the whole or (old) textBox folder in components
 b) in textBoxCreator in features: variableTextCreator, variableTextGenerator, subSuperTextGenerator
