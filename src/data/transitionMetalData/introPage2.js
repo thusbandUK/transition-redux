@@ -1,4 +1,19 @@
-export const introPage = [
+export const introPage2 = [
+        {id: 15, allContent: [
+            
+            {
+                type: 'h2',
+                content: ['What should I be able to do before I start?'],
+                props: {key: 16.1}
+            },
+            {
+                type: 'p',  
+                content: ['Draw a diagram showing the structure of the complex ion formed when copper sulfate is dissolved in distilled water.',
+                'Try drawing the diagram now and then click the next button to check your answer.'],
+                props: {key: 16.2}
+            }
+          ]
+        }/*,
         {id: 16, allContent: [
             
             {
@@ -87,7 +102,7 @@ export const introPage = [
                 {
                     type: 'h2',
                     
-                    content: /*'hello joe!',*/{            
+                    content: {            
                         staticContent: 'The [REPLACE TEXT] solutions.',            
                         dynamicContent: [
                             {string: 'five', true: ['AQA', 'Edexcel', 'OCRA']},
@@ -99,7 +114,7 @@ export const introPage = [
                 {
                     type: 'p',
                     
-                    content: /*'hello joe!',*/{            
+                    content: {            
                         staticContent: "The [REPLACE TEXT] syllabus includes the reactions of ",            
                         dynamicContent: [
                             {string: 'AQA', true: ['AQA']},
@@ -114,7 +129,7 @@ export const introPage = [
                 {
                     type: 'p',
                     
-                    content: /*'hello joe!',*/{            
+                    content: {            
                         staticContent: "[REPLACE TEXT] hexaaquaions with the reagents in the menu below. The hexaaquaions are as follows:",            
                         dynamicContent: [
                             {string: 'five', true: ['AQA', 'Edexcel', 'OCRA']},
@@ -157,36 +172,10 @@ export const introPage = [
                               }
                             ],
                     props: {key: 18.3, variableContent: 'filter by exam board'}
-                        }/*,
-                   {
-                    type: 'ul',
-                    content: [
-                              {childType: 'li',
-                               childProps: {},
-                               childContent: 'hexaaquacobalt(II): pink solution'
-                              },
-                              {childType: 'li',
-                               childProps: {},
-                               childContent: 'hexaaquacopper(II): blue solution'
-                              },
-                              {childType: 'li',
-                               childProps: {},
-                               childContent: 'hexaquairon(II): green solution'
-                              },
-                              {childType: 'li',
-                               childProps: {},
-                               childContent: 'hexaaquairon(III): pale yellow (or violet) solution'
-                              },
-                              {childType: 'li',
-                               childProps: {},
-                               childContent: 'hexaaquaaluminium(III): colourless solution'
-                              }
-                            ],
-                    props: {id: 18.3, parent: true}
-                        }*/,
+                        },
                     {
                         type: 'p',  
-                        content: [/*'In each section the starting solutions appear in a different order with buttons you can click to reveal their identity. This is so you can practise recalling their name by colour.',*/
+                        content: [
                     'After each set of reactions there is a set of text boxes to record your observations. Make sure to describe both the appearance of each tube at the start and at the end. State whether colours describe a solution or a precipitate. For example: "When a few drops of sodium hydroxide are added to a blue solution of hexaaquacopper(II) ions, a pale blue precipitate forms.'],
                         props: {key: 18.4}
                     }
@@ -195,7 +184,7 @@ export const introPage = [
 
 
               
-
+*/
         
         ]
         

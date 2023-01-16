@@ -5,26 +5,26 @@ export const MCQData = [
         correct: {id: 434},
         options: [
             {
-                id: 421,
+                key: 421,
                 optionNumber: 1,
                 optionText: '4[Fe(H<sub>2</sub>O)<sub>4</sub>(OH)<sub>2</sub>] + O<sub>2</sub> &#8594;	 4[Fe(H<sub>2</sub>O)<sub>3</sub>(OH)<sub>3</sub>] + 2H<sub>2</sub>O',
                 feedback: 'Incorrect! Complex product is neutral but this is oxidation.'
                 
             },
             {
-                id: 422,
+                key: 422,
                 optionNumber: 2,
                 optionText: '[Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 2OH<sup>-</sup> &#8594;	 [Fe(H<sub>2</sub>O)<sub>4</sub>(OH)<sub>2</sub>]<sup>+</sup> + 2H<sub>2</sub>O',
                 feedback: 'Incorrect! Complex product is charged so soluble.'
             },
             {
-                id: 423,
+                key: 423,
                 optionNumber: 3,
                 optionText: '[Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 2OH<sup>-</sup> &#8594;	 [Fe(H<sub>2</sub>O)<sub>4</sub>(OH)<sub>2</sub>] + 2H<sub>2</sub>O',
                 feedback: 'Correct! '
             },
             {
-                id: 424,
+                key: 424,
                 optionNumber: 4,
                 optionText: '[Al(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 4OH<sup>-</sup> &#8594;	 [Al(OH)<sub>4</sub>]<sup>-</sup> + 6H<sub>2</sub>O',
                 feedback: 'Incorrect! Complex product is charged so soluble.'
@@ -39,7 +39,7 @@ export const MCQData = [
         correct: {id: 434},
         options: [
             {
-                id: 431,
+                key: 431,
                 optionNumber: 1,
                 optionText: [
                     {childType: 'p',
@@ -58,7 +58,7 @@ export const MCQData = [
                 
             },
             {
-                id: 432,
+                key: 432,
                 optionNumber: 2,
                 optionText: [
                     {childType: 'p',
@@ -77,7 +77,7 @@ export const MCQData = [
                 
             },
             {
-                id: 433,
+                key: 433,
                 optionNumber: 3,
                 optionText: [
                     {childType: 'p',
@@ -96,7 +96,7 @@ export const MCQData = [
                 
             },
             {
-                id: 434,
+                key: 434,
                 optionNumber: 4,
                 optionText: [
                     {childType: 'p',
@@ -128,20 +128,20 @@ export const textDataTemp = {
             {
                 type: 'h2',
                 
-                content: /*'hello joe!',*//*{            
+                content: {            
                     staticContent: 'The [REPLACE TEXT] solutions.',            
                     dynamicContent: [
-                        {string: 'five', true: ['AQA', 'Edexcel', 'OCRA']},
-                        {string: 'three', true: ['OCRB']},
+                        {string: 'five', true: ['AQA', 'Edexcel', 'OCRA'], key: 16.1},
+                        {string: 'three', true: ['OCRB'], key: 16.2},
                     ]
                 },
-                props: {key: 18.1, variableContent: 'stringSplicer'/**//*}
-            },
+                props: {key: 18.1, variablecontent: 'stringSplicer'}
+            },*/
             {
                 type: 'h2',
-                content: ['What should I be able to do before I start?'],
+                content: 'What should I be able to do before I start?',
                 props: {key: 16.1}
-            },
+            }/*,
             {
                 type: 'ul',                
                 content: [
@@ -237,12 +237,12 @@ export const textDataTemp = {
                 type: 'mcq',                
                 props: {key: 1},
                 content: {id: 42}
-            },*/
+            },
             {
                 type: 'mcq',                
                 props: {key: 4},
                 content: {id: 43}
-            }
+            }*/
         
             ]
         }

@@ -15,10 +15,12 @@ import Comparison from './Comparison';
 
 function ElementGenerator(props) {
 
-  
+  //console.log('elementGenerator props reads...');
+  //console.log(props.props.key);
 
  let newType = props.type;
- let newProps = props.props; 
+ //console.log(newType);
+ let newProps = {...props.props, key: props.props.key}; 
  let newContent = props.content;
   
   const examBoard = props.examBoard;
@@ -31,7 +33,7 @@ const processContent = () => {
 
   //to generate single string which splices content filtered by examboard
 
-  if (newProps.variableContent === 'stringSplicer'){
+  if (newProps.variablecontent === 'stringSplicer'){
     
     const splicedString = stringSplicer(itemToProcess, examBoard);    
     newContent = splicedString;
@@ -41,13 +43,13 @@ const processContent = () => {
 
   //to filter eg: a set of li elements by examboard
 
-  if (newProps.variableContent === 'filter by exam board' ){
+  if (newProps.variablecontent === 'filter by exam board' ){
     let objectsToInclude = filterByExamBoard(props.content, examBoard);
     //alert(objectsToInclude[0]);
     let elementsToRender = objectsToInclude.map((childElementDetails) => {  
       if (childElementDetails.childProps.tagged === true){
         const arrayOfTaggedElements = formatSubSuperScript(childElementDetails.childContent);
-        return createElement(childElementDetails.childType === 'p' ? 'div' : childElementDetails.childType, childElementDetails.childProps, arrayOfTaggedElements)
+        return createElement(childElementDetails.childType === 'p' ? 'div' : childElementDetails.childType, {...childElementDetails.childProps, key: props.key}, arrayOfTaggedElements)
       } else { 
         return createElement(childElementDetails.childType, childElementDetails.childProps, childElementDetails.childContent) }          
     }) 
@@ -80,7 +82,7 @@ const processContent = () => {
   if (newProps.tagged === true){
     
     //make sure below still works, added props.key to generate unique keyCount
-    const arrayOfObjects = formatSubSuperScript(props.content, props.key);
+    const arrayOfObjects = formatSubSuperScript(props.content, props.props.key);
     
       newContent = arrayOfObjects;
       return newType = 'div';
@@ -96,6 +98,7 @@ const processContent = () => {
   }
 
   if (props.type === 'comparison') {
+    //console.log(newProps);
     return newType = Comparison
   }
 

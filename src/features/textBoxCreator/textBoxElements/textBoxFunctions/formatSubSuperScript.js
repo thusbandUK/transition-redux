@@ -2,7 +2,7 @@ import { createElement } from 'react';
 import Arrow from '../arrow';
 
 function formatSubSuperScript(string, key){
-   // console.log(`key reads: ${key}`);
+   //console.log(`key reads: ${key}`);
 let keyCount;
     if (!key){
         keyCount = 0;

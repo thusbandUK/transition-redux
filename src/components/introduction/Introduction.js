@@ -5,6 +5,7 @@ import IntroMenu from '../../features/menu/IntroMenu';
 import TextBoxCreator from '../../features/textBoxCreator/TextBoxCreator';
 import { useSelector, useDispatch } from 'react-redux';
 import { reset } from '../../features/observations/observationFormSlice';
+import { selectSection } from '../../features/textBoxCreator/textBoxCreatorSlice';
 //import { getState } from 'react';
 
 
@@ -16,6 +17,7 @@ const Introduction = () => {
     useEffect(() => {
         //console.log('useEffect called');
         dispatch(reset());
+        dispatch(selectSection('introPage'));
 
 
     }, []);
@@ -46,7 +48,7 @@ const Introduction = () => {
 */}
            {/** */ }
            <div style={{marginTop: '5%'}}>
-           {examBoard ? <TextBoxCreator /> : null} 
+           {examBoard ? <TextBoxCreator key="text-box-creator"/> : null} 
            </div>
            <IntroMenu />
         </div>

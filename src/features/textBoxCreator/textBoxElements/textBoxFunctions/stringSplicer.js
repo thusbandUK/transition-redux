@@ -11,7 +11,7 @@ const stringSplicer = (object, examBoard) => {
     //let replacementTextObject = filterByExamBoard(object.dynamicContent, examBoard);
     //alert(replacementTextObject[0]);
     const newString = workingString.replace('[REPLACE TEXT]', replacementTextObject[0].string);
-    //alert(newString);
+    //alert(newString);    
     return newString;
 
 }

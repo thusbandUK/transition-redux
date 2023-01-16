@@ -80,7 +80,7 @@ const MultipleChoiceQuestion = (props) => {
             {MCQAllDetails.options.map((option) => (
                   <div 
                   className="form-check"
-                  key={option.id}
+                  key={option.key}
                   
                   >
                     <input name='option' className="form-check-input" type="radio" value={option.id} onChange={onValueChange} id={`flexCheck${option.optionNumber}`} />

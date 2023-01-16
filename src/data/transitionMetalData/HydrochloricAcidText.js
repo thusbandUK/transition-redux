@@ -15,7 +15,7 @@ export const HydrochloricAcidText = [
         }
       ]
     },
-    {id: 20, allContent: [
+    {id: 21, allContent: [
             
       {
           type: 'h2',
@@ -35,9 +35,17 @@ export const HydrochloricAcidText = [
       {
           type: 'comparison',
           content: {},
-          props: {key: 20.3}
+          props: {id: 20.3}
       }
     ]
+  },
+  {id: 22, allContent: [
+    {
+      type: 'comparison',
+      content: {},
+      props: {id: 22.3}
   }
+  ]
+}
 
 ]

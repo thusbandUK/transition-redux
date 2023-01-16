@@ -4,6 +4,9 @@ import '../../../app/App.css';
 
 const ObservationPage = (props) => {
 
+   // console.log(`observation page props`);
+    //console.log(props);
+
     const observationsObject = useSelector(state => state.observationForm.reactantsToObserve);
 
     const observationsArray = Object.entries(observationsObject);

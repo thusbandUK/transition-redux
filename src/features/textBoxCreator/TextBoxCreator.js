@@ -9,6 +9,7 @@ import ElementGenerator from './textBoxElements/ElementGenerator';
 //import SubSuperTextGenerator from './dump/subSuperTextGenerator';
 //import VariableTextCreator from './dump/variableTextCreator';
 import { introPage } from '../../data/transitionMetalData/introPage';
+import { introPage2 } from '../../data/transitionMetalData/introPage2';
 import { AmmoniaText } from '../../data/transitionMetalData/AmmoniaText';
 import { HydrochloricAcidText } from '../../data/transitionMetalData/HydrochloricAcidText';
 import { SodiumCarbonateText } from '../../data/transitionMetalData/SodiumCarbonateText';
@@ -22,9 +23,10 @@ const TextBoxCreator = (props) => {
     const selectedReagent = useSelector(state => state.menu.selectedReagent);
     const currentSection = useSelector(state => state.textBoxCreator.selectedSection);
     let currentPage = useSelector(state => state.textBoxCreator.selectedPage);
-  const leftDisabled = useSelector(state => state.textBoxCreator.leftDisabled); 
-  const rightDisabled = useSelector(state => state.textBoxCreator.rightDisabled); 
+    const leftDisabled = useSelector(state => state.textBoxCreator.leftDisabled); 
+    const rightDisabled = useSelector(state => state.textBoxCreator.rightDisabled); 
 
+    console.log(currentSection);
   //important way of doing things
   //const pages = textData[currentSection][currentPage].allContent;
 
@@ -60,16 +62,19 @@ const TextBoxCreator = (props) => {
     //if you've got the initial state, which you will have, it'll know what page to load and if the localStorage has different
     //data, it will load that. Basically, synch this with the state
     
+//I think this is the problem because it doubles up what the introduction page is doing, which is setting state to introPage
+
     useEffect(() => {
-        console.log('use effect called');
-        if (!examBoard) {
+        console.log('I fire once');
+        /*if (!examBoard) {
             return;
-        }
+        }*/
         dispatch(reset());
         //localStorage.setItem('textBoxCreator'.'leftDisabled', true);
         //localStorage.setItem('rightDisabled', false);
         let textSectionSelector;
         if (!selectedReagent.name){
+            console.log('if fired');
             textSectionSelector = 'introPage';
         } else {
             textSectionSelector = selectedReagent.text;
@@ -78,9 +83,9 @@ const TextBoxCreator = (props) => {
         dispatch(selectPage(0));
         dispatch(disableRight(false));
         dispatch(disableLeft(true));
-    }, [dispatch, selectedReagent, examBoard])
+    }, [dispatch, selectedReagent/*, examBoard*/])
 /**/
-    //, examBoard
+    //, examBoard  , examBoard
     /*
     useEffect(() => {
         //console.log('useEffect called');
@@ -140,9 +145,9 @@ const TextBoxCreator = (props) => {
     }
 
     return(
-        <div className="bg-light border p-5 rounded position-relative">
+        <div className="bg-light border p-5 rounded position-relative" key="container-div">
           
-          <div className="text-box">
+          <div className="text-box" key="text-box-div">
                     
 {/**TEMPORARY - YOU WILL NEED TO CHANGE PAGES2 BACK TO PAGES */}
             {pages.map((entry) => (
@@ -151,14 +156,14 @@ const TextBoxCreator = (props) => {
               type={entry.type}
               content={entry.content}
               props={entry.props}
-              key={entry.id}
+              key={entry.props.key}
               examBoard={examBoard}
               
               
               />
             ))}
             
-            
+            {/*props={entry.props} */}
             <nav>
           {/* BF: these are now buttons elements (instead of divs) to ensure they can be focused on using keyboard nabigation only - crucial for accessibility. Also, semnatically they are indeed buttons! */}
               <button 
@@ -166,6 +171,7 @@ const TextBoxCreator = (props) => {
               onClick={leftClick} 
               id="back-button-0"
               disabled={leftDisabled}
+              key={'button1'}
               >
                 <i className="mdi mdi-chevron-left" ></i>
                 <span className="visually-hidden">Previous</span>
@@ -175,6 +181,7 @@ const TextBoxCreator = (props) => {
               onClick={rightClick} 
               id="next-button-0"
               disabled={rightDisabled}
+              key={'button2'}
               >
                 <span className="visually-hidden">Next</span>
                 <i className="mdi mdi-chevron-right" ></i>
