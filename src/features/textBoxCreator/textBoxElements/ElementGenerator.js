@@ -49,7 +49,7 @@ const processContent = () => {
     let objectsToInclude = filterByExamBoard(props.content, examBoard);
     //alert(objectsToInclude[0]);
     let elementsToRender = objectsToInclude.map((childElementDetails) => {  
-      if (childElementDetails.childProps.tagged === true){
+      if (childElementDetails.childProps.tagged === 'true'){
         const arrayOfTaggedElements = formatSubSuperScript(childElementDetails.childContent);
         return createElement(childElementDetails.childType === 'p' ? 'div' : childElementDetails.childType, {...childElementDetails.childProps, key: props.key}, arrayOfTaggedElements)
       } else { 

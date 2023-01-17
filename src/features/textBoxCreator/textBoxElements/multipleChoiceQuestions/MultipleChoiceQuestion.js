@@ -1,4 +1,6 @@
-import { MCQData } from '../../../../textDataTemp';
+//import { MCQData } from '../../../../textDataTemp';
+import { MCQData } from '../../../../../src/data/transitionMetalData/mcqData';
+import filterByExamBoard from "../textBoxFunctions/filterByExamBoard";
 import '../../../../app/App.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectAnswer, displayFeedback, selectMCQId, reset } from './multipleChoiceQuestionSlice';
@@ -13,6 +15,8 @@ const MultipleChoiceQuestion = (props) => {
     //define constants to refer to items in state
     const selectedAnswer = useSelector(state => state.multipleChoiceQuestion.selectedAnswer);
     const feedback = useSelector(state => state.multipleChoiceQuestion.displayedFeedback);
+    const examBoard = useSelector(state => state.examBoard.selectedExamBoard);
+    //console.log(examBoard);
 
     //harvest Id number of multiple choice question (MCQ) from props
     const MCQId = props.children.id;
@@ -20,9 +24,13 @@ const MultipleChoiceQuestion = (props) => {
     //define constant for MCQ entry in data file, including question text, options, formatting, feedback comments and which correct
     const MCQAllDetails = MCQData.find((entry) => entry.id === MCQId);
 
+    //define constant for the options *only* from the above constant, filtered by examboard
+    const MCQAllDetailsFiltered = filterByExamBoard(MCQAllDetails.options, examBoard, true);
+    
 
     //when radio button clicked, selected answer dispatched to state
     const onValueChange = (event) => {
+      //console.log(event.target.value);
         dispatch(selectAnswer(event.target.value));
     }
 
@@ -34,7 +42,8 @@ const MultipleChoiceQuestion = (props) => {
         //compiles feedback data for dispatch to state
         
         let feedbackData = {}; 
-        MCQAllDetails.options.forEach((response) => {
+        //MCQAllDetails.options.forEach((response) => {
+          MCQAllDetailsFiltered.forEach((response) => {
           if (response.id === Number(selectedAnswer)){            
             return feedbackData = {comment: response.feedback};
           }          
@@ -76,11 +85,13 @@ const MultipleChoiceQuestion = (props) => {
             className="mt-2 pt-2 border-top border-3"
             style={{borderColor: 'red !important'}}
             >
-            {/**findQuestion(MCQId) MCQAllDetails*/}
-            {MCQAllDetails.options.map((option) => (
+            {/**findQuestion(MCQId) MCQAllDetails
+            {MCQAllDetails.options.map((option) => (*/}
+
+             {MCQAllDetailsFiltered.map((option) => (
                   <div 
                   className="form-check"
-                  key={option.key}
+                  key={option.id}
                   
                   >
                     <input name='option' className="form-check-input" type="radio" value={option.id} onChange={onValueChange} id={`flexCheck${option.optionNumber}`} />

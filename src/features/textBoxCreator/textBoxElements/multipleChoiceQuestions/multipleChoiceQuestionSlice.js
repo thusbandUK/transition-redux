@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { MCQData } from '../../../../textDataTemp';
+import { MCQData } from '../../../../data/transitionMetalData/mcqData';
 
 const initialState = {      
   
@@ -20,7 +20,7 @@ export const multipleChoiceQuestionSlice = createSlice({
       selectMCQId: (state, action) => {
         state.MCQId = action.payload;                
       },
-      selectAnswer: (state, action) => {
+      selectAnswer: (state, action) => {        
         state.selectedAnswer = action.payload;       
       },
       displayFeedback: (state, action) => {

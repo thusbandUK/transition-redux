@@ -55,6 +55,9 @@ e) for any parent elements, eg: div / ul / form etc, props needs a KV pair, K = 
 f) for a multiple choice question, 
 i) enter it in the text for that text box as {type: 'mcq', props: {key: 1}, content: {id: 43}}
 ii) make a separate entry in the MCQs file (is this useful?)
+iii) you have to pass "true"(boolean, not string) as an optional third argument to filterByExamBoard function, so that it reads the "true" key 
+values, rather than the childProp.true key values
+remember there's a two-column option, too
 g) if you want to add a break as a child you need to include an empty props entry as well as type
 h) you need to use strings for 'true' for the 'parent' and 'tagged' indicators
 i) comparison feedback, see example, 

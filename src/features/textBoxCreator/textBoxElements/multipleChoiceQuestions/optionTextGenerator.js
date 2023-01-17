@@ -16,6 +16,7 @@ import { createElement } from 'react';
 
 
 const optionTextGenerator = (MCQDetails, columns, key) => {
+    
     let keyCount;
     if (!key){
         keyCount = 0;
@@ -28,7 +29,7 @@ if (columns === 2){
     //console.log('if function called!')
     //console.log(MCQDetails.optionText);
     let childrenToRender = MCQDetails.optionText.map((childElementDetails) => {
-        if (childElementDetails.childProps.tagged === true){
+        if (childElementDetails.childProps.tagged === 'true'){
             //console.log('tagged logic triggered');
           const arrayOfTaggedElements = formatSubSuperScript(childElementDetails.childContent, keyCount = keyCount + 1);
           //console.log(arrayOfTaggedElements);

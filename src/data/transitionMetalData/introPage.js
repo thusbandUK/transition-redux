@@ -67,7 +67,7 @@ export const introPage = [
                            childContent: 'Square brackets with overall charge shown top right'
                           },
                           {childType: 'br',
-                        childProps: {key: 4.1}},
+                           childProps: {key: 4.1}},
                           {childType: 'input',
                            childProps: {key: 5, type: 'checkbox', id: 'pre-learning-checklist3', name:'pre-learning-checklist3', value:'arrows', style: {display: 'inline'}},
                            childContent: null

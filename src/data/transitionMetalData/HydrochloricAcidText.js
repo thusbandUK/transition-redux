@@ -57,7 +57,126 @@ export const HydrochloricAcidText = [
       },
       props: {id: 20.4, key: 22.2}
     }
-  ]
-}
-
+    ]
+  },
+  {id: 23, allContent: [
+    {
+      type: 'h2',
+      content: ['Substitution reactions'],
+      props: {key: 23.1}
+    },
+    {
+      type: 'img',
+      content: null,
+      props: {key: 23.2, src: "images/structures/equation conc HCl substitution.png", alt: "an equation showing the octahedral complex hexaaquacopper reacting with four chloride ions to produce the tetrachlorocopper complex along with six displaced water molecules", className: 'img-fluid'}
+    },
+    {
+      type: 'div',
+      content: [
+                {childType: 'p',
+                 childProps: {key: 23.31, style: {display: 'inline'}},
+                 childContent: 'These are'
+                },
+                {childType: 'p',
+                 childProps: {key: 23.32, style: {display: 'inline', fontStyle: 'italic'}},
+                 childContent: ' ligand substitution '
+                },
+                {childType: 'p',
+                 childProps: {key: 23.33, style: {display: 'inline'}},
+                 childContent: 'reactions or'
+                },
+                {childType: 'p',
+                 childProps: {key: 23.34, style: {display: 'inline', fontStyle: 'italic'}},
+                 childContent: ' ligand exchange '
+                },
+                {childType: 'p',
+                 childProps: {key: 23.35, style: {display: 'inline'}},
+                 childContent: 'reactions.'
+                }
+              ],
+      props: {key: 23.3, style: {marginTop: '10px'}, parent: 'true'}
+  },
+  {
+    type: 'p',
+    content: [
+      'As the name suggests this is when one or more ligands in a complex are substituted for other ligands.',
+      ' As you will see below, not all ligand exchange reactions involve a change in coordination number, so why does it happen in this case?',
+      ' How do the size and charge of chloro ligands compare to aqua ligands? How might that affect the shape of the complex ion?'
+    ],
+    props: {key: 23.4}
+  }
+    ]
+  },
+  {id: 24, allContent: [
+    {
+      type: 'h2',
+      content: ['Changing shape'],
+      props: {key: 24.1}
+    },
+    {
+       type: 'div',
+       content: [
+          {
+             childType: 'img',
+             childProps: {true: ['AQA', 'Edexcel', 'OCRA', 'OCRB'], className: "col-md-3 m-2 img-fluid", key: 24.21, src: "images/structures/tetrachlorocopper.png", alt: "diagram showing the display formula of the tetrahedral complex ion tetrachlorocopper"},
+             childContent: null                           
+          },
+          {
+            childType: 'img',
+            childProps: {true: ['AQA', 'Edexcel'], className: "col-md-3 m-2 img-fluid", key: 24.22, src: "images/structures/tetrachlorocobalt.png", alt: "diagram showing the display formula of the tetrahedral complex ion tetrachlorocobalt"},
+            childContent: null                           
+          },
+          {
+            childType: 'img',
+            childProps: {true: ['AQA'], className: "col-md-3 m-2 img-fluid", key: 24.23, src: "images/structures/tetrachloroironIII.png", alt: "diagram showing the display formula of the tetrahedral complex ion tetrachloroironIII"},
+            childContent: null                           
+          },
+          ],
+       props: {key: 24.2, className: "row", variablecontent: 'filter by exam board'}
+    },
+    {
+      type: 'p',
+      content: [
+        'Chloro ligands are larger than water ligands, which may not be self-evident.',
+         ' Although aqua ligands each contain three atoms, two of these are hydrogen atoms, which are very small. Meanwhile oxygen has two electron shells compared to three in each chloride ion.',
+          ' Consequently there is only space for four chloro ligands around the central copper ion. Furthermore this arrangement minimises the repulsion between the negatively charged chloro ligands.'
+      ],
+      props: {key: 24.3}
+    },
+    {
+      type: 'p',
+      
+      content: {            
+          staticContent: "[REPLACE TEXT]",
+          dynamicContent: [
+              {string: 'Cobalt and iron(III) also form tetrahedral complexes when reacted with excess hydrochloric acid.', true: ['AQA']},
+              {string: '', true: ['OCRA']},
+              {string: '', true: ['OCRB']},
+              {string: 'Cobalt also forms tetrahedral complexes when reacted with excess hydrochloric acid.', true: ['Edexcel']}
+              
+          ]
+      },
+      props: {key: 24.4, variablecontent: 'stringSplicer', style: {display: 'inline'}}
+  }, 
+    ]
+  },
+  {id: 24, allContent: [
+    {
+      type: 'mcq',                
+      props: {key: 25},
+      content: {id: 43}
+    }
+   ]
+  }
 ]
+
+//<p>Cobalt and iron(III) also form tetrahedral complexes when reacted with excess hydrochloric acid.</p>
+//, style: {transform: 'scale(0.6)'}
+
+/*
+{
+                type: 'mcq',                
+                props: {key: 1},
+                content: {id: 42}
+            }
+*/
