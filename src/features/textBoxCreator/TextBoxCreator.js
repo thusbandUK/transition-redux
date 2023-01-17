@@ -26,7 +26,7 @@ const TextBoxCreator = (props) => {
     const leftDisabled = useSelector(state => state.textBoxCreator.leftDisabled); 
     const rightDisabled = useSelector(state => state.textBoxCreator.rightDisabled); 
 
-    console.log(currentSection);
+    //console.log(currentSection);
   //important way of doing things
   //const pages = textData[currentSection][currentPage].allContent;
 
@@ -65,7 +65,7 @@ const TextBoxCreator = (props) => {
 //I think this is the problem because it doubles up what the introduction page is doing, which is setting state to introPage
 
     useEffect(() => {
-        console.log('I fire once');
+        //console.log('I fire once');
         /*if (!examBoard) {
             return;
         }*/
@@ -74,7 +74,7 @@ const TextBoxCreator = (props) => {
         //localStorage.setItem('rightDisabled', false);
         let textSectionSelector;
         if (!selectedReagent.name){
-            console.log('if fired');
+            //console.log('if fired');
             textSectionSelector = 'introPage';
         } else {
             textSectionSelector = selectedReagent.text;

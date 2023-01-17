@@ -7,6 +7,7 @@ import '../../../app/App.css';
 import MultipleChoiceQuestion from './multipleChoiceQuestions/MultipleChoiceQuestion';
 import ObservationPage from './ObservationPage';
 import Comparison from './Comparison';
+import ComparisonFeedback from './ComparisonFeedback';
 
 //'./multipleChoiceQuestions/MultipleChoiceQuestion';
 //import ObservationPage from './ObservationPage';
@@ -16,11 +17,12 @@ import Comparison from './Comparison';
 function ElementGenerator(props) {
 
   //console.log('elementGenerator props reads...');
-  //console.log(props.props.key);
+  //console.log(props);
 
  let newType = props.type;
  //console.log(newType);
- let newProps = {...props.props, key: props.props.key}; 
+ let newProps = props.props; 
+ //console.log(newProps);
  let newContent = props.content;
   
   const examBoard = props.examBoard;
@@ -61,10 +63,10 @@ const processContent = () => {
   
   //to create an element with children, eg: div / form / ul and populate the children elements
 
-  if (newProps.parent === true){
+  if (newProps.parent === 'true'){
     
     let childrenToRender = newContent.map((childElementDetails) => {
-      if (childElementDetails.childProps.tagged === true){
+      if (childElementDetails.childProps.tagged === 'true'){
         const arrayOfTaggedElements = formatSubSuperScript(childElementDetails.childContent);
         return createElement(childElementDetails.childType === 'p' ? 'div' : childElementDetails.childType, childElementDetails.childProps, arrayOfTaggedElements)
         //return 'hello Joe!'
@@ -79,7 +81,7 @@ const processContent = () => {
   //receives a single string with <sub> / <super> tags returns single element w no children, eg: li or div in place of p which should not 
   //be a parent
 
-  if (newProps.tagged === true){
+  if (newProps.tagged === 'true'){
     
     //make sure below still works, added props.key to generate unique keyCount
     const arrayOfObjects = formatSubSuperScript(props.content, props.props.key);
@@ -94,6 +96,7 @@ const processContent = () => {
   }
 
   if (props.type === 'ObservationPage'){
+    //console.log(typeof(newProps));
     return newType = ObservationPage
   }
 
@@ -102,8 +105,12 @@ const processContent = () => {
     return newType = Comparison
   }
 
-//if none of the if clauses apply
+  if (props.type === 'comparison-feedback'){
+    return newType = ComparisonFeedback;
+  }
 
+//if none of the if clauses apply
+//console.log(newProps);
 return newType;
 }
 

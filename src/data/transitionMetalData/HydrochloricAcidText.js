@@ -30,21 +30,33 @@ export const HydrochloricAcidText = [
       {
           type: 'img',
           content: null,
-          props: {src: "images/structures/equation conc HCl substitution.png", altText: "an equation showing the octahedral complex hexaaquacopper reacting with four chloride ions to produce the tetrachlorocopper complex along with six displaced water molecules", className: 'img-fluid'}
+          props: {key: 20.3, src: "images/structures/equation conc HCl substitution.png", alt: "an equation showing the octahedral complex hexaaquacopper reacting with four chloride ions to produce the tetrachlorocopper complex along with six displaced water molecules", className: 'img-fluid'}
       },
       {
           type: 'comparison',
           content: {},
-          props: {id: 20.3}
+          props: {id: 20.4, key: 20.4}
       }
     ]
   },
   {id: 22, allContent: [
     {
-      type: 'comparison',
-      content: {},
-      props: {id: 22.3}
-  }
+      type: 'img',
+      content: null,
+      props: {key: 22.1, src: "images/structures/equation conc HCl substitution.png", alt: "an equation showing the octahedral complex hexaaquacopper reacting with four chloride ions to produce the tetrachlorocopper complex along with six displaced water molecules", className: 'img-fluid'}
+    },
+    {
+      type: 'comparison-feedback',
+      content: {
+        sameReference: 'For both complexes',
+        AReference: 'The left-hand complex',
+        BReference: 'The right-hand complex',
+        similarities: ['the oxidation state of the copper ion is +2', 'the ligands are attached via coordinate (dative) bonds'],
+        differencesA: ['has six aqua (water) ligands', '+2 overall charge', 'octahedral shape'],
+        differencesB: ['has four chloro ligands', '-2 overall charge', 'tetrahedral shape']
+      },
+      props: {id: 20.4, key: 22.2}
+    }
   ]
 }
 

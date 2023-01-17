@@ -4,6 +4,8 @@ import '../../../app/App.css';
 
 const ObservationPage = (props) => {
 
+    //console.log(ObservationPage.children);
+
    // console.log(`observation page props`);
     //console.log(props);
 
@@ -25,14 +27,14 @@ console.log(Object.entries(observationsArray[0][1]).map((x) => {
 }));
 */
 
-//let keyCount = 1;
+let keyCount = 1;
 
     return (
         <div>
             <h2>{`Observations for ${selectedReagent}`}</h2>
              
             {observationsArray.map((metalObservations) => (
-                <div >
+                <div key={keyCount = keyCount + 1}>
                 <p><strong>{`Your observations for ${metalObservations[0]}`}</strong></p>
                 <p style={inline}>{`At first ${observationsObject[metalObservations[0]]['1'].logged}.`}</p>
                 <p style={inline}>{` Then ${observationsObject[metalObservations[0]]['2'].logged}.`}</p>

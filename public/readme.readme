@@ -9,7 +9,12 @@ thinks they are. So they're working, but they're not greying out when they ought
 0.85) make sure "variableContent" changed to "variablecontent" throughout all objects with content to render
 
 0.9) add a note for textCreation manual that comparison printing section should have the same id as the comparison input section
-
+0.91) render and style comparison on following page with checklists
+0.92) create something similar to the comparison pages for the assessment pages
+0.93) address the assorted error messages, eg: for to htmlFor or whatever it is
+0.94) transfer in all the code from the old website to the new website
+0.95) troubleshoot
+0.96) add to portfolio =)
 
 
 1) you need to finish coding the individual observation-input forms which will stack under their individual test tubes
@@ -35,6 +40,7 @@ b) in textBoxCreator in features: variableTextCreator, variableTextGenerator, su
 MANUAL
 
 3) write a manual called variableTextManual.readme which should include:
+<a) A KEY IN EVERY SET OF PROPS
 a) for single strings with sub- or superscript tags, put tagged=true in props 
 b) the above can also be applied to childProps
 c) variableText = 'stringSplicer' is a KV pair to include in props for the generation of a single string
@@ -50,6 +56,11 @@ f) for a multiple choice question,
 i) enter it in the text for that text box as {type: 'mcq', props: {key: 1}, content: {id: 43}}
 ii) make a separate entry in the MCQs file (is this useful?)
 g) if you want to add a break as a child you need to include an empty props entry as well as type
+h) you need to use strings for 'true' for the 'parent' and 'tagged' indicators
+i) comparison feedback, see example, 
+a) it takes the type "'comparison-feedback'"
+b) it has three sub-titles, the same title ('sameReference') and then differenceA ('AReference') and differenceB ('BReference')
+c) then the 'similarities', 'differencesA' and 'differencesB' are filed as strings in arrays
 
 
 
