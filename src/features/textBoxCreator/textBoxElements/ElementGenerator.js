@@ -8,6 +8,7 @@ import MultipleChoiceQuestion from './multipleChoiceQuestions/MultipleChoiceQues
 import ObservationPage from './ObservationPage';
 import Comparison from './Comparison';
 import ComparisonFeedback from './ComparisonFeedback';
+import WrittenResponse from './WrittenResponse';
 
 //'./multipleChoiceQuestions/MultipleChoiceQuestion';
 //import ObservationPage from './ObservationPage';
@@ -107,6 +108,10 @@ const processContent = () => {
 
   if (props.type === 'comparison-feedback'){
     return newType = ComparisonFeedback;
+  }
+
+  if (props.type === 'written-response'){
+    return newType = WrittenResponse;
   }
 
 //if none of the if clauses apply

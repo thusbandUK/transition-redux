@@ -160,16 +160,40 @@ export const HydrochloricAcidText = [
   }, 
     ]
   },
-  {id: 24, allContent: [
+  {id: 24, allContent: [,
+    
     {
       type: 'mcq',                
       props: {key: 25},
       content: {id: 43}
     }
    ]
+  },
+  {id: 25, allContent: [,
+    
+    {
+      type: 'written-response',                
+      props: {key: 25, id: 25},
+      content: {id: 25, questions:
+        [
+          {
+            questionReference: 'equation',
+            questionText: 'Enter an ionic equation to show the reaction of hexaaquairon(III) with excess concentrated hydrochloric acid.'
+          },
+          {
+            questionReference: 'explanation',
+            questionText: 'Explain why the complex ion produced is a different shape to the complex ion that reacts.'
+          }
+
+        ]
+      }
+    }
+   ]
   }
 ]
 
+
+//written-response
 //<p>Cobalt and iron(III) also form tetrahedral complexes when reacted with excess hydrochloric acid.</p>
 //, style: {transform: 'scale(0.6)'}
 
