@@ -9,6 +9,7 @@ import ObservationPage from './ObservationPage';
 import Comparison from './Comparison';
 import ComparisonFeedback from './ComparisonFeedback';
 import WrittenResponse from './WrittenResponse';
+import WrittenResponseFeedback from './WrittenResponseFeedback';
 
 //'./multipleChoiceQuestions/MultipleChoiceQuestion';
 //import ObservationPage from './ObservationPage';
@@ -112,6 +113,10 @@ const processContent = () => {
 
   if (props.type === 'written-response'){
     return newType = WrittenResponse;
+  }
+
+  if (props.type === 'written-response-feedback'){
+    return newType = WrittenResponseFeedback;
   }
 
 //if none of the if clauses apply

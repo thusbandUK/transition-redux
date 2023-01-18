@@ -12,6 +12,9 @@ thinks they are. So they're working, but they're not greying out when they ought
 the size of columns, so one image will fill the whole width, whereas three will shrink down
 and or they each need to be in individual divs
 
+0.91) soooo, for the writtenResponseFeedback I think I want there to be an equation option, like, if equation, then render equation here,
+otherwise just map arrays for keypoint checklists 
+
 0.92) create something similar to the comparison pages for the assessment pages
 0.93) address the assorted error messages, eg: for to htmlFor or whatever it is
 0.94) transfer in all the code from the old website to the new website

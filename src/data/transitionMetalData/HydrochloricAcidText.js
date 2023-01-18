@@ -189,6 +189,35 @@ export const HydrochloricAcidText = [
       }
     }
    ]
+  },
+  {id: 26, allContent: [,
+    
+    {
+      type: 'written-response-feedback',                
+      props: {key: 25, id: 25},
+      content: {id: 25, answers:
+        [
+          {
+            questionReference: 'equation',
+            answerText: [
+              'Square brackets around both complexes', 
+              'Overall 3+ charge on left-hand complex, 1- charge on right-hand complex',
+              '6 H<sub>2</sub>O ligands in left complex ion, 4 Cl ligands in right complex ion',
+              'plus 4Cl<sup>-</sup> ions shown on left, plus 6H<sub>2</sub>O molecules on right'
+            ]
+          },
+          {
+            questionReference: 'explanation',
+            answerText: [
+              'chloro / Cl ligands larger than aqua / H<sub>2</sub>O ligands',
+              'Only 4 chloro ligands can fit round metal ion (which minimises repulsion between negative charges)'
+            ]
+          }
+
+        ]
+      }
+    }
+   ]
   }
 ]
 
