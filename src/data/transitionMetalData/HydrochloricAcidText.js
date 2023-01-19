@@ -169,18 +169,32 @@ export const HydrochloricAcidText = [
     }
    ]
   },
+
+//copying from here....
+
+
   {id: 25, allContent: [,
     
     {
       type: 'written-response',                
       props: {key: 25, id: 25},
-      content: {id: 25, questions:
+      content: {id: 25, filter: 'true', questions:
         [
           {
+            true: ['AQA'],
+            id: 'equationA',
             questionReference: 'equation',
             questionText: 'Enter an ionic equation to show the reaction of hexaaquairon(III) with excess concentrated hydrochloric acid.'
           },
           {
+            true: ['Edexcel'],
+            id: 'equationB',
+            questionReference: 'equation',
+            questionText: 'Little experiment going on here'
+          },
+          {
+            true: ['AQA', 'Edexcel'],
+            id: 'explanationA',
             questionReference: 'explanation',
             questionText: 'Explain why the complex ion produced is a different shape to the complex ion that reacts.'
           }
@@ -190,15 +204,16 @@ export const HydrochloricAcidText = [
     }
    ]
   },
-  {id: 26, allContent: [,
+  {id: 26, allContent: [
     
     {
       type: 'written-response-feedback',                
       props: {key: 25, id: 25},
       content: {id: 25, answers:
         [
-          {
+          {            
             questionReference: 'equation',
+            id: 'equationA',
             answerText: [
               'Square brackets around both complexes', 
               'Overall 3+ charge on left-hand complex, 1- charge on right-hand complex',
@@ -207,7 +222,14 @@ export const HydrochloricAcidText = [
             ]
           },
           {
+            
+            id: 'equationB',
+            questionReference: 'equation',
+            answerText: ['Here\'s another little experiment', 'and another', 'and still another']
+          },
+          {
             questionReference: 'explanation',
+            id: 'explanationA',
             answerText: [
               'chloro / Cl ligands larger than aqua / H<sub>2</sub>O ligands',
               'Only 4 chloro ligands can fit round metal ion (which minimises repulsion between negative charges)'
@@ -218,7 +240,101 @@ export const HydrochloricAcidText = [
       }
     }
    ]
+  },
+
+//to here (copied from above)
+
+//pasting in from here (below)
+
+
+{id: 30, allContent: [,
+    
+  {
+    type: 'written-response',                
+    props: {key: 30, id: 30},
+    content: {id: 30, filter: 'true', questions:
+      [
+        {
+          true: ['AQA'],
+          id: 'equationA',
+          questionReference: 'equation',
+          questionText: 'Enter an ionic equation to show the reaction of hexaaquairon(III) with excess concentrated hydrochloric acid.'
+        },
+        {
+          true: ['Edexcel'],
+          id: 'equationB',
+          questionReference: 'equation',
+          questionText: 'Little experiment going on here'
+        },
+        {
+          true: ['AQA', 'Edexcel'],
+          id: 'explanationA',
+          questionReference: 'explanation',
+          questionText: 'Explain why the complex ion produced is a different shape to the complex ion that reacts.'
+        }
+
+      ]
+    }
   }
+ ]
+},
+{id: 31, allContent: [
+  
+  {
+    type: 'written-response-feedback',                
+    props: {key: 31, id: 30},
+    content: {id: 30, answers:
+      [
+        {            
+          questionReference: 'equation',
+          id: 'equationA',
+          answerText: [
+            'Square brackets around both complexes', 
+            'Overall 3+ charge on left-hand complex, 1- charge on right-hand complex',
+            '6 H<sub>2</sub>O ligands in left complex ion, 4 Cl ligands in right complex ion',
+            'plus 4Cl<sup>-</sup> ions shown on left, plus 6H<sub>2</sub>O molecules on right'
+          ]
+        },
+        {
+          
+          id: 'equationB',
+          questionReference: 'equation',
+          answerText: ['Here\'s another little experiment', 'and another', 'and still another']
+        },
+        {
+          questionReference: 'explanation',
+          id: 'explanationA',
+          answerText: [
+            'chloro / Cl ligands larger than aqua / H<sub>2</sub>O ligands',
+            'Only 4 chloro ligands can fit round metal ion (which minimises repulsion between negative charges)'
+          ]
+        }
+
+      ]
+    }
+  }
+ ]
+},
+
+
+//down to here (from above)
+
+  {id: 27, allContent: [
+    {
+      type: 'h2',
+      content: ['You\'ve finished this section!'],
+      props: {key: 27.1}
+    },
+    {
+      type: 'p',
+      content: [
+        'Congratulations you\'ve finished this section!',
+        ' Click the link below to advance to the next section.'        
+      ],
+      props: {key: 27.2}
+    }
+
+  ]}
 ]
 
 

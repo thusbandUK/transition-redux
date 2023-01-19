@@ -25,7 +25,7 @@ otherwise just map arrays for keypoint checklists
 1) you need to finish coding the individual observation-input forms which will stack under their individual test tubes
 
 
-h) style the forms because at the moment they're GROSS
+h) style the forms because at the moment they're GROSS - AND RENDER THE NAME OF EACH METAL
 
 1.5) Render text boxes. You need to format and complete the observations page. You'll need to add the model observations
 in the content section of the ObservationStages entry in the first page of each text box. They'll need to be tagged for 
@@ -66,10 +66,13 @@ remember there's a two-column option, too
 g) if you want to add a break as a child you need to include an empty props entry as well as type
 h) you need to use strings for 'true' for the 'parent' and 'tagged' indicators
 i) comparison feedback, see example, 
-a) it takes the type "'comparison-feedback'"
-b) it has three sub-titles, the same title ('sameReference') and then differenceA ('AReference') and differenceB ('BReference')
-c) then the 'similarities', 'differencesA' and 'differencesB' are filed as strings in arrays
-
+i) it takes the type "'comparison-feedback'"
+ii) it has three sub-titles, the same title ('sameReference') and then differenceA ('AReference') and differenceB ('BReference')
+iii) then the 'similarities', 'differencesA' and 'differencesB' are filed as strings in arrays
+j) written-response and written-response-feedback: don't forget that like with comparison(feedback) the id - but the key - has to be
+the same for matching sets of input / responses 
+i) to filter by examboard you have to put "filter: 'true'" in the main props
+ii) questions and feedback sets have to have matching ID numbers, that's how the feedback sets are located
 
 
 4) embed code with comments that explain what each section is for

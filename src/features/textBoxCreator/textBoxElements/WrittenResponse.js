@@ -3,11 +3,14 @@ import '../../../app/App.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { createWrittenResponseSection, inputWrittenResponse, submitWrittenResponses } from '../textBoxCreatorSlice';
+import filterByExamBoard from './textBoxFunctions/filterByExamBoard';
 
 
-const WrittenResponse = (props) => {    
+const WrittenResponse = (props) => { 
 
     const dispatch = useDispatch();
+
+    const examBoard = useSelector(state => state.examBoard.selectedExamBoard);
     
     const writtenResponses = useSelector(state => state.textBoxCreator.writtenResponses);
 
@@ -17,28 +20,24 @@ const WrittenResponse = (props) => {
         return x.id === props.id;
       }) 
 
-    //console.log(props.children);
+    //generates an array of questions to render, filtering if necessary by examBoard
 
-    const arrayOfQuestionsToRender = props.children.questions;
+    const arrayOfQuestionsToRender = (props.children.filter === 'true') ? filterByExamBoard(props.children.questions, examBoard, true) : props.children.questions;
+
+    //this generates the skeleton of an object to add to the writtenResponses section of the store
 
     const prepareStorageObject = () => {
-        let newObject = {id: props.id};
+        let newObject = {id: props.id, questions: {}};
+        let newerObject = {id: props.id, questions: {}};
         arrayOfQuestionsToRender.forEach((questionDetails) => {
-            newObject = {...newObject, [questionDetails.questionReference]: {input: "", logged: ""}};
+            newerObject.questions = {...newerObject.questions, [questionDetails.questionReference]: {id: questionDetails.id, input: "", logged: ""}};
         })
-        console.log(newObject);
-        return newObject;
-        //setOfReactants.reduce((accumulator, currentValue) => ({...accumulator, [currentValue.metal]: (({id, link, altText, opaque}) => ({id, link, altText, opaque}))(currentValue)}), {});
+        
+        return newerObject;
+        
     }
 
-    //prepareStorageObject();
-    //Adds an object in which to input and log comparisons to comparison array of textBoxCreator section of state
-
-    /**
-     * seems like it would be good to give yourself the versatility to render whatever's there, so let's say there's an array
-     * of question objects, each of which has a question reference, the question itself
-     * so you'd map the array and use it to make an object and all of that would be sent via the action payload and slotted into the state array
-     */
+    //sends the object skeleton for addition to the writtenResponses section of the store
 
     useEffect(() => {
         const objectToSend = prepareStorageObject();        
@@ -46,22 +45,19 @@ const WrittenResponse = (props) => {
     }, [])
     
 
+    //this takes any text that has been inputted into the text boxes and files them in the input sections of the relevant object in the 
+    //writtenResponse section of the store 
+
     const inputResponse = (event) => {        
-        //dispatch(inputSimilarities({index: indexOfComparisonToUpdate, content: event.target.value}));
-        //state.writtenResponses[action.payload.index][action.payload.questionReference].input = action.payload.inputtedText;
-        //console.log(event.target.id);
         dispatch(inputWrittenResponse({index: indexOfResponseToUpdate, questionReference: event.target.id, inputtedText: event.target.value}))
         
     }
-/*
-    const differencesToState = (event) => {        
-        //dispatch(inputDifferences({index: indexOfComparisonToUpdate, content: event.target.value}));
-    }    */
+
+    //this handles the logic for the submit button, it transfers userInput from the 'input' to the 'logged' section of the relevant object
+    //in the writtenResponse section of the store, which restores 'input' entry to null, which empties the text boxes on the screen (via their 
+    //'value' props)
 
     const submitWrittenResponse = () => {       
-       // dispatch(submitComparisons({index: indexOfComparisonToUpdate, id: props.id}));       
-       // dispatch(inputSimilarities({index: indexOfComparisonToUpdate, content: ""}));
-       // dispatch(inputDifferences({index: indexOfComparisonToUpdate, content: ""}));
        dispatch(submitWrittenResponses({index: indexOfResponseToUpdate}));
        arrayOfQuestionsToRender.forEach((question) => {
         return dispatch(inputWrittenResponse({index: indexOfResponseToUpdate, questionReference: question.questionReference, inputtedText: ""}))
@@ -74,24 +70,18 @@ return (
     <div style={{width: "100%"}} className="mt-2">
         <h3>Written response</h3>
         <p>Enter your answers in the textboxes below each question.</p>
-        {/**
-        <div className="row">
-                    <div className="col-md-6 ">
-                        <p>Similarities</p>
-                        <p><textarea value={(indexOfComparisonToUpdate === -1) ? '' : comparisonInputs[indexOfComparisonToUpdate].similarities.input} onChange={similaritiesToState}  style={{width: "100%"}} type="text" name="TB1-similarities" id="TB1Similarities"></textarea></p>
-                    </div>
-                    <div className="col-md-6">
-                        <p>Differences</p>
-                        <p><textarea value={(indexOfComparisonToUpdate === -1) ? '' : comparisonInputs[indexOfComparisonToUpdate].differences.input} onChange={differencesToState} style={{width: "100%"}} type="text" name="TB1-differences" id="TB1Differences"></textarea></p>
-                    </div>
-        </div>
-         */}
+        
+        {/*Renders questions with empty text boxes below */}
+
          {arrayOfQuestionsToRender.map((questionDetails) => (
             <div key={keyCount = keyCount + 1}>
             <p>{questionDetails.questionText}</p>
-            <p><textarea value={(indexOfResponseToUpdate === -1) ? '' : writtenResponses[indexOfResponseToUpdate][questionDetails.questionReference].input} onChange={inputResponse}  style={{width: "100%"}} type="text" name="TB1-similarities" id={questionDetails.questionReference}></textarea></p>
+            <p><textarea value={(indexOfResponseToUpdate === -1) ? '' : writtenResponses[indexOfResponseToUpdate].questions[questionDetails.questionReference].input} onChange={inputResponse}  style={{width: "100%"}} type="text" name="TB1-similarities" id={questionDetails.questionReference}></textarea></p>
             </div>
          ))}
+
+        {/*Renders submit button */}
+
         <ul className="list-group list-group-horizontal mt-3 fs-5 d-flex justify-content-center">
                     <div className="excess-or-reset-button-container d-flex justify-content-center">
                       <button 
