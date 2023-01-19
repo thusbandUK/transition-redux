@@ -178,7 +178,9 @@ export const HydrochloricAcidText = [
     {
       type: 'written-response',                
       props: {key: 25, id: 25},
-      content: {id: 25, filter: 'true', questions:
+      content: {id: 25, 
+      filter: 'true', 
+      questions:
         [
           {
             true: ['AQA'],
@@ -247,14 +249,6 @@ export const HydrochloricAcidText = [
     }
    ]
   },
-
-//to here (copied from above)
-
-//pasting in from here (below)
-
-
-//down to here (from above)
-
   {id: 27, allContent: [
     {
       type: 'h2',
@@ -269,8 +263,8 @@ export const HydrochloricAcidText = [
       ],
       props: {key: 27.2}
     }
-
-  ]}
+    ]
+  }
 ]
 
 

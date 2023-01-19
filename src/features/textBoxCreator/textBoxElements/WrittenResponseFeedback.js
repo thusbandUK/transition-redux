@@ -58,7 +58,7 @@ const WrittenResponseFeedback = (props) => {
 
     //styles responses white on black for emphasis
 
-    const inverseStyling = {backgroundColor: 'black', color: 'white', padding: '10px', borderRadius: '10px'};
+    const inverseStyling = {backgroundColor: 'black', color: 'white', padding: '10px', borderRadius: '5px'};
 
     //styles feedback points so that they line up with check boxes and with a small gap between the two
 

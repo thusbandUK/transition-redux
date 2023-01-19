@@ -53,7 +53,7 @@ const processContent = () => {
     let elementsToRender = objectsToInclude.map((childElementDetails) => {  
       if (childElementDetails.childProps.tagged === 'true'){
         const arrayOfTaggedElements = formatSubSuperScript(childElementDetails.childContent);
-        return createElement(childElementDetails.childType === 'p' ? 'div' : childElementDetails.childType, {...childElementDetails.childProps, key: props.key}, arrayOfTaggedElements)
+        return createElement(childElementDetails.childType === 'p' ? 'div' : childElementDetails.childType, childElementDetails.childProps, arrayOfTaggedElements)
       } else { 
         return createElement(childElementDetails.childType, childElementDetails.childProps, childElementDetails.childContent) }          
     }) 

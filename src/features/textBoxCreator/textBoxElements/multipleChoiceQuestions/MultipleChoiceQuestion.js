@@ -25,9 +25,12 @@ const MultipleChoiceQuestion = (props) => {
     const MCQAllDetails = MCQData.find((entry) => entry.id === MCQId);
 
     //define constant for the options *only* from the above constant, filtered by examboard
-    const MCQAllDetailsFiltered = filterByExamBoard(MCQAllDetails.options, examBoard, true);
+    //console.log(MCQAllDetails);
+    //const MCQAllDetailsFiltered = filterByExamBoard(MCQAllDetails.options, examBoard, true);
     
+    const MCQAllDetailsFiltered = (MCQAllDetails.filter === 'true') ? filterByExamBoard(MCQAllDetails.options, examBoard, true) : MCQAllDetails.options;
 
+    //console.log(MCQAllDetailsFiltered2);
     //when radio button clicked, selected answer dispatched to state
     const onValueChange = (event) => {
       //console.log(event.target.value);

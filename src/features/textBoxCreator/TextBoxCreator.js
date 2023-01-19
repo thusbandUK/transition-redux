@@ -144,6 +144,20 @@ const TextBoxCreator = (props) => {
         
     }
 
+    const skipRender = (entry) => {
+        if (!entry.doNotRender){
+            return true;
+        } else if (entry.doNotRender){
+            if (entry.doNotRender.includes(examBoard)){
+                return false;
+            } else {
+                return true;
+            }
+
+        }
+
+    }
+
     return(
         <div className="bg-light border p-5 rounded position-relative" key="container-div">
           
@@ -152,18 +166,26 @@ const TextBoxCreator = (props) => {
 {/**TEMPORARY - YOU WILL NEED TO CHANGE PAGES2 BACK TO PAGES */}
             {pages.map((entry) => (
               
+              (skipRender(entry)) ?
+
               <ElementGenerator
               type={entry.type}
               content={entry.content}
               props={entry.props}
               key={entry.props.key}
-              examBoard={examBoard}
-              
-              
+              examBoard={examBoard}              
               />
+              
+              : null
+
             ))}
             
-            {/*props={entry.props} */}
+            {/*
+            {(skipRender(entry)) ? 
+            
+            : null }
+            
+            props={entry.props} */}
             <nav>
           {/* BF: these are now buttons elements (instead of divs) to ensure they can be focused on using keyboard nabigation only - crucial for accessibility. Also, semnatically they are indeed buttons! */}
               <button 

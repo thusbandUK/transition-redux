@@ -13,6 +13,10 @@ const ComparisonFeedback = (props) => {
     const boldType = {fontWeight: 'bold', marginTop: '10px'};
 
     const comparisonsText = {display: 'inline', marginLeft: '10px'};
+
+    const inverseStyling = {backgroundColor: 'black', color: 'white', padding: '10px', borderRadius: '5px'};
+
+    const hiddenResponseStyling = {display: 'none'};   
     
     //accesses the part of state into which comparison statements have been logged on previous page
 
@@ -31,22 +35,28 @@ const ComparisonFeedback = (props) => {
       
     return (
         <div>
-
+            {((!comparisonInputs[indexOfComparisonToRead].similarities.logged) && (!comparisonInputs[indexOfComparisonToRead].differences.logged)) ? null :
+            <div>
             <h3 style={{marginTop: '10px'}}>Your comparison</h3>
 
             <div className="row">
 
                <div className="col-md-6">
                   <p style={boldType}>Similarities</p>
-                  <p>{comparisonInputs[indexOfComparisonToRead].similarities.logged}</p>
+                  <p style={comparisonInputs[indexOfComparisonToRead].similarities.logged ? inverseStyling : hiddenResponseStyling} >
+                     {comparisonInputs[indexOfComparisonToRead].similarities.logged}
+                  </p>
                 </div>
 
                 <div className="col-md-6">
                   <p style={boldType}>Differences</p>
-                  <p>{comparisonInputs[indexOfComparisonToRead].differences.logged}</p>
+                  <p style={comparisonInputs[indexOfComparisonToRead].differences.logged ? inverseStyling : hiddenResponseStyling} >
+                     {comparisonInputs[indexOfComparisonToRead].differences.logged}
+                  </p>
                 </div>
             </div>
-
+            </div>
+         }
             <h3>Did you notice?</h3>
 
             <div className="row">
@@ -71,7 +81,9 @@ const ComparisonFeedback = (props) => {
                         <p style={comparisonsText}>{difference}</p>
                      </div>
                    ))}
-        
+                  {/***/}
+                  {content.BReference ? 
+                  <div>
                   <p style={boldType}>{content.BReference}</p>
 
                   {content.differencesB.map((difference) => (
@@ -80,6 +92,10 @@ const ComparisonFeedback = (props) => {
                         <p style={comparisonsText}>{difference}</p>
                      </div>
                   ))}
+                  </div>
+                  : null
+                  }
+                   
                </div>
             </div>
             

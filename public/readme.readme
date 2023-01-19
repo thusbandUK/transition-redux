@@ -11,12 +11,12 @@ thinks they are. So they're working, but they're not greying out when they ought
 0.90) make an image rendering component, adjacentImages, pass the objects in an array and then array.length will dictate
 the size of columns, so one image will fill the whole width, whereas three will shrink down
 and or they each need to be in individual divs
+0.901) add image of equation of chromium hydroxide dissolving upon addition excess sodium hydroxide 
 
-0.91) soooo, for the writtenResponseFeedback I think I want there to be an equation option, like, if equation, then render equation here,
-otherwise just map arrays for keypoint checklists 
+0.91) add Salters content to first two excess slides NaOH (might end up necessary for NH3 reactions too)
+0.91) neaten up textBoxCreator, including keep doNotRender logic? Problem is that's item by item on a page, you can't skip a whole page
+which is a shame because with OCR B there'll be two pages that aren't needed for NaOH
 
-0.92) create something similar to the comparison pages for the assessment pages
-0.93) address the assorted error messages, eg: for to htmlFor or whatever it is
 0.94) transfer in all the code from the old website to the new website
 0.95) troubleshoot
 0.96) add to portfolio =)
@@ -63,6 +63,7 @@ ii) make a separate entry in the MCQs file (is this useful?)
 iii) you have to pass "true"(boolean, not string) as an optional third argument to filterByExamBoard function, so that it reads the "true" key 
 values, rather than the childProp.true key values
 remember there's a two-column option, too
+iv) also add "filter: 'true'" in the main props if you want it filtered
 g) if you want to add a break as a child you need to include an empty props entry as well as type
 h) you need to use strings for 'true' for the 'parent' and 'tagged' indicators
 i) comparison feedback, see example, 
@@ -73,6 +74,7 @@ j) written-response and written-response-feedback: don't forget that like with c
 the same for matching sets of input / responses 
 i) to filter by examboard you have to put "filter: 'true'" in the main props
 ii) questions and feedback sets have to have matching ID numbers, that's how the feedback sets are located
+
 
 
 4) embed code with comments that explain what each section is for

@@ -10,6 +10,7 @@ const filterByExamBoard = (array, examBoard, MCQ) => {
             return entry.childProps.true.includes(examBoard);
     }
     )
+    
     return outputArray;
 }
  
