@@ -49,7 +49,8 @@ const WrittenResponseFeedback = (props) => {
         const arrayOfFeedbackPoints = feedbackPointsForMapping.answers.find((details) => {
             return (details.id === responseId);
         })
-         return arrayOfFeedbackPoints;
+        
+        return arrayOfFeedbackPoints;
               
     }
 
@@ -78,11 +79,17 @@ const WrittenResponseFeedback = (props) => {
     return(
         <div>
             <h3>How did you do?</h3>
+            <p>Use the check list to tick off all the points you got correct.</p>
             {responsesForMapping.map((responseDetails) => (
                 <div key={keyCount = keyCount + 1}>
                 <p style={titleStyling}>{`Your ${responseDetails.questionReference}`}</p>
                 <p style={responseDetails.questionAnswer ? inverseStyling : hiddenResponseStyling}>{responseDetails.questionAnswer}</p>
-                
+                {feedbackFinder(responseDetails.id).equation ? 
+                <div>
+                <p style={titleStyling}>Correct equation</p>
+                <div style={{marginBottom: '10px'}}>{formatSubSuperScript(feedbackFinder(responseDetails.id).equation)} </div>
+                </div>
+                : null}
                 {feedbackFinder(responseDetails.id).answerText.map((feedbackPoint) => (
 
                             <div key={keyCount = keyCount * 2 + 1}>
@@ -101,3 +108,5 @@ const WrittenResponseFeedback = (props) => {
 }
 
 export default WrittenResponseFeedback;
+
+//{/** <p>{feedbackFinder(responseDetails.id).equation ? formatSubSuperScript(responseDetails.equation) : null}</p>*/}

@@ -187,13 +187,13 @@ export const HydrochloricAcidText = [
             questionText: 'Enter an ionic equation to show the reaction of hexaaquairon(III) with excess concentrated hydrochloric acid.'
           },
           {
-            true: ['Edexcel'],
+            true: ['Edexcel', 'OCRA', 'OCRB'],
             id: 'equationB',
             questionReference: 'equation',
-            questionText: 'Little experiment going on here'
-          },
+            questionText: 'Enter an ionic equation to show the reaction of hexaaquacopper(II) with excess concentrated hydrochloric acid.'
+          },     
           {
-            true: ['AQA', 'Edexcel'],
+            true: ['AQA', 'Edexcel', 'OCRA', 'OCRB'],
             id: 'explanationA',
             questionReference: 'explanation',
             questionText: 'Explain why the complex ion produced is a different shape to the complex ion that reacts.'
@@ -219,14 +219,20 @@ export const HydrochloricAcidText = [
               'Overall 3+ charge on left-hand complex, 1- charge on right-hand complex',
               '6 H<sub>2</sub>O ligands in left complex ion, 4 Cl ligands in right complex ion',
               'plus 4Cl<sup>-</sup> ions shown on left, plus 6H<sub>2</sub>O molecules on right'
-            ]
+            ],
+            equation: '[Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 4Cl<sup>-</sup> &#8652; [FeCl<sub>4</sub>]<sup>-</sup> + 6H<sub>2</sub>O'
           },
-          {
-            
-            id: 'equationB',
+          {            
             questionReference: 'equation',
-            answerText: ['Here\'s another little experiment', 'and another', 'and still another']
-          },
+            id: 'equationB',
+            answerText: [
+              'Square brackets around both complexes', 
+              'Overall 2+ charge on left-hand complex, 2- charge on right-hand complex',
+              '6 H<sub>2</sub>O ligands in left complex ion, 4 Cl ligands in right complex ion',
+              'plus 4Cl<sup>-</sup> ions shown on left, plus 6H<sub>2</sub>O molecules on right'
+            ],
+            equation: '[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 4Cl<sup>-</sup> &#8652; [CuCl<sub>4</sub>]<sup>2-</sup> + 6H<sub>2</sub>O'
+          },  
           {
             questionReference: 'explanation',
             id: 'explanationA',
@@ -245,76 +251,6 @@ export const HydrochloricAcidText = [
 //to here (copied from above)
 
 //pasting in from here (below)
-
-
-{id: 30, allContent: [,
-    
-  {
-    type: 'written-response',                
-    props: {key: 30, id: 30},
-    content: {id: 30, filter: 'true', questions:
-      [
-        {
-          true: ['AQA'],
-          id: 'equationA',
-          questionReference: 'equation',
-          questionText: 'Enter an ionic equation to show the reaction of hexaaquairon(III) with excess concentrated hydrochloric acid.'
-        },
-        {
-          true: ['Edexcel'],
-          id: 'equationB',
-          questionReference: 'equation',
-          questionText: 'Little experiment going on here'
-        },
-        {
-          true: ['AQA', 'Edexcel'],
-          id: 'explanationA',
-          questionReference: 'explanation',
-          questionText: 'Explain why the complex ion produced is a different shape to the complex ion that reacts.'
-        }
-
-      ]
-    }
-  }
- ]
-},
-{id: 31, allContent: [
-  
-  {
-    type: 'written-response-feedback',                
-    props: {key: 31, id: 30},
-    content: {id: 30, answers:
-      [
-        {            
-          questionReference: 'equation',
-          id: 'equationA',
-          answerText: [
-            'Square brackets around both complexes', 
-            'Overall 3+ charge on left-hand complex, 1- charge on right-hand complex',
-            '6 H<sub>2</sub>O ligands in left complex ion, 4 Cl ligands in right complex ion',
-            'plus 4Cl<sup>-</sup> ions shown on left, plus 6H<sub>2</sub>O molecules on right'
-          ]
-        },
-        {
-          
-          id: 'equationB',
-          questionReference: 'equation',
-          answerText: ['Here\'s another little experiment', 'and another', 'and still another']
-        },
-        {
-          questionReference: 'explanation',
-          id: 'explanationA',
-          answerText: [
-            'chloro / Cl ligands larger than aqua / H<sub>2</sub>O ligands',
-            'Only 4 chloro ligands can fit round metal ion (which minimises repulsion between negative charges)'
-          ]
-        }
-
-      ]
-    }
-  }
- ]
-},
 
 
 //down to here (from above)
