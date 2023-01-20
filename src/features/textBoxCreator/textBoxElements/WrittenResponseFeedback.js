@@ -84,12 +84,23 @@ const WrittenResponseFeedback = (props) => {
                 <div key={keyCount = keyCount + 1}>
                 <p style={titleStyling}>{`Your ${responseDetails.questionReference}`}</p>
                 <p style={responseDetails.questionAnswer ? inverseStyling : hiddenResponseStyling}>{responseDetails.questionAnswer}</p>
+                
                 {feedbackFinder(responseDetails.id).equation ? 
                 <div>
-                <p style={titleStyling}>Correct equation</p>
-                <div style={{marginBottom: '10px'}}>{formatSubSuperScript(feedbackFinder(responseDetails.id).equation)} </div>
+                <p style={titleStyling}>{`Acceptable equation${(feedbackFinder(responseDetails.id).equation.length > 1) ? 's' : ''}`}</p>
+
+                <div style={{marginBottom: '10px'}}>
+                    
+                    {feedbackFinder(responseDetails.id).equation.map((equation) => (
+                        <div key={keyCount = keyCount * 3 + 1}>{formatSubSuperScript(equation)}</div>
+                    ))} 
+                
+                
                 </div>
+                </div>
+
                 : null}
+
                 {feedbackFinder(responseDetails.id).answerText.map((feedbackPoint) => (
 
                             <div key={keyCount = keyCount * 2 + 1}>
@@ -109,4 +120,4 @@ const WrittenResponseFeedback = (props) => {
 
 export default WrittenResponseFeedback;
 
-//{/** <p>{feedbackFinder(responseDetails.id).equation ? formatSubSuperScript(responseDetails.equation) : null}</p>*/}
+// {formatSubSuperScript(feedbackFinder(responseDetails.id).equation)} 

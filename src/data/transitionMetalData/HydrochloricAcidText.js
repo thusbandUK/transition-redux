@@ -222,7 +222,7 @@ export const HydrochloricAcidText = [
               '6 H<sub>2</sub>O ligands in left complex ion, 4 Cl ligands in right complex ion',
               'plus 4Cl<sup>-</sup> ions shown on left, plus 6H<sub>2</sub>O molecules on right'
             ],
-            equation: '[Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 4Cl<sup>-</sup> &#8652; [FeCl<sub>4</sub>]<sup>-</sup> + 6H<sub>2</sub>O'
+            equation: ['[Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 4Cl<sup>-</sup> &#8652; [FeCl<sub>4</sub>]<sup>-</sup> + 6H<sub>2</sub>O']
           },
           {            
             questionReference: 'equation',
@@ -233,7 +233,7 @@ export const HydrochloricAcidText = [
               '6 H<sub>2</sub>O ligands in left complex ion, 4 Cl ligands in right complex ion',
               'plus 4Cl<sup>-</sup> ions shown on left, plus 6H<sub>2</sub>O molecules on right'
             ],
-            equation: '[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 4Cl<sup>-</sup> &#8652; [CuCl<sub>4</sub>]<sup>2-</sup> + 6H<sub>2</sub>O'
+            equation: ['[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 4Cl<sup>-</sup> &#8652; [CuCl<sub>4</sub>]<sup>2-</sup> + 6H<sub>2</sub>O']
           },  
           {
             questionReference: 'explanation',

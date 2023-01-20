@@ -1,3 +1,5 @@
+import sectionFinish from "./genericContent/sectionFinish";
+
 export const SodiumHydroxideText = [
     
     {
@@ -267,7 +269,7 @@ export const SodiumHydroxideText = [
               '3 hydroxide ions in reactants, 3 water molecules in products',
               '6 H<sub>2</sub>O ligands in reactant, 3 H<sub>2</sub>O ligands <em>and</em> 3OH<sup>-</sup> ligands in product'
             ],
-            equation: '[Al(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 3OH<sup>-</sup> &#8594;	 [Al(H<sub>2</sub>O)<sub>3</sub>(OH)<sub>3</sub>] + 3H<sub>2</sub>O'
+            equation: ['[Al(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 3OH<sup>-</sup> &#8594;	 [Al(H<sub>2</sub>O)<sub>3</sub>(OH)<sub>3</sub>] + 3H<sub>2</sub>O']
           },
           {            
             questionReference: 'equation',
@@ -280,7 +282,7 @@ export const SodiumHydroxideText = [
               '3 hydroxide ions in reactants, 3 water molecules in products',
               '6 H<sub>2</sub>O ligands in reactant, 3 H<sub>2</sub>O ligands <em>and</em> 3OH<sup>-</sup> ligands in product'
             ],
-            equation: '[Cr(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 3OH<sup>-</sup> &#8652; [Cr(OH)<sub>3</sub>(H<sub>2</sub>O)<sub>3</sub>] + 3H<sub>2</sub>O'
+            equation: ['[Cr(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 3OH<sup>-</sup> &#8652; [Cr(OH)<sub>3</sub>(H<sub>2</sub>O)<sub>3</sub>] + 3H<sub>2</sub>O']
           },
           {            
             questionReference: 'equation',
@@ -293,7 +295,7 @@ export const SodiumHydroxideText = [
               '2 hydroxide ions in reactants, 2 water molecules in products',
               '6 H<sub>2</sub>O ligands in reactant, 4 H<sub>2</sub>O ligands <em>and</em> 2OH<sup>-</sup> ligands in product'
             ],
-            equation: '[Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 2OH<sup>-</sup> &#8652; [Fe(OH)<sub>2</sub>(H<sub>2</sub>O)<sub>4</sub>] + 2H<sub>2</sub>O'
+            equation: ['[Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 2OH<sup>-</sup> &#8652; [Fe(OH)<sub>2</sub>(H<sub>2</sub>O)<sub>4</sub>] + 2H<sub>2</sub>O']
           }
 
         ]
@@ -537,8 +539,14 @@ export const SodiumHydroxideText = [
             questionText: 'In the textbox below state and explain what you would observe if sodium hydroxide was added dropwise (drop by drop) to a solution of hexaaquachromium(III) ions until excess reagent had been added. Include a set of equations in the first text box.'
           },     
           {
-            true: ['AQA', 'Edexcel', 'OCRA', 'OCRB'],
+            true: ['AQA', 'OCRB'],
             id: 'explanationA',
+            questionReference: 'explanation',
+            questionText: 'Include your observations in the text box below.'
+          },     
+          {
+            true: ['Edexcel', 'OCRA'],
+            id: 'explanationB',
             questionReference: 'explanation',
             questionText: 'Include your observations in the text box below.'
           }
@@ -559,31 +567,56 @@ export const SodiumHydroxideText = [
             questionReference: 'equation',
             id: 'equationA',
             answerText: [
-              'Square brackets around both complexes', 
-              'Overall 3+ charge on left-hand complex, 1- charge on right-hand complex',
-              '6 H<sub>2</sub>O ligands in left complex ion, 4 Cl ligands in right complex ion',
-              'plus 4Cl<sup>-</sup> ions shown on left, plus 6H<sub>2</sub>O molecules on right'
+              'One correct hydrolysis equation', 
+              'Both half equations or complete equation to show oxidation of precipitate'              
             ],
-            equation: ['[Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 4Cl<sup>-</sup> &#8652; [FeCl<sub>4</sub>]<sup>-</sup> + 6H<sub>2</sub>O', 
-            '[Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 4Cl<sup>-</sup> &#8652; [FeCl<sub>4</sub>]<sup>-</sup> + 6H<sub>2</sub>O']
-          },
-          {            
-            questionReference: 'equation',
-            id: 'equationB',
-            answerText: [
-              'Square brackets around both complexes', 
-              'Overall 2+ charge on left-hand complex, 2- charge on right-hand complex',
-              '6 H<sub>2</sub>O ligands in left complex ion, 4 Cl ligands in right complex ion',
-              'plus 4Cl<sup>-</sup> ions shown on left, plus 6H<sub>2</sub>O molecules on right'
-            ],
-            equation: '[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 4Cl<sup>-</sup> &#8652; [CuCl<sub>4</sub>]<sup>2-</sup> + 6H<sub>2</sub>O'
+            equation: [
+              'Acceptable hydrolysis equations:',
+              '[Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 2OH<sup>-</sup> &#8652; [Fe(H<sub>2</sub>O)<sub>4</sub>(OH)<sub>2</sub>] + 2H<sub>2</sub>O',
+                '[Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 2NaOH &#8652; [Fe(H<sub>2</sub>O)<sub>4</sub>(OH)<sub>2</sub>] + 2H<sub>2</sub>O + 2Na<sup>+</sup>',
+                'Fe<sup>2+</sup> + 2OH<sup>-</sup> &#8652; Fe(OH)<sub>2</sub>',
+                'Acceptable equations to explain oxidation of iron(II) hydroxide',
+                '2H<sub>2</sub>O + O<sub>2</sub> + 4e<sup>-</sup> &#8594; 4OH<sup>-</sup>',
+                'Fe<sup>2+</sup> &#8594; Fe<sup>3+</sup> + e<sup>-</sup>',
+                '4[Fe(H<sub>2</sub>O)<sub>4</sub>(OH)<sub>2</sub>] + O<sub>2</sub> &#8594;	 4[Fe(H<sub>2</sub>O)<sub>3</sub>(OH)<sub>3</sub>] + 2H<sub>2</sub>O'
+            ]
           },  
           {
             questionReference: 'explanation',
             id: 'explanationA',
             answerText: [
-              'chloro / Cl ligands larger than aqua / H<sub>2</sub>O ligands',
-              'Only 4 chloro ligands can fit round metal ion (which minimises repulsion between negative charges)'
+              'green solution changes to green precipitate on addition of sodium hydroxide',
+              'green precipitate turns brown at the edges on standing / after some time',
+              'iron(II) / Fe<sup>2+</sup> (central metal) ion oxidised to iron(III) / Fe<sup>3+</sup>...',
+              '...by oxygen in the air'
+            ]
+          },
+          {            
+            questionReference: 'equation',
+            id: 'equationB',
+            answerText: [
+              'One correct equation for the addition of a few drops', 
+              'One correct equation for the addition of excess reagents',
+              'Correct charges on all formulae'
+            ],
+            equation: [
+              'After addition of a few drops',
+              'Cr<sup>3+</sup> + 3OH<sup>-</sup> &#8652; Cr(OH)<sub>3</sub>',
+              'Cr(H<sub>2</sub>O)<sub>6</sub> + 3OH<sup>-</sup> &#8652; Cr(OH)<sub>3</sub>(H<sub>2</sub>O)<sub>3</sub> + 3H<sub>2</sub>O',
+              'Once reagent added to excess',
+              'Cr(OH)<sub>3</sub> + 3OH<sup>-</sup> &#8652; [Cr(OH)<sub>6</sub>]<sup>3-</sup>',
+              'Cr(OH)<sub>3</sub>(H<sub>2</sub>O)<sub>3</sub> + 3OH<sup>-</sup> &#8652; [Cr(OH)<sub>6</sub>]<sup>3-</sup> + 3H<sub>2</sub>O'
+            ]
+          },  
+          {
+            questionReference: 'explanation',
+            id: 'explanationB',
+            answerText: [
+              'blueish green solution changes to grey green precipitate on addition of a few drops of sodium hydroxide',
+              'produces Cr(OH)<sub>3</sub> OR Cr(OH)<sub>3</sub>(H<sub>2</sub>O)<sub>3</sub>',
+              'when excess reagent added, grey green precipitate dissolves',
+              'producing a green solution',
+              'with formula Cr(OH)<sub>6</sub> OR [Cr(OH)<sub>6</sub>]<sup>3-</sup>'
             ]
           }
 
@@ -592,7 +625,7 @@ export const SodiumHydroxideText = [
     }
    ]
   },
-    
+    {...sectionFinish, id: 42}
   
 
 ]
