@@ -5,6 +5,8 @@ import '../../../../app/App.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectAnswer, displayFeedback, selectMCQId, reset } from './multipleChoiceQuestionSlice';
 import optionTextGenerator from './optionTextGenerator';
+//import filterByExamBoard from '../textBoxFunctions/filterByExamBoard';
+import formatSubSuperScript from '../textBoxFunctions/formatSubSuperScript';
 
 
 const MultipleChoiceQuestion = (props) => {
@@ -103,7 +105,7 @@ const MultipleChoiceQuestion = (props) => {
                     
                   </div>
                 ))}
-                <p className="lead mt-1 pt-2 border-top border-3" >{feedback ? feedback.comment : 'Select an option and then press "Check Answer"'}</p> 
+                <p className="lead mt-1 pt-2 border-top border-3" >{feedback ? formatSubSuperScript(feedback.comment) : 'Select an option and then press "Check Answer"'}</p> 
                 <ul className="list-group list-group-horizontal mt-3 fs-5 d-flex justify-content-center">
                 <div className="excess-or-reset-button-container d-flex justify-content-center">
                   { !feedback ? 

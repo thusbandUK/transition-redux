@@ -470,5 +470,203 @@ export const MCQData = [
         ]/*,
         correct: {id: 433}*/
         
+    },
+    {
+        id: 46,
+        question: 'Which of these equations does not correctly show an acid-base reaction of aluminium hydroxide?',        
+        //filter: 'true', 
+        correct: {id: 443},
+        options: [
+            {
+                id: 441,
+                optionNumber: 1,
+                optionText: '[Al(H<sub>2</sub>O)<sub>3</sub>(OH)<sub>3</sub>] + 3H<sub>3</sub>O<sup>+</sup> &#8652; [Al(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 3H<sub>2</sub>O',
+                feedback: 'Incorrect selection! Balanced equation uses H<sub>3</sub>O<sup>+</sup> longhand for acidic proton.',
+                //true: ['AQA', 'Edexcel', 'OCRA', 'OCRB']
+                
+            },
+            {
+                id: 442,
+                optionNumber: 2,
+                optionText: 'Al(OH)<sub>3</sub> + NaOH  &#8652; Na[Al(OH)<sub>4</sub>]',
+                feedback: 'Incorrect selection! Question does not specify that equation should be ionic.',
+                //true: ['AQA', 'Edexcel', 'OCRA', 'OCRB']
+            },
+            {
+                id: 443,
+                optionNumber: 3,
+                optionText: '[Al(H<sub>2</sub>O)<sub>3</sub>(OH)<sub>3</sub>] + 3H<sup>+</sup> &#8652; [Al(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 3H<sub>2</sub>O',
+                feedback: 'Correct! Although equation shows acid base reaction, it is not balanced; 3H<sub>2</sub>O should be omitted.',
+                //true: ['AQA', 'Edexcel', 'OCRA', 'OCRB']
+            },
+            {
+                id: 444,
+                optionNumber: 4,
+                optionText: '[Al(H<sub>2</sub>O)<sub>3</sub>(OH)<sub>3</sub>] + OH<sup>&ndash;</sup> &#8652; [Al(OH)<sub>4</sub>]<sup>&ndash;</sup> + 3H<sub>2</sub>O',
+                feedback: 'Incorrect selection! Balanced ionic equation shows production of aluminium tetrahydrate ion.',
+                //true: ['AQA']
+            }
+            
+        ]
+        
+    },
+    {
+        id: 47,
+        columns: 2,
+        question: 'Choose the answer in which the observations are accurate for the stated equation.',
+        correct: {id: 472},
+        options: [
+            {
+                id: 471,
+                optionNumber: 1,                
+                optionText: [
+                    {childType: 'p',
+                     childProps: {className: "col-md-5", tagged: 'true'},
+                     childContent: 'Cr<sup>3+</sup> + 3OH<sup>-</sup> &#8652; Cr(OH)<sub>3</sub>'
+                    },
+                    {childType: 'p',
+                     childProps: {className: "col-md-5"},
+                     childContent: 'grey-green precipitate to dark green solution'
+                    }
+                  ],
+                                
+                feedback: 'Incorrect! The grey-green precipitate is the product, not the reactant.',
+                correct: false
+                
+            },
+            {
+                id: 472,
+                optionNumber: 2,                
+                optionText: [
+                    {childType: 'p',
+                     childProps: {className: "col-md-5", tagged: 'true'},
+                     childContent: 'Cr(OH)<sub>3</sub> + 3OH<sup>-</sup> &#8652; [Cr(OH)<sub>6</sub>]<sup>3-</sup>'
+                    },
+                    {childType: 'p',
+                     childProps: {className: "col-md-5"},
+                     childContent: 'grey-green precipitate produces green solution'
+                    }
+                  ],
+                                
+                feedback: 'Correct!',
+                correct: true
+                
+            },
+            {
+                id: 473,
+                optionNumber: 3,                
+                optionText: [
+                    {childType: 'p',
+                     childProps: {className: "col-md-5", tagged: 'true'},
+                     childContent: '[Cr(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 3OH<sup>-</sup> &#8652; [Cr(OH)<sub>3</sub>(H<sub>2</sub>O)<sub>3</sub>] + 3H<sub>2</sub>O'
+                    },
+                    {childType: 'p',
+                     childProps: {className: "col-md-5"},
+                     childContent: 'pink solution produces grey-green precipitate'
+                    }
+                  ],
+                                
+                feedback: 'Incorrect! Starting solution is blueish-green, not pink.',
+                correct: false
+                
+            },            
+            {
+                id: 474,
+                optionNumber: 4,                
+                optionText: [
+                    {childType: 'p',
+                     childProps: {className: "col-md-5", tagged: 'true'},
+                     childContent: '[Cr(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 6OH<sup>-</sup> &#8652; [Cr(OH)<sub>6</sub>]<sup>3-</sup> + 6H<sub>2</sub>O'
+                    },
+                    {childType: 'p',
+                     childProps: {className: "col-md-5"},
+                     childContent: 'blueish green solution to grey-green precipitate'
+                    }
+                  ],
+                                
+                feedback: 'Incorrect! Blueish green solution produces green solution.',
+                correct: false
+                
+            }
+        ]
+        
+    },
+    {
+        id: 48,
+        question: 'I AM A PLACEHOLDER FOR THE OCRB QUESTION TO BE WRITTEN',        
+        //filter: 'true', 
+        correct: {id: 443},
+        options: [
+            {
+                id: 441,
+                optionNumber: 1,
+                optionText: '[Al(H<sub>2</sub>O)<sub>3</sub>(OH)<sub>3</sub>] + 3H<sub>3</sub>O<sup>+</sup> &#8652; [Al(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 3H<sub>2</sub>O',
+                feedback: 'Incorrect selection! Balanced equation uses H<sub>3</sub>O<sup>+</sup> longhand for acidic proton.',
+                //true: ['AQA', 'Edexcel', 'OCRA', 'OCRB']
+                
+            },
+            {
+                id: 442,
+                optionNumber: 2,
+                optionText: 'Al(OH)<sub>3</sub> + NaOH  &#8652; Na[Al(OH)<sub>4</sub>]',
+                feedback: 'Incorrect selection! Question does not specify that equation should be ionic.',
+                //true: ['AQA', 'Edexcel', 'OCRA', 'OCRB']
+            },
+            {
+                id: 443,
+                optionNumber: 3,
+                optionText: '[Al(H<sub>2</sub>O)<sub>3</sub>(OH)<sub>3</sub>] + 3H<sup>+</sup> &#8652; [Al(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 3H<sub>2</sub>O',
+                feedback: 'Correct! Although equation shows acid base reaction, it is not balanced; 3H<sub>2</sub>O should be omitted.',
+                //true: ['AQA', 'Edexcel', 'OCRA', 'OCRB']
+            },
+            {
+                id: 444,
+                optionNumber: 4,
+                optionText: '[Al(H<sub>2</sub>O)<sub>3</sub>(OH)<sub>3</sub>] + OH<sup>&ndash;</sup> &#8652; [Al(OH)<sub>4</sub>]<sup>&ndash;</sup> + 3H<sub>2</sub>O',
+                feedback: 'Incorrect selection! Balanced ionic equation shows production of aluminium tetrahydrate ion.',
+                //true: ['AQA']
+            }
+            
+        ]
+        
+    },
+    {
+        id: 49,
+        question: 'Choose the half equation which correctly shows the role of oxygen in the oxidation of iron(II) hydroxide to iron(III) hydroxide',
+        //filter: 'true', 
+        correct: {id: 492},       
+        options: [
+            {
+                id: 491,
+                optionNumber: 1,
+                optionText: '4H<sup>+</sup> + O<sub>2</sub> + 4e<sup>-</sup> &#8594; 2H<sub>2</sub>O',
+                feedback: 'Incorrect selection! This half equation would apply to acidic conditions.',
+                //true: ['AQA', 'Edexcel', 'OCRA', 'OCRB']
+                
+            },
+            {
+                id: 492,
+                optionNumber: 2,
+                optionText: '2H<sub>2</sub>O + O<sub>2</sub> + 4e<sup>-</sup> &#8594; 4OH<sup>-</sup>',
+                feedback: 'Correct!',
+                //true: ['AQA', 'Edexcel', 'OCRA', 'OCRB']
+            },
+            {
+                id: 493,
+                optionNumber: 3,
+                optionText: '2H<sub>2</sub>O &#8594; 4H<sup>+</sup> + O<sub>2</sub> + 4e<sup>-</sup>',
+                feedback: 'Incorrect! O<sub>2</sub> should be a reactant.',
+                //true: ['AQA', 'Edexcel', 'OCRA', 'OCRB']
+            },
+            {
+                id: 494,
+                optionNumber: 4,
+                optionText: '4OH<sup>-</sup> &#8594; 2H<sub>2</sub>O + O<sub>2</sub> + 4e<sup>-</sup>',
+                feedback: 'Incorrect! O<sub>2</sub> should be a reactant.',
+                //true: ['AQA']
+            }
+            
+        ]
+        
     }
 ]

@@ -22,9 +22,11 @@ const TextBoxCreator = (props) => {
     const reagentOptions = useSelector(state => state.menu.reagentOptions);    
     const selectedReagent = useSelector(state => state.menu.selectedReagent);
     const currentSection = useSelector(state => state.textBoxCreator.selectedSection);
-    let currentPage = useSelector(state => state.textBoxCreator.selectedPage);
     const leftDisabled = useSelector(state => state.textBoxCreator.leftDisabled); 
     const rightDisabled = useSelector(state => state.textBoxCreator.rightDisabled); 
+    let currentPage = useSelector(state => state.textBoxCreator.selectedPage);
+
+    
 
     //console.log(currentSection);
   //important way of doing things

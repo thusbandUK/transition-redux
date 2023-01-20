@@ -267,7 +267,7 @@ export const SodiumHydroxideText = [
               '3 hydroxide ions in reactants, 3 water molecules in products',
               '6 H<sub>2</sub>O ligands in reactant, 3 H<sub>2</sub>O ligands <em>and</em> 3OH<sup>-</sup> ligands in product'
             ],
-            equation: '[Al(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 3OH<sup>-</sup> &#8594;	 [Al(H<sub>2</sub>O)<sub>3</sub>(OH)<sub>3</sub>] + 3H<sub>2</sub>O</p>'
+            equation: '[Al(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 3OH<sup>-</sup> &#8594;	 [Al(H<sub>2</sub>O)<sub>3</sub>(OH)<sub>3</sub>] + 3H<sub>2</sub>O'
           },
           {            
             questionReference: 'equation',
@@ -428,18 +428,170 @@ export const SodiumHydroxideText = [
       content: ['Insert OCR B content'],
       doNotRender: ['AQA', 'Edexcel', 'OCRA'],
       props: {key: 35.1}
-    },
-    /*
-    {
-      type: 'p',
-      content: [
-        'That concludes the explanation for the addition of a few drops of sodium hydroxide.',
-        ' Continuing clicking the right hand arrow to learn what happens when sodium hydroxide is added in excess.'        
-      ],
-      props: {key: 35.2}
-    }*/
+    },    
     ]
-  }
+  },
+  {id: 37, allContent: [
+    {
+      type: 'mcq', 
+      doNotRender: ['Edexcel', 'OCRA', 'OCRB'],               
+      props: {key: 37.1},
+      content: {id: 46}
+    },
+    {
+      type: 'mcq', 
+      doNotRender: ['AQA', 'OCRB'],               
+      props: {key: 37.2},
+      content: {id: 47}
+    },
+    {
+      type: 'mcq', 
+      doNotRender: ['Edexcel', 'OCRA', 'AQA'],               
+      props: {key: 37.3},
+      content: {id: 48}
+    }
+   ]
+  },
+  {id: 38, allContent: [
+    {
+      type: 'h2',
+      content: ['Why does iron(II) hydroxide turn brown on standing?'],
+      doNotRender: ['OCRA'],
+      props: {key: 38.1}
+    },
+    {
+      type: 'h2',
+      content: ['Why do iron(II) hydroxide and manganese(II) hydroxide turn brown on standing?'],
+      doNotRender: ['AQA', 'Edexcel', 'OCRB'],
+      props: {key: 38.2}
+    },
+    {
+      type: 'div',
+      //doNotRender: ['AQA', 'OCRB'],
+      content: [         
+         {
+            childType: 'p',
+            childProps: {key: 38.31, style: {display: 'inline'}},
+            childContent: 'Iron(II) hydroxide turns brown at the edges on standing (after some time has passed). Note that sodium hydroxide does '
+         },
+         {
+          childType: 'p',
+          childProps: {key: 36.33, style: {display: 'inline', fontStyle: 'italic'}},
+          childContent: 'not'
+         },
+         {
+          childType: 'p',
+          childProps: {key: 36.34, style: {display: 'inline'}},
+          childContent: ' to be added in excess for this change to happen.'
+         },
+         {
+          childType: 'p',
+          childProps: {key: 36.35, style: {marginTop: '10px'}},
+          childContent: 'The central iron 2+ ion is oxidised to iron 3+ by oxygen in the air as follows...'
+         },
+         {
+          childType: 'p',
+          childProps: {key: 36.36, tagged: 'true'},
+          childContent: '4[Fe(H<sub>2</sub>O)<sub>4</sub>(OH)<sub>2</sub>] + O<sub>2</sub> &#8594;	 4[Fe(H<sub>2</sub>O)<sub>3</sub>(OH)<sub>3</sub>] + 2H<sub>2</sub>O'
+         }
+         ],
+      props: {key: 38.3, parent: 'true'}
+      },
+      {
+        type: 'p',
+        content: ['White manganese(II) hydroxide precipitate also turns brown at the edges on standing for exactly the same reason. Note that manganese(III) hydroxide and iron(III) hydroxide are slightly different shades of brown brown, Iron(III) hydroxide being quite a reddish brown..'],
+        doNotRender: ['AQA', 'Edexcel', 'OCRB'],
+        props: {key: 38.4, style: {marginTop: '10px'}}
+      }
+
+   ]
+  },
+  {id: 39, allContent: [
+    {
+      type: 'mcq', 
+      //doNotRender: ['Edexcel', 'OCRA', 'OCRB'],               
+      props: {key: 39.1},
+      content: {id: 49}
+    }
+  ]
+  },
+  {id: 40, allContent: [,
+    
+    {
+      type: 'written-response',                
+      props: {key: 40, id: 40},
+      content: {id: 40,      
+      filter: 'true', 
+      questions:
+        [
+          {
+            true: ['AQA', 'OCRB'],
+            id: 'equationA',
+            questionReference: 'equation',
+            questionText: 'In the textbox below state and explain what you would observe if sodium hydroxide was added dropwise (drop by drop) to a solution of hexaaquairon(II) ions and then left to stand for several minutes. Include a set of equations in the first text box.'
+          },
+          {
+            true: ['Edexcel', 'OCRA'],
+            id: 'equationB',
+            questionReference: 'equation',
+            questionText: 'In the textbox below state and explain what you would observe if sodium hydroxide was added dropwise (drop by drop) to a solution of hexaaquachromium(III) ions until excess reagent had been added. Include a set of equations in the first text box.'
+          },     
+          {
+            true: ['AQA', 'Edexcel', 'OCRA', 'OCRB'],
+            id: 'explanationA',
+            questionReference: 'explanation',
+            questionText: 'Include your observations in the text box below.'
+          }
+
+        ]
+      }
+    }
+   ]
+  },
+  {id: 41, allContent: [
+    
+    {
+      type: 'written-response-feedback',                
+      props: {key: 41, id: 40},
+      content: {id: 40, answers:
+        [
+          {            
+            questionReference: 'equation',
+            id: 'equationA',
+            answerText: [
+              'Square brackets around both complexes', 
+              'Overall 3+ charge on left-hand complex, 1- charge on right-hand complex',
+              '6 H<sub>2</sub>O ligands in left complex ion, 4 Cl ligands in right complex ion',
+              'plus 4Cl<sup>-</sup> ions shown on left, plus 6H<sub>2</sub>O molecules on right'
+            ],
+            equation: ['[Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 4Cl<sup>-</sup> &#8652; [FeCl<sub>4</sub>]<sup>-</sup> + 6H<sub>2</sub>O', 
+            '[Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 4Cl<sup>-</sup> &#8652; [FeCl<sub>4</sub>]<sup>-</sup> + 6H<sub>2</sub>O']
+          },
+          {            
+            questionReference: 'equation',
+            id: 'equationB',
+            answerText: [
+              'Square brackets around both complexes', 
+              'Overall 2+ charge on left-hand complex, 2- charge on right-hand complex',
+              '6 H<sub>2</sub>O ligands in left complex ion, 4 Cl ligands in right complex ion',
+              'plus 4Cl<sup>-</sup> ions shown on left, plus 6H<sub>2</sub>O molecules on right'
+            ],
+            equation: '[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 4Cl<sup>-</sup> &#8652; [CuCl<sub>4</sub>]<sup>2-</sup> + 6H<sub>2</sub>O'
+          },  
+          {
+            questionReference: 'explanation',
+            id: 'explanationA',
+            answerText: [
+              'chloro / Cl ligands larger than aqua / H<sub>2</sub>O ligands',
+              'Only 4 chloro ligands can fit round metal ion (which minimises repulsion between negative charges)'
+            ]
+          }
+
+        ]
+      }
+    }
+   ]
+  },
     
   
 
