@@ -668,5 +668,77 @@ export const MCQData = [
             
         ]
         
+    },
+    {
+        id: 50,
+        question: 'What kind of reaction takes place when a few drops of ammonia solution are added to hexaaquacopper(II) to produce a pale blue precipitate?',
+        correct: {id: 504},       
+        options: [            
+            {
+                id: 501,
+                optionNumber: 1,
+                optionText: 'Ligand exchange',
+                feedback: 'Incorrect! Ammonia needs to be in excess for ligand exchange to occur.'               
+                
+            },
+            {
+                id: 502,
+                optionNumber: 2,
+                optionText: 'Oxidation',
+                feedback: 'Incorrect! Oxidation state of central copper ion does not change.'                
+            },
+            {
+                id: 503,
+                optionNumber: 3,
+                optionText: 'Reduction',
+                feedback: 'Incorrect! Oxidation state of central copper ion does not change.'               
+            },
+            {
+                id: 504,
+                optionNumber: 4,
+                optionText: 'Hydrolysis',
+                feedback: 'Correct!'                
+            }
+            
+        ]
+        
+    },
+    {
+        id: 51,
+        question: 'Which equation could not be used to represent any stage of the hydrolysis of hexaaquacopper(II) to produce a precipitate?',
+        correct: {id: 512},       
+        options: [       
+            /*{question: 1,correct: 'n',text: 'NH<sub>3</sub> acts as base by accepting protons from complex.'},
+            {question: 2,correct: 'y',text: 'Ligand exchange should not take place during a hydrolysis reaction.'},
+            {question: 3,correct: 'n',text: 'NH<sub>3</sub> solution is alkaline so contains OH<sup>&ndash;</sup> ions.'},
+            {question: 4,correct: 'n',text: 'This is an acceptable simplified equation for hydrolysis.'}     */
+            {
+                id: 511,
+                optionNumber: 1,
+                optionText: '[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 2NH<sub>3</sub>   &#8652;   [Cu(H<sub>2</sub>O)<sub>4</sub>(OH)<sub>2</sub>] + 2NH<sub>4</sub><sup>+</sup>',
+                feedback: 'Incorrect selection! NH<sub>3</sub> acts as base by accepting protons from complex.'               
+                
+            },
+            {
+                id: 512,
+                optionNumber: 2,
+                optionText: '[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 2NH<sub>4</sub><sup>+</sup>   &#8652;   [Cu(H<sub>2</sub>O)<sub>4</sub>(NH<sub>3</sub>)<sub>2</sub>] + 2H<sub>3</sub>O<sup>+</sup>',
+                feedback: 'Correct selection! This question shows ligand exchange not hydrolysis.'
+            },
+            {
+                id: 513,
+                optionNumber: 3,
+                optionText: '[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 2OH<sup>-</sup>   &#8652;   [Cu(H<sub>2</sub>O)<sub>4</sub>(OH)<sub>2</sub>] + 2H<sub>2</sub>O',
+                feedback: 'Incorrect selection! NH<sub>3</sub> solution is alkaline so contains OH<sup>-</sup> ions.'               
+            },
+            {
+                id: 514,
+                optionNumber: 4,
+                optionText: 'Cu<sup>2+</sup> + 2OH<sup>-</sup>   &#8594;   Cu(OH)<sub>2</sub>',
+                feedback: 'Incorrect selection! This is an acceptable simplified equation for hydrolysis.'                
+            }
+            
+        ]
+        
     }
 ]

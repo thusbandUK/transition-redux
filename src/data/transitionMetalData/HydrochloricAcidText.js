@@ -1,3 +1,5 @@
+import sectionFinish from "./genericContent/sectionFinish";
+
 export const HydrochloricAcidText = [
     
     {
@@ -249,33 +251,8 @@ export const HydrochloricAcidText = [
     }
    ]
   },
-  {id: 27, allContent: [
-    {
-      type: 'h2',
-      content: ['You\'ve finished this section!'],
-      props: {key: 27.1}
-    },
-    {
-      type: 'p',
-      content: [
-        'Congratulations you\'ve finished this section!',
-        ' Click the link below to advance to the next section.'        
-      ],
-      props: {key: 27.2}
-    }
-    ]
-  }
+  {...sectionFinish, id: 27}
+  
 ]
 
 
-//written-response
-//<p>Cobalt and iron(III) also form tetrahedral complexes when reacted with excess hydrochloric acid.</p>
-//, style: {transform: 'scale(0.6)'}
-
-/*
-{
-                type: 'mcq',                
-                props: {key: 1},
-                content: {id: 42}
-            }
-*/

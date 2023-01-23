@@ -13,6 +13,8 @@ the size of columns, so one image will fill the whole width, whereas three will 
 and or they each need to be in individual divs
 0.901) add image of equation of chromium hydroxide dissolving upon addition excess sodium hydroxide 
 0.902) add MCQ question (ID 48) for OCR B question about complex ion medicine
+0.903) in ammonia excess section comparison(1) feedback - you're going to need to configure the comparison feedback to 
+filter by exam board because the observations are different depending on the exam board
 
 0.91) add Salters content to first two excess slides NaOH (might end up necessary for NH3 reactions too)
 0.91) neaten up textBoxCreator, including keep doNotRender logic? Problem is that's item by item on a page, you can't skip a whole page

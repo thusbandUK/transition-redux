@@ -32,27 +32,7 @@ export const SodiumHydroxideText = [
           type: 'p',  
           content: ["The following slides will focus on the initial reaction of the metal solutions to the addition of just a few drops of sodium hydroxide solution."],
           props: {key: 28.52}
-      }/*,
-      {
-          type: 'p',  
-          content: ['Looking at an equation…'],
-          props: {key: 29.3}
-      },
-      {
-          type: 'p',  
-          content: ['[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 2OH<sup>-</sup> &#8594;	 [Cu(H<sub>2</sub>O)<sub>4</sub>(OH)<sub>2</sub>] + 2H<sub>2</sub>O'],
-          props: {key: 29.4, tagged: 'true', style: {marginBottom: '10px'}}
-      },
-      {
-          type: 'p',  
-          content: ["It seems as if two hydroxide ions have each been swapped for a water molecule, which would make this a ligand exchange reaction, but actually, that's not what's happening."],
-          props: {key: 29.5}
-      },
-      {
-          type: 'p',  
-          content: ['So what is going on?'],
-          props: {key: 29.6}
-      }*/
+      }
     ]
     },
     {id: 29, allContent: [
@@ -315,7 +295,7 @@ export const SodiumHydroxideText = [
       type: 'p',
       content: [
         'That concludes the explanation for the addition of a few drops of sodium hydroxide.',
-        ' Continuing clicking the right hand arrow to learn what happens when sodium hydroxide is added in excess.'        
+        ' Continue clicking the right hand arrow to learn what happens when sodium hydroxide is added in excess.'        
       ],
       props: {key: 35.2}
     }

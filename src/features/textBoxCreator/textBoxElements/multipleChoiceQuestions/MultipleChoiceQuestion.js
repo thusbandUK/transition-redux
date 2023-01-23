@@ -18,7 +18,7 @@ const MultipleChoiceQuestion = (props) => {
     const selectedAnswer = useSelector(state => state.multipleChoiceQuestion.selectedAnswer);
     const feedback = useSelector(state => state.multipleChoiceQuestion.displayedFeedback);
     const examBoard = useSelector(state => state.examBoard.selectedExamBoard);
-    //console.log(examBoard);
+    
 
     //harvest Id number of multiple choice question (MCQ) from props
     const MCQId = props.children.id;
@@ -87,15 +87,15 @@ const MultipleChoiceQuestion = (props) => {
            <p className="lead">{MCQAllDetails.question}</p>
             <form
             onSubmit={formSubmit}
-            className="mt-2 pt-2 border-top border-3"
-            style={{borderColor: 'red !important'}}
+            className="mt-3 pt-2 border-top border-3"
+            style={{borderColor: 'red !important', margin: '10px 0px'}}
             >
             {/**findQuestion(MCQId) MCQAllDetails
             {MCQAllDetails.options.map((option) => (*/}
 
              {MCQAllDetailsFiltered.map((option) => (
                   <div 
-                  className="form-check"
+                  className="form-check mt-2"
                   key={option.id}
                   
                   >
@@ -105,7 +105,7 @@ const MultipleChoiceQuestion = (props) => {
                     
                   </div>
                 ))}
-                <p className="lead mt-1 pt-2 border-top border-3" >{feedback ? formatSubSuperScript(feedback.comment) : 'Select an option and then press "Check Answer"'}</p> 
+                <p className="lead mt-3 pt-2 border-top border-3" style={{margin: '10px 0px'}}>{feedback ? formatSubSuperScript(feedback.comment) : 'Select an option and then press "Check Answer"'}</p> 
                 <ul className="list-group list-group-horizontal mt-3 fs-5 d-flex justify-content-center">
                 <div className="excess-or-reset-button-container d-flex justify-content-center">
                   { !feedback ? 
