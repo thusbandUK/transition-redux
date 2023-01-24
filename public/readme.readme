@@ -76,6 +76,12 @@ i) comparison feedback, see example,
 i) it takes the type "'comparison-feedback'"
 ii) it has three sub-titles, the same title ('sameReference') and then differenceA ('AReference') and differenceB ('BReference')
 iii) then the 'similarities', 'differencesA' and 'differencesB' are filed as strings in arrays
+iv) comparison-feedback can filter by examBoard, in any of 'similarities', 'differencesA' and 'differencesB' you can opt-in
+to filtration. Normal the value for each key is an array of strings (of the comparison points to be rendered). 
+To opt-in to filtration, each string has to be placed in a separate object, as the value of the key 'content'
+A 'true' key also needs to be included, the value of which should be an array of string references to the examBoards that should
+render that content
+
 j) written-response and written-response-feedback: don't forget that like with comparison(feedback) the id - but the key - has to be
 the same for matching sets of input / responses 
 i) to filter by examboard you have to put "filter: 'true'" in the main props

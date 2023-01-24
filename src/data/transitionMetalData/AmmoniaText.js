@@ -219,14 +219,23 @@ export const AmmoniaText = [
       type: 'comparison-feedback',
       content: {
         filter: 'true',
-        sameReference: 'For the complexes produced...',
-        AReference: 'However both complexes...',
-        BReference: 'And now if I...?',
-        similarities: [{true: ['AQA', 'Edexcel'], content: 'Both have enough hydroxide ion ligands to equalise charge of metal ions'}, {true: ['AQA', 'Edexcel'], content: 'Both have no overall charge'}],
+        sameReference: 'In both sets of reactions...',
+        AReference: 'whereas...',
+        BReference: '',
+        similarities: [
+          {true: ['AQA', 'OCRA', 'OCRB', 'Edexcel'], content: ['iron(II) hydroxide can be oxidised to produce brown iron(III) hydroxide at the edges']},
+          {true: ['OCRA'], content: ['manganese(II) hydroxide can be oxidised to produce brown manganese(III) hydroxide at the edges']}
+        ],
+        //similarities: [{true: ['AQA', 'Edexcel'], content: 'Both have enough hydroxide ion ligands to equalise charge of metal ions'}, {true: ['AQA', 'Edexcel'], content: 'Both have no overall charge'}],
         //similarities: ['Both have enough hydroxide ion ligands to equalise charge of metal ions', 'Both have no overall charge'],
-        differencesA: [{true: ['AQA'], content: ['Have different numbers of hydroxide ion and water molecule ligands']}, {true: ['AQA'], content: ['Have central metal ions with different oxidation states']}],
+        differencesA: [
+          {true: ['AQA'], content: ['the aluminium hydroxide does not redissolve in excess ammonia solution']}, 
+          {true: ['Edexcel', 'AQA'], content: ['both cobalt and copper hydroxide redissolve to produce new, different-coloured solutions']},
+          {true: ['Edexcel', 'OCRA'], content: ['the chromium hydroxide precipitate dissolves to produce a different coloured solution than with sodium hydroxide']},
+          {true: ['OCRA', 'OCRB'], content: ['the copper hydroxide precipitate dissolves to produce a deep blue-coloured solution']}
+        ]
         //differencesB: [null],
-        differencesB: ['Both have enough hydroxide ion ligands to equalise charge of metal ions', 'Both have no overall charge']
+        //differencesB: ['Both have enough hydroxide ion ligands to equalise charge of metal ions', 'Both have no overall charge']
       },
       props: {id: 50.3, key: 51.1}
     }
