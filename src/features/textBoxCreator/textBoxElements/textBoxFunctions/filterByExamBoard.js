@@ -1,6 +1,6 @@
 const filterByExamBoard = (array, examBoard, MCQ) => {
     if (MCQ){
-        
+        console.log(array);
         const outputArray = array.filter((entry) => {        
             return entry.true.includes(examBoard);
     })

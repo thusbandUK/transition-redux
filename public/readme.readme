@@ -15,6 +15,9 @@ and or they each need to be in individual divs
 0.902) add MCQ question (ID 48) for OCR B question about complex ion medicine
 0.903) in ammonia excess section comparison(1) feedback - you're going to need to configure the comparison feedback to 
 filter by exam board because the observations are different depending on the exam board
+0.904) when you have two MCQs in a row (eg: few drops ammonia section), the state needs to be reset between slides
+0.905) when you click submit it should bump the slide forward for written response questions, you can pass the page advance 
+function via props
 
 0.91) add Salters content to first two excess slides NaOH (might end up necessary for NH3 reactions too)
 0.91) neaten up textBoxCreator, including keep doNotRender logic? Problem is that's item by item on a page, you can't skip a whole page

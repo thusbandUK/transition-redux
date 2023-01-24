@@ -1,5 +1,6 @@
 import '../../../app/App.css';
 import { useSelector, useDispatch } from 'react-redux';
+import filterByExamBoard from './textBoxFunctions/filterByExamBoard';
 
 const ComparisonFeedback = (props) => {
 
@@ -7,6 +8,8 @@ const ComparisonFeedback = (props) => {
     const content = props.children;
 
     const dispatch = useDispatch();
+
+    const examBoard = useSelector(state => state.examBoard.selectedExamBoard);
 
     //styling
 
@@ -32,7 +35,50 @@ const ComparisonFeedback = (props) => {
         return x.id === props.id;
       }) 
 
+   //Small temporary area to add filter logic
+   //console.log(content.experiment);
+   //console.log(filterByExamBoard(content.experiment, examBoard, true));
+
+/*
+right I think it's a mixed blessing bending the filtration logic to apply to every different usage. Write a special one for this
+that outputs the array of just the strings, and then you don't need to alter the render logic too much, so basically, if 
+content.filter === 'true' then process the array of objects and output an array of strings
+*/
+/*
+const filterComparisonContentSuperceded = (contentParent, contentKey) => {
+   if (contentParent.filter === 'true'){
+      const filteredArray = contentKey.filter((entry) => {
+         return entry.true.includes(examBoard);
+      })
+      return filteredArray;
+   } else {
+      return contentKey;
+   }
+}
+*/
+const filterComparisonContent2 = (contentKey) => {
+   let filteredArray =[]
+   contentKey.forEach((entry) => {
+      if (entry.true){
+         if (entry.true.includes(examBoard)){
+            return filteredArray.push(entry.content);
+         } else {
+            return;
+         }
+      } else {
+         return filteredArray = contentKey;
+      }
+   })
+   return filteredArray;  
+}
+
+
+//console.log(filterComparisonContent2(content.experiment));
+   
+   //temporary filter area ends
       
+
+
     return (
         <div>
             {((!comparisonInputs[indexOfComparisonToRead].similarities.logged) && (!comparisonInputs[indexOfComparisonToRead].differences.logged)) ? null :

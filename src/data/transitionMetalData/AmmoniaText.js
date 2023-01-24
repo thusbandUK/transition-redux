@@ -218,9 +218,11 @@ export const AmmoniaText = [
     {
       type: 'comparison-feedback',
       content: {
+        filter: 'true',
         sameReference: 'For the complexes produced...',
         AReference: 'However both complexes...',
         BReference: '',
+        experiment: [{true: ['AQA', 'Edexcel'], content: 'Both have enough hydroxide ion ligands to equalise charge of metal ions'}, {true: ['AQA', 'Edexcel'], content: 'Both have no overall charge'}],
         similarities: ['Both have enough hydroxide ion ligands to equalise charge of metal ions', 'Both have no overall charge'],
         differencesA: ['Have different numbers of hydroxide ion and water molecule ligands', 'Have central metal ions with different oxidation states'],
         differencesB: [null]
