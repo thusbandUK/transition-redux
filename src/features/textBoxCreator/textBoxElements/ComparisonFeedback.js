@@ -56,7 +56,7 @@ const filterComparisonContentSuperceded = (contentParent, contentKey) => {
    }
 }
 */
-const filterComparisonContent2 = (contentKey) => {
+const filterComparisonContent = (contentKey) => {
    let filteredArray =[]
    contentKey.forEach((entry) => {
       if (entry.true){
@@ -110,7 +110,7 @@ const filterComparisonContent2 = (contentKey) => {
                <div className="col-md-6">
                   <p style={boldType}>{content.sameReference}</p>
         
-                  {content.similarities.map((similarity) => (            
+                  {filterComparisonContent(content.similarities).map((similarity) => (            
                      <div key={keyCount = keyCount + 1}>
                         <input name='option' className="form-check-input" type="checkbox" value={'not sure yet'}  id={`flexCheckCHANGEME`} />
                         <p style={comparisonsText}>{similarity}</p>
@@ -121,7 +121,7 @@ const filterComparisonContent2 = (contentKey) => {
                <div className="col-md-6">
                   <p style={boldType}>{content.AReference}</p>
 
-                  {content.differencesA.map((difference) => (
+                  {filterComparisonContent(content.differencesA).map((difference) => (
                      <div key={keyCount = keyCount + 1}>
                         <input name='option' className="form-check-input" type="checkbox" value={'not sure yet'}  id={`flexCheckCHANGEME`} />
                         <p style={comparisonsText}>{difference}</p>
@@ -132,7 +132,7 @@ const filterComparisonContent2 = (contentKey) => {
                   <div>
                   <p style={boldType}>{content.BReference}</p>
 
-                  {content.differencesB.map((difference) => (
+                  {filterComparisonContent(content.differencesB).map((difference) => (
                      <div key={keyCount = keyCount + 1}>
                         <input name='option' className="form-check-input" type="checkbox" value={'not sure yet'}  id={`flexCheckCHANGEME`} />
                         <p style={comparisonsText}>{difference}</p>

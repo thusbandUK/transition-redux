@@ -221,11 +221,12 @@ export const AmmoniaText = [
         filter: 'true',
         sameReference: 'For the complexes produced...',
         AReference: 'However both complexes...',
-        BReference: '',
-        experiment: [{true: ['AQA', 'Edexcel'], content: 'Both have enough hydroxide ion ligands to equalise charge of metal ions'}, {true: ['AQA', 'Edexcel'], content: 'Both have no overall charge'}],
-        similarities: ['Both have enough hydroxide ion ligands to equalise charge of metal ions', 'Both have no overall charge'],
-        differencesA: ['Have different numbers of hydroxide ion and water molecule ligands', 'Have central metal ions with different oxidation states'],
-        differencesB: [null]
+        BReference: 'And now if I...?',
+        similarities: [{true: ['AQA', 'Edexcel'], content: 'Both have enough hydroxide ion ligands to equalise charge of metal ions'}, {true: ['AQA', 'Edexcel'], content: 'Both have no overall charge'}],
+        //similarities: ['Both have enough hydroxide ion ligands to equalise charge of metal ions', 'Both have no overall charge'],
+        differencesA: [{true: ['AQA'], content: ['Have different numbers of hydroxide ion and water molecule ligands']}, {true: ['AQA'], content: ['Have central metal ions with different oxidation states']}],
+        //differencesB: [null],
+        differencesB: ['Both have enough hydroxide ion ligands to equalise charge of metal ions', 'Both have no overall charge']
       },
       props: {id: 50.3, key: 51.1}
     }
