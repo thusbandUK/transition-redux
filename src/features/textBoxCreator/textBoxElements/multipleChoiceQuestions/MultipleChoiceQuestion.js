@@ -105,7 +105,13 @@ const MultipleChoiceQuestion = (props) => {
                     
                   </div>
                 ))}
-                <p className="lead mt-3 pt-2 border-top border-3" style={{margin: '10px 0px'}}>{feedback ? formatSubSuperScript(feedback.comment) : 'Select an option and then press "Check Answer"'}</p> 
+
+                {/*Hopefully this won't affect anything. Ele dir below *was* <p> but then console started error warning, p can't be
+                child of p, so changed to <div> and seems okay. Weird it suddenly started doing that */}
+
+
+
+                <div className="lead mt-3 pt-2 border-top border-3" style={{margin: '10px 0px'}}>{feedback ? formatSubSuperScript(feedback.comment) : 'Select an option and then press "Check Answer"'}</div> 
                 <ul className="list-group list-group-horizontal mt-3 fs-5 d-flex justify-content-center">
                 <div className="excess-or-reset-button-container d-flex justify-content-center">
                   { !feedback ? 

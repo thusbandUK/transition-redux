@@ -40,6 +40,7 @@ let keyCount;
         
         //this was just '>' but trying '>='
            if (arrayOfObjects[x].newContent.toString().indexOf('<sup>') >= 0){
+           // if (arrayOfObjects[x].newContent.toString().indexOf('<sup>') > 0){
             
             let remainder;
             remainder = arrayOfObjects[x].newContent.toString().substring(arrayOfObjects[x].newContent.indexOf('<sup>') + 5, arrayOfObjects[x].newContent.length);

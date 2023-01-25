@@ -15,7 +15,9 @@ and or they each need to be in individual divs
 0.902) add MCQ question (ID 48) for OCR B question about complex ion medicine
 0.903) in ammonia excess section comparison(1) feedback - you're going to need to configure the comparison feedback to 
 filter by exam board because the observations are different depending on the exam board
-0.904) when you have two MCQs in a row (eg: few drops ammonia section), the state needs to be reset between slides
+0.904) when you have two MCQs in a row (eg: few drops ammonia section), the state needs to be reset between slides 
+OR
+include multiple MCQ sections of store like for comparison / writtenResponse
 0.905) when you click submit it should bump the slide forward for written response questions, you can pass the page advance 
 function via props
 
@@ -23,15 +25,18 @@ function via props
 0.91) neaten up textBoxCreator, including keep doNotRender logic? Problem is that's item by item on a page, you can't skip a whole page
 which is a shame because with OCR B there'll be two pages that aren't needed for NaOH
 
-0.94) transfer in all the code from the old website to the new website
+0.94) transfer in all the code from the sodium carbonate reactions section to the new website
 0.95) troubleshoot
 0.96) add to portfolio =)
+
 
 
 1) you need to finish coding the individual observation-input forms which will stack under their individual test tubes
 
 
-h) style the forms because at the moment they're GROSS - AND RENDER THE NAME OF EACH METAL
+h) style the forms (AND the text boxes, esp how acceptable equations render, and consistent with only show "Your [INSERT]" if 
+response has been added) because at the moment they're GROSS - AND RENDER THE NAME OF EACH METAL
+
 
 1.5) Render text boxes. You need to format and complete the observations page. You'll need to add the model observations
 in the content section of the ObservationStages entry in the first page of each text box. They'll need to be tagged for 

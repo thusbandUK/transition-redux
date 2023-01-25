@@ -707,11 +707,7 @@ export const MCQData = [
         id: 51,
         question: 'Which equation could not be used to represent any stage of the hydrolysis of hexaaquacopper(II) to produce a precipitate?',
         correct: {id: 512},       
-        options: [       
-            /*{question: 1,correct: 'n',text: 'NH<sub>3</sub> acts as base by accepting protons from complex.'},
-            {question: 2,correct: 'y',text: 'Ligand exchange should not take place during a hydrolysis reaction.'},
-            {question: 3,correct: 'n',text: 'NH<sub>3</sub> solution is alkaline so contains OH<sup>&ndash;</sup> ions.'},
-            {question: 4,correct: 'n',text: 'This is an acceptable simplified equation for hydrolysis.'}     */
+        options: [           
             {
                 id: 511,
                 optionNumber: 1,
@@ -738,6 +734,176 @@ export const MCQData = [
                 feedback: 'Incorrect selection! This is an acceptable simplified equation for hydrolysis.'                
             }
             
+        ]
+        
+    },
+    {
+        id: 52,
+        question: 'Which of these aqueous ions would produce the following observations when ammonia solution was added dropwise to excess: blue solution produces a pale blue precipitate, which then turns into a deep blue solution?',    
+        filter: 'true', 
+        correct: {id: 434},
+        options: [            
+            {
+                id: 521,
+                optionNumber: 1,
+                optionText: 'Co(II)',
+                feedback: 'Incorrect! In this case pink solution produces blue precipitate and then straw solution.',
+                true: ['AQA', 'Edexcel']
+                
+            },
+            {
+                id: 526,
+                optionNumber: 1,
+                optionText: 'Mn(II)',
+                feedback: 'Incorrect! In this case pale pink solution produces white precipitate.',
+                true: ['OCRA']
+            },
+            {
+                id: 522,
+                optionNumber: 2,
+                optionText: 'Cu(II)',
+                feedback: 'Correct, well done!',
+                true: ['AQA', 'Edexcel', 'OCRA']
+            },
+            {
+                id: 523,
+                optionNumber: 3,
+                optionText: 'Fe(III)',
+                feedback: 'Incorrect! In this case pale yellow (or violet) solution produces brown precipitate.',
+                true: ['AQA', 'Edexcel', 'OCRA']
+            },
+            {
+                id: 524,
+                optionNumber: 4,
+                optionText: 'Al(III)',
+                feedback: 'Incorrect! In this case colourless solution produces white precipitate.',
+                true: ['AQA']
+            },
+            {
+                id: 525,
+                optionNumber: 4,
+                optionText: 'Cr(III)',
+                feedback: 'Incorrect! In this case blueish green solution produces grey green precipitate, followed by violet solution.',
+                true: ['Edexcel', 'OCRA']
+            }
+        ]
+        
+    },
+    {
+        id: 53,
+        question: 'Select the correct sequence of observations that accompany the addition of ammonia solution, drop by drop, until the reagent has been addeed to excess.',        
+        correct: {id: 534},
+        options: [
+            {
+                id: 531,
+                optionNumber: 1,
+                optionText: 'Blue solution produces pale blue solution, produces deep blue precipitate.',
+                feedback: 'Incorrect! State changes in wrong sequence.',                
+            },
+            {
+                id: 532,
+                optionNumber: 2,
+                optionText: 'Blue solution produces deep blue solution, produces pale blue precipitate.',  
+                feedback: 'Incorrect! State and colour changes in wrong sequence.'              
+            },
+            {
+                id: 533,
+                optionNumber: 3,
+                optionText: 'Blue solution produces deep blue precipitate, produces pale blue solution.',
+                feedback: 'Incorrect! Colour changes in wrong sequence.',                
+            },
+            {
+                id: 534,
+                optionNumber: 4,
+                optionText: 'Blue solution produces pale blue precipitate, produces deep blue solution.',
+                feedback: 'Correct, well done!',                
+            }            
+        ]        
+    },
+    {
+        id: 54,
+        question: 'Which equation does not show a ligand substitution reaction?',    
+        filter: 'true', 
+        correct: {id: 541},
+        options: [        
+            /*
+            {question: 1,correct: 'y',text: 'Hydroxide ions have accepted H<sup>+</sup> ions, transforming H<sub>2</sub>O ligands into OH<sup>&ndash;</sup> ligands.'},
+            {question: 2,correct: 'n',text: 'Aqua ligands have been substituted for chloro ligands.'},
+            {question: 3,correct: 'n',text: 'Ammine ligands have been substituted for aqua ligands.'},
+            {question: 4,correct: 'n',text: 'Equation shows ligand substitution starting with copper hydroxide precipitate.'}
+            */    
+            {
+                id: 541,
+                optionNumber: 1,
+                optionText: '[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 2OH<sup>–</sup> &#8652; [Cu(H<sub>2</sub>O)<sub>4</sub>(OH)<sub>2</sub>] + 2H<sub>2</sub>O',
+                feedback: 'Correct selection! Hydroxide ions have accepted H<sup>+</sup> ions, transforming H<sub>2</sub>O ligands into OH<sup>&ndash;</sup> ligands.',
+                true: ['AQA', 'Edexcel', 'OCRB', 'OCRA']
+                
+            },
+            /*{
+                id: 546,
+                optionNumber: 1,
+                optionText: 'Mn(II)',
+                feedback: 'Incorrect! In this case pale pink solution produces white precipitate.',
+                true: ['OCRA']
+            },*/
+            {
+                id: 542,
+                optionNumber: 2,
+                optionText: '[Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 4Cl<sup>–</sup> &#8652; [FeCl<sub>4</sub>]<sup>–</sup> + 6H<sub>2</sub>O',
+                feedback: 'Incorrect selection! Aqua ligands have been substituted for chloro ligands.',
+                true: ['AQA']
+            },
+            {
+                id: 546,
+                optionNumber: 2,
+                optionText: '[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 4Cl<sup>–</sup> &#8652; [CuCl<sub>4</sub>]<sup>2–</sup> + 6H<sub>2</sub>O',
+                feedback: 'Incorrect selection! Aqua ligands have been substituted for chloro ligands.',
+                true: ['OCRA', 'OCRB']
+            },
+            {
+                id: 545,
+                optionNumber: 2,
+                optionText: '[Co(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 4Cl<sup>–</sup> &#8652; [CoCl<sub>4</sub>]<sup>2–</sup> + 6H<sub>2</sub>O',
+                feedback: 'Incorrect selection! Aqua ligands have been substituted for chloro ligands.',
+                true: ['Edexcel']
+            },
+            {
+                id: 543,
+                optionNumber: 3,
+                optionText: '[Co(NH<sub>3</sub>)<sub>6</sub>]<sup>2+</sup> + 6H<sub>2</sub>O &#8652; [Co(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 6NH<sub>3</sub>',
+                feedback: 'Incorrect selection! Ammine ligands have been substituted for aqua ligands.',
+                true: ['AQA']
+            },
+            {
+                id: 547,
+                optionNumber: 3,
+                optionText: '[Cr(NH<sub>3</sub>)<sub>6</sub>]<sup>3+</sup> + 6H<sub>2</sub>O &#8652; [Cr(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 6NH<sub>3</sub>',
+                feedback: 'Incorrect selection! Ammine ligands have been substituted for aqua ligands.',
+                true: ['OCRA', 'Edexcel']
+            },
+            {
+                id: 548,
+                optionNumber: 3,
+                optionText: '[Cu(NH<sub>3</sub>)<sub>4</sub>(H<sub>2</sub>O)<sub>2</sub>]<sup>2+</sup> + 4H<sub>2</sub>O  &#8652;    [Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 4NH<sub>3</sub>',
+                feedback: 'Incorrect selection! Ammine ligands have been substituted for aqua ligands',
+                true: ['OCRB']
+                
+            },
+            {
+                id: 544,
+                optionNumber: 4,
+                optionText: '[Cu(H<sub>2</sub>O)<sub>4</sub>(OH)<sub>2</sub>] + 4NH<sub>3</sub> &#8652; [Cu(NH<sub>3</sub>)<sub>4</sub>(H<sub>2</sub>O)<sub>2</sub>]<sup>2+</sup> + 2H<sub>2</sub>O + 2OH<sup>–</sup>',
+                feedback: 'Incorrect selection! Equation shows ligand substitution starting with copper hydroxide precipitate.',
+                true: ['AQA', 'Edexcel', 'OCRA', 'OCRB']
+            },
+            /*{
+                id: 545,
+                optionNumber: 4,
+                optionText: 'Cr(III)',
+                feedback: 'Incorrect! In this case blueish green solution produces grey green precipitate, followed by violet solution.',
+                true: ['Edexcel', 'OCRA']
+            }*/
         ]
         
     }

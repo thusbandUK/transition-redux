@@ -1,3 +1,5 @@
+import sectionFinish from "./genericContent/sectionFinish";
+
 export const AmmoniaText = [   
     {
        id: 43, allContent: [
@@ -240,6 +242,232 @@ export const AmmoniaText = [
       props: {id: 50.3, key: 51.1}
     }
    ]
+  },
+  {id: 52, allContent: [
+    {
+      type: 'mcq', 
+      doNotRender: ['OCRB'],               
+      props: {key: 52.1},
+      content: {id: 52}
+    },
+    {
+      type: 'mcq',       
+      doNotRender: ['Edexcel', 'OCRA', 'AQA'],               
+      props: {key: 52.2},
+      content: {id: 53}
+    }
+   ]
+  },
+  {id: 53, allContent: [
+    {
+      type: 'h2',
+      props: {key: 53.1},
+      content: 'Ligand exchange'
+
+    },
+    {
+      type: 'div',      
+      content: [
+         {
+            childType: 'img',
+            childProps: {true: ['Edexcel', 'OCRA', 'OCRB', 'AQA'], style: {margin: '10px 0px'}, className: "img-fluid", key: 53.21, src: "images/structures/equation Cu w XS ammonia.png", alt: "octahedral hexaaquacopper(II) complex ion substitutes four aqua ligands for four ammine ligands, producing octahedral tetraammine diaqua copper (II) complex ion"},
+            childContent: null                           
+         },
+         {
+            childType: 'p',
+            childProps: {true: ['Edexcel', 'OCRA', 'OCRB', 'AQA'], key: 53.22},
+            childContent: 'When ammonia is added to hexaaquacopper(II) in excess, a ligand exchange reaction occurs in which four aqua (water) ligands are exchanged for four ammonia molecules, which become ammine ligands.'
+         },
+         {
+          childType: 'p',
+          childProps: {true: ['AQA'], key: 53.23},
+          childContent: 'Ligand exchange also occurs with hexaaquacobalt(II) but in this case, all six aqua ligands are substituted for ammine ligands, as shown in the equation.'
+         },
+         {
+          childType: 'p',
+          childProps: {true: ['OCRA'], key: 53.24},
+          childContent: 'Ligand exchange also occurs with hexaaquachromium(III) but in this case, all six aqua ligands are substituted for ammine ligands, as shown in the equation.'
+         },
+         {
+          childType: 'p',
+          childProps: {true: ['Edexcel'], key: 53.25},
+          childContent: 'Ligand exchange also occurs with hexaaquacobalt(II) and hexaaquachromium(III) but in both cases, all six aqua ligands are substituted for ammine ligands, as shown in the equations.'
+         },
+         {
+          childType: 'p',
+          childProps: {true: ['Edexcel', 'AQA'], key: 53.26, tagged: 'true', style: {marginBottom: '10px'}},
+          childContent: '[Co(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 6NH<sub>3</sub> &#8652; [Co(NH<sub>3</sub>)<sub>6</sub>]<sup>2+</sup> + 6H<sub>2</sub>O'
+         },
+         {
+          childType: 'p',
+          childProps: {true: ['Edexcel', 'OCRA'], key: 53.27, tagged: 'true', style: {marginBottom: '10px'}},
+          childContent: '[Cr(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 6NH<sub>3</sub> &#8652; [Cr(NH<sub>3</sub>)<sub>6</sub>]<sup>3+</sup> + 6H<sub>2</sub>O'
+         }         
+         ],
+      props: {key: 53.2, variablecontent: 'filter by exam board'}
+   },
+   {
+    type: 'p',
+    content: {            
+      staticContent: "You will not be expected to explain why substition is complete for [REPLACE TEXT] but not for copper. A proper explanation requires reference to something called crystal field theory which is beyond the scope of the A-level course. Questions in the exam will be limited to the complex ions listed in the specification.",            
+      dynamicContent: [          
+          {string: 'cobalt', true: ['AQA']},
+          {string: 'cobalt and chromium', true: ['Edexcel']},
+          {string: 'chromium', true: ['OCRA']}
+          
+      ]
+    },
+    doNotRender: ['OCRB'],
+    props: {key: 53.3, variablecontent: 'stringSplicer', style: {display: 'inline'}}
+  },  
+  ]
+
+  },
+  {id: 54, allContent: [
+    {
+      type: 'mcq',                
+      props: {key: 54.1},
+      content: {id: 54}
+    }
+  ]
+
+  },
+  {id: 55, allContent: [,
+    
+    {
+      type: 'written-response',                
+      props: {key: 55.1, id: 55.1},
+      content: {id: 55.1, 
+      filter: 'true', 
+      questions:
+        [
+          {
+            true: ['AQA', 'OCRB'],
+            id: 'equationA',
+            questionReference: 'equation',
+            questionText: 'Describe and explain the changes you would observe if NH<sub>3</sub> was added dropwise to hexaaquacopper(II) until excess NH<sub>3</sub> had been added. Identify the complex species associated with each colour change. Include a set of equations in the first text box.'
+          },
+          {
+            true: ['Edexcel', 'OCRA'],
+            id: 'equationB',
+            questionReference: 'equation',
+            questionText: 'Describe and explain the changes you would observe if NH<sub>3</sub> was added dropwise to hexaaquachromium(III) until excess NH<sub>3</sub> had been added. Identify the complex species associated with each colour change. Include a set of equations in the first text box.'
+          },
+          {
+            true: ['AQA', 'OCRB'],
+            id: 'explanationA',
+            questionReference: 'explanation',
+            questionText: 'Include your observations in the text box below.'
+          }, 
+          {
+            true: ['Edexcel', 'OCRA'],
+            id: 'explanationB',
+            questionReference: 'explanation',
+            questionText: 'Include your observations in the text box below.'
+          }
+
+        ]
+      }
+    }
+   ]
+  },
+  {id: 56, allContent: [
+    
+    {
+      type: 'written-response-feedback',                
+      props: {key: 56.1, id: 55.1},
+      content: {id: 55.1, answers:
+        [
+          {            
+            questionReference: 'equation',
+            id: 'equationA',
+            answerText: [              
+              'Hydrolysis equation(s) which include NH<sub>3</sub> AND hydroxide precipitate.', 
+              'At least one ligand substitution equation.'              
+            ],            
+            equation: [
+              'Acceptable hydrolysis equations:',
+              'NH<sub>3</sub> + H<sub>2</sub>O &#8652; NH<sub>4</sub><sup>+</sup> + OH<sup>–</sup>',
+              '[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 2OH<sup>–</sup> &#8652; [Cu(H<sub>2</sub>O)<sub>4</sub>(OH)<sub>2</sub>] + 2H<sub>2</sub>O',
+              'Cu<sup>2+</sup> + 2OH<sup>–</sup> &#8652; Cu(OH)<sub>2</sub>',
+              '[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 2NH<sub>3</sub> &#8652; [Cu(H<sub>2</sub>O)<sub>4</sub>(OH)<sub>2</sub>] + 2NH<sub>4</sub><sup>+</sup>',
+              'Acceptable ligand substitution equations:',
+              '[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 4NH<sub>3</sub> &#8652; [Cu(NH<sub>3</sub>)<sub>4</sub>(H<sub>2</sub>O)<sub>2</sub>]<sup>2+</sup> + 4H<sub>2</sub>O',
+              '[Cu(H<sub>2</sub>O)<sub>4</sub>(OH)<sub>2</sub>] + 4NH<sub>3</sub> &#8652; [Cu(NH<sub>3</sub>)<sub>4</sub>(H<sub>2</sub>O)<sub>2</sub>]<sup>2+</sup> + 2H<sub>2</sub>O + 2OH<sup>–</sup>'
+            ]
+          },  
+          {
+            questionReference: 'explanation',
+            id: 'explanationA',
+            answerText: [              
+              'Blue solution produces pale blue precipitate.',
+              'Precipitate is copper hydroxide / Cu(OH)<sub>2</sub> / [Cu(H<sub>2</sub>O)<sub>4</sub>(OH)<sub>2</sub>]',
+              'Excess ammonia produces deep blue solution.',
+              'Deep blue solution is [Cu(NH<sub>3</sub>)<sub>4</sub>(H<sub>2</sub>O)<sub>2</sub>]<sup>2+</sup> / tetraamminediaquacopper.'
+            ]
+          },
+          {            
+            questionReference: 'equation',
+            id: 'equationB',
+            answerText: [              
+              'Hydrolysis equation(s) which include NH<sub>3</sub> AND hydroxide precipitate.', 
+              'At least one ligand substitution equation.'              
+            ],            
+            equation: [
+              'Acceptable hydrolysis equations:',
+              'NH<sub>3</sub> + H<sub>2</sub>O &#8652; NH<sub>4</sub><sup>+</sup> + OH<sup>–</sup>',
+              '[Cr(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 3OH<sup>–</sup> &#8652; [Cr(H<sub>2</sub>O)<sub>3</sub>(OH)<sub>3</sub>] + 3H<sub>2</sub>O',
+              'Cr<sup>3+</sup> + 3OH<sup>–</sup> &#8652; Cr(OH)<sub>3</sub>',
+              '[Cr(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 3NH<sub>3</sub> &#8652; [Cr(H<sub>2</sub>O)<sub>3</sub>(OH)<sub>3</sub>] + 3NH<sub>4</sub><sup>+</sup>',
+              'Acceptable ligand substitution equations:',
+              '[Cr(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 6NH<sub>3</sub> &#8652; [Cr(NH<sub>3</sub>)<sub>6</sub>]<sup>3+</sup> + 6H<sub>2</sub>O',
+              '[Cr(H<sub>2</sub>O)<sub>3</sub>(OH)<sub>3</sub>] + 6NH<sub>3</sub> &#8652; [Cr(NH<sub>3</sub>)<sub>6</sub>]<sup>3+</sup> + 3H<sub>2</sub>O + 3OH<sup>–</sup>'
+            ]
+          },  
+          {
+            questionReference: 'explanation',
+            id: 'explanationB',
+            answerText: [              
+              'Blueish green solution produces grey green precipitate.',
+              'Precipitate is chromium hydroxide / Cr(OH)<sub>3</sub> / [Cr(H<sub>2</sub>O)<sub>3</sub>(OH)<sub>3</sub>]',
+              'Excess ammonia produces violet solution.',
+              'Violet solution is [Cr(NH<sub>3</sub>)<sub>6</sub>]<sup>3+</sup> / hexaamminechromium.'
+            ]
+          }          
+
+        ]
+      }
+    
+      
+      }
+    ]
+  },
+  {id: 57, allContent: [
+    {
+      type: 'h2',
+      content: ['You\'ve finished this section!'],
+      props: {key: 57.1}
+    },
+    {
+      type: 'p',
+      doNotRender: ['OCRB', 'OCRA', 'Edexcel'],
+      content: [
+        'Congratulations you\'ve finished this section!',
+        ' Click the link below to advance to the next section.'        
+      ],
+      props: {key: 57.2}
+    },
+    {
+      type: 'p',
+      doNotRender: ['AQA'],
+      content: [
+        'Congratulations you\'ve finished the last section on reactions of complex ions!',
+        ' Click the link below to return to the main menu.'        
+      ],
+      props: {key: 57.2}
+    }
+
+    ]
   }
 
 ]

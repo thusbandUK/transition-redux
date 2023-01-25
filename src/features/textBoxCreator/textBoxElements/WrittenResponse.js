@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { createWrittenResponseSection, inputWrittenResponse, submitWrittenResponses } from '../textBoxCreatorSlice';
 import filterByExamBoard from './textBoxFunctions/filterByExamBoard';
+import formatSubSuperScript from './textBoxFunctions/formatSubSuperScript';
 
 
 const WrittenResponse = (props) => { 
@@ -75,7 +76,7 @@ return (
 
          {arrayOfQuestionsToRender.map((questionDetails) => (
             <div key={keyCount = keyCount + 1}>
-            <p>{questionDetails.questionText}</p>
+            <div>{formatSubSuperScript(questionDetails.questionText)}</div>
             <p><textarea value={(indexOfResponseToUpdate === -1) ? '' : writtenResponses[indexOfResponseToUpdate].questions[questionDetails.questionReference].input} onChange={inputResponse}  style={{width: "100%"}} type="text" name="TB1-similarities" id={questionDetails.questionReference}></textarea></p>
             </div>
          ))}
