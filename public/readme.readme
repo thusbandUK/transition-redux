@@ -11,6 +11,8 @@ thinks they are. So they're working, but they're not greying out when they ought
 0.90) make an image rendering component, adjacentImages, pass the objects in an array and then array.length will dictate
 the size of columns, so one image will fill the whole width, whereas three will shrink down
 and or they each need to be in individual divs
+0.9001) Also deploy "#text-box-image-container" id to any images so that they'll be 60% on a desktop and 100% (width, with no distortion)
+on a mobile / tablet
 0.901) add image of equation of chromium hydroxide dissolving upon addition excess sodium hydroxide 
 0.902) add MCQ question (ID 48) for OCR B question about complex ion medicine
 0.903) in ammonia excess section comparison(1) feedback - you're going to need to configure the comparison feedback to 
@@ -20,6 +22,7 @@ OR
 include multiple MCQ sections of store like for comparison / writtenResponse
 0.905) when you click submit it should bump the slide forward for written response questions, you can pass the page advance 
 function via props
+0.906) connect submit buttons (eg for written response) to advance page logic
 
 0.91) add Salters content to first two excess slides NaOH (might end up necessary for NH3 reactions too)
 0.91) neaten up textBoxCreator, including keep doNotRender logic? Problem is that's item by item on a page, you can't skip a whole page

@@ -897,14 +897,153 @@ export const MCQData = [
                 feedback: 'Incorrect selection! Equation shows ligand substitution starting with copper hydroxide precipitate.',
                 true: ['AQA', 'Edexcel', 'OCRA', 'OCRB']
             },
-            /*{
-                id: 545,
-                optionNumber: 4,
-                optionText: 'Cr(III)',
-                feedback: 'Incorrect! In this case blueish green solution produces grey green precipitate, followed by violet solution.',
-                true: ['Edexcel', 'OCRA']
-            }*/
+            
         ]
+        
+    },
+    {
+        id: 55,
+        question: 'Which ionic equation correctly shows a metal aqua ion reacting with sodium carbonate solution?',
+        correct: {id: 554},
+        options: [            
+            {
+                id: 551,
+                optionNumber: 1,
+                optionText: '[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + CO<sub>3</sub><sup>2–</sup> &#8594; [Cu(H<sub>2</sub>O)<sub>4</sub>(OH)<sub>2</sub>] + CO<sub>2</sub> + H<sub>2</sub>O',
+                feedback: 'Incorrect! Solutions of Cu<sup>2+</sup> ions are too weakly acidic for acid base reaction with carbonate ions.'
+                
+            },
+            {
+                id: 552,
+                optionNumber: 2,
+                optionText: '2[Al(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 3CO<sub>3</sub><sup>2–</sup> &#8594; Al<sub>2</sub>(CO<sub>3</sub>)<sub>3</sub> + 12H<sub>2</sub>O',
+                feedback: 'Incorrect! Solutions of Al<sup>3+</sup> are strong enough acids to produce carbon dioxide in reaction with carbonate ions.'
+            },
+            {
+                id: 553,
+                optionNumber: 3,
+                optionText: '2[Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 6CO<sub>3</sub><sup>2–</sup> &#8594; Fe<sub>2</sub>(CO<sub>3</sub>)<sub>3</sub> + 3CO<sub>2</sub> + 3H<sub>2</sub>O',
+                feedback: 'Incorrect! Carbonate ions will not form precipitate because they react to form carbon dioxide gas instead.'
+            },
+            {
+                id: 554,
+                optionNumber: 4,
+                optionText: '2[Al(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 3CO<sub>3</sub><sup>2–</sup> &#8594; 2[Al(H<sub>2</sub>O)<sub>3</sub>(OH)<sub>3</sub>] + 3CO<sub>2</sub> + 3H<sub>2</sub>O',
+                feedback: 'Correct!'
+            }
+        ]
+        
+    },
+    {
+        id: 56,
+        columns: 2,
+        question: 'A student investigates solutions of Fe<sup>3+</sup> ions and Fe<sup>2+</sup> ions with a pH probe. Which row correctly describes the details of the complex ion that produces the higher pH?',
+        correct: {id: 561},
+        options: [
+            /*
+            {question: 1,correct: 'y',text: 'The less polar O—H bond is stronger, meaning fewer H<sup>+</sup> ions are released, so pH is higher.'},
+            {question: 2,correct: 'n',text: 'Lower charge density of metal ion exerts weaker attraction on nearby electrons, producing a less polar O—H bond.'},
+            {question: 3,correct: 'n',text: 'Higher charge density of metal ion exerts stronger attraction on nearby electrons, producing a more polar O—H bond.'},
+            {question: 4,correct: 'n',text: 'The more polar O—H bond is weaker, meaning more H<sup>+</sup> ions are released, which <em>reduces</em> pH.'}
+            */
+            {
+                id: 560,
+                optionNumber: 0,
+                hideCheckbox: 'true',
+                optionText: [
+                    {childType: 'p',
+                     childProps: {className: "col-md-5", style: {fontWeight: 'bold'}},
+                     childContent: 'Charge density of Fe ion'
+                    },
+                    {childType: 'p',
+                     childProps: {className: "col-md-5", style: {fontWeight: 'bold'}},
+                     childContent: 'Polarity of O—H bond'
+                    }
+                  ],
+                
+                //['[Co(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 4Cl<sup>-</sup> &#8652; [CoCl<sub>4</sub>]<sup>2-</sup> + 6H<sub>2</sub>O', 'blue solution to pink precipitate'],
+                feedback: 'Incorrect! Pink solution produces a blue solution.',
+                correct: false
+                
+            },
+            {
+                id: 561,
+                optionNumber: 1,
+                optionText: [
+                    {childType: 'p',
+                     childProps: {className: "col-md-5"},
+                     childContent: 'lower'
+                    },
+                    {childType: 'p',
+                     childProps: {className: "col-md-5"},
+                     childContent: 'less polar'
+                    }
+                  ],
+                
+                //['[Co(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 4Cl<sup>-</sup> &#8652; [CoCl<sub>4</sub>]<sup>2-</sup> + 6H<sub>2</sub>O', 'blue solution to pink precipitate'],
+                feedback: 'Correct! The less polar O—H bond is stronger, meaning fewer H<sup>+</sup> ions are released, so pH is higher.',
+                correct: false
+                
+            },
+            {
+                id: 562,
+                optionNumber: 2,
+                optionText: [
+                    {childType: 'p',
+                     childProps: {className: "col-md-5"},
+                     childContent: 'lower'
+                    },
+                    {childType: 'p',
+                     childProps: {className: "col-md-5"},
+                     childContent: 'more polar'
+                    }
+                  ],
+                
+                //['[Co(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 4Cl<sup>-</sup> &#8652; [CoCl<sub>4</sub>]<sup>2-</sup> + 6H<sub>2</sub>O', 'blue solution to pink precipitate'],
+                feedback: 'Incorrect! Lower charge density of metal ion exerts weaker attraction on nearby electrons, producing a less polar O—H bond.',
+                correct: false
+                
+            },
+            {
+                id: 563,
+                optionNumber: 3,
+                optionText: [
+                    {childType: 'p',
+                     childProps: {className: "col-md-5"},
+                     childContent: 'higher'
+                    },
+                    {childType: 'p',
+                     childProps: {className: "col-md-5"},
+                     childContent: 'less polar'
+                    }
+                  ],
+                
+                //['[Co(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 4Cl<sup>-</sup> &#8652; [CoCl<sub>4</sub>]<sup>2-</sup> + 6H<sub>2</sub>O', 'blue solution to pink precipitate'],
+                feedback: 'Incorrect! Higher charge density of metal ion exerts stronger attraction on nearby electrons, producing a more polar O—H bond.',
+                correct: false
+                
+            },
+            {
+                id: 564,
+                optionNumber: 4,
+                optionText: [
+                    {childType: 'p',
+                     childProps: {className: "col-md-5"},
+                     childContent: 'higher'
+                    },
+                    {childType: 'p',
+                     childProps: {className: "col-md-5"},
+                     childContent: 'more polar'
+                    }
+                  ],
+                
+                //['[Co(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 4Cl<sup>-</sup> &#8652; [CoCl<sub>4</sub>]<sup>2-</sup> + 6H<sub>2</sub>O', 'blue solution to pink precipitate'],
+                feedback: 'Incorrect! The more polar O—H bond is weaker, meaning more H<sup>+</sup> ions are released, which reduces pH.',
+                correct: true
+                
+            }
+        ]/*,
+        correct: {id: 433}*/
         
     }
 ]

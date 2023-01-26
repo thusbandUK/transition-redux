@@ -1,15 +1,16 @@
-//import { MCQData } from '../../../../textDataTemp';
 import { MCQData } from '../../../../../src/data/transitionMetalData/mcqData';
 import filterByExamBoard from "../textBoxFunctions/filterByExamBoard";
 import '../../../../app/App.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectAnswer, displayFeedback, selectMCQId, reset } from './multipleChoiceQuestionSlice';
+import { useEffect } from 'react';
+import { createMCQObject, selectAnswer, displayFeedback, reset, selectAnswer2, displayFeedback2, reset2 } from './multipleChoiceQuestionSlice';
 import optionTextGenerator from './optionTextGenerator';
-//import filterByExamBoard from '../textBoxFunctions/filterByExamBoard';
 import formatSubSuperScript from '../textBoxFunctions/formatSubSuperScript';
 
 
 const MultipleChoiceQuestion = (props) => {
+
+  //console.log(props.children.id);
 
     //redux config
     const dispatch = useDispatch();
@@ -17,26 +18,38 @@ const MultipleChoiceQuestion = (props) => {
     //define constants to refer to items in state
     const selectedAnswer = useSelector(state => state.multipleChoiceQuestion.selectedAnswer);
     const feedback = useSelector(state => state.multipleChoiceQuestion.displayedFeedback);
+    const feedback2 = useSelector(state => state.multipleChoiceQuestion.MCQAnswers);
     const examBoard = useSelector(state => state.examBoard.selectedExamBoard);
+    const MCQAnswersInStore = useSelector(state => state.multipleChoiceQuestion.MCQAnswers);
     
-
+    
     //harvest Id number of multiple choice question (MCQ) from props
     const MCQId = props.children.id;
+
+    //Scans store to find index of object linked to the multiple choice question currently being answered
+
+    let indexOfMCQToUpdate = MCQAnswersInStore.findIndex((x) => {
+      return x.id === MCQId;
+    }) 
+
+    //creates and dispatches an object in which to store data for individual multiple choice questions
+    useEffect(() => {
+      dispatch(createMCQObject({id: props.children.id}));        
+  }, [])
     
     //define constant for MCQ entry in data file, including question text, options, formatting, feedback comments and which correct
     const MCQAllDetails = MCQData.find((entry) => entry.id === MCQId);
 
     //define constant for the options *only* from the above constant, filtered by examboard
-    //console.log(MCQAllDetails);
-    //const MCQAllDetailsFiltered = filterByExamBoard(MCQAllDetails.options, examBoard, true);
-    
+        
     const MCQAllDetailsFiltered = (MCQAllDetails.filter === 'true') ? filterByExamBoard(MCQAllDetails.options, examBoard, true) : MCQAllDetails.options;
 
-    //console.log(MCQAllDetailsFiltered2);
+    
     //when radio button clicked, selected answer dispatched to state
     const onValueChange = (event) => {
-      //console.log(event.target.value);
+      
         dispatch(selectAnswer(event.target.value));
+        dispatch(selectAnswer2({index: indexOfMCQToUpdate, answer: event.target.value}));
     }
 
     //checks selected answer against multiple choice data
@@ -58,6 +71,7 @@ const MultipleChoiceQuestion = (props) => {
         //dispatches feedback data
 
         dispatch(displayFeedback({...feedbackData, correct: MCQAllDetails.correct}));
+        dispatch(displayFeedback2({index: indexOfMCQToUpdate, answerDetails: {...feedbackData, correct: MCQAllDetails.correct}}));
     }
 
 
@@ -67,6 +81,7 @@ const MultipleChoiceQuestion = (props) => {
       
       //resets MCQ section of state to initial values
       dispatch(reset());
+      dispatch(reset2({index: indexOfMCQToUpdate, MCQId: MCQId}));
 
       //finds and unchecks the checked radio button
       var ele = document.getElementsByName('option');
@@ -84,7 +99,7 @@ const MultipleChoiceQuestion = (props) => {
     return (
         <div>
            <h2>Check your understanding!</h2>
-           <p className="lead">{MCQAllDetails.question}</p>
+           <div className="lead">{formatSubSuperScript(MCQAllDetails.question)}</div>
             <form
             onSubmit={formSubmit}
             className="mt-3 pt-2 border-top border-3"
@@ -99,7 +114,9 @@ const MultipleChoiceQuestion = (props) => {
                   key={option.id}
                   
                   >
-                    <input name='option' className="form-check-input" type="radio" value={option.id} onChange={onValueChange} id={`flexCheck${option.optionNumber}`} />
+                    <input name='option' 
+                    style={option.hideCheckbox ? {display: 'none'} : {display: 'block'}}
+                    className="form-check-input" type="radio" value={option.id} onChange={onValueChange} id={`flexCheck${option.optionNumber}`} />
                     
                       {optionTextGenerator(option, MCQAllDetails.columns, option.id)}
                     
@@ -114,7 +131,8 @@ const MultipleChoiceQuestion = (props) => {
                 <div className="lead mt-3 pt-2 border-top border-3" style={{margin: '10px 0px'}}>{feedback ? formatSubSuperScript(feedback.comment) : 'Select an option and then press "Check Answer"'}</div> 
                 <ul className="list-group list-group-horizontal mt-3 fs-5 d-flex justify-content-center">
                 <div className="excess-or-reset-button-container d-flex justify-content-center">
-                  { !feedback ? 
+                  { !feedback ?
+                  
                    <button 
                    className="excess-button list-group-item w-100 rounded" 
                    type="submit" 
@@ -140,3 +158,5 @@ const MultipleChoiceQuestion = (props) => {
 }
 
 export default MultipleChoiceQuestion;
+
+//{ !feedback2[indexOfMCQToUpdate].displayedFeedback ?

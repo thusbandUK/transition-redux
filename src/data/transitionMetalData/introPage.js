@@ -157,33 +157,7 @@ export const introPage = [
                               }
                             ],
                     props: {key: 18.4, variablecontent: 'filter by exam board'}
-                        },/*
-                   {
-                    type: 'ul',
-                    content: [
-                              {childType: 'li',
-                               childProps: {},
-                               childContent: 'hexaaquacobalt(II): pink solution'
-                              },
-                              {childType: 'li',
-                               childProps: {},
-                               childContent: 'hexaaquacopper(II): blue solution'
-                              },
-                              {childType: 'li',
-                               childProps: {},
-                               childContent: 'hexaquairon(II): green solution'
-                              },
-                              {childType: 'li',
-                               childProps: {},
-                               childContent: 'hexaaquairon(III): pale yellow (or violet) solution'
-                              },
-                              {childType: 'li',
-                               childProps: {},
-                               childContent: 'hexaaquaaluminium(III): colourless solution'
-                              }
-                            ],
-                    props: {id: 18.3, parent: true}
-                        }*/,
+                        },
                     {
                         type: 'p',  
                         content: [/*'In each section the starting solutions appear in a different order with buttons you can click to reveal their identity. This is so you can practise recalling their name by colour.',*/
@@ -192,9 +166,6 @@ export const introPage = [
                     }/**/
                 ]
                 }
-
-
-              
 
         
         ]
