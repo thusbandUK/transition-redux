@@ -100,11 +100,11 @@ h1 {
   color: var(--primaryText) !important;   
   
 }
-
+/*
 .excess-or-reset-button-container button:hover {
   background-color: var(--greyLight) !important; 
 }
-
+*/
 .excess-or-reset-button-container button:active {
   background-color: var(--greyDark) !important;
 }
@@ -125,12 +125,38 @@ h1 {
   margin: 0 auto;
 }
 
+#intro-answer-sidenote {
+  display: inline-flex;
+  height: 40%;
+}
+
+#sidenote {
+  padding-left: 5%;
+  overflow-y: auto;
+}
+
+#text-box-image-container {
+  width: 60%;
+  margin: auto;
+}
+
+@media only screen and (max-width: 920px) {
+  #text-box-image-container {
+    width: 100%;
+  }
+}
+
 @media only screen and (max-width: 740px) {
   .text-box {
       width: 90%;
   }
+
+  
 }
 
+.border-top {
+  border-color: var(--primary) !important;
+}
 
 
 /*This was already here in the boiler plate*/

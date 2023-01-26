@@ -1,6 +1,185 @@
 
 POINTS TO ADDRESS:
 
+
+0.5) In App.css revisit the hover horror show
+0.75) screen reader horror show, getting hydroxide read out as OH - ADD ARIA LABEL WITH O AND H SEPARATED?
+0.8) EUCH!! so basics there's a disconnect between when the css thinks the textBox chevrons are disabled and when the javascript
+thinks they are. So they're working, but they're not greying out when they ought to
+0.905) when you click submit it should bump the slide forward for written response questions, you can pass the page advance 
+function via props BY advancing page logic (THIS GOES WITH INCORRECTLY DISABLED ADVANCE BUTTONS SITCH)
+
+0.90) make an image rendering component, adjacentImages, pass the objects in an array and then array.length will dictate
+the size of columns, so one image will fill the whole width, whereas three will shrink down
+and or they each need to be in individual divs
+0.9001) Also deploy "#text-box-image-container" id to any images so that they'll be 60% on a desktop and 100% (width, with no distortion)
+on a mobile / tablet
+0.901) add image of equation of chromium hydroxide dissolving upon addition excess sodium hydroxide 
+0.902) add MCQ question (ID 48) for OCR B question about complex ion medicine
+
+
+
+0.91) add Salters content to first two excess slides NaOH (might end up necessary for NH3 reactions too)
+0.91) neaten up textBoxCreator, including keep doNotRender logic? Problem is that's item by item on a page, you can't skip a whole page
+which is a shame because with OCR B there'll be two pages that aren't needed for NaOH
+
+0.95) troubleshoot
+0.96) add to portfolio =)
+
+
+
+1) you need to finish coding the individual observation-input forms which will stack under their individual test tubes
+h) style the forms (AND the text boxes, esp how acceptable equations render, and consistent with only show "Your [INSERT]" if 
+response has been added) because at the moment they're GROSS - AND RENDER THE NAME OF EACH METAL
+
+
+1.5) Render text boxes. You need to format and complete the observations page. You'll need to add the model observations
+in the content section of the ObservationStages entry in the first page of each text box. They'll need to be tagged for 
+examBoard filtering. Or that might be overkill. It might just be that a function scans the state for the metals then 
+harvests them from props.content. I'd say a plus of rendering by examboard might be if you want to file slightly different
+"approved" colours for the same reaction. We'll see.
+
+
+2) prune superceded files, including (to confirm) 
+a) the whole or (old) textBox folder in components
+b) in textBoxCreator in features: variableTextCreator, variableTextGenerator, subSuperTextGenerator
+
+MANUAL
+
+3) write a manual called variableTextManual.readme which should include:
+<a) A KEY IN EVERY SET OF PROPS
+a) for single strings with sub- or superscript tags, put tagged=true in props 
+b) the above can also be applied to childProps
+c) variableText = 'stringSplicer' is a KV pair to include in props for the generation of a single string
+ i) content for singleString needs to be an array of two objects, first of which contains a key called 'staticContent' and has 
+ [REPLACE TEXT] 
+ ii) second object contains a key called 'dynamicContent' which is also an array of objects
+ iii) object should contain a key called string, the value for which is obvious the string to substitute
+ iv) object should also contain a key called true, which is an array of examBoards for which the string should be included
+d) variableText = 'filter by exam Board' is a KV pair to include in props for an array of eg li elements to be filtered by examBoard
+i) in array of children, each should have a prop entry which is a KV pair, K = true, V = array of examboards for which true
+e) for any parent elements, eg: div / ul / form etc, props needs a KV pair, K = parent, V = true
+f) for a multiple choice question, 
+i) enter it in the text for that text box as {type: 'mcq', props: {key: 1}, content: {id: 43}}
+ii) make a separate entry in the MCQs file (is this useful?)
+iii) you have to pass "true"(boolean, not string) as an optional third argument to filterByExamBoard function, so that it reads the "true" key 
+values, rather than the childProp.true key values
+remember there's a two-column option, too
+iv) also add "filter: 'true'" in the main props if you want it filtered
+g) if you want to add a break as a child you need to include an empty props entry as well as type
+h) you need to use strings for 'true' for the 'parent' and 'tagged' indicators
+i) comparison feedback, see example, 
+i) it takes the type "'comparison-feedback'"
+ii) it has three sub-titles, the same title ('sameReference') and then differenceA ('AReference') and differenceB ('BReference')
+iii) then the 'similarities', 'differencesA' and 'differencesB' are filed as strings in arrays
+iv) comparison-feedback can filter by examBoard, in any of 'similarities', 'differencesA' and 'differencesB' you can opt-in
+to filtration. Normal the value for each key is an array of strings (of the comparison points to be rendered). 
+To opt-in to filtration, each string has to be placed in a separate object, as the value of the key 'content'
+A 'true' key also needs to be included, the value of which should be an array of string references to the examBoards that should
+render that content
+
+j) written-response and written-response-feedback: don't forget that like with comparison(feedback) the id - but the key - has to be
+the same for matching sets of input / responses 
+i) to filter by examboard you have to put "filter: 'true'" in the main props
+ii) questions and feedback sets have to have matching ID numbers, that's how the feedback sets are located
+
+
+
+4) embed code with comments that explain what each section is for
+5) delete superceded commented-out code
+
+11) review code, esp bad usage of useEffect and middleware / rehydration logic 
+12) there needs to be more test logic, esp introduce that bit the page always says: "hey developer you can blah blah blah"
+
+
+good way to access localStorage 
+
+const cat = localStorage.getItem('selectedExamBoard');
+
+look at the initialState logic in rowOfTubesSlice, you used a reset system which you need to introduce for the text box
+the rehydrate comprehensively takes the entire store and rehydrates it
+so you need to figure out a way that you can clear storage at certain key points, eg: backToMainMenu
+moreover, some of the difficulties you had earlier, I think not only with disabled buttons but also with crashes when you updated
+the examBoard, and also the fact that the store remembered selections already made and so it didn't update the dynamic content
+correctly
+
+what if you made a constant which was a copy of the store but then you deleted parts you didn't want to permanently store?
+
+Last thing you bookmarked in coding hacks was the mdn guide to updating the state which I think is the key here. 
+Basically the whole entire state is saved (under the misleading name of selectedExamBoard) and you need to develop more precise control 
+of that.
+Also it's annoying that the store seems to remember things when you don't want it to (see issues with disabled arrow tags)
+So clearing*all data* in local storage might be a little extreme but you could prune data.
+Eg when the intro page refreshes, the store rehydrates with the information on the last position of, eg: current page and the attendant 
+activity of the leftDisabled and rightDisabled state entries.
+(A work around for that might be eliminating dependence on the state, or that aspect of the state for disabling the buttons)
+So eg when you select an exam board you can trigger a reset of the textCreator state 
+
+With the exam board selection process there's a problem that it creates a conflict with the existing textBox, which causes crashes. 
+So there definitely needs to be a rerender for the text box, which to be fair is what you'd been trying to do with useEffect, you just 
+need to figure out what's causing the crashes each time.
+
+But I think it's basically the fact that the way the store rehydrates causes conflicts.
+When you select an exam board, check what logic that dispatches (the menu)
+Maybe get the useEffect update for the text box configured with it in its static form, then think about how to introduce the dynamic 
+content logic.
+Also the way it processes the dynamic textData, you can just put a bit after the copy of the incoming object gets made that says, if 
+!variable return to reduce processing burden.
+
+It's tricky that when it refreshes the text box crashes
+When the textBox rerenders it needs to reset the textBox creator to the initial state.
+
+when the intro page is refreshed, the textBox returns to page 1 but the state retains the previous thingy
+
+1) in textBox creator I've added a "if no examBoard, useEffect function returns straight away"
+
+
+
+
+
+
+So I think what you need to do is clear the
+
+
+I think quite large structural revisions need to take place in the text-generation logic
+it doesn't make too much sense to have the subSuperTextGenerator.js in a ternary operator with ElementGenerator because the whole
+point of ElementGenerator is to process the different kinds of input and render output accordingly
+but the reason why subSuperTextGenerator went where it did was because ElementGenerator has a function for the content part of the
+createElement function only, whereas if a single function output type, props and content then SSTG could go there
+it seems like the variableContent logic needs to be furthest upstream? Why because having processed it for the output, that output
+still needs to be processed for render, because a variety of different elements can have variableContent, incl h2, p etc.
+
+I think what happens is you need to call a function in the textBox component when the incoming content is being mapped
+call the function to make a copy of the array being mapped, in the copy you can overwrite the content for any entries
+with dynamic content and then feed the copy through something similar to the existing architecture
+
+actually I think you can keep most of it as is, just do the above in textBox where the comments indicate and see what's what, use
+the code in 
+
+You're also going to have to fix the store rehydration logic because it's permanently stuck in a bad way
+
+And also you might have some glitches in variableTextGenerator that could throw an error
+
+
+in the element generator, I think you can figure out a way to combine two sets of props via {...notation}
+because a) the image is at 100% and it wants to be at 40% and b) you need a way to be able to add one off instructions (like image size)
+
+then you need to get the textBoxCreator(slice) logic written. Basically the state should give the id number of the relevant sets of
+text for each text box
+the chevrons will dispatch information to the state, basically just the id number
+textBoxCreator will recall the ID number from the state and render the relevant section of the text box via textBox
+and then you're basically done for the time being
+
+biggies: 
+1) disable arrow buttons when they're no longer needed (ie clicked all the way right / left)
+2) the multiple choice questions will need a data storage format and a rendering component
+3) selectively rendering text, if you added a key to the object containing each page of data, you can add conditional formatting
+just to say, oh if it says edexcel then blah blah blah, more on which later
+4) individual form for submitting observations (and can organise it so that they can't do the reaction until they've entered observation)
+
+
+
+
 restore the single menu component instead of the split component?
 
 write localStorage tests using: https://stackoverflow.com/questions/65282181/how-to-use-jest-for-testing-a-react-component-with-localstorage
