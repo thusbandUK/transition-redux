@@ -80,8 +80,8 @@ const handleExcessProduct = (metal, productImageDetails, observationStage) => {
 
 
     return (
-        <div className="row-of-tubes rounded overflow-auto" style={rowOfTubesStyling}>
-            <div className="row" style={{width: '100%', marginTop: '5%'}}>
+        <div className="row-of-tubes rounded overflow-auto m-0 p-0 ml-0" style={rowOfTubesStyling}>
+            <div className="row justify-content-between ml-2 pl-0" style={{width: '100%', margin: '5% 3% 0%'}}>
            
          {Object.entries(unreactedMetals).map(([key, value]) => (
             <IndividualTube

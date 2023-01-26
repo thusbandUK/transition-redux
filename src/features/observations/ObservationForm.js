@@ -83,10 +83,16 @@ const ObservationForm = (props) => {
         props.handleExcessProduct(metal, productImageDetails, observationStage);
   
       }
-
+/*
+      const observationFormStyle = {
+        width: '75px!important'
+      }*/
+//translate-middle-x
+//form-check
     return (
-        <div className="form-check translate-middle-x">
-            <form>              
+        <div className="  " style={{width: '90%'}}>
+          
+            <form >              
 
                {/*form input elements to enter and submit observations */}                              
                 
@@ -97,11 +103,11 @@ const ObservationForm = (props) => {
                     {`Observation ${observationStage/2}`}
                   </label>
                 
-                  <input type="text"   onChange={observationToState} id={`flexCheck${props.metal.id}-initial`}/>
+                  <input type="text" style={{width: '100%', height: '50px'}}  onChange={observationToState} id={`flexCheck${props.metal.id}-initial`}/>
                   <ul className="list-group list-group-horizontal mt-3 fs-5 d-flex justify-content-center">
                     <div className="excess-or-reset-button-container d-flex justify-content-center">
                       <button 
-                       className="excess-button list-group-item w-100 rounded" 
+                       className="excess-button list-group-item w-100 rounded p-1 m-0" 
                        type="submit" 
                        id="submitObservation"
                        onClick={submitObservation}                   

@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import '../../app/App.css';
 import ObservationForm from '../../features/observations/ObservationForm';
 import { incrementObservationStage } from '../../features/rowOfTestTubes/rowOfTestTubesSlice';
+import RevealElement from '../revealElement/RevealElement';
 
 const IndividualTube = (props) => { 
   
@@ -18,15 +19,18 @@ const IndividualTube = (props) => {
       dispatch(incrementObservationStage({metal: metal, newObservationStage: observationStage + 1}))      
     }
     
+   //style={{height: '30%'}}
     return (      
-      <div className="col-md-2 d-flex flex-column container " style={{height: '400px'}}> 
+      <div className="col-md-2 d-flex flex-column container p-0 m-0" style={{height: '400px'}}> 
+      <p className='text-center'>{props.metal.metal}</p>
       
         
         <button 
-        className="test-tube "
+        className="test-tube p-0 m-0"
         onClick={handleClick}
         aria-live="polite"
         disabled={observationStage !== 3}
+        style={{height: '40%'}}
         
         >
           {/* mx-auto */}
@@ -44,12 +48,14 @@ const IndividualTube = (props) => {
           alt={props.product.altText}
           /> : null }
         </button>
-        
+        <div className="container-non-bootstrap">
        <ObservationForm
        key={props.metal.id}       
        metal={props.metal}
        handleExcessProduct={props.handleExcessProduct}
+      
        />
+       </div>
       </div>
 
     );

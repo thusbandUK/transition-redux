@@ -32,6 +32,12 @@ export const rowOfTestTubesSlice = createSlice({
         Object.entries(state.unreactedMetals).forEach(([key, value]) => {
           state.unreactedMetals[key] = {...value, product: products}
         })
+      },
+      assignElementRevealedStatus: (state, action) => {
+        /*console.log(action.payload.metalName);
+        let updatedObject = state.unreactedMetals[action.payload.metalName];
+        console.log({...updatedObject, revealed: false});
+        state.unreactedMetals[action.payload.metalName] = {...updatedObject, revealed: false};*/
       }
     }
     
@@ -42,7 +48,8 @@ export const rowOfTestTubesSlice = createSlice({
     selectUnreactedMetals,
     showProducts,
     reset,
-    incrementObservationStage
+    incrementObservationStage,
+    assignElementRevealedStatus
  } = rowOfTestTubesSlice.actions;
  
  export default rowOfTestTubesSlice.reducer;
