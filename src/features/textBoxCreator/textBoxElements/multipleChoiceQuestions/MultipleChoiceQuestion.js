@@ -3,7 +3,7 @@ import filterByExamBoard from "../textBoxFunctions/filterByExamBoard";
 import '../../../../app/App.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { createMCQObject, selectAnswer, displayFeedback, reset, selectAnswer2, displayFeedback2, reset2 } from './multipleChoiceQuestionSlice';
+import { createMCQObject, selectAnswer, displayFeedback, reset } from './multipleChoiceQuestionSlice';
 import optionTextGenerator from './optionTextGenerator';
 import formatSubSuperScript from '../textBoxFunctions/formatSubSuperScript';
 
@@ -15,12 +15,12 @@ const MultipleChoiceQuestion = (props) => {
     //redux config
     const dispatch = useDispatch();
 
-    //define constants to refer to items in state
-    const selectedAnswer = useSelector(state => state.multipleChoiceQuestion.selectedAnswer);
-    const feedback = useSelector(state => state.multipleChoiceQuestion.displayedFeedback);
-    const feedback2 = useSelector(state => state.multipleChoiceQuestion.MCQAnswers);
+    //define constants to refer to items in state    
+    
+    const feedback = useSelector(state => state.multipleChoiceQuestion.MCQAnswers);
     const examBoard = useSelector(state => state.examBoard.selectedExamBoard);
-    const MCQAnswersInStore = useSelector(state => state.multipleChoiceQuestion.MCQAnswers);
+    const MCQAnswersInStore = useSelector(state => state.multipleChoiceQuestion.MCQAnswers);     
+
     
     
     //harvest Id number of multiple choice question (MCQ) from props
@@ -31,6 +31,7 @@ const MultipleChoiceQuestion = (props) => {
     let indexOfMCQToUpdate = MCQAnswersInStore.findIndex((x) => {
       return x.id === MCQId;
     }) 
+   
 
     //creates and dispatches an object in which to store data for individual multiple choice questions
     useEffect(() => {
@@ -48,10 +49,10 @@ const MultipleChoiceQuestion = (props) => {
     //when radio button clicked, selected answer dispatched to state
     const onValueChange = (event) => {
       
-        dispatch(selectAnswer(event.target.value));
-        dispatch(selectAnswer2({index: indexOfMCQToUpdate, answer: event.target.value}));
+        //dispatch(selectAnswer(event.target.value));
+        dispatch(selectAnswer({index: indexOfMCQToUpdate, answer: event.target.value}));        
     }
-
+   
     //checks selected answer against multiple choice data
 
     const formSubmit = (event) => {        
@@ -60,18 +61,18 @@ const MultipleChoiceQuestion = (props) => {
         //compiles feedback data for dispatch to state
         
         let feedbackData = {}; 
-        //MCQAllDetails.options.forEach((response) => {
+        
           MCQAllDetailsFiltered.forEach((response) => {
-          if (response.id === Number(selectedAnswer)){            
+           if (response.id === Number(feedback[indexOfMCQToUpdate].selectedAnswer)){
+                   
             return feedbackData = {comment: response.feedback};
           }          
 
         })
         
         //dispatches feedback data
-
-        dispatch(displayFeedback({...feedbackData, correct: MCQAllDetails.correct}));
-        dispatch(displayFeedback2({index: indexOfMCQToUpdate, answerDetails: {...feedbackData, correct: MCQAllDetails.correct}}));
+        
+        dispatch(displayFeedback({index: indexOfMCQToUpdate, answerDetails: {...feedbackData, correct: MCQAllDetails.correct}}));
     }
 
 
@@ -80,8 +81,8 @@ const MultipleChoiceQuestion = (props) => {
     const handleReset = () => {
       
       //resets MCQ section of state to initial values
-      dispatch(reset());
-      dispatch(reset2({index: indexOfMCQToUpdate, MCQId: MCQId}));
+      
+      dispatch(reset({index: indexOfMCQToUpdate, MCQId: MCQId}));
 
       //finds and unchecks the checked radio button
       var ele = document.getElementsByName('option');
@@ -94,19 +95,51 @@ const MultipleChoiceQuestion = (props) => {
               }
              
     }
-   
+   //the three below functions protect against crashing because items have been written to the store yet
+
+   //This provides logic to selectively render the "submit" or "try again" buttons
+
+  const renderButton = () => {
+    if ((indexOfMCQToUpdate === -1) || (!feedback[indexOfMCQToUpdate].selectedAnswer) || (!feedback[indexOfMCQToUpdate].displayedFeedback)){
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  //This disables the submit button until an answer has been selected
+
+  const disableButton = () => {
+    if ((indexOfMCQToUpdate === -1) || (!feedback[indexOfMCQToUpdate].selectedAnswer)){      
+      return true;
+    } else return false;
+
+  }
+
+  //this provides logic to render "select an option..." until an answer is submitted and then provides the corresponding feedback
+  const renderText = () => {
+    const noFeedback = 'Select an option and then press "Check Answer"';
+    if ((indexOfMCQToUpdate === -1) || (!feedback[indexOfMCQToUpdate].selectedAnswer) || (!feedback[indexOfMCQToUpdate].displayedFeedback)){
+      return noFeedback;
+    } else return formatSubSuperScript(feedback[indexOfMCQToUpdate].displayedFeedback.comment)
+
+  }
+
+
 
     return (
         <div>
            <h2>Check your understanding!</h2>
+
+           {/*Below renders multiple choice question */}
+
            <div className="lead">{formatSubSuperScript(MCQAllDetails.question)}</div>
             <form
             onSubmit={formSubmit}
             className="mt-3 pt-2 border-top border-3"
             style={{borderColor: 'red !important', margin: '10px 0px'}}
             >
-            {/**findQuestion(MCQId) MCQAllDetails
-            {MCQAllDetails.options.map((option) => (*/}
+            {/*Below renders the multiple choice question potential answers*/}
 
              {MCQAllDetailsFiltered.map((option) => (
                   <div 
@@ -123,22 +156,23 @@ const MultipleChoiceQuestion = (props) => {
                   </div>
                 ))}
 
-                {/*Hopefully this won't affect anything. Ele dir below *was* <p> but then console started error warning, p can't be
-                child of p, so changed to <div> and seems okay. Weird it suddenly started doing that */}
+                {/*Below renders feedback when selected answer submitted */}
+               
+                <div className="lead mt-3 pt-2 border-top border-3" style={{margin: '10px 0px'}}>{renderText()}</div>                
+                
+                {/*Below selectively renders and styles "submit" and "try again" buttons */}
 
-
-
-                <div className="lead mt-3 pt-2 border-top border-3" style={{margin: '10px 0px'}}>{feedback ? formatSubSuperScript(feedback.comment) : 'Select an option and then press "Check Answer"'}</div> 
                 <ul className="list-group list-group-horizontal mt-3 fs-5 d-flex justify-content-center">
                 <div className="excess-or-reset-button-container d-flex justify-content-center">
-                  { !feedback ?
+                  
+                  {renderButton() ? 
                   
                    <button 
                    className="excess-button list-group-item w-100 rounded" 
                    type="submit" 
                    id="checkAnswerButton"
-                   onClick={formSubmit}
-                   disabled={!selectedAnswer}
+                   onClick={formSubmit}                   
+                   disabled={disableButton()}
                    >Check answer</button> 
                    :
                    <button 
@@ -158,5 +192,3 @@ const MultipleChoiceQuestion = (props) => {
 }
 
 export default MultipleChoiceQuestion;
-
-//{ !feedback2[indexOfMCQToUpdate].displayedFeedback ?
