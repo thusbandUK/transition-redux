@@ -30,7 +30,8 @@ which is a shame because with OCR B there'll be two pages that aren't needed for
 
 1) you need to finish coding the individual observation-input forms which will stack under their individual test tubes
 h) style the forms (AND the text boxes, esp how acceptable equations render, and consistent with only show "Your [INSERT]" if 
-response has been added) because at the moment they're GROSS - AND RENDER THE NAME OF EACH METAL
+response has been added) because at the moment they're GROSS 
+i) intro function where you click to reveal the name of the metal 
 
 
 1.5) Render text boxes. You need to format and complete the observations page. You'll need to add the model observations
