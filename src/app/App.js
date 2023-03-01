@@ -12,16 +12,7 @@ function App(props) {
   return (
     
     <div className="App">
-      <p>Hello</p>
-      <NavLink 
-                   to={"/home/"}
-                   className="d-block text-decoration-none"
-                   
-                   
-                   >
-                     Take me home!
-                     
-                 </NavLink>
+      
       <Outlet />
     </div>
     
@@ -31,6 +22,17 @@ function App(props) {
 export default App;
 
 /*
+<p>Hello</p>
+      <NavLink 
+                   to={"/home/"}
+                   className="d-block text-decoration-none"
+                   
+                   
+                   >
+                     Take me home!
+                     
+                 </NavLink>
+
 <Header />
       <section className="py-5">
         <div className="container">
@@ -45,4 +47,21 @@ export default App;
       <footer className="border-top py-5 overflow-hidden position-relative">        
         <div className="container">Copyright T Husband</div>
       </footer>
+
+
+<Header />
+      <section className="py-5">
+        <div className="container">
+          <div className="reagents-and-tubes">
+          
+          </div>          
+          <Outlet />
+           
+        </div>
+      </section>
+      
+      <footer className="border-top py-5 overflow-hidden position-relative">        
+        <div className="container">Copyright T Husband</div>
+      </footer>
+
       */

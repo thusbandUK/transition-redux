@@ -3,24 +3,41 @@ import React from 'react';
 import { Outlet } from "react-router-dom";
 //import Menu from '../features/menu/Menu';
 import Header from './components/headerAndFooter/header';
-import ReactionsContainer from './components/reactionsContainer/reactionsContainer';
-import Introduction from './components/introduction/Introduction';
+import { NavLink } from 'react-router-dom';
 
 
-function Home(props) {  
+
+function LandingPage(props) {  
   
   return (
     
     <div className="App">
-      
-      <Header />
+      <p>I want everything on this page to be invisible on other pages</p>
+      <NavLink 
+                   to={"/home/"}
+                   className="d-block text-decoration-none"
+                   
+                   
+                   >
+                     Take me home!
+                     
+                 </NavLink>
+    </div>
+    
+  );
+}
+
+export default LandingPage;
+
+/*
+
+<Header />
       <section className="py-5">
         <div className="container">
           <div className="reagents-and-tubes">
           
-          </div>        
-            
-          
+          </div>          
+          <Outlet />
            
         </div>
       </section>
@@ -28,10 +45,4 @@ function Home(props) {
       <footer className="border-top py-5 overflow-hidden position-relative">        
         <div className="container">Copyright T Husband</div>
       </footer>
-    </div>
-    
-  );
-}
-
-export default Home;
-
+*/
