@@ -82,7 +82,7 @@ export const SodiumCarbonateText = [
            {
             childType: 'p',
             childProps: {key: 60.23, tagged: 'true', className: 'mt-2'},
-            childContent: 'Co<sup>2+</sup> + CO<sub>3</sub><sup>2+</sup> &#8652; CoCO<sub>3</sub>'
+            childContent: 'Co<sup>2+</sup> + CO<sub>3</sub><sup>2–</sup> &#8652; CoCO<sub>3</sub>'
            },           
            {
             childType: 'p',
@@ -92,7 +92,7 @@ export const SodiumCarbonateText = [
            {
             childType: 'p',
             childProps: {key: 60.26, tagged: 'true', className: 'mt-2 mb-2'},
-            childContent: '[Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 3/2CO<sub>3</sub><sup>2+</sup> &#8594; [Fe(H<sub>2</sub>O)<sub>3</sub>(OH)<sub>3</sub>] + 3/2CO<sub>2</sub> + 3/2H<sub>2</sub>O'
+            childContent: '[Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 3/2CO<sub>3</sub><sup>2–</sup> &#8594; [Fe(H<sub>2</sub>O)<sub>3</sub>(OH)<sub>3</sub>] + 3/2CO<sub>2</sub> + 3/2H<sub>2</sub>O'
            },
            {
             childType: 'p',
@@ -184,7 +184,7 @@ export const SodiumCarbonateText = [
   ]
 
   },
-  {id: 64, allContent: [,
+  {id: 64, allContent: [
     
     {
       type: 'written-response',                

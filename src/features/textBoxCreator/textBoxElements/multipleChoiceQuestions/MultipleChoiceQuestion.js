@@ -36,7 +36,7 @@ const MultipleChoiceQuestion = (props) => {
     //creates and dispatches an object in which to store data for individual multiple choice questions
     useEffect(() => {
       dispatch(createMCQObject({id: props.children.id}));        
-  }, [])
+  }, [dispatch, props.children.id])
     
     //define constant for MCQ entry in data file, including question text, options, formatting, feedback comments and which correct
     const MCQAllDetails = MCQData.find((entry) => entry.id === MCQId);
@@ -131,9 +131,26 @@ const MultipleChoiceQuestion = (props) => {
         <div>
            <h2>Check your understanding!</h2>
 
-           {/*Below renders multiple choice question */}
+           
+           {/*Below renders image if provided */}
 
            <div className="lead">{formatSubSuperScript(MCQAllDetails.question)}</div>
+           {MCQAllDetails.image ? 
+           <div style={{width: '40%', margin: 'auto'}}>
+            <img 
+            src={MCQAllDetails.image.src}
+            style={MCQAllDetails.image.style}
+            className={MCQAllDetails.image.className}
+            key={MCQAllDetails.image.key}
+            alt={MCQAllDetails.image.alt}
+            
+            ></img>
+            </div>
+           
+           : null}
+
+           {/*Below renders multiple choice question */}
+
             <form
             onSubmit={formSubmit}
             className="mt-3 pt-2 border-top border-3"

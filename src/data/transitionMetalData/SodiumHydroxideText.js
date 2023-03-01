@@ -198,7 +198,7 @@ export const SodiumHydroxideText = [
     }
    ]
   },
-  {id: 33, allContent: [,
+  {id: 33, allContent: [
     
     {
       type: 'written-response',                
@@ -369,7 +369,7 @@ export const SodiumHydroxideText = [
        {
           childType: 'img',
           //NEED TO SUBSTITUTE IN NEW IMAGE FOR THIS
-          childProps: {style: {margin: '10px 0px'}, className: "img-fluid", key: 36.31, src: "images/structures/equation excess hydroxide aluminium.png", alt: "diagrams showing transformation of octahedral aluminium hydroxide complex turning into tetrahedral aluminium tetrahydrate ion"},
+          childProps: {style: {margin: '10px 0px'}, className: "img-fluid", key: 36.31, src: "images/structures/equation excess hydroxide chromium.png", alt: "diagrams showing transformation of octahedral aluminium hydroxide complex turning into tetrahedral aluminium tetrahydrate ion"},
           childContent: null                           
        },
        {
@@ -407,10 +407,35 @@ export const SodiumHydroxideText = [
 
     {
       type: 'h2',
-      content: ['Insert OCR B content'],
+      content: ['Complex medicine'],
       doNotRender: ['AQA', 'Edexcel', 'OCRA'],
-      props: {key: 35.1}
-    },    
+      props: {key: 36.5, className: 'mb-3'}
+    },
+    {
+      type: 'div',
+      content: [
+        {
+          childType: 'img',
+          childProps: {style: {margin: '10px 0px'}, className: "img-fluid m-auto", key: 36.51, src: "images/structures/cisplatin.png", alt: "diagram showing the structure of the medicine cisplatin, showing two chloro ligands and two ammino ligands."},
+          childContent: null                           
+        }        
+      ],
+      doNotRender: ['AQA', 'Edexcel', 'OCRA'],
+      props: {key: 36.6, parent: 'true', style: {margin: 'auto', width: '40%'}}
+    },
+    {
+      type: 'div',
+      content: [
+        {
+          childType: 'p',
+          childProps: {key: 36.52},
+          childContent: 'The diagram shows a molecule of cisplatin, which is an example of a complex used in medicine. Cisplatin is commonly used to treat cancer. It works by binding to different sections of DNA strands, which makes it harder for the DNA to be replicated. This in turn makes cell division more difficult, which slows the growth of tumours.'
+       }
+      ],
+      doNotRender: ['AQA', 'Edexcel', 'OCRA'],
+      props: {key: 36.7, parent: 'true', className: 'mt-3'}
+
+    }
     ]
   },
   {id: 37, allContent: [
@@ -464,7 +489,7 @@ export const SodiumHydroxideText = [
          {
           childType: 'p',
           childProps: {key: 36.34, style: {display: 'inline'}},
-          childContent: ' to be added in excess for this change to happen.'
+          childContent: ' need to be added in excess for this change to happen.'
          },
          {
           childType: 'p',
@@ -497,7 +522,7 @@ export const SodiumHydroxideText = [
     }
   ]
   },
-  {id: 40, allContent: [,
+  {id: 40, allContent: [
     
     {
       type: 'written-response',                
@@ -582,7 +607,7 @@ export const SodiumHydroxideText = [
             equation: [
               'After addition of a few drops',
               'Cr<sup>3+</sup> + 3OH<sup>-</sup> &#8652; Cr(OH)<sub>3</sub>',
-              'Cr(H<sub>2</sub>O)<sub>6</sub> + 3OH<sup>-</sup> &#8652; Cr(OH)<sub>3</sub>(H<sub>2</sub>O)<sub>3</sub> + 3H<sub>2</sub>O',
+              '[Cr(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 3OH<sup>-</sup> &#8652; Cr(OH)<sub>3</sub>(H<sub>2</sub>O)<sub>3</sub> + 3H<sub>2</sub>O',
               'Once reagent added to excess',
               'Cr(OH)<sub>3</sub> + 3OH<sup>-</sup> &#8652; [Cr(OH)<sub>6</sub>]<sup>3-</sup>',
               'Cr(OH)<sub>3</sub>(H<sub>2</sub>O)<sub>3</sub> + 3OH<sup>-</sup> &#8652; [Cr(OH)<sub>6</sub>]<sup>3-</sup> + 3H<sub>2</sub>O'
@@ -596,7 +621,7 @@ export const SodiumHydroxideText = [
               'produces Cr(OH)<sub>3</sub> OR Cr(OH)<sub>3</sub>(H<sub>2</sub>O)<sub>3</sub>',
               'when excess reagent added, grey green precipitate dissolves',
               'producing a green solution',
-              'with formula Cr(OH)<sub>6</sub> OR [Cr(OH)<sub>6</sub>]<sup>3-</sup>'
+              'with formula [Cr(OH)<sub>6</sub>]<sup>3-</sup>'
             ]
           }
 

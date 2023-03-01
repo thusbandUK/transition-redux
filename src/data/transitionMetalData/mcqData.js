@@ -593,40 +593,108 @@ export const MCQData = [
     },
     {
         id: 48,
-        question: 'I AM A PLACEHOLDER FOR THE OCRB QUESTION TO BE WRITTEN',        
+        columns: 2,
+        question: 'Select the correct shape and bonding angle for cisplatin.',       
+        image: {className: "img-fluid m-auto mt-3", key: 48.1, src: "images/structures/cisplatin.png", alt: "diagram showing the structure of the medicine cisplatin, showing two chloro ligands and two ammino ligands."}, 
         //filter: 'true', 
-        correct: {id: 443},
-        options: [
+        correct: {id: 484},
+        options: [            
             {
-                id: 441,
-                optionNumber: 1,
-                optionText: '[Al(H<sub>2</sub>O)<sub>3</sub>(OH)<sub>3</sub>] + 3H<sub>3</sub>O<sup>+</sup> &#8652; [Al(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 3H<sub>2</sub>O',
-                feedback: 'Incorrect selection! Balanced equation uses H<sub>3</sub>O<sup>+</sup> longhand for acidic proton.',
-                //true: ['AQA', 'Edexcel', 'OCRA', 'OCRB']
+                id: 480,
+                optionNumber: 0,
+                hideCheckbox: 'true',
+                optionText: [
+                    {childType: 'p',
+                     childProps: {className: "col-md-5", style: {fontWeight: 'bold'}},
+                     childContent: 'Shape'
+                    },
+                    {childType: 'p',
+                     childProps: {className: "col-md-5", style: {fontWeight: 'bold'}},
+                     childContent: 'Bonding Angle / degrees'
+                    }
+                  ],
+                
+                //['[Co(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 4Cl<sup>-</sup> &#8652; [CoCl<sub>4</sub>]<sup>2-</sup> + 6H<sub>2</sub>O', 'blue solution to pink precipitate'],
+                feedback: 'Incorrect! Pink solution produces a blue solution.',
+                correct: false
                 
             },
             {
-                id: 442,
+                id: 481,
+                optionNumber: 1,
+                optionText: [
+                    {childType: 'p',
+                     childProps: {className: "col-md-5"},
+                     childContent: 'Tetrahedral'
+                    },
+                    {childType: 'p',
+                     childProps: {className: "col-md-5"},
+                     childContent: '109.5'
+                    }
+                  ],
+                
+                //['[Co(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 4Cl<sup>-</sup> &#8652; [CoCl<sub>4</sub>]<sup>2-</sup> + 6H<sub>2</sub>O', 'blue solution to pink precipitate'],
+                feedback: 'Incorrect! Bonding angle matches shape but the shape is wrong.',
+                correct: false
+                
+            },
+            {
+                id: 482,
                 optionNumber: 2,
-                optionText: 'Al(OH)<sub>3</sub> + NaOH  &#8652; Na[Al(OH)<sub>4</sub>]',
-                feedback: 'Incorrect selection! Question does not specify that equation should be ionic.',
-                //true: ['AQA', 'Edexcel', 'OCRA', 'OCRB']
+                optionText: [
+                    {childType: 'p',
+                     childProps: {className: "col-md-5"},
+                     childContent: 'Square planar'
+                    },
+                    {childType: 'p',
+                     childProps: {className: "col-md-5"},
+                     childContent: '109.5'
+                    }
+                  ],
+                
+                //['[Co(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 4Cl<sup>-</sup> &#8652; [CoCl<sub>4</sub>]<sup>2-</sup> + 6H<sub>2</sub>O', 'blue solution to pink precipitate'],
+                feedback: 'Incorrect! Wrong bonding angle for square planar shape.',
+                correct: false
+                
             },
             {
-                id: 443,
+                id: 483,
                 optionNumber: 3,
-                optionText: '[Al(H<sub>2</sub>O)<sub>3</sub>(OH)<sub>3</sub>] + 3H<sup>+</sup> &#8652; [Al(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> + 3H<sub>2</sub>O',
-                feedback: 'Correct! Although equation shows acid base reaction, it is not balanced; 3H<sub>2</sub>O should be omitted.',
-                //true: ['AQA', 'Edexcel', 'OCRA', 'OCRB']
+                optionText: [
+                    {childType: 'p',
+                     childProps: {className: "col-md-5"},
+                     childContent: 'Tetrahedral'
+                    },
+                    {childType: 'p',
+                     childProps: {className: "col-md-5"},
+                     childContent: '90'
+                    }
+                  ],
+                
+                //['[Co(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 4Cl<sup>-</sup> &#8652; [CoCl<sub>4</sub>]<sup>2-</sup> + 6H<sub>2</sub>O', 'blue solution to pink precipitate'],
+                feedback: 'Incorrect! Wrong bonding angle for tetrahedral shape.',
+                correct: false
+                
             },
             {
-                id: 444,
+                id: 484,
                 optionNumber: 4,
-                optionText: '[Al(H<sub>2</sub>O)<sub>3</sub>(OH)<sub>3</sub>] + OH<sup>&ndash;</sup> &#8652; [Al(OH)<sub>4</sub>]<sup>&ndash;</sup> + 3H<sub>2</sub>O',
-                feedback: 'Incorrect selection! Balanced ionic equation shows production of aluminium tetrahydrate ion.',
-                //true: ['AQA']
+                optionText: [
+                    {childType: 'p',
+                     childProps: {className: "col-md-5"},
+                     childContent: 'Square planar'
+                    },
+                    {childType: 'p',
+                     childProps: {className: "col-md-5"},
+                     childContent: '90'
+                    }
+                  ],
+                
+                //['[Co(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> + 4Cl<sup>-</sup> &#8652; [CoCl<sub>4</sub>]<sup>2-</sup> + 6H<sub>2</sub>O', 'blue solution to pink precipitate'],
+                feedback: 'Correct!',
+                correct: true
+                
             }
-            
         ]
         
     },
@@ -939,13 +1007,7 @@ export const MCQData = [
         columns: 2,
         question: 'A student investigates solutions of Fe<sup>3+</sup> ions and Fe<sup>2+</sup> ions with a pH probe. Which row correctly describes the details of the complex ion that produces the higher pH?',
         correct: {id: 561},
-        options: [
-            /*
-            {question: 1,correct: 'y',text: 'The less polar O—H bond is stronger, meaning fewer H<sup>+</sup> ions are released, so pH is higher.'},
-            {question: 2,correct: 'n',text: 'Lower charge density of metal ion exerts weaker attraction on nearby electrons, producing a less polar O—H bond.'},
-            {question: 3,correct: 'n',text: 'Higher charge density of metal ion exerts stronger attraction on nearby electrons, producing a more polar O—H bond.'},
-            {question: 4,correct: 'n',text: 'The more polar O—H bond is weaker, meaning more H<sup>+</sup> ions are released, which <em>reduces</em> pH.'}
-            */
+        options: [            
             {
                 id: 560,
                 optionNumber: 0,
