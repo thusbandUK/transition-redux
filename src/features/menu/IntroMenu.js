@@ -83,7 +83,7 @@ return (
                 key={reagent.id}
                >
                  <NavLink 
-                   to={reagent.path}
+                   to={`/home${reagent.path}`}
                    className="d-block text-decoration-none"
                    onClick={() => dispatch(selectReagent(reagent))}
                    

@@ -18,7 +18,8 @@ const RowOfTubes = () => {
   const {reactant} = useParams();
   const unreactedMetals = useSelector(state => state.rowOfTubes.unreactedMetals);
  
- 
+ console.log(reactant);
+
   //filters the available reactants in data.js to identify the ones used by the exam board and with the reagent in question
 
   const generateMetalReactantsSet = useCallback(() => {

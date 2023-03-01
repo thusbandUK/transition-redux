@@ -1,37 +1,18 @@
-import './App.css';
+import './app/App.css';
 import React from 'react';
 import { Outlet } from "react-router-dom";
 //import Menu from '../features/menu/Menu';
-import Header from '../components/headerAndFooter/header';
-import Home from '../routerHome.js';
-import { NavLink } from 'react-router-dom';
+import Header from './components/headerAndFooter/header';
 
 
-function App(props) {  
+
+function Home(props) {  
   
   return (
     
     <div className="App">
-      <p>Hello</p>
-      <NavLink 
-                   to={"/home/"}
-                   className="d-block text-decoration-none"
-                   
-                   
-                   >
-                     Take me home!
-                     
-                 </NavLink>
-      <Outlet />
-    </div>
-    
-  );
-}
-
-export default App;
-
-/*
-<Header />
+      
+      <Header />
       <section className="py-5">
         <div className="container">
           <div className="reagents-and-tubes">
@@ -45,4 +26,10 @@ export default App;
       <footer className="border-top py-5 overflow-hidden position-relative">        
         <div className="container">Copyright T Husband</div>
       </footer>
-      */
+    </div>
+    
+  );
+}
+
+export default Home;
+

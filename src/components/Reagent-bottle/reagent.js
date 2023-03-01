@@ -10,7 +10,7 @@ const ReagentBottle = (props) => {
       return (
           <div className="reagent-bottle-selection d-flex justify-content-center">
             <img className="reagent-bottle-image img-fluid " 
-            src={selectedReagentImage}
+            src={window.location.origin + `/${selectedReagentImage}`}
             alt={selectedReagent.altText}
             />
           </div>

@@ -1,6 +1,21 @@
 
 POINTS TO ADDRESS:
 
+0.1) new branch in github and save the recent redirectioning changes to the new branch
+0.10) consider how you want your branching to look before updating (nav)links(?) below, you'll want
+i) home page (where you'll introduce the header and footer sitch)
+ii) how many atoms in body
+iii) transition-metals
+0.11) find all image link references and add the thing referenced here: 
+https://stackoverflow.com/questions/37644265/correct-path-for-img-on-react-js (Dima G answer)
+for which make use of exemplar here: Components/ReagentBottle/reagent.js
+src={window.location.origin + `/${selectedReagentImage}`} 
+0.12) Go through all the menu functionality (reagents menu AND intro menu) to update the Navlinks as follows:
+(line 86 introMenu.js) to={`/home${reagent.path}`} 
+
+0.2) then come back to the main branch and build it (could use that surge thingy) and try altering the index.html file as per advice
+here: https://stackoverflow.com/questions/62867653/static-html-landing-pages-with-create-react-app (Dan Monego answer)
+
 
 0.5) In App.css revisit the hover horror show
 0.75) screen reader horror show, getting hydroxide read out as OH - ADD ARIA LABEL WITH O AND H SEPARATED?
