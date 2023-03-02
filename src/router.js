@@ -1,4 +1,5 @@
 import App from './app/App';
+import React from 'react';
 import {
     createBrowserRouter,    
     createRoutesFromElements,
@@ -16,7 +17,6 @@ import LandingPage from './routerLandingPage';
         
           <Route path="/" element={<LandingPage />} />
           <Route path="/home/" element={<Home />} />
-          
              <Route path="/home/introduction/" element={<Introduction />} />
              <Route path="/home/:reactant" element={<ReactionsContainer />} />
           <Route />
@@ -25,6 +25,4 @@ import LandingPage from './routerLandingPage';
     )
   );
 
-  export default router;
-
-  //<Route path="/home/" element={<Home />}></Route>        
+  export default router;  
