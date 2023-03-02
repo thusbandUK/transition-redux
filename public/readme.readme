@@ -1,7 +1,10 @@
 
 POINTS TO ADDRESS:
 
-
+0.1) delete build
+0.2) this: https://stackoverflow.com/questions/64468843/netlify-deployment-failed-during-stage-building-site-build-script-returned-n 
+(explains how to deploy to netlify)
+0.3) be aware that the readme list is different in each branch
 0.5) In App.css revisit the hover horror show
 0.75) screen reader horror show, getting hydroxide read out as OH - ADD ARIA LABEL WITH O AND H SEPARATED?
 0.8) EUCH!! so basics there's a disconnect between when the css thinks the textBox chevrons are disabled and when the javascript
