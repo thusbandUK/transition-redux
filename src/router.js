@@ -7,8 +7,9 @@ import {
   } from "react-router-dom";
 import ReactionsContainer from './components/reactionsContainer/reactionsContainer';
 import Introduction from './components/introduction/Introduction';
-import Home from './routerHome';
-import LandingPage from './routerLandingPage';
+import Home from './components/home/home';
+import LandingPage from './components/landingPage/landingPage';
+import NumberOfAtoms from './components/numberOfAtoms/numberOfAtoms';
 
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -17,8 +18,9 @@ import LandingPage from './routerLandingPage';
         
           <Route path="/" element={<LandingPage />} />
           <Route path="/home/" element={<Home />} />
-             <Route path="/home/introduction/" element={<Introduction />} />
-             <Route path="/home/:reactant" element={<ReactionsContainer />} />
+          <Route path="/number-of-atoms/" element={<NumberOfAtoms />} />
+          <Route path="/transition-metals/introduction/" element={<Introduction />} />             
+             <Route path="/transition-metals/:reactant" element={<ReactionsContainer />} />
           <Route />
           
       </Route>

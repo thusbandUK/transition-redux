@@ -3,7 +3,7 @@ import React from 'react';
 import { Outlet } from "react-router-dom";
 //import Menu from '../features/menu/Menu';
 import Header from '../components/headerAndFooter/header';
-import Home from '../routerHome.js';
+import Home from '../components/home/home.js';
 import { NavLink } from 'react-router-dom';
 import { useParams, useLocation } from 'react-router-dom';
 
@@ -23,9 +23,45 @@ function App(props) {
       <Outlet />
       </div>
       :
-      null
+      <div>
+    <Header />
+    <section className="py-5">
+      <div className="container">
+        <div className="reagents-and-tubes">
+        
+        </div>          
+        <Outlet />
+         
+      </div>
+    </section>
+    
+    <footer className="border-top py-5 overflow-hidden position-relative">  
+      <div id="pseudo-footer">
+
+      </div>      
+      <div id="footer-nav" className="d-flex position-absolute">
+        <div className="container">Copyright T Husband</div>
+        <NavLink 
+          to={"/home/"}
+          className="d-block text-decoration-none"                   
+        >
+          Take me home!                     
+        </NavLink>
+      </div>
+    </footer>
+    </div>
     }
-    {(pathName.includes('home')) ?
+    
+    </div>
+    
+  );
+}
+
+export default App;
+
+/*
+
+{(pathName.includes('home')) ?
     <div>
     <Header />
     <section className="py-5">
@@ -46,14 +82,8 @@ function App(props) {
     null
   
   }
-    </div>
-    
-  );
-}
 
-export default App;
 
-/*
 <p>Hello</p>
       <NavLink 
                    to={"/home/"}

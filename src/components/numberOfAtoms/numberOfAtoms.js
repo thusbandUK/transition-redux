@@ -1,19 +1,29 @@
-import './app/App.css';
+import '../../app/App.css';
 import React from 'react';
 import { Outlet } from "react-router-dom";
 //import Menu from '../features/menu/Menu';
-import Header from './components/headerAndFooter/header';
-import ReactionsContainer from './components/reactionsContainer/reactionsContainer';
-import Introduction from './components/introduction/Introduction';
+import Header from '../headerAndFooter/header';
+import ReactionsContainer from '../reactionsContainer/reactionsContainer';
+import Introduction from '../introduction/Introduction';
 
 
-function Home(props) {  
+function NumberOfAtoms(props) {  
   
   return (
     
     <div className="App">
+        <p>Hello I'm number of atoms page</p>
       
-      <Header />
+      
+    </div>
+    
+  );
+}
+
+export default NumberOfAtoms;
+
+/*
+<Header />
       <section className="py-5">
         <div className="container">
           <div className="reagents-and-tubes">
@@ -28,10 +38,4 @@ function Home(props) {
       <footer className="border-top py-5 overflow-hidden position-relative">        
         <div className="container">Copyright T Husband</div>
       </footer>
-    </div>
-    
-  );
-}
-
-export default Home;
-
+*/

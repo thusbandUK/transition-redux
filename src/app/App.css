@@ -44,7 +44,10 @@ a:hover {
 
 /* Header and footer */
 header::before,
-footer::before {
+/*footer::before */
+#pseudo-footer::before
+
+{
   content: '';
   width: 100%;
   height: 1000px;
