@@ -97,6 +97,13 @@ h1 {
   border-left: 1px solid var(--greyLight);
 }
 
+/*landing page carousel image*/
+
+.carousel-item img {
+  width: 100% !important;
+  height: auto !important;
+}
+
 /*Excess or reset button (this prevents buttons that wrap test images from changing colour when clicked*/
 
 .excess-or-reset-button-container button {
@@ -159,6 +166,21 @@ h1 {
 
 .border-top {
   border-color: var(--primary) !important;
+}
+
+@media screen and (orientation: portrait){
+  .carousel-item img {
+    width: auto !important;
+    height: 100% !important;
+  }
+}
+
+@media screen and (min-width: 586px) and (max-width: 880px){
+  .carousel-item img {
+    width: auto !important;
+    height: 100% !important;
+  }
+
 }
 
 

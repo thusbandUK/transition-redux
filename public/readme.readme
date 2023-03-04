@@ -1,7 +1,8 @@
 
 POINTS TO ADDRESS:
 
-0.1) new branch in github and save the recent redirectioning changes to the new branch
+0.05) parallax:
+you should have strips (black, containing white text) pass over the top of the images
 0.10) consider how you want your branching to look before updating (nav)links(?) below, you'll want
 i) home page (where you'll introduce the header and footer sitch)
 ii) how many atoms in body
@@ -10,8 +11,9 @@ iii) transition-metals
 https://stackoverflow.com/questions/37644265/correct-path-for-img-on-react-js (Dima G answer)
 for which make use of exemplar here: Components/ReagentBottle/reagent.js
 src={window.location.origin + `/${selectedReagentImage}`} 
-0.12) Go through all the menu functionality (reagents menu AND intro menu) to update the Navlinks as follows:
-(line 86 introMenu.js) to={`/home${reagent.path}`} 
+0.12) Okay, with the image links, this is going to be difficult because of the content-complication logic (textBoxCreator), I 
+think you need to make a component which renders images, so that you can splice in the windows.location(?) code 
+and that of course will mean tweaking some of the other content-compilation logic, eg: when parent containers render children, etc.
 
 0.2) then come back to the main branch and build it (could use that surge thingy) and try altering the index.html file as per advice
 here: https://stackoverflow.com/questions/62867653/static-html-landing-pages-with-create-react-app (Dan Monego answer)

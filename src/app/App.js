@@ -19,7 +19,7 @@ function App(props) {
     
     <div className="App">
       {(pathName === '/') ? 
-      <div>
+      <div className="landing-wrapper">
       <Outlet />
       </div>
       :
