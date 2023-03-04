@@ -1,12 +1,7 @@
 
 POINTS TO ADDRESS:
 
-0.05) parallax:
-you should have strips (black, containing white text) pass over the top of the images
-0.10) consider how you want your branching to look before updating (nav)links(?) below, you'll want
-i) home page (where you'll introduce the header and footer sitch)
-ii) how many atoms in body
-iii) transition-metals
+0.9) introductory text and style links
 0.11) find all image link references and add the thing referenced here: 
 https://stackoverflow.com/questions/37644265/correct-path-for-img-on-react-js (Dima G answer)
 for which make use of exemplar here: Components/ReagentBottle/reagent.js

@@ -9,7 +9,7 @@ import ReactionsContainer from './components/reactionsContainer/reactionsContain
 import Introduction from './components/introduction/Introduction';
 import Home from './components/home/home';
 import LandingPage from './components/landingPage/landingPage';
-import NumberOfAtoms from './components/numberOfAtoms/numberOfAtoms';
+import NumberOfAtoms from './features/numberOfAtoms/numberOfAtoms';
 
   const router = createBrowserRouter(
     createRoutesFromElements(

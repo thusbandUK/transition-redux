@@ -5,6 +5,7 @@ import multipleChoiceQuestionReducer from '../features/textBoxCreator/textBoxEle
 import textBoxCreatorReducer from '../features/textBoxCreator/textBoxCreatorSlice';
 import rowOfTubesReducer from '../features/rowOfTestTubes/rowOfTestTubesSlice';
 import observationFormReducer from '../features/observations/observationFormSlice';
+import numberOfAtomsReducer from '../features/numberOfAtoms/numberOfAtomsSlice';
 import { reHydrateStore, localStorageMiddleware } from '../features/examBoards/examBoardMiddleware';
 
 
@@ -15,7 +16,8 @@ export default configureStore({
         rowOfTubes: rowOfTubesReducer,
         textBoxCreator: textBoxCreatorReducer,
         multipleChoiceQuestion: multipleChoiceQuestionReducer,
-        observationForm: observationFormReducer
+        observationForm: observationFormReducer,
+        numberOfAtoms: numberOfAtomsReducer
     },
     preloadedState: reHydrateStore(),
     middleware: getDefaultMiddleware =>
