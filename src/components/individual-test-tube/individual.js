@@ -19,7 +19,7 @@ const IndividualTube = (props) => {
       dispatch(incrementObservationStage({metal: metal, newObservationStage: observationStage + 1}))      
     }
     
-   //style={{height: '30%'}}
+   
     return (      
       <div className="col-md-2 d-flex flex-column container p-0 m-0" style={{height: '400px'}}> 
       <p className='text-center'>{props.metal.metal}</p>
@@ -34,19 +34,22 @@ const IndividualTube = (props) => {
         
         >
           {/* mx-auto */}
-          <img src={"images/test tube outline.png"} className="position-absolute top-0 translate-middle-x" alt=""/>
+          
+          <img src={window.location.origin  + "/images/test tube outline.png"} className="position-absolute top-0 translate-middle-x" alt=""/>
           <img className="position-absolute top-0 translate-middle-x"
-          src={props.metal.link}                 
+          src={window.location.origin + `${props.metal.link}`}                 
           style={props.metal.opaque? null : {opacity: 0.5}}
           alt={props.product.link ? '' : props.metal.altText } 
                 
           />
-          {props.product ? <img 
+          
+          <img 
           className="position-absolute top-0 translate-middle-x" 
-          src={props.product.link}
-          style={props.product.opaque? null : {opacity: 0.5}}           
+          src={!props.product.link ? "/images/test tube outline.png" : `${window.location.origin}/${props.product.link}`}
+          style={{visibility: props.product ? 'visible' : 'hidden', opacity: props.product.opaque ? null : '0.5'}}                     
           alt={props.product.altText}
-          /> : null }
+          />
+          
         </button>
         <div className="container-non-bootstrap">
        <ObservationForm

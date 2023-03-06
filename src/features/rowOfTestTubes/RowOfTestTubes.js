@@ -54,7 +54,8 @@ const products = useSelector(state => state.rowOfTubes.unreactedMetals);
 
   const rowOfTubesStyling = {
     width: "100%",
-    backgroundImage: `url("images/laboratory-background.png")`,
+    backgroundImage: `url("${window.location.origin}/images/laboratory-background.png")`,
+    //backgroundImage: `${window.location.origin}/images/laboratory-background.png`,
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
