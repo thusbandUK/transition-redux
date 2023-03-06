@@ -14,6 +14,10 @@ export const numberOfAtomsSlice = createSlice({
         },
         submitMass: (state,action) => {
             state.submittedMass = action.payload;
+        },
+        resetMassValuesInState: (state) => {
+          state.mass = 0;
+          state.submittedMass = 0;
         }
       /*selectReactantsToObserve: (state, action) => {        
         state.reactantsToObserve = {}
@@ -46,7 +50,8 @@ export const numberOfAtomsSlice = createSlice({
 
   export const {    
     inputMass,
-    submitMass
+    submitMass,
+    resetMassValuesInState
     /*selectReactantsToObserve,
     inputInitialObservation,
     inputFinalObservation,
