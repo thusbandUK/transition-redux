@@ -30,7 +30,7 @@ export const SodiumCarbonateText = [
         content: [
           {
               childType: 'img',
-              childProps: {style: {margin: '10px 0px'}, className: "img-fluid", key: 59.21, src: "images/comparison carbonate and hydroxide ppts.png", alt: "diagrams showing different observations for the additions of sodium hydroxide and sodium carbonate"},
+              childProps: {style: {margin: '10px 0px'}, className: "img-fluid", key: 59.21, src: `${window.location.origin}/images/comparison carbonate and hydroxide ppts.png`, alt: "diagrams showing different observations for the additions of sodium hydroxide and sodium carbonate"},
               childContent: null                           
            }
         ],
@@ -141,7 +141,7 @@ export const SodiumCarbonateText = [
       content: [
         {
             childType: 'img',
-            childProps: {style: {margin: '10px 0px'}, className: "img-fluid", key: 59.21, src: "images/structures/acidity FeII vs FeIII.png", alt: "diagrams showing hexaaquairon(II) and hexaaquairon(III). The Fe3+ ion is smaller than the Fe2+ ion and the O-H bonds are more polar in the iron (III) complex."},
+            childProps: {style: {margin: '10px 0px'}, className: "img-fluid", key: 59.21, src: `${window.location.origin}/images/structures/acidity FeII vs FeIII.png`, alt: "diagrams showing hexaaquairon(II) and hexaaquairon(III). The Fe3+ ion is smaller than the Fe2+ ion and the O-H bonds are more polar in the iron (III) complex."},
             childContent: null                           
          }
       ],

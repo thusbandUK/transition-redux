@@ -79,7 +79,7 @@ export const SodiumHydroxideText = [
       {
         type: 'img',
         content: null,
-        props: {key: 30.2, src: "images/structures/hydrolysis mechanism.png", alt: "an equation showing the octahedral complex hexaaquacopper reacting with two hydroxide ions, so that two of the aqua ligands lose protons to become hydroxide ions and the original hydroxide ions become water molecules", className: 'img-fluid'}
+        props: {key: 30.2, src: `${window.location.origin}/images/structures/hydrolysis mechanism.png`, alt: "an equation showing the octahedral complex hexaaquacopper reacting with two hydroxide ions, so that two of the aqua ligands lose protons to become hydroxide ions and the original hydroxide ions become water molecules", className: 'img-fluid'}
       },
       {
           type: 'p',  
@@ -321,7 +321,7 @@ export const SodiumHydroxideText = [
       content: [
          {
             childType: 'img',
-            childProps: {style: {margin: '10px 0px'}, className: "img-fluid", key: 36.21, src: "images/structures/equation excess hydroxide aluminium.png", alt: "diagrams showing transformation of octahedral aluminium hydroxide complex turning into tetrahedral aluminium tetrahydrate ion"},
+            childProps: {style: {margin: '10px 0px'}, className: "img-fluid", key: 36.21, src: `${window.location.origin}/images/structures/equation excess hydroxide aluminium.png`, alt: "diagrams showing transformation of octahedral aluminium hydroxide complex turning into tetrahedral aluminium tetrahydrate ion"},
             childContent: null                           
          },
          {
@@ -369,7 +369,7 @@ export const SodiumHydroxideText = [
        {
           childType: 'img',
           //NEED TO SUBSTITUTE IN NEW IMAGE FOR THIS
-          childProps: {style: {margin: '10px 0px'}, className: "img-fluid", key: 36.31, src: "images/structures/equation excess hydroxide chromium.png", alt: "diagrams showing transformation of octahedral aluminium hydroxide complex turning into tetrahedral aluminium tetrahydrate ion"},
+          childProps: {style: {margin: '10px 0px'}, className: "img-fluid", key: 36.31, src: `${window.location.origin}/images/structures/equation excess hydroxide chromium.png`, alt: "diagrams showing transformation of octahedral aluminium hydroxide complex turning into tetrahedral aluminium tetrahydrate ion"},
           childContent: null                           
        },
        {
@@ -416,7 +416,7 @@ export const SodiumHydroxideText = [
       content: [
         {
           childType: 'img',
-          childProps: {style: {margin: '10px 0px'}, className: "img-fluid m-auto", key: 36.51, src: "images/structures/cisplatin.png", alt: "diagram showing the structure of the medicine cisplatin, showing two chloro ligands and two ammino ligands."},
+          childProps: {style: {margin: '10px 0px'}, className: "img-fluid m-auto", key: 36.51, src: `${window.location.origin}/images/structures/cisplatin.png`, alt: "diagram showing the structure of the medicine cisplatin, showing two chloro ligands and two ammino ligands."},
           childContent: null                           
         }        
       ],
