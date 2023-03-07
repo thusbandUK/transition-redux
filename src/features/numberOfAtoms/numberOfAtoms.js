@@ -39,8 +39,11 @@ const numberOfAtoms = atomCalculator._atomsPerElement;
 let key = 0;
   return (
     
-    <div className="App">      
-        <p className="fs-3">Enter your mass in kilograms to obtain a research-based<sup>1</sup> estimate of the number of atoms of each element your body contains.</p>
+    <div className="App">    
+        <p className="fs-5">Have you ever wondered what elements your body contains? There are some surprising results! Scientific analysis<sup>1</sup>  
+         has found that the human body may contain the poison arsenic, the radioactive element uranium and even the precious metal gold. On this page
+          you can get an estimate of the number of atoms of each element in your body. Simply enter your mass in kilograms and click
+           submit.</p>
         {/*https://en.wikipedia.org/wiki/Composition_of_the_human_body */}
         <div id="landing">
         <div id="user-details" className="landing">

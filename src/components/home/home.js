@@ -12,26 +12,34 @@ function Home(props) {
   
   return (
     
-    <div className="App">
+    <div className="App home">
+      <p className="fs-4">Welcome to Now Chemistry! On this site you can find out the number of atoms of each element in your body 
+      or learn about the reactions of complex ions. More content will be added all the time so come back soon!</p>
+
+      <div className="row w-100 mx-0 d-flex justify-content-between">
+        <button className="btn col-md-4 bg-light p-5 m-5 rounded-3 btn-outline-primary" >
                 <NavLink 
                    to={"/number-of-atoms/"}
-                   className="d-block text-decoration-none"
+                   className="d-block text-decoration-none fs-5"
                    
                    
                    >
-                     Take me to the number of atoms!
+                     Number of Atoms Calculator
                      
                  </NavLink>
+                 </button>
+                 <button className="btn col-md-4 bg-light p-5 m-5 rounded-3 btn-outline-primary">
                  <NavLink 
                    to={"/transition-metals/introduction/"}
-                   className="d-block text-decoration-none"
+                   className="d-block text-decoration-none fs-5"
                    
                    
                    >
-                     Take me to the transition metals!
+                     Reactions of Complex Ions
                      
                  </NavLink>
-      
+                 </button>
+                 </div>
       
     </div>
     

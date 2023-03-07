@@ -41,15 +41,85 @@ function App(props) {
       <div id="pseudo-footer">
 
       </div>      
-      <div id="footer-nav" className="d-flex position-absolute">
-        <div className="container">Copyright T Husband</div>
-        <NavLink 
-          to={"/home/"}
-          className="d-block text-decoration-none"                   
-        >
-          Take me home!                     
-        </NavLink>
-      </div>
+      <nav class="navbar sticky-top navbar-expand-lg container">
+      
+      <div class="container-fluid " id="navbar-container">        
+        
+          
+          <div className="navbar-brand text-wrap fs-5">Copyright T Husband</div>
+          
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">                  
+                  <NavLink 
+                    to={"/home/"}
+                    className="nav-link text-decoration-none ms-lg-5 fs-5"                   
+                  >
+                    Home                     
+                  </NavLink>
+                </li>
+                <li class="nav-item">                  
+                  <NavLink 
+                    to={"/home/"}
+                    className="nav-link text-decoration-none ms-lg-5 fs-5"                   
+                  >
+                    Privacy                     
+                  </NavLink>
+                </li>
+                <li class="nav-item">                  
+                  <NavLink 
+                    to={"/home/"}
+                    className="nav-link text-decoration-none ms-lg-5 fs-5"                   
+                  >
+                    Cookies                     
+                  </NavLink>
+                </li>                
+            </ul>            
+          </div>          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          </div>        
+      </nav>
+      {/*
+<div class="logo-heading">
+            <p >Logo</p>
+          </div> 
+
+      <nav id="footer-nav" className="navbar px-4 pt-3 position-absolute top-50 start-50 translate-middle">
+      <div class="container-fluid">
+        <div className="navbar-brand text-wrap fs-5">Copyright T Husband</div>
+        <ul class="navbar-nav d-flex flex-md-row justify-content-md-around flex-grow-1 pe-3">
+                <li class="nav-item">                  
+                  <NavLink 
+                    to={"/home/"}
+                    className="nav-link text-decoration-none ms-5 fs-5"                   
+                  >
+                    Home                     
+                  </NavLink>
+                </li>
+                <li class="nav-item">                  
+                  <NavLink 
+                    to={"/home/"}
+                    className="nav-link text-decoration-none ms-5 fs-5"                   
+                  >
+                    Privacy                     
+                  </NavLink>
+                </li>
+                <li class="nav-item">                  
+                  <NavLink 
+                    to={"/home/"}
+                    className="nav-link text-decoration-none ms-5 fs-5"                   
+                  >
+                    Cookies                     
+                  </NavLink>
+                </li>                
+              </ul>
+        
+        
+        </div>
+      </nav>
+  */}
     </footer>
     </div>
     }

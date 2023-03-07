@@ -34,9 +34,9 @@ const Introduction = () => {
     return (
         <div >
             <p className="fs-5">
-                This page features interactive simulations of all the reactions of transition metal ions specified in the AQA A-level
-                chemistry syllabus. Click the test tubes to add the specified amounts of each reagent. There are also questions to help you commit
-                all of the information to memory.
+                This page features interactive simulations of all the reactions of complex ions specified in the AQA, Edexcel, OCR A and OCR B 
+                A-level chemistry syllabi. Click the test tubes to add the specified amounts of each reagent. There are also questions to help 
+                you commit all of the information to memory.
             </p>
             
             
