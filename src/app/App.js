@@ -7,6 +7,7 @@ import Home from '../components/home/home.js';
 import { NavLink } from 'react-router-dom';
 import { useParams, useLocation } from 'react-router-dom';
 import usePageTracking from './usePageTracking';
+import CookieConsent, { Cookies, getCookieConsentValue } from "react-cookie-consent";
 
 
 function App(props) {  
@@ -14,11 +15,45 @@ function App(props) {
   //console.log(useParams());
   //const {currentUrl} = useParams();
   const pathName = useLocation().pathname;
-  console.log(pathName);
-  
+  //console.log(pathName);
+  //alert(getCookieConsentValue());
+/*
+      const consentGiven = () => {
+        if (!getCookieConsentValue()){
+          return 'denied';
+        } else {
+          return 'granted';
+        }
+      }
+
+      window.gtag('consent', 'default', {
+        analytics_storage: consentGiven()        
+        });
+        console.log(consentGiven());
+    /**/
+
+
+
   return (
     
     <div className="App">
+      <CookieConsent
+      enableDeclineButton
+      onDecline={() => {
+        window.gtag('consent', 'update', {
+          analytics_storage: 'denied'        
+          });
+          console.log('permission denied');
+      }}
+      onAccept={() => {
+        window.gtag('consent', 'update', {
+          analytics_storage: 'granted'        
+          });
+          console.log('permission granted');
+      }}
+      >This website uses cookies to enhance the user experience.</CookieConsent>
+      
+
       {(pathName === '/') ? 
       <div className="landing-wrapper">
       <Outlet />
@@ -42,16 +77,16 @@ function App(props) {
       <div id="pseudo-footer">
 
       </div>      
-      <nav class="navbar sticky-top navbar-expand-lg container">
+      <nav className="navbar sticky-top navbar-expand-lg container">
       
-      <div class="container-fluid " id="navbar-container">        
+      <div className="container-fluid " id="navbar-container">        
         
           
           <div className="navbar-brand text-wrap fs-5">Copyright T Husband</div>
           
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">                  
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">                  
                   <NavLink 
                     to={"/home/"}
                     className="nav-link text-decoration-none ms-lg-5 fs-5"                   
@@ -59,7 +94,7 @@ function App(props) {
                     Home                     
                   </NavLink>
                 </li>
-                <li class="nav-item">                  
+                <li className="nav-item">                  
                   <NavLink 
                     to={"/home/"}
                     className="nav-link text-decoration-none ms-lg-5 fs-5"                   
@@ -67,7 +102,7 @@ function App(props) {
                     Privacy                     
                   </NavLink>
                 </li>
-                <li class="nav-item">                  
+                <li className="nav-item">                  
                   <NavLink 
                     to={"/home/"}
                     className="nav-link text-decoration-none ms-lg-5 fs-5"                   
@@ -77,8 +112,8 @@ function App(props) {
                 </li>                
             </ul>            
           </div>          
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
           </button>
           </div>        
       </nav>
