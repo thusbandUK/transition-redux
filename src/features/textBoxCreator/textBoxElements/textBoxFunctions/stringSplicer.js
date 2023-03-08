@@ -1,4 +1,4 @@
-import filterByExamBoard from "./filterByExamBoard";
+//import filterByExamBoard from "./filterByExamBoard";
 
 const stringSplicer = (object, examBoard) => {
     

@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import '../../app/App.css';
 import ObservationForm from '../../features/observations/ObservationForm';
 import { incrementObservationStage } from '../../features/rowOfTestTubes/rowOfTestTubesSlice';
-import RevealElement from '../revealElement/RevealElement';
+//import RevealElement from '../revealElement/RevealElement';
 
 const IndividualTube = (props) => { 
   

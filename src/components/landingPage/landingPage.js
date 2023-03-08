@@ -3,8 +3,8 @@ import '../../app/App.css';
 //import * as containerStyles from './landingPage.module.css';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Parallax } from 'react-scroll-parallax';
-import { ParallaxBanner } from 'react-scroll-parallax';
+//import { Parallax } from 'react-scroll-parallax';
+//import { ParallaxBanner } from 'react-scroll-parallax';
 import { useParallax } from 'react-scroll-parallax';
 
 
@@ -13,7 +13,7 @@ import { useParallax } from 'react-scroll-parallax';
 
 
 function LandingPage(props) {  
-
+/*
   const siteWrapperStyle = {
     backgroundImage: "url('images/landing/red-and-yellow-model-tetrahedral-lattice.jpg')",
     backgroundSize: 'cover',
@@ -33,12 +33,12 @@ const blackDiv = {
     backgroundColor: 'black',
     color: 'white'
 }
-
+*/
 const inheritSize = {
   height: 'inherit',
   width: 'inherit'
 }
-
+/*
 const imgSize = {
   width: '100%',
   height: 'auto'
@@ -47,7 +47,8 @@ const imgSize = {
 const parallaxRotate = useParallax<HTMLDivElement>({
     rotateY: [0, 360],
   });
-
+*/
+/*
   const matchOrientation = () => {
     if (window.matchMedia("(orientation: portrait)")){
       return {
@@ -61,7 +62,8 @@ const parallaxRotate = useParallax<HTMLDivElement>({
       };
     }
   }
-  
+  */
+ /*
 const portraitStyle = {
   width: 'auto',
   height: '100%'
@@ -71,7 +73,7 @@ const landscapeStyle = {
   width: '100%',
   height: 'auto'
 }
-
+*/
 const navBarStyling = {
   background: 'rgba(255,255,255,0.7)',  
   borderRadius: '0.25rem',

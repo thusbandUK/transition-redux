@@ -28,7 +28,7 @@ const WrittenResponse = (props) => {
     //this generates the skeleton of an object to add to the writtenResponses section of the store
 
     const prepareStorageObject = () => {
-        let newObject = {id: props.id, questions: {}};
+        //let newObject = {id: props.id, questions: {}};
         let newerObject = {id: props.id, questions: {}};
         arrayOfQuestionsToRender.forEach((questionDetails) => {
             newerObject.questions = {...newerObject.questions, [questionDetails.questionReference]: {id: questionDetails.id, input: "", logged: ""}};
@@ -43,7 +43,7 @@ const WrittenResponse = (props) => {
     useEffect(() => {
         const objectToSend = prepareStorageObject();        
         dispatch(createWrittenResponseSection(objectToSend));        
-    }, [])
+    }, [dispatch, prepareStorageObject])
     
 
     //this takes any text that has been inputted into the text boxes and files them in the input sections of the relevant object in the 

@@ -1,10 +1,10 @@
 import '../../app/App.css';
 import React from 'react';
-import { Outlet } from "react-router-dom";
+//import { Outlet } from "react-router-dom";
 //import Menu from '../features/menu/Menu';
-import Header from '../headerAndFooter/header';
-import ReactionsContainer from '../reactionsContainer/reactionsContainer';
-import Introduction from '../introduction/Introduction';
+//import Header from '../headerAndFooter/header';
+//import ReactionsContainer from '../reactionsContainer/reactionsContainer';
+//import Introduction from '../introduction/Introduction';
 import { NavLink } from 'react-router-dom';
 
 
@@ -47,21 +47,3 @@ function Home(props) {
 }
 
 export default Home;
-
-/*
-<Header />
-      <section className="py-5">
-        <div className="container">
-          <div className="reagents-and-tubes">
-          
-          </div>        
-            
-          
-           
-        </div>
-      </section>
-      
-      <footer className="border-top py-5 overflow-hidden position-relative">        
-        <div className="container">Copyright T Husband</div>
-      </footer>
-*/

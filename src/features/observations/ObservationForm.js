@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { inputInitialObservation, inputFinalObservation, logInitialObservation, logFinalObservation, completeObservation } from './observationFormSlice';
+import { inputInitialObservation, logInitialObservation, completeObservation } from './observationFormSlice';
 import '../../app/App.css';
 import { incrementObservationStage } from '../../features/rowOfTestTubes/rowOfTestTubesSlice';
 import ExcessButton from '../../components/excessButton/excessButton';

@@ -10,7 +10,7 @@ or two columns worth of code to generate children
 
 */
 
-import filterByExamBoard from "../textBoxFunctions/filterByExamBoard";
+//import filterByExamBoard from "../textBoxFunctions/filterByExamBoard";
 import formatSubSuperScript from "../textBoxFunctions/formatSubSuperScript";
 import { createElement } from 'react';
 

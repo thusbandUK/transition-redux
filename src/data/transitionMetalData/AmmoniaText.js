@@ -1,4 +1,4 @@
-import sectionFinish from "./genericContent/sectionFinish";
+//import sectionFinish from "./genericContent/sectionFinish";
 
 export const AmmoniaText = [   
     {
@@ -100,7 +100,7 @@ export const AmmoniaText = [
     }
    ]
   },
-  {id: 47, allContent: [,
+  {id: 47, allContent: [
     
     {
       type: 'written-response',                
@@ -332,7 +332,7 @@ export const AmmoniaText = [
   ]
 
   },
-  {id: 55, allContent: [,
+  {id: 55, allContent: [
     
     {
       type: 'written-response',                

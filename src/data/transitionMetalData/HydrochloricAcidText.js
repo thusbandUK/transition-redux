@@ -163,7 +163,7 @@ export const HydrochloricAcidText = [
   }, 
     ]
   },
-  {id: 24, allContent: [,
+  {id: 24, allContent: [
     
     {
       type: 'mcq',                
@@ -176,7 +176,7 @@ export const HydrochloricAcidText = [
 //copying from here....
 
 
-  {id: 25, allContent: [,
+  {id: 25, allContent: [
     
     {
       type: 'written-response',                

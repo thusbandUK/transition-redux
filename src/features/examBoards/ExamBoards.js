@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectExamBoard } from './examBoardsSlice';
 import'../../app/App.css';
@@ -7,7 +7,7 @@ import { data } from '../../data';
 
 export function ExamBoards() {    
     const dispatch = useDispatch()
-    const examBoard = useSelector(state => state.examBoard.selectedExamBoard);
+    //const examBoard = useSelector(state => state.examBoard.selectedExamBoard);
 /*
     useEffect(() => {
         alert('useEffect called');

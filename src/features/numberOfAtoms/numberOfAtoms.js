@@ -20,7 +20,7 @@ useEffect(() => {
   dispatch(resetMassValuesInState());
   
 
-}, []);
+}, [dispatch]);
 
 const submitMassToState = () => {
   

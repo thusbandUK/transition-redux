@@ -20,7 +20,7 @@ const Introduction = () => {
         dispatch(selectSection('introPage'));
 
 
-    }, []);
+    }, [dispatch]);
 
     /*
     useEffect(() => {

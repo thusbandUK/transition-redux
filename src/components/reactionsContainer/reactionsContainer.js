@@ -6,7 +6,7 @@ import ResetButton from '../../components/resetButton/resetButton';
 //import Menu from '../../features/menu/Menu';
 import ReactantMenu from '../../features/menu/ReactantMenu';
 import TextBoxCreator from '../../features/textBoxCreator/TextBoxCreator';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const ReactionsContainer = () => {
     
@@ -16,7 +16,8 @@ const handleReset = (props) => {
   props.handleReset();
 
 }
-
+// DON'T PERMANENTLY DELETE THIS, IT'S THE CODE TO MAKE THE TEXT BOX RENDER ONLY ON COMPLETION OF THE OBSERVATIONS
+/*
 const textBoxRender = () => {
   let newArray = Object.values(observations);
   //if the observations section has not yet been compiled, the below returns false
@@ -29,7 +30,7 @@ const textBoxRender = () => {
   return allObservationsComplete;
   
 }
-
+*/
     return (
       <div>
       <div className="container-fluid border d-flex p-4 rounded position-relative mb-4 row" style={{marginLeft: '0px', marginRight: '0px'}}>

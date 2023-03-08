@@ -21,7 +21,7 @@ const Comparison = (props) => {
 
     useEffect(() => {
         dispatch(createComparisonSection({id: props.id}));        
-    }, [])
+    }, [dispatch, props.id])
     
 
     const similaritiesToState = (event) => {        

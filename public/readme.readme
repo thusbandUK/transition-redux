@@ -1,14 +1,29 @@
 
 POINTS TO ADDRESS:
 
-0.9) introductory text and style links
-0.11) find all image link references and add the thing referenced here: 
-https://stackoverflow.com/questions/37644265/correct-path-for-img-on-react-js (Dima G answer)
-for which make use of exemplar here: Components/ReagentBottle/reagent.js
-src={window.location.origin + `/${selectedReagentImage}`} 
-0.12) Okay, with the image links, this is going to be difficult because of the content-complication logic (textBoxCreator), I 
-think you need to make a component which renders images, so that you can splice in the windows.location(?) code 
-and that of course will mean tweaking some of the other content-compilation logic, eg: when parent containers render children, etc.
+0.01) Oof!
+reduxbeacon: https://rangle.gitbook.io/redux-beacon/ 
+You need to write a thunk that console.logs something to confirm that thunk is included by default w configureStore / getDefaultMiddleware
+which seems to be the case (see: https://redux-toolkit.js.org/api/configureStore#full-example)
+
+this: https://github.com/reduxjs/redux-toolkit/issues/552 
+seems to suggest that you can concat two different middlewares like so: concat(middleware1, middleware2) so I think we've got this!
+
+i) import redux beacon 
+ii) use: https://rangle.gitbook.io/redux-beacon/examples-and-recipes#how-to-track-pageviews-in-a-react-redux-app to add 
+a pageTracking function 
+iii) do the double concat SITCH
+iv) maybe stick a console log in somewhere
+v) I wonder if the best thing is to point nowchemistry.com to the deployed site *first* and then configure the beacon middleware
+
+
+0.1) add google analytics
+0.2) add cookie banner, which can be reviewed by clicking on "cookies" in footer nav
+0.3) make it so disabling cookies disables google analytics
+0.4) add privacy statement
+0.5) launch to netlifly
+0.6) point nowchemistry.com to netlifly
+0.7) check it's all find and send to Engy along with others =)
 
 0.2) then come back to the main branch and build it (could use that surge thingy) and try altering the index.html file as per advice
 here: https://stackoverflow.com/questions/62867653/static-html-landing-pages-with-create-react-app (Dan Monego answer)
@@ -24,10 +39,6 @@ function via props BY advancing page logic (THIS GOES WITH INCORRECTLY DISABLED 
 0.90) make an image rendering component, adjacentImages, pass the objects in an array and then array.length will dictate
 the size of columns, so one image will fill the whole width, whereas three will shrink down
 and or they each need to be in individual divs
-0.9001) Also deploy "#text-box-image-container" id to any images so that they'll be 60% on a desktop and 100% (width, with no distortion)
-on a mobile / tablet
-0.901) add image of equation of chromium hydroxide dissolving upon addition excess sodium hydroxide 
-0.902) add MCQ question (ID 48) for OCR B question about complex ion medicine
 
 
 
