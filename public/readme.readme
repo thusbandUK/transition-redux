@@ -1,6 +1,7 @@
 
 POINTS TO ADDRESS:
 
+
 0.01) Oof!
 reduxbeacon: https://rangle.gitbook.io/redux-beacon/ 
 You need to write a thunk that console.logs something to confirm that thunk is included by default w configureStore / getDefaultMiddleware
@@ -29,6 +30,15 @@ v) I wonder if the best thing is to point nowchemistry.com to the deployed site 
 here: https://stackoverflow.com/questions/62867653/static-html-landing-pages-with-create-react-app (Dan Monego answer)
 
 
+
+
+//from the main branch after routeExpanstion branch started
+0.1) delete build
+0.2) this: https://stackoverflow.com/questions/64468843/netlify-deployment-failed-during-stage-building-site-build-script-returned-n 
+(explains how to deploy to netlify)
+0.3) be aware that the readme list is different in each branch
+//from the main branch after routeExpanstion branch started ENDS
+
 0.5) In App.css revisit the hover horror show
 0.75) screen reader horror show, getting hydroxide read out as OH - ADD ARIA LABEL WITH O AND H SEPARATED?
 0.8) EUCH!! so basics there's a disconnect between when the css thinks the textBox chevrons are disabled and when the javascript
@@ -53,7 +63,8 @@ which is a shame because with OCR B there'll be two pages that aren't needed for
 
 1) you need to finish coding the individual observation-input forms which will stack under their individual test tubes
 h) style the forms (AND the text boxes, esp how acceptable equations render, and consistent with only show "Your [INSERT]" if 
-response has been added) because at the moment they're GROSS - AND RENDER THE NAME OF EACH METAL
+response has been added) because at the moment they're GROSS 
+i) intro function where you click to reveal the name of the metal 
 
 
 1.5) Render text boxes. You need to format and complete the observations page. You'll need to add the model observations
