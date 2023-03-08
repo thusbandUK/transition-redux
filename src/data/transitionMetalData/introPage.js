@@ -24,7 +24,7 @@ export const introPage = [
                 type: 'div',
                 content: [
                           {childType: 'img',
-                           childProps: {key: 1, src: 'images/structures/hexaaquacopper.png', className: 'img-fluid', style: {maxWidth: '40%', height: 'auto'}},
+                           childProps: {key: 1, src: `${window.location.origin}/images/structures/hexaaquacopper.png`, className: 'img-fluid', style: {maxWidth: '40%', height: 'auto'}},
                            childContent: null
                           },
                           {childType: 'p',

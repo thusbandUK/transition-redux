@@ -2,14 +2,14 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { selectSection, selectPage, disableLeft, disableRight, reset } from './textBoxCreatorSlice';
-import { textData } from '../../textData';
+//import { textData } from '../../textData';
 //import TextBox from '../../components/textBox/textBox';
 import { textDataTemp } from '../../textDataTemp';
 import ElementGenerator from './textBoxElements/ElementGenerator';
 //import SubSuperTextGenerator from './dump/subSuperTextGenerator';
 //import VariableTextCreator from './dump/variableTextCreator';
 import { introPage } from '../../data/transitionMetalData/introPage';
-import { introPage2 } from '../../data/transitionMetalData/introPage2';
+//import { introPage2 } from '../../data/transitionMetalData/introPage2';
 import { AmmoniaText } from '../../data/transitionMetalData/AmmoniaText';
 import { HydrochloricAcidText } from '../../data/transitionMetalData/HydrochloricAcidText';
 import { SodiumCarbonateText } from '../../data/transitionMetalData/SodiumCarbonateText';
@@ -19,7 +19,7 @@ import { SodiumHydroxideText } from '../../data/transitionMetalData/SodiumHydrox
 const TextBoxCreator = (props) => {
     const dispatch = useDispatch();
     const examBoard = useSelector(state => state.examBoard.selectedExamBoard);
-    const reagentOptions = useSelector(state => state.menu.reagentOptions);    
+    //const reagentOptions = useSelector(state => state.menu.reagentOptions);    
     const selectedReagent = useSelector(state => state.menu.selectedReagent);
     const currentSection = useSelector(state => state.textBoxCreator.selectedSection);
     const leftDisabled = useSelector(state => state.textBoxCreator.leftDisabled); 
@@ -56,7 +56,7 @@ const TextBoxCreator = (props) => {
 
 //console.log(window[currentSection]);
  //temporary stand in
- const pages2 = textDataTemp.introPage[0].allContent;
+ //const pages2 = textDataTemp.introPage[0].allContent;
 
 //console.log(reagentOptions);
 

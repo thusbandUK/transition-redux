@@ -1,13 +1,13 @@
 import '../../../app/App.css';
 import { useSelector, useDispatch } from 'react-redux';
-import filterByExamBoard from './textBoxFunctions/filterByExamBoard';
+//import filterByExamBoard from './textBoxFunctions/filterByExamBoard';
 
 const ComparisonFeedback = (props) => {
 
     
     const content = props.children;
 
-    const dispatch = useDispatch();
+    //const dispatch = useDispatch();
 
     const examBoard = useSelector(state => state.examBoard.selectedExamBoard);
 

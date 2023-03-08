@@ -31,8 +31,8 @@ export const HydrochloricAcidText = [
       },
       {
           type: 'img',
-          content: null,
-          props: {key: 20.3, src: "images/structures/equation conc HCl substitution.png", alt: "an equation showing the octahedral complex hexaaquacopper reacting with four chloride ions to produce the tetrachlorocopper complex along with six displaced water molecules", className: 'img-fluid'}
+          content: null,          
+          props: {key: 20.3, src: `${window.location.origin}/images/structures/equation conc HCl substitution.png`, alt: "an equation showing the octahedral complex hexaaquacopper reacting with four chloride ions to produce the tetrachlorocopper complex along with six displaced water molecules", className: 'img-fluid'}
       },
       {
           type: 'comparison',
@@ -45,7 +45,8 @@ export const HydrochloricAcidText = [
     {
       type: 'img',
       content: null,
-      props: {key: 22.1, src: "images/structures/equation conc HCl substitution.png", alt: "an equation showing the octahedral complex hexaaquacopper reacting with four chloride ions to produce the tetrachlorocopper complex along with six displaced water molecules", className: 'img-fluid'}
+      //props: {key: 22.1, src: "images/structures/equation conc HCl substitution.png", alt: "an equation showing the octahedral complex hexaaquacopper reacting with four chloride ions to produce the tetrachlorocopper complex along with six displaced water molecules", className: 'img-fluid'}
+      props: {key: 22.1, src: `${window.location.origin}/images/structures/equation conc HCl substitution.png`, alt: "an equation showing the octahedral complex hexaaquacopper reacting with four chloride ions to produce the tetrachlorocopper complex along with six displaced water molecules", className: 'img-fluid'}
     },
     {
       type: 'comparison-feedback',
@@ -70,7 +71,7 @@ export const HydrochloricAcidText = [
     {
       type: 'img',
       content: null,
-      props: {key: 23.2, src: "images/structures/equation conc HCl substitution.png", alt: "an equation showing the octahedral complex hexaaquacopper reacting with four chloride ions to produce the tetrachlorocopper complex along with six displaced water molecules", className: 'img-fluid'}
+      props: {key: 23.2, src: `${window.location.origin}/images/structures/equation conc HCl substitution.png`, alt: "an equation showing the octahedral complex hexaaquacopper reacting with four chloride ions to produce the tetrachlorocopper complex along with six displaced water molecules", className: 'img-fluid'}
     },
     {
       type: 'div',
@@ -120,17 +121,17 @@ export const HydrochloricAcidText = [
        content: [
           {
              childType: 'img',
-             childProps: {true: ['AQA', 'Edexcel', 'OCRA', 'OCRB'], className: "col-md-3 m-2 img-fluid", key: 24.21, src: "images/structures/tetrachlorocopper.png", alt: "diagram showing the display formula of the tetrahedral complex ion tetrachlorocopper"},
+             childProps: {true: ['AQA', 'Edexcel', 'OCRA', 'OCRB'], className: "col-md-3 m-2 img-fluid", key: 24.21, src: `${window.location.origin}/images/structures/tetrachlorocopper.png`, alt: "diagram showing the display formula of the tetrahedral complex ion tetrachlorocopper"},
              childContent: null                           
           },
           {
             childType: 'img',
-            childProps: {true: ['AQA', 'Edexcel'], className: "col-md-3 m-2 img-fluid", key: 24.22, src: "images/structures/tetrachlorocobalt.png", alt: "diagram showing the display formula of the tetrahedral complex ion tetrachlorocobalt"},
+            childProps: {true: ['AQA', 'Edexcel'], className: "col-md-3 m-2 img-fluid", key: 24.22, src: `${window.location.origin}/images/structures/tetrachlorocobalt.png`, alt: "diagram showing the display formula of the tetrahedral complex ion tetrachlorocobalt"},
             childContent: null                           
           },
           {
             childType: 'img',
-            childProps: {true: ['AQA'], className: "col-md-3 m-2 img-fluid", key: 24.23, src: "images/structures/tetrachloroironIII.png", alt: "diagram showing the display formula of the tetrahedral complex ion tetrachloroironIII"},
+            childProps: {true: ['AQA'], className: "col-md-3 m-2 img-fluid", key: 24.23, src: `${window.location.origin}/images/structures/tetrachloroironIII.png`, alt: "diagram showing the display formula of the tetrahedral complex ion tetrachloroironIII"},
             childContent: null                           
           },
           ],
@@ -162,7 +163,7 @@ export const HydrochloricAcidText = [
   }, 
     ]
   },
-  {id: 24, allContent: [,
+  {id: 24, allContent: [
     
     {
       type: 'mcq',                
@@ -175,7 +176,7 @@ export const HydrochloricAcidText = [
 //copying from here....
 
 
-  {id: 25, allContent: [,
+  {id: 25, allContent: [
     
     {
       type: 'written-response',                

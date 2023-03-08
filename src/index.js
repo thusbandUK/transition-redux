@@ -8,8 +8,10 @@ import 'bootstrap/dist/js/bootstrap.bundle.js';
 import { RouterProvider } from "react-router-dom";
 import router from './router';
 import store from './app/store';
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 
+//it went Provider / routerProvider / /Provider
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,10 +19,12 @@ root.render(
     <Provider 
     store={store}
     >
+      <ParallaxProvider>
     <RouterProvider 
     router={router}
     
     />
+    </ParallaxProvider>
     </Provider>
     </React.StrictMode>
       

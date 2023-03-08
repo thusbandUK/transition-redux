@@ -1,4 +1,4 @@
-import sectionFinish from "./genericContent/sectionFinish";
+//import sectionFinish from "./genericContent/sectionFinish";
 
 export const AmmoniaText = [   
     {
@@ -100,7 +100,7 @@ export const AmmoniaText = [
     }
    ]
   },
-  {id: 47, allContent: [,
+  {id: 47, allContent: [
     
     {
       type: 'written-response',                
@@ -270,7 +270,7 @@ export const AmmoniaText = [
       content: [
          {
             childType: 'img',
-            childProps: {true: ['Edexcel', 'OCRA', 'OCRB', 'AQA'], style: {margin: '10px 0px'}, className: "img-fluid", key: 53.21, src: "images/structures/equation Cu w XS ammonia.png", alt: "octahedral hexaaquacopper(II) complex ion substitutes four aqua ligands for four ammine ligands, producing octahedral tetraammine diaqua copper (II) complex ion"},
+            childProps: {true: ['Edexcel', 'OCRA', 'OCRB', 'AQA'], style: {margin: '10px 0px'}, className: "img-fluid", key: 53.21, src: `${window.location.origin}/images/structures/equation Cu w XS ammonia.png`, alt: "octahedral hexaaquacopper(II) complex ion substitutes four aqua ligands for four ammine ligands, producing octahedral tetraammine diaqua copper (II) complex ion"},
             childContent: null                           
          },
          {
@@ -332,7 +332,7 @@ export const AmmoniaText = [
   ]
 
   },
-  {id: 55, allContent: [,
+  {id: 55, allContent: [
     
     {
       type: 'written-response',                

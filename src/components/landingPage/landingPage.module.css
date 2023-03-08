@@ -1,0 +1,362 @@
+/*from cover.css in everyday-chemistry version*/
+
+/* stylelint-disable property-no-vendor-prefix */
+
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+/* Custom default button 
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` *//*
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+*/
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  background-color: #333;
+}
+body {
+  /*color: #fff;*/
+  color: black;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+  -webkit-box-shadow: inset 0 0 100px rgba(0, 0, 0, .5);
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, .5);
+}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+  height: 100vh;
+}
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Padding for spacing */
+.inner {
+  padding: 30px;
+}
+
+
+/*
+ * Header
+ */
+.masthead-brand {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.masthead-nav > li {
+  display: inline-block;
+}
+.masthead-nav > li + li {
+  margin-left: 20px;
+}
+.masthead-nav > li > a {
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff; /* IE8 proofing */
+  color: rgba(255, 255, 255, .75);
+  border-bottom: 2px solid transparent;
+}
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+  background-color: transparent;
+  border-bottom-color: #a9a9a9;
+  border-bottom-color: rgba(255, 255, 255, .25);
+}
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+@media (min-width: 768px) {
+  .masthead-brand {
+    float: left;
+  }
+  .masthead-nav {
+    float: right;
+  }
+}
+
+
+/*
+ * Cover
+ */
+
+.cover {
+  padding: 0 20px;
+}
+.cover .btn-lg {
+  padding: 10px 20px;
+  font-weight: 700;
+  
+}
+
+
+/*
+ * Footer
+ */
+
+.mastfoot {
+  color: #999; /* IE8 proofing */
+  color: rgba(255, 255, 255, .5);
+}
+
+
+/*
+ * Affix and center
+ */
+
+@media (min-width: 768px) {
+  /* Pull out the header and footer */
+  .masthead {
+    position: fixed;
+    top: 0;
+  }
+  .mastfoot {
+    position: fixed;
+    bottom: 0;
+  }
+  .site-wrapper-inner {
+    vertical-align: middle; /* Start the vertical centering */
+  }
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}
+/*
+@media (min-width: 992px) {
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 700px;
+  }
+}
+*/
+
+/*from index.css in everyday-chemistry versions*/
+
+/*
+.site-wrapper {
+    background-image: url('images/landing/red\ and\ yellow\ model\ tetrahedral\ lattice.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+*/
+
+.cover-heading {
+    /*font-family: 'Play', sans-serif;*/
+    font-size: 8rem;
+    font-family: timmana;
+    letter-spacing: 6px;
+}
+
+/*
+.cover .btn-lg {
+    border-radius: 5px;
+    border: 0px;
+    background-color: rgb(255, 255, 255, 0.5);
+}
+*/
+/*
+#tom-feedback {
+    
+    height: 120vh;
+}
+*/
+html * {
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+h1 * {
+    font-size: 10rem;
+}
+    
+
+.lead {
+  font-size: 2em;
+}
+
+/*buttons*/
+
+.btn default {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+
+/*parallax*/
+
+body {
+    margin: 0;
+  }
+  
+  main {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 2px;
+  }
+
+  section {
+    /* Added */ 
+    transform-style: preserve-3d;
+  
+    position: relative;
+    /*height: 130vh;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+
+  .parallax {
+    height: 130vh;
+  }
+
+  .no-parallax {
+    background-color: #111;
+    z-index: 999;
+    height: 40vh;
+  }
+  
+  section h1 {
+    text-align: center;
+    font-size: 4rem;
+    font-family: sans-serif;
+  }
+  
+  .parallax p, .no-parallax p {
+    width: 60%;
+    font-size: 1rem;
+    /*position: absolute;*/
+
+  }
+  
+
+  .background-image {
+    width: 100%;
+    height: 100%;
+    content: ' ';
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateZ(-0.8px) scale(1.5);
+    background-size: 100%;
+    z-index: -1;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background-size: cover;
+  }
+/*
+  #amethyst {
+    background-image: url('images/pink\ amethyst\ gemstone.jpg');
+    
+  }
+
+  #sparkler {
+    background-image: url('images/sparkler.jpg');
+    
+  }
+*/
+  p#sparkler-text {
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  }
+/*
+  #bubble {
+    background-image: url('images/landing/single-soap-bubble.jpg');
+    
+  }
+*/
+
+  @media screen and (max-device-width: 600px) {
+    
+    .no-parallax p {
+      width: 70%;
+    }
+
+    .parallax p, .no-parallax p {
+      
+      font-size: 3rem;
+      
+    }
+
+    .parallax {
+      height: 80vh;
+    }
+  
+    .no-parallax {
+      background-color: #111;
+      z-index: 999;
+      height: 100vh;
+    }
+
+    .background-image {
+      background-position: center;
+    }
+
+
+    footer {
+      padding: 10%;
+    }
+  }
+
+  footer {
+    position: absolute;
+    width: 100%;
+    padding-left: 5%;
+    font-size: 1.5em;
+    text-align: left;
+    background-color: #111;
+    color: white;
+    /*padding: 5%;*/
+
+  }
+   
+  
+
+    

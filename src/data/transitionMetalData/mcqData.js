@@ -595,7 +595,7 @@ export const MCQData = [
         id: 48,
         columns: 2,
         question: 'Select the correct shape and bonding angle for cisplatin.',       
-        image: {className: "img-fluid m-auto mt-3", key: 48.1, src: "images/structures/cisplatin.png", alt: "diagram showing the structure of the medicine cisplatin, showing two chloro ligands and two ammino ligands."}, 
+        image: {className: "img-fluid m-auto mt-3", key: 48.1, src: `${window.location.origin}/images/structures/cisplatin.png`, alt: "diagram showing the structure of the medicine cisplatin, showing two chloro ligands and two ammino ligands."}, 
         //filter: 'true', 
         correct: {id: 484},
         options: [            
