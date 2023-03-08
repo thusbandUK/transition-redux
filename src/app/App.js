@@ -6,10 +6,11 @@ import Header from '../components/headerAndFooter/header';
 import Home from '../components/home/home.js';
 import { NavLink } from 'react-router-dom';
 import { useParams, useLocation } from 'react-router-dom';
+import usePageTracking from './usePageTracking';
 
 
 function App(props) {  
-
+  usePageTracking();
   //console.log(useParams());
   //const {currentUrl} = useParams();
   const pathName = useLocation().pathname;

@@ -7,6 +7,7 @@ import rowOfTubesReducer from '../features/rowOfTestTubes/rowOfTestTubesSlice';
 import observationFormReducer from '../features/observations/observationFormSlice';
 import numberOfAtomsReducer from '../features/numberOfAtoms/numberOfAtomsSlice';
 import { reHydrateStore, localStorageMiddleware } from '../features/examBoards/examBoardMiddleware';
+//import { gaMiddleware } from './usePageTracking';
 
 
 export default configureStore({
