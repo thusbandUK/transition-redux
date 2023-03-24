@@ -133,7 +133,7 @@ const navBarStyling = {
       <div class="carousel-item" data-bs-interval="4000" style={inheritSize}>
           <img src="images/landing/red-and-yellow-model-tetrahedral-lattice.jpg"  class="d-block position-absolute top-50 start-50 translate-middle" alt="photograph of workshop scene with frame chevrons on back wall and grey carpeted bench" />
         </div>
-        <div class="carousel-item active position-relative" data-bs-interval="4000" style={inheritSize}>     
+        <div class="carousel-item" data-bs-interval="4000" style={inheritSize}>     
           <img src='images/landing/single-soap-bubble.jpg' class="d-block position-absolute top-50 start-50 translate-middle" alt="photograph of grey panelled double doors with homewares and plants in foreground and framing workshop in background" />
         </div>   
         
@@ -173,3 +173,5 @@ const navBarStyling = {
 
 export default LandingPage;
 
+//below removed from "carousel-item" div containing bubble image
+// active position-relative
