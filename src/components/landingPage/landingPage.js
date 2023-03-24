@@ -130,18 +130,18 @@ const navBarStyling = {
     <div id="container" style={{height: '100vh', width: '100vw'}}>
     <div id="carouselExampleFade" style={inheritSize} class="carousel slide carousel-fade" data-bs-ride="carousel">
       <div class="carousel-inner" style={inheritSize}>
-      <div class="carousel-item active" data-bs-interval="4000" style={inheritSize}>
+      <div class="carousel-item active" data-bs-interval="4000" style={inheritSize} data-bs-slide-to="0" aria-label="Slide 1" aria-current="true">
           <img src="images/landing/red-and-yellow-model-tetrahedral-lattice.jpg"  class="d-block position-absolute top-50 start-50 translate-middle" alt="photograph of workshop scene with frame chevrons on back wall and grey carpeted bench" />
         </div>
-        <div class="carousel-item" data-bs-interval="4000" style={inheritSize}>     
+        <div class="carousel-item" data-bs-interval="4000" data-bs-slide-to="1" aria-label="Slide 2" style={inheritSize}>     
           <img src='images/landing/single-soap-bubble.jpg' class="d-block position-absolute top-50 start-50 translate-middle" alt="photograph of grey panelled double doors with homewares and plants in foreground and framing workshop in background" />
         </div>   
         
-        <div class="carousel-item" data-bs-interval="4000" style={inheritSize}>
+        <div class="carousel-item" data-bs-interval="4000"  data-bs-slide-to="2" aria-label="Slide 3" style={inheritSize}>
           <img src='images/landing/colourful-solutions.jpg' class="d-block position-absolute top-50 start-50 translate-middle" alt="closeup of corner of wooden frame" />
         </div>
         
-        <div class="carousel-item" data-bs-interval="4000" style={inheritSize}>
+        <div class="carousel-item" data-bs-interval="4000" data-bs-slide-to="3" aria-label="Slide 4" style={inheritSize}>
           <img src='images/landing/pink-amethyst-gemstone.jpg' class="d-block position-absolute top-50 start-50 translate-middle" alt="art print on desk with white frame chevron at corner" />
         </div>
         {/**
