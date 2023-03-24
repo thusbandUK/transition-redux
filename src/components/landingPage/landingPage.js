@@ -130,7 +130,7 @@ const navBarStyling = {
     <div id="container" style={{height: '100vh', width: '100vw'}}>
     <div id="carouselExampleFade" style={inheritSize} class="carousel slide carousel-fade" data-bs-ride="carousel">
       <div class="carousel-inner" style={inheritSize}>
-      <div class="carousel-item" data-bs-interval="4000" style={inheritSize}>
+      <div class="carousel-item active" data-bs-interval="4000" style={inheritSize}>
           <img src="images/landing/red-and-yellow-model-tetrahedral-lattice.jpg"  class="d-block position-absolute top-50 start-50 translate-middle" alt="photograph of workshop scene with frame chevrons on back wall and grey carpeted bench" />
         </div>
         <div class="carousel-item" data-bs-interval="4000" style={inheritSize}>     
