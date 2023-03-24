@@ -128,21 +128,21 @@ const navBarStyling = {
         {/*Carousel code, images landing page*/}
     
     <div id="container" style={{height: '100vh', width: '100vw'}}>
-    <div id="carouselExampleFade" style={inheritSize} class="carousel slide carousel-fade" data-bs-ride="carousel">
-      <div class="carousel-inner" style={inheritSize}>
-      <div class="carousel-item active" data-bs-interval="4000" data-bs-ride="false" style={inheritSize} data-bs-slide-to="0" aria-label="Slide 1" aria-current="true">
-          <img src="images/landing/red-and-yellow-model-tetrahedral-lattice.jpg"  class="d-block position-absolute top-50 start-50 translate-middle" alt="photograph of workshop scene with frame chevrons on back wall and grey carpeted bench" />
+    <div id="carouselExampleFade" style={inheritSize} className="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-pause="false">
+      <div className="carousel-inner" style={inheritSize}>
+      <div className="carousel-item" data-bs-interval="4000"  style={inheritSize}  >
+          <img src="images/landing/red-and-yellow-model-tetrahedral-lattice.jpg"  className="d-block position-absolute top-50 start-50 translate-middle" alt="photograph of workshop scene with frame chevrons on back wall and grey carpeted bench" />
         </div>
-        <div class="carousel-item" data-bs-interval="4000" data-bs-slide-to="1" aria-label="Slide 2" style={inheritSize}>     
-          <img src='images/landing/single-soap-bubble.jpg' class="d-block position-absolute top-50 start-50 translate-middle" alt="photograph of grey panelled double doors with homewares and plants in foreground and framing workshop in background" />
+        <div className="carousel-item active" data-bs-interval="4000" aria-current="true" data-bs-slide-to="1" aria-label="Slide 2" style={inheritSize}>     
+          <img src='images/landing/single-soap-bubble.jpg' className="d-block position-absolute top-50 start-50 translate-middle" alt="photograph of grey panelled double doors with homewares and plants in foreground and framing workshop in background" />
         </div>   
         
-        <div class="carousel-item" data-bs-interval="4000"  data-bs-slide-to="2" aria-label="Slide 3" style={inheritSize}>
-          <img src='images/landing/colourful-solutions.jpg' class="d-block position-absolute top-50 start-50 translate-middle" alt="closeup of corner of wooden frame" />
+        <div className="carousel-item" data-bs-interval="4000"  data-bs-slide-to="2" aria-label="Slide 3" style={inheritSize}>
+          <img src='images/landing/colourful-solutions.jpg' className="d-block position-absolute top-50 start-50 translate-middle" alt="closeup of corner of wooden frame" />
         </div>
         
-        <div class="carousel-item" data-bs-interval="4000" data-bs-slide-to="3" aria-label="Slide 4" style={inheritSize}>
-          <img src='images/landing/pink-amethyst-gemstone.jpg' class="d-block position-absolute top-50 start-50 translate-middle" alt="art print on desk with white frame chevron at corner" />
+        <div className="carousel-item" data-bs-interval="4000" data-bs-slide-to="3" aria-label="Slide 4" style={inheritSize}>
+          <img src='images/landing/pink-amethyst-gemstone.jpg' className="d-block position-absolute top-50 start-50 translate-middle" alt="art print on desk with white frame chevron at corner" />
         </div>
         {/**
         {window.matchMedia("(min-width: 500px)") ? : null }window.matchMedia("(min-width: 500px)") ?  : 'none'
@@ -155,13 +155,13 @@ const navBarStyling = {
     </div>
     {/*Buttons to scroll back and forth through carousel*/}
     <div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+      <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span className="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+      <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+        <span className="visually-hidden">Next</span>
       </button>
     </div>
 
@@ -175,3 +175,5 @@ export default LandingPage;
 
 //below removed from "carousel-item" div containing bubble image
 // active position-relative
+
+//data-bs-slide-to="0" aria-label="Slide 1"
