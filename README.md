@@ -1,3 +1,10 @@
+# Now Chemistry
+
+This is a website that simulates a set of chemical reactions for educational purposes. Students can then read explanatory text, answer questions and receive feedback. The plan is to develop the project to cover the whole of the UK A-level chemistry syllabus.
+
+
+# Create-React-App boiler plate follows
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
